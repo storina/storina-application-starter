@@ -1,0 +1,1224 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Onliner shoping application\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-21 14:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.0; wp-4.9.8"
+
+#: onliner-shop-app.php:24
+msgid "ioncube loader +5.6 Not installed."
+msgstr ""
+
+#: them_options/create_custompanel.php:31
+#: them_options/create_text_adsplus.php:24
+#: them_options/create_sliderplus.php:26
+#: them_options/create_custompanel2.php:35 them_options/on5-panel.php:332
+msgid "Open the site"
+msgstr ""
+
+#: them_options/create_custompanel.php:32
+#: them_options/create_text_adsplus.php:25
+#: them_options/create_sliderplus.php:27
+#: them_options/create_custompanel2.php:36 them_options/on5-panel.php:332
+msgid "Open telegram channel"
+msgstr ""
+
+#: them_options/create_custompanel.php:33
+#: them_options/create_text_adsplus.php:26
+#: them_options/create_sliderplus.php:28
+#: them_options/create_custompanel2.php:37 them_options/on5-panel.php:332
+#: api/models/classes/codedBYphp-5.6/OSA_index.php:546
+msgid "Call"
+msgstr ""
+
+#: them_options/create_custompanel.php:34
+#: them_options/create_text_adsplus.php:27
+#: them_options/create_sliderplus.php:29
+#: them_options/create_custompanel2.php:38 them_options/on5-panel.php:332
+msgid "Open instagram page"
+msgstr ""
+
+#: them_options/create_custompanel.php:35
+#: them_options/create_text_adsplus.php:28
+#: them_options/create_sliderplus.php:30
+#: them_options/create_custompanel2.php:39 them_options/on5-panel.php:332
+msgid "A custom archive"
+msgstr ""
+
+#: them_options/create_custompanel.php:36
+#: them_options/create_text_adsplus.php:29
+#: them_options/create_sliderplus.php:31
+#: them_options/create_custompanel2.php:40 them_options/on5-panel.php:332
+msgid "A custom product"
+msgstr ""
+
+#: them_options/create_custompanel.php:39
+#: them_options/create_text_adsplus.php:32
+#: them_options/create_sliderplus.php:34 them_options/create_sliderplus.php:40
+#: them_options/create_sliderplus.php:43
+#: them_options/create_custompanel2.php:47
+#: them_options/create_custompanel3.php:31 them_options/create_slider.php:16
+#: them_options/create_slider.php:22 them_options/create_slider.php:25
+#: them_options/create_banner.php:22 them_options/create_banner.php:28
+#: them_options/create_banner.php:31 them_options/create_menu.php:17
+msgid "Description"
+msgstr ""
+
+#: them_options/create_custompanel.php:45
+msgid "Value for Event"
+msgstr ""
+
+#: them_options/create_custompanel.php:45
+msgid "Size"
+msgstr ""
+
+#: them_options/create_custompanel.php:45
+msgid "Event"
+msgstr ""
+
+#: them_options/create_custompanel.php:45 them_options/create_sliderplus.php:40
+#: them_options/create_sliderplus.php:43 them_options/create_slider.php:22
+#: them_options/create_slider.php:25 them_options/create_banner.php:28
+#: them_options/create_banner.php:31
+msgid "Banner address"
+msgstr ""
+
+#: them_options/create_custompanel.php:45
+#: them_options/create_text_adsplus.php:38
+#: them_options/create_text_adsplus.php:41
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:43
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+#: them_options/create_custompanel3.php:37 them_options/create_slider.php:22
+#: them_options/create_slider.php:25 them_options/create_banner.php:28
+#: them_options/create_banner.php:31
+msgid "Action"
+msgstr ""
+
+#: them_options/create_custompanel.php:70
+#: them_options/create_custompanel.php:110
+#: them_options/create_sliderplus.php:54 them_options/create_sliderplus.php:91
+#: them_options/create_custompanel2.php:70
+#: them_options/create_custompanel2.php:82
+#: them_options/create_custompanel2.php:132
+#: them_options/create_custompanel2.php:144 them_options/create_slider.php:34
+#: them_options/create_slider.php:52 them_options/create_banner.php:43
+#: them_options/create_banner.php:82
+msgid "Upload"
+msgstr ""
+
+#: them_options/create_custompanel.php:82
+#: them_options/create_custompanel.php:113
+#: them_options/create_text_adsplus.php:63
+#: them_options/create_text_adsplus.php:85
+#: them_options/create_sliderplus.php:79 them_options/create_sliderplus.php:114
+#: them_options/create_custompanel2.php:120
+#: them_options/create_custompanel2.php:174
+#: them_options/create_custompanel3.php:55
+#: them_options/create_custompanel3.php:75 them_options/create_slider.php:40
+#: them_options/create_slider.php:58 them_options/create_banner.php:70
+#: them_options/create_banner.php:102
+msgid "Add top"
+msgstr ""
+
+#: them_options/create_custompanel.php:83
+#: them_options/create_custompanel.php:114
+#: them_options/create_text_adsplus.php:64
+#: them_options/create_text_adsplus.php:86
+#: them_options/create_sliderplus.php:80 them_options/create_sliderplus.php:115
+#: them_options/create_custompanel2.php:121
+#: them_options/create_custompanel2.php:175
+#: them_options/create_custompanel3.php:56
+#: them_options/create_custompanel3.php:76 them_options/create_slider.php:41
+#: them_options/create_slider.php:59 them_options/create_banner.php:71
+#: them_options/create_banner.php:103
+msgid "Add bottom"
+msgstr ""
+
+#: them_options/create_custompanel.php:84
+#: them_options/create_custompanel.php:115
+#: them_options/create_text_adsplus.php:65
+#: them_options/create_text_adsplus.php:87
+#: them_options/create_sliderplus.php:81 them_options/create_sliderplus.php:116
+#: them_options/create_custompanel2.php:122
+#: them_options/create_custompanel2.php:176
+#: them_options/create_custompanel3.php:57
+#: them_options/create_custompanel3.php:77 them_options/create_slider.php:42
+#: them_options/create_slider.php:60 them_options/create_banner.php:72
+#: them_options/create_banner.php:104
+msgid "Delete"
+msgstr ""
+
+#: them_options/create_custompanel.php:125
+#: them_options/create_text_adsplus.php:97
+#: them_options/create_sliderplus.php:126 them_options/create_options.php:145
+#: them_options/create_custompanel2.php:186
+#: them_options/create_custompanel3.php:87 them_options/create_slider.php:70
+#: them_options/create_banner.php:113 them_options/on5_functions.php:226
+msgid "Save"
+msgstr ""
+
+#: them_options/create_text_adsplus.php:20
+#: them_options/create_sliderplus.php:22
+#: them_options/create_custompanel2.php:23 them_options/create_list.php:10
+#: them_options/create_list.php:27 them_options/on5_functions.php:215
+msgid "All"
+msgstr ""
+
+#: them_options/create_text_adsplus.php:38
+#: them_options/create_text_adsplus.php:41
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:43
+#: them_options/on5-panel.php:315 them_options/create_slider.php:22
+#: them_options/create_slider.php:25 them_options/create_banner.php:28
+#: them_options/create_banner.php:31 them_options/create_menu.php:23
+#: them_options/tabs/dinamic/productBox.php:40
+msgid "Title"
+msgstr ""
+
+#: them_options/create_text_adsplus.php:38
+#: them_options/create_text_adsplus.php:41 them_options/on5-panel.php:319
+msgid "Text"
+msgstr ""
+
+#: them_options/create_text_adsplus.php:38
+#: them_options/create_text_adsplus.php:41
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:43
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+#: them_options/create_custompanel2.php:57 them_options/on5-panel.php:330
+msgid "Link type"
+msgstr ""
+
+#: them_options/create_text_adsplus.php:38
+#: them_options/create_text_adsplus.php:41
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:43
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+#: them_options/create_custompanel2.php:57
+msgid "Value"
+msgstr ""
+
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:43
+msgid "Show in"
+msgstr ""
+
+#: them_options/create_custompanel2.php:43
+msgid "One column"
+msgstr ""
+
+#: them_options/create_custompanel2.php:44
+msgid "Two column"
+msgstr ""
+
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+msgid "Banner address 1"
+msgstr ""
+
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+msgid "Banner address 2"
+msgstr ""
+
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57
+msgid "Column"
+msgstr ""
+
+#: them_options/create_custompanel2.php:53
+#: them_options/create_custompanel2.php:57 them_options/on5_functions.php:216
+msgid "Show"
+msgstr ""
+
+#: them_options/create_custompanel3.php:22
+#: them_options/tabs/dinamic/slider.php:11
+msgid "Slider"
+msgstr ""
+
+#: them_options/create_custompanel3.php:23 them_options/create_banner.php:28
+#: them_options/create_banner.php:31
+msgid "Category"
+msgstr ""
+
+#: them_options/create_custompanel3.php:24
+#: them_options/tabs/dinamic/featured.php:5
+#: them_options/tabs/dinamic/featured.php:14
+msgid "Amazing box"
+msgstr ""
+
+#: them_options/create_custompanel3.php:25
+#: them_options/tabs/dinamic/oneColADV.php:11
+msgid "Banners ads"
+msgstr ""
+
+#: them_options/create_custompanel3.php:26
+#: them_options/tabs/dinamic/productBox.php:5
+msgid "Product box"
+msgstr ""
+
+#: them_options/create_custompanel3.php:27 them_options/tabs/dinamic/line.php:5
+msgid "Line"
+msgstr ""
+
+#: them_options/create_custompanel3.php:28
+#: them_options/tabs/dinamic/space.php:5
+msgid "Space"
+msgstr ""
+
+#: them_options/create_custompanel3.php:37
+msgid "Item"
+msgstr ""
+
+#: them_options/on5-panel.php:214
+msgid "Saved changes."
+msgstr ""
+
+#: them_options/on5-panel.php:221
+msgid "Application settings"
+msgstr ""
+
+#: them_options/on5-panel.php:222 them_options/on5-panel.php:311
+msgid "Send notification"
+msgstr ""
+
+#: them_options/on5-panel.php:229
+msgid "You can not change options on site."
+msgstr ""
+
+#: them_options/on5-panel.php:300
+msgid "Notification sent."
+msgstr ""
+
+#: them_options/on5-panel.php:302
+msgid "Notification not send."
+msgstr ""
+
+#: them_options/on5-panel.php:305
+msgid "Please fill all reqired fields."
+msgstr ""
+
+#: them_options/on5-panel.php:323
+msgid "Icon"
+msgstr ""
+
+#: them_options/on5-panel.php:326
+msgid "Select notification icon 512*512 px"
+msgstr ""
+
+#: them_options/on5-panel.php:333
+msgid "What do you want then touch on notification?"
+msgstr ""
+
+#: them_options/on5-panel.php:337
+msgid "Link value"
+msgstr ""
+
+#: them_options/on5-panel.php:340
+msgid "Enter the desired value according to the link type field."
+msgstr ""
+
+#: them_options/on5-panel.php:344
+msgid "Send"
+msgstr ""
+
+#: them_options/create_slider.php:22 them_options/create_slider.php:25
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_menu.php:23
+msgid "Link"
+msgstr ""
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Width px"
+msgstr ""
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Height px"
+msgstr ""
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Expire"
+msgstr ""
+
+#: them_options/create_list.php:11
+msgid "Nothing"
+msgstr ""
+
+#: them_options/on5_functions.php:115
+msgid "Delete app cache"
+msgstr ""
+
+#: them_options/on5_functions.php:120
+msgid "Delete cache"
+msgstr ""
+
+#: them_options/on5_functions.php:122
+msgid "You can delete application cache from this box."
+msgstr ""
+
+#: them_options/on5_functions.php:128
+msgid "Deleted application cache"
+msgstr ""
+
+#: them_options/on5_functions.php:209 them_options/on5_functions.php:210
+#: them_options/on5_functions.php:221
+msgid "App Announcements"
+msgstr ""
+
+#: them_options/on5_functions.php:211
+msgid "Add new Announcement"
+msgstr ""
+
+#: them_options/on5_functions.php:212
+msgid "This post shown only in Announcements section"
+msgstr ""
+
+#: them_options/on5_functions.php:213
+msgid "Edit Announcement"
+msgstr ""
+
+#: them_options/on5_functions.php:214
+msgid "New Announcements"
+msgstr ""
+
+#: them_options/on5_functions.php:217
+msgid "Search"
+msgstr ""
+
+#: them_options/on5_functions.php:218
+msgid "Not found"
+msgstr ""
+
+#: them_options/on5_functions.php:219
+msgid "Not found in trash"
+msgstr ""
+
+#: them_options/on5_functions.php:300
+msgid "Email address"
+msgstr ""
+
+#: them_options/on5_functions.php:306
+msgid "Phone"
+msgstr ""
+
+#: them_options/on5_functions.php:311
+msgid "Emergency phon number"
+msgstr ""
+
+#: inc/user_field.php:7
+msgid "Extra information"
+msgstr ""
+
+#: inc/user_field.php:11
+msgid "User token"
+msgstr ""
+
+#: inc/user_field.php:15
+msgid "Current user token id."
+msgstr ""
+
+#: inc/user_field.php:19
+msgid "Gender"
+msgstr ""
+
+#: inc/user_field.php:28
+msgid "Select your gender"
+msgstr ""
+
+#: inc/user_field.php:32 inc/user_field.php:36
+msgid "National codeٔ"
+msgstr ""
+
+#: inc/user_field.php:40 inc/user_field.php:70
+msgid "Birth date"
+msgstr ""
+
+#: inc/user_field.php:111
+msgid "Emergency phone"
+msgstr ""
+
+#: inc/user_field.php:112
+msgctxt "placeholder"
+msgid "Emergency phone"
+msgstr ""
+
+#: inc/user_field.php:116 inc/user_field.php:132
+#: them_options/tabs/about-options.php:37
+msgid "Email"
+msgstr ""
+
+#: inc/user_field.php:117 inc/user_field.php:133
+msgctxt "placeholder"
+msgid "Email"
+msgstr ""
+
+#: inc/user_field.php:122
+msgid "Phone number"
+msgstr ""
+
+#: inc/user_field.php:123
+msgctxt "placeholder"
+msgid "Phone number"
+msgstr ""
+
+#: inc/user_field.php:127
+msgid "Mobile"
+msgstr ""
+
+#: inc/user_field.php:128
+msgctxt "placeholder"
+msgid "Mobile"
+msgstr ""
+
+#: inc/user_field.php:150
+msgid "Mobile :"
+msgstr ""
+
+#: inc/user_field.php:151
+msgid "Shipping phone :"
+msgstr ""
+
+#: inc/user_field.php:152
+msgid "Shipping mobile :"
+msgstr ""
+
+#: inc/user_field.php:158 inc/user_field.php:185 inc/user_field.php:207
+msgid "Send box time and date :"
+msgstr ""
+
+#: inc/user_field.php:172
+msgid "Mobile 1 :"
+msgstr ""
+
+#: inc/user_field.php:176
+msgid "Mobile 2 :"
+msgstr ""
+
+#: inc/catalogueType.php:28
+msgid "Catalogue"
+msgstr ""
+
+#: inc/woocommerce_custom_field.php:25
+msgid "secondary title for show in app"
+msgstr ""
+
+#: them_options/tabs/index-options.php:5
+msgid "Home page layout"
+msgstr ""
+
+#: them_options/tabs/index-options.php:14
+msgid "Design your home page for application"
+msgstr ""
+
+#: them_options/tabs/manuItems-options.php:5
+msgid "Custom menu"
+msgstr ""
+
+#: them_options/tabs/manuItems-options.php:14
+msgid "can you make custom menu for your application"
+msgstr ""
+
+#: them_options/tabs/app-options.php:5
+msgid "General"
+msgstr ""
+
+#: them_options/tabs/app-options.php:14
+msgid "Caching mode"
+msgstr ""
+
+#: them_options/tabs/app-options.php:16 them_options/tabs/app-options.php:72
+#: them_options/tabs/dinamic/productBox.php:60
+msgid "Active"
+msgstr ""
+
+#: them_options/tabs/app-options.php:18
+msgid "Caching mode increase your application load speed"
+msgstr ""
+
+#: them_options/tabs/app-options.php:22
+msgid "application title"
+msgstr ""
+
+#: them_options/tabs/app-options.php:24
+msgid ""
+"Enter the application title. use in register page and login page and etc..."
+msgstr ""
+
+#: them_options/tabs/app-options.php:28
+msgid "Splash screen logo"
+msgstr ""
+
+#: them_options/tabs/app-options.php:30
+msgid "Select the splash screen logo. PNG and 512px*512px"
+msgstr ""
+
+#: them_options/tabs/app-options.php:34
+msgid "Top page logo"
+msgstr ""
+
+#: them_options/tabs/app-options.php:36
+msgid ""
+"Select the home page logo. this logo shows in top&left application home page."
+" PNG witch 200px height 40px"
+msgstr ""
+
+#: them_options/tabs/app-options.php:40
+msgid "Master application color"
+msgstr ""
+
+#: them_options/tabs/app-options.php:42
+msgid "Please select main application color"
+msgstr ""
+
+#: them_options/tabs/app-options.php:46
+msgid "secondary application color"
+msgstr ""
+
+#: them_options/tabs/app-options.php:48
+msgid "Please select secondary application color"
+msgstr ""
+
+#: them_options/tabs/app-options.php:52
+msgid "Application version"
+msgstr ""
+
+#: them_options/tabs/app-options.php:54
+msgid "Enter application version"
+msgstr ""
+
+#: them_options/tabs/app-options.php:58
+msgid "APK file"
+msgstr ""
+
+#: them_options/tabs/app-options.php:60
+msgid "Upload and select application file. *.apk"
+msgstr ""
+
+#: them_options/tabs/app-options.php:64
+msgid "new version description"
+msgstr ""
+
+#: them_options/tabs/app-options.php:66
+msgid "Enter the new version descriptions. one item in one line."
+msgstr ""
+
+#: them_options/tabs/app-options.php:70
+msgid "Fource update"
+msgstr ""
+
+#: them_options/tabs/app-options.php:73
+msgid "If users must update to this version, active this field;"
+msgstr ""
+
+#: them_options/tabs/app-options.php:77
+msgid "products count in archive page"
+msgstr ""
+
+#: them_options/tabs/app-options.php:79
+msgid "Enter the products count in archive page"
+msgstr ""
+
+#: them_options/tabs/app-options.php:83
+msgid "product content type"
+msgstr ""
+
+#: them_options/tabs/app-options.php:85 them_options/tabs/app-options.php:88
+msgid "Short description"
+msgstr ""
+
+#: them_options/tabs/app-options.php:85
+msgid "Full description"
+msgstr ""
+
+#: them_options/tabs/app-options.php:87
+msgid "you can select for show full description product or short description."
+msgstr ""
+
+#: them_options/tabs/app-options.php:92
+msgid "Call text"
+msgstr ""
+
+#: them_options/tabs/app-options.php:94
+msgid ""
+"In home page, som products have zero price. for they show (call) text. if "
+"you want to change it please enter the text that you want"
+msgstr ""
+
+#: them_options/tabs/app-options.php:98
+msgid "Blog"
+msgstr ""
+
+#: them_options/tabs/app-options.php:102
+msgid ""
+"Select categories that you want show their articles in application blog."
+msgstr ""
+
+#: them_options/tabs/app-options.php:106
+msgid "product categories menu"
+msgstr ""
+
+#: them_options/tabs/app-options.php:114
+msgid "Archive level Start"
+msgstr ""
+
+#: them_options/tabs/app-options.php:116
+msgid "Parent"
+msgstr ""
+
+#: them_options/tabs/app-options.php:116
+msgid "Sub category"
+msgstr ""
+
+#: them_options/tabs/app-options.php:118
+msgid ""
+"when that user select a sub categories, show type be parent category or sam "
+"category?"
+msgstr ""
+
+#: them_options/tabs/app-options.php:122
+msgid "view count custom field"
+msgstr ""
+
+#: them_options/tabs/app-options.php:124
+msgid "Set your custom field for view counter"
+msgstr ""
+
+#: them_options/tabs/app-options.php:128
+msgid "Payment type"
+msgstr ""
+
+#: them_options/tabs/app-options.php:130
+msgid "In browser"
+msgstr ""
+
+#: them_options/tabs/app-options.php:130
+msgid "In application"
+msgstr ""
+
+#: them_options/tabs/app-options.php:132
+msgid ""
+"In (in application) method, when user go for payment , do not exit from "
+"application. "
+msgstr ""
+
+#: them_options/tabs/app-options.php:136
+msgid "variation price show type"
+msgstr ""
+
+#: them_options/tabs/app-options.php:138 them_options/tabs/app-options.php:141
+msgid "Single price"
+msgstr ""
+
+#: them_options/tabs/app-options.php:138
+msgid "Period prices"
+msgstr ""
+
+#: them_options/tabs/app-options.php:140
+msgid "Can you select show type price in home page product boxes"
+msgstr ""
+
+#: them_options/tabs/app-options.php:145
+msgid "Register type"
+msgstr ""
+
+#: them_options/tabs/app-options.php:147
+msgid "Only by email"
+msgstr ""
+
+#: them_options/tabs/app-options.php:147
+msgid "by Email OR sms"
+msgstr ""
+
+#: them_options/tabs/app-options.php:149
+msgid "Select your registration type in application"
+msgstr ""
+
+#: them_options/tabs/app-options.php:153
+msgid "connect application to sms panel "
+msgstr ""
+
+#: them_options/tabs/app-options.php:155
+msgid "how to connect application to sms panel"
+msgstr ""
+
+#: them_options/tabs/app-options.php:159
+msgid "(Security code)"
+msgstr ""
+
+#: them_options/tabs/app-options.php:161
+msgid "Enter the security code."
+msgstr ""
+
+#: them_options/tabs/app-options.php:165
+msgid "(Api key)"
+msgstr ""
+
+#: them_options/tabs/app-options.php:167
+msgid "Enter the Api key"
+msgstr ""
+
+#: them_options/tabs/about-options.php:5 them_options/tabs/about-options.php:73
+msgid "About US"
+msgstr ""
+
+#: them_options/tabs/about-options.php:25
+msgid "Shop slogan"
+msgstr ""
+
+#: them_options/tabs/about-options.php:27
+msgid "Enter the shop slogan"
+msgstr ""
+
+#: them_options/tabs/about-options.php:31
+msgid "select top page logo"
+msgstr ""
+
+#: them_options/tabs/about-options.php:33
+msgid "Select top page logo. PNG and width 700px height 445px"
+msgstr ""
+
+#: them_options/tabs/about-options.php:39
+msgid "Enter support Email"
+msgstr ""
+
+#: them_options/tabs/about-options.php:43
+msgid "Telegram"
+msgstr ""
+
+#: them_options/tabs/about-options.php:45
+msgid "Enter the telegram ID (without @)"
+msgstr ""
+
+#: them_options/tabs/about-options.php:49
+msgid "mubile number"
+msgstr ""
+
+#: them_options/tabs/about-options.php:51
+msgid "Enter support phone"
+msgstr ""
+
+#: them_options/tabs/about-options.php:55
+msgid "copyright"
+msgstr ""
+
+#: them_options/tabs/about-options.php:57
+msgid "Enter the copyright text. maximum 12 char"
+msgstr ""
+
+#: them_options/tabs/about-options.php:61
+msgid "Privacy"
+msgstr ""
+
+#: them_options/tabs/about-options.php:63
+msgid "Enter the privacy page url"
+msgstr ""
+
+#: them_options/tabs/about-options.php:67
+msgid "Terms"
+msgstr ""
+
+#: them_options/tabs/about-options.php:69
+msgid "Enter the terms page url"
+msgstr ""
+
+#: them_options/tabs/about-options.php:75
+msgid "Enter the url of about us page"
+msgstr ""
+
+#: them_options/tabs/about-options.php:79
+msgid "Custom button"
+msgstr ""
+
+#: them_options/tabs/about-options.php:85
+msgid "button text"
+msgstr ""
+
+#: them_options/tabs/about-options.php:87
+msgid "Enter the button text"
+msgstr ""
+
+#: them_options/tabs/about-options.php:91
+msgid "URL button"
+msgstr ""
+
+#: them_options/tabs/about-options.php:93
+msgid "Enter the button url"
+msgstr ""
+
+#: them_options/tabs/archiveads-options.php:5
+msgid "Categories banners ADS"
+msgstr ""
+
+#: them_options/tabs/archiveads-options.php:14
+msgid "Enter the ads banners for archive pages"
+msgstr ""
+
+#: them_options/tabs/archiveslider-options.php:5
+msgid "Archive sliders"
+msgstr ""
+
+#: them_options/tabs/archiveslider-options.php:15
+msgid ""
+"set slider banners for show in custom archives. width 800px height 400px"
+msgstr ""
+
+#: them_options/tabs/social-options.php:5
+msgid "socials icons"
+msgstr ""
+
+#: them_options/tabs/social-options.php:13
+msgid ""
+"this icons shown in buttom of app menu. only banner address and link using "
+msgstr ""
+
+#: them_options/tabs/dinamic/categories.php:5
+msgid "product Categories"
+msgstr ""
+
+#: them_options/tabs/dinamic/categories.php:14
+msgid "Product categories"
+msgstr ""
+
+#: them_options/tabs/dinamic/categories.php:18
+msgid "you can insert categories in button type. please select that."
+msgstr ""
+
+#: them_options/tabs/dinamic/featured.php:18
+msgid "this box show products that have offer AND have Schedule for offers."
+msgstr ""
+
+#: them_options/tabs/dinamic/featured.php:22
+msgid "products count"
+msgstr ""
+
+#: them_options/tabs/dinamic/featured.php:24
+msgid "Product count for show. max 12"
+msgstr ""
+
+#: them_options/tabs/dinamic/oneColADV.php:20
+msgid "Select the banners for show in home page"
+msgstr ""
+
+#: them_options/tabs/dinamic/space.php:14
+msgid "space value"
+msgstr ""
+
+#: them_options/tabs/dinamic/space.php:16
+msgid "Enter the space value for pixel"
+msgstr ""
+
+#: them_options/tabs/dinamic/slider.php:22
+msgid "Enter the banners for this slider"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:14
+msgid "Box title"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:16
+msgid "Enter the title box"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:20
+msgid "category"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:24
+msgid "Select the category"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:28
+msgid "product count"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:30
+msgid "Enter product count for show in box. max 12"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:34
+msgid "Order by"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:38
+msgid "Created date"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:39
+msgid "Modified date"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:41
+msgid "sale count"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:42
+msgid "View count"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:43
+msgid "Comment count"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:44
+msgid "Random"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:45
+msgid "Select order type for show products."
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:49
+msgid "Sort"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:52
+msgid "ASC"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:52
+msgid "DESC"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:53
+msgid "Select the sort type for show"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:57
+msgid "exist"
+msgstr ""
+
+#: them_options/tabs/dinamic/productBox.php:61
+msgid "Only show exists products"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_index.php:461
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:535
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:706
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:814
+msgid "To"
+msgstr ""
+
+#. Author of the plugin
+#: api/models/classes/codedBYphp-5.6/OSA_index.php:647
+msgid "Onliner"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:38
+msgid "Password sent."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:87
+msgid "Mobile number is invalid."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:108
+msgid "This mobile number is exist. please login."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:175
+msgid "Register successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:199
+msgid "This email is exist. please login."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:229
+msgid "This user is not exist. please review or sign up first."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:260
+msgid "Verify successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:269
+msgid "Entered cod is invalid."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:286
+msgid "Entered email is invalid."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:330
+msgid "Before login need to verify mobile number. please first verify that."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:353
+msgid "Wrong information."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:454
+msgid "Login successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:478
+msgid "This user is not exist."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:489
+msgid "Logout successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:565
+msgid "Password reset successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:585
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:610
+msgid "Reset password link sent to your email."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:592
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:617
+msgid "Reset password link not sent."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:600
+msgid "Entered email is not exist."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:628
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:640
+msgid "Entered mobile number is not exist."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:713
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:803
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:840
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:880
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:946
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:1041
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:1107
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:1153
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:827
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:876
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:949
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1100
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1292
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1340
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1479
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1639
+#: api/models/classes/codedBYphp-5.6/OSA_general.php:319
+msgid "Token is invalid"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:829
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:869
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:935
+msgid ""
+"yith-woocommerce-wishlist plugin is not active. please first active that."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_user.php:1032
+msgid "Your vote saved."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:649
+#, php-format
+msgid "your request count is not exist. Stock inventory is %s "
+msgid_plural "your request count is not exist. Stock inventory is %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:857
+msgid "Coupons removed successfully."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:916
+msgid "Offer coupon applied."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:927
+msgid "Coupon is invalid"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:935
+msgid "Basket have coupon."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:993
+msgid "This order is not for you."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1282
+msgid "something wrong happen."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1452
+msgid "This order to "
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1453
+msgid ", address :"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1454
+msgid ", phone : "
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1455
+msgid " Will be delivered."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1456
+msgid "This order through "
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_cart.php:1457
+msgid " and price :"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_single.php:398
+msgid "Details"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_general.php:310
+msgid "Error in insert comment."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_general.php:350
+msgid "Your shop slogan here."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_general.php:354
+msgid "All right reserved."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:534
+msgid "From"
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:878
+msgid "Result not found."
+msgstr ""
+
+#: api/models/classes/codedBYphp-5.6/OSA_archive.php:888
+msgid "don't receive keyword for search."
+msgstr ""
+
+#. Name of the plugin
+msgid "Onliner shoping application"
+msgstr ""
+
+#. Description of the plugin
+msgid "A amazing android application for woocommerce."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://shop.onliner.ir/product/app-andorid-woocommerce/"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://onliner.ir"
+msgstr ""

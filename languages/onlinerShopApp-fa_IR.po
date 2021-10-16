@@ -1,0 +1,2134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Onliner shoping application\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-01 19:52+0430\n"
+"PO-Revision-Date: 2021-08-20 18:18+0430\n"
+"Last-Translator: افسانه طالبی <afsaneh.talebi1995@gmail.com>\n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Loco-Version: 2.2.0; wp-4.9.8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: inc\n"
+"X-Poedit-SearchPath-1: modules\n"
+"X-Poedit-SearchPath-2: them_options\n"
+"X-Poedit-SearchPath-3: includes/Controllers\n"
+"X-Poedit-SearchPath-4: modules/customer-vendor-talk/includes/Init.php\n"
+"X-Poedit-SearchPathExcluded-0: them_options/scripts\n"
+"X-Poedit-SearchPathExcluded-1: them_options/assets\n"
+"X-Poedit-SearchPathExcluded-2: assets\n"
+"X-Poedit-SearchPathExcluded-3: inc/plugin-updater\n"
+"X-Poedit-SearchPathExcluded-4: them_options/assets\n"
+
+#: inc/catalogueType.php:31
+msgid "Catalogue"
+msgstr "کاتالوگ"
+
+#: inc/dokan_functions.php:12
+msgid "آنلاینر اپ"
+msgstr ""
+
+#: inc/dokan_functions.php:24
+msgid "تنظیمات اپلیکیشن"
+msgstr ""
+
+#: inc/dokan_functions.php:35
+msgid "شما مجوز ویرایش تنظیمات قالب را ندارید."
+msgstr ""
+
+#: inc/order_functions.php:237 inc/order_functions.php:252
+msgid "From"
+msgstr "از"
+
+#: inc/order_functions.php:271
+msgid "App"
+msgstr "اپلیکیشن"
+
+#: inc/order_functions.php:318
+msgid "FAQ"
+msgstr "پرسش و پاسخ"
+
+#: inc/order_functions.php:320
+msgid ""
+"enter faq shortcode id. <a href='https://nimb.ws/bOogTf' "
+"target='_blank'>Screenshot</a>"
+msgstr ""
+"شناسه شورتکد پرسش و پاسخ را وارد کنید. <a href='https://nimb.ws/bOogTf' "
+"target='_blank'>تصویر</a>"
+
+#: inc/order_functions.php:367
+msgid "Request Quantity is bigger than request quantity"
+msgstr "تعداد محصول درخواستی از تعداد محصول مجاز بیشتر است"
+
+#: inc/user_field.php:14 inc/user_field.php:22
+#, fuzzy
+#| msgid "Google map manifest"
+msgid "Google map lat"
+msgstr "نقشه گوگل مانیفست"
+
+#: inc/user_field.php:18 inc/user_field.php:26
+#, fuzzy
+#| msgid "Google map manifest"
+msgid "Google map lng"
+msgstr "نقشه گوگل مانیفست"
+
+#: inc/user_field.php:40
+msgid "Extra information"
+msgstr "اطلاعات اضافی"
+
+#: inc/user_field.php:44
+msgid "User token"
+msgstr "توکن کاربر"
+
+#: inc/user_field.php:48
+msgid "Current user token id."
+msgstr "توکن کاربر فعلی"
+
+#: inc/user_field.php:53
+msgid "Gender"
+msgstr "جنسيت"
+
+#: inc/user_field.php:62
+msgid "Select your gender"
+msgstr "جنسیت خود را انتخاب کنید"
+
+#: inc/user_field.php:66 inc/user_field.php:70
+msgid "National codeٔ"
+msgstr "کد ملی"
+
+#: inc/user_field.php:74 inc/user_field.php:104
+msgid "Birth date"
+msgstr "تاریخ تولد"
+
+#: inc/user_field.php:151
+msgid "Emergency phone"
+msgstr "تلفن اضطراری"
+
+#: inc/user_field.php:156 inc/user_field.php:172
+#: them_options/tabs/about-options.php:37
+msgid "Email"
+msgstr "ایمیل"
+
+#: inc/user_field.php:162
+#, fuzzy
+#| msgctxt "placeholder"
+#| msgid "Phone number"
+msgid "Phone number"
+msgstr "شماره تلفن (placeholder)"
+
+#: inc/user_field.php:167
+msgid "Mobile"
+msgstr "موبایل"
+
+#: inc/user_field.php:192
+msgid "Mobile :"
+msgstr "موبایل :"
+
+#: inc/user_field.php:196
+msgid "Shipping phone :"
+msgstr "تلفن ارسال:"
+
+#: inc/user_field.php:200
+#, fuzzy
+#| msgid "Shipping phone :"
+msgid "Shipping mobile :"
+msgstr "تلفن ارسال:"
+
+#: inc/user_field.php:204 inc/user_field.php:233 inc/user_field.php:253
+msgid "Send box time and date :"
+msgstr "تاریخ و زمان ارسال بسته:"
+
+#: inc/user_field.php:219
+msgid "Mobile 1 :"
+msgstr "موبایل 1 :"
+
+#: inc/user_field.php:223
+msgid "Mobile 2 :"
+msgstr "موبایل 2 :"
+
+#: inc/woocommerce_custom_field.php:26
+msgid "secondary title for show in app"
+msgstr "عنوان انگلیسی برای نشان دادن در اپلیکیشن"
+
+#: includes/Controllers/archive.php:181
+msgid "Dokan is inactive."
+msgstr "توکن نامعتبر است."
+
+#: includes/Controllers/archive.php:1011
+msgid "Result not found."
+msgstr "نتیجه یافت نشد."
+
+#: includes/Controllers/archive.php:1026
+msgid "don't receive keyword for search."
+msgstr "کلمه کلیدی را برای جستجو وارد نشده"
+
+#: includes/Controllers/archive.php:1042
+#, fuzzy
+#| msgid "product categories menu"
+msgid "no product category was founded"
+msgstr "منوی دسته بندی محصولات"
+
+#: includes/Controllers/cart.php:799
+msgid "Sold individually"
+msgstr "فروش تکی"
+
+#: includes/Controllers/cart.php:996 includes/Controllers/cart.php:1068
+#: includes/Controllers/cart.php:1144 includes/Controllers/cart.php:1302
+#: includes/Controllers/cart.php:1604 includes/Controllers/cart.php:1714
+#: includes/Controllers/cart.php:1938 includes/Controllers/terawallet.php:59
+#: includes/Controllers/user.php:842 includes/Controllers/user.php:908
+#: includes/Controllers/user.php:950 includes/Controllers/user.php:993
+#: includes/Controllers/user.php:1065 includes/Controllers/user.php:1158
+#: includes/Controllers/user.php:1228 includes/Controllers/user.php:1244
+msgid "Token is invalid"
+msgstr "توکن نامعتبر است"
+
+#: includes/Controllers/cart.php:1051
+msgid "Coupons removed successfully."
+msgstr "کوپن ها با موفقیت حذف شدند"
+
+#: includes/Controllers/cart.php:1111
+msgid "Offer coupon applied."
+msgstr "کوپن تخفیف اعمال شد."
+
+#: includes/Controllers/cart.php:1122
+msgid "Coupon is invalid"
+msgstr "کوپن نامعتبر است"
+
+#: includes/Controllers/cart.php:1131
+msgid "Basket have coupon."
+msgstr "سبد خرید حاوی کوپن تخفیف است."
+
+#: includes/Controllers/cart.php:1201
+msgid "This order is not for you."
+msgstr "این سفارش برای شما نیست."
+
+#: includes/Controllers/cart.php:1404
+msgid "Cart is empty"
+msgstr "سبد خرید خالی است"
+
+#: includes/Controllers/cart.php:1595 includes/Controllers/terawallet.php:126
+msgid "something wrong happen."
+msgstr "مشکلی پیش آمده است."
+
+#: includes/Controllers/general.php:322 includes/Controllers/general.php:353
+msgid "Error in insert comment."
+msgstr "در ثبت نظر خطایی رخ داد."
+
+#: includes/Controllers/general.php:415
+msgid "Your shop slogan here."
+msgstr "شعار فروشگاه شما."
+
+#: includes/Controllers/general.php:419
+msgid "All right reserved."
+msgstr "تمامی حقوق محفوظ است."
+
+#: includes/Controllers/general.php:529
+msgid "Open the Home page of app"
+msgstr "نمایش صفحه اصلی اپلیکیشن"
+
+#: includes/Controllers/general.php:530
+msgid "Open the site"
+msgstr "باز شدن سایت"
+
+#: includes/Controllers/general.php:531
+msgid "Open telegram channel"
+msgstr "باز شدن کانال تلگرام"
+
+#: includes/Controllers/general.php:532 includes/Controllers/index.php:44
+#: includes/Controllers/index.php:54 includes/Controllers/index.php:94
+#: includes/Controllers/index.php:102
+msgid "Call"
+msgstr "تماس"
+
+#: includes/Controllers/general.php:533
+msgid "Open instagram page"
+msgstr "باز شدن پیج اینستاگرام"
+
+#: includes/Controllers/general.php:534
+msgid "A custom archive"
+msgstr "یک آرشیو خاص"
+
+#: includes/Controllers/general.php:535
+msgid "A custom product"
+msgstr "یک محصول خاص"
+
+#: includes/Controllers/general.php:536
+msgid "A custom article (post)"
+msgstr "یک پست سفارشی"
+
+#: includes/Controllers/general.php:537
+msgid "A custom article (archive)"
+msgstr "یک آرشیو سفارشی"
+
+#: includes/Controllers/general.php:538
+msgid "Show Vendor List Based on Category "
+msgstr "نمایش فروشندگان بر اساس دسته بندی"
+
+#: includes/Controllers/general.php:796
+msgid "email is not sent."
+msgstr "ایمیل وارد شده وجود ندارد."
+
+#: includes/Controllers/general.php:805
+msgid "product id is not exists."
+msgstr "شناسه محصول وجود ندارد."
+
+#: includes/Controllers/index.php:189
+msgid "Onliner"
+msgstr "استورینا"
+
+#: includes/Controllers/index.php:632
+#: includes/Controllers/price_based_roles.php:69
+#: includes/Controllers/single.php:60
+msgid "To"
+msgstr "تا"
+
+#: includes/Controllers/single.php:1095
+msgid "Details"
+msgstr "مشخصات کلی"
+
+#: includes/Controllers/terawallet.php:163
+#, php-format
+msgid "The minimum amount needed for wallet top up is %s"
+msgstr "حداقل مبلغ شارژ کیف پول %s"
+
+#: includes/Controllers/terawallet.php:170
+#, php-format
+msgid "Wallet top up amount should be less than %s"
+msgstr "حداکثر مبلغ شارژ کیف پول %s"
+
+#: includes/Controllers/terawallet.php:177
+#, php-format
+msgid "Wallet top up amount should be between %s and %s"
+msgstr "شارژ کیف پول باید مابین %s و %s باشد."
+
+#: includes/Controllers/terawallet.php:388
+#: includes/Controllers/terawallet.php:408
+msgid "For order payment #"
+msgstr "برای پرداخت سفارش #"
+
+#: includes/Controllers/user.php:31 includes/Controllers/user.php:104
+#: includes/Controllers/user.php:697
+msgid "Digits plugin not active."
+msgstr "پلاگین دیجیتز غیر فعال است."
+
+#: includes/Controllers/user.php:47
+msgid "This user is not exist. please review or sign up first."
+msgstr ""
+"این کاربر وجود ندارد لطفا نام کاربری را بررسی کنید یا ابتدا ثبت نام کنید."
+
+#: includes/Controllers/user.php:82
+msgid "Password sent."
+msgstr "رمز عبور ارسال شد."
+
+#: includes/Controllers/user.php:131
+msgid "Entered cod is invalid."
+msgstr "کد وارد شده نامعتبر است."
+
+#: includes/Controllers/user.php:155
+msgid "Verify successfully."
+msgstr "تأیید با موفقیت انجام شد."
+
+#: includes/Controllers/user.php:172
+msgid "Entered email is invalid."
+msgstr "ایمیل وارد شده نامعتبر است"
+
+#: includes/Controllers/user.php:211
+msgid "This email is exist. please login."
+msgstr "این ایمیل وجود دارد. لطفا وارد شوید."
+
+#: includes/Controllers/user.php:297
+msgid "Register successfully."
+msgstr "ثبت نام با موفقیت انجام شد"
+
+#: includes/Controllers/user.php:327
+msgid "Mobile number is invalid."
+msgstr "شماره موبایل نامعتبر است"
+
+#: includes/Controllers/user.php:343
+msgid "This mobile number is exist. please login."
+msgstr "این شماره تلفن همراه وجود دارد. لطفا وارد شوید."
+
+#: includes/Controllers/user.php:388
+msgid "Wrong information."
+msgstr "اطلاعات اشتباه."
+
+#: includes/Controllers/user.php:398 includes/Controllers/user.php:410
+#: includes/Controllers/user.php:431
+msgid "Error:"
+msgstr "خطا :"
+
+#: includes/Controllers/user.php:410
+msgid "Username is required."
+msgstr "نام کاربری اجباری است."
+
+#: includes/Controllers/user.php:431
+msgid "A user could not be found with this email address."
+msgstr "کاربری با این آدرس ایمیل یافت نشد."
+
+#: includes/Controllers/user.php:521
+msgid "Before login need to verify mobile number. please first verify that."
+msgstr "قبل از ورود باید شماره تلفن را تایید کنید. لطفا ابتدا آن را تایید کنید"
+
+#: includes/Controllers/user.php:537
+msgid "Login successfully."
+msgstr "ورود با موفقیت انجام شد."
+
+#: includes/Controllers/user.php:564 includes/Controllers/user.php:604
+msgid "This user is not exist."
+msgstr "این کاربر وجود ندارد"
+
+#: includes/Controllers/user.php:617
+msgid "Logout successfully."
+msgstr "خروج با موفقیت انجام شد."
+
+#: includes/Controllers/user.php:632
+msgid "Password reset successfully."
+msgstr "گذرواژه با موفقیت بازسازی شد."
+
+#: includes/Controllers/user.php:654 includes/Controllers/user.php:679
+msgid "Reset password link sent to your email."
+msgstr "لینک بازیابی رمز عبور به ایمیل شما ارسال شده."
+
+#: includes/Controllers/user.php:661 includes/Controllers/user.php:686
+msgid "Reset password link not sent."
+msgstr "لینک بازنشانی رمز عبور ارسال نشد."
+
+#: includes/Controllers/user.php:669
+msgid "Entered email is not exist."
+msgstr "ایمیل وارد شده وجود ندارد."
+
+#: includes/Controllers/user.php:708
+msgid "Entered mobile number invalid."
+msgstr "شماره تلفن وارد شده وجود ندارد."
+
+#: includes/Controllers/user.php:720
+msgid "Entered mobile number is not exist."
+msgstr "شماره تلفن وارد شده وجود ندارد."
+
+#: includes/Controllers/user.php:941 includes/Controllers/user.php:984
+#: includes/Controllers/user.php:1056
+msgid ""
+"yith-woocommerce-wishlist plugin is not active. please first active that."
+msgstr "افزونه yith-woocommerce-wishlist فعال نیست لطفا ابتدا آن را فعال کنید."
+
+#: includes/Controllers/user.php:1149
+msgid "Your vote saved."
+msgstr "رأی شما ثبت شد."
+
+#: includes/Controllers/user.php:1251
+msgid "Email is invalid"
+msgstr "ایمیل وارد شده نامعتبر است"
+
+#: includes/Controllers/user.php:1378
+#: modules/customer-vendor-talk/includes/Controllers/Api/Vendor.php:28
+msgid "user not founded"
+msgstr "کاربر یافت نشد."
+
+#: modules/application-report/admin/panels/most-viewes-products.php:2
+msgid "Product Most viewed"
+msgstr "پربازدیدترین محصولات"
+
+#: modules/application-report/admin/panels/most-viewes-products.php:3
+msgid "the product most was viewed from application"
+msgstr "محصولات با بیشترین بازدید در اپلیکیشن"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:5
+msgid "Loading..."
+msgstr "بارگزاری..."
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:11
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_custompanel4.php:32
+#: them_options/create_custompanel4.php:40 them_options/create_menu.php:23
+#: them_options/create_slider.php:23 them_options/create_slider.php:31
+#: them_options/create_sliderplus.php:38 them_options/create_sliderplus.php:48
+#: them_options/create_text_adsplus.php:35
+#: them_options/create_text_adsplus.php:38 them_options/on5-panel.php:545
+#: them_options/tabs/dinamic/postBox.php:42
+#: them_options/tabs/dinamic/productBox.php:40
+#: them_options/tabs/dinamic/productBoxColorize.php:58
+#: them_options/tabs/popup-home.php:29
+msgid "Title"
+msgstr "عنوان"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:17
+msgid "Body"
+msgstr "متن بدنه"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:23
+msgid "Click event type"
+msgstr "نوع لینک"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:32
+#: them_options/on5-panel.php:574
+msgid "What do you want then touch on notification?"
+msgstr "هنگامی که نوتیفیکیشن لمس شد چه عملی انجام شود؟"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:36
+msgid "Click Event Value"
+msgstr "مقدار لینک"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:39
+#: them_options/on5-panel.php:582
+msgid "Enter the desired value according to the link type field."
+msgstr "مقدار مورد نظر را با توجه به فیلد نوع لینک وارد کنید."
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:43
+msgid "Notification icon"
+msgstr "آیکن"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:47
+#: them_options/on5-panel.php:557
+msgid "Select notification icon 512*512 px"
+msgstr "آیکون نوتیفیکیشن را انتخاب کنید 512 * 512 پیکسل"
+
+#: modules/application-report/admin/panels/online-viewers-rows-notif.php:51
+msgid "send"
+msgstr "ارسال"
+
+#: modules/application-report/admin/panels/online-viewers-rows.php:15
+msgid "send notification"
+msgstr "ارسال نوتیفیکیشن"
+
+#: modules/application-report/admin/panels/online-viewers-rows.php:22
+#: them_options/on5_functions.php:368 them_options/on5_functions.php:371
+msgid "Send Notification"
+msgstr "ارسال نوتیفیکیشن"
+
+#: modules/application-report/admin/panels/online-viewers.php:2
+msgid "Online Viewers"
+msgstr "کاربران آنلاین"
+
+#: modules/application-report/admin/panels/online-viewers.php:3
+msgid "Online Viewers on applications"
+msgstr ""
+"اطلاعات کاربران آنلاین اپلیکیشن به همراه امکان ارسال اعلان به هر کدام به "
+"صورت مجزا."
+
+#: modules/application-report/admin/panels/online-viewers.php:9
+msgid "Displey name"
+msgstr "نام قابل نمایش"
+
+#: modules/application-report/admin/panels/online-viewers.php:10
+msgid "identifier"
+msgstr "شناسه"
+
+#: modules/application-report/admin/panels/online-viewers.php:11
+msgid "Authentication"
+msgstr "احراز هویت"
+
+#: modules/application-report/admin/panels/online-viewers.php:12
+msgid "Client Type"
+msgstr "سیستم عامل"
+
+#: modules/application-report/admin/panels/online-viewers.php:13
+msgid "Current Version"
+msgstr "ورژن اپ"
+
+#: modules/application-report/admin/panels/online-viewers.php:14
+msgid "Send Notif"
+msgstr "ارسال نوتیفیکیشن"
+
+#: modules/application-report/admin/panels/online-viewers.php:24
+msgid "No Viewer has online"
+msgstr "بازدید کننده ای یافت نشد"
+
+#: modules/application-report/admin/panels/search-expressions.php:2
+msgid "Search Expression"
+msgstr "عبارات جستجو"
+
+#: modules/application-report/admin/panels/search-expressions.php:3
+msgid "Most search expressions was searched by users"
+msgstr ""
+"بیشترین عباراتی در اپلیکیشن به وسیله کاربران جستجو شده اند به همراه تعداد "
+"تکرار جستجو"
+
+#: modules/application-report/admin/panels/viewes-chart.php:2
+msgid "Product Views Daily Chart"
+msgstr "نمودار بازدید روزانه اپلیکیشن"
+
+#: modules/application-report/admin/panels/viewes-chart.php:3
+msgid "Product Viewes in last 7 day ago"
+msgstr "تعداد بازدید های روزانه از اپلیکیشن در ۷ روز گذشته"
+
+#: modules/application-report/admin/report-panel.php:10
+msgid "Product Views Count"
+msgstr "تعداد بازدید از محصولات"
+
+#: modules/application-report/admin/report-panel.php:20
+msgid ""
+"Application products view chart , Online user status , Most search "
+"expressions"
+msgstr ""
+"پنل گزارش اپلیکیشن شامل بازدید های روزانه کاربران ، کاربران آنلاین ، وضعیت "
+"کاربران ، عبارات جستجو شده محبوب."
+
+#: modules/application-report/includes/Controllers/Logic/ViewerLogic.php:23
+msgid "guest"
+msgstr "میهمان"
+
+#: modules/application-report/includes/Controllers/Logic/ViewerLogic.php:27
+msgid "yes"
+msgstr "بله"
+
+#: modules/application-report/includes/Controllers/Logic/ViewerLogic.php:27
+msgid "no"
+msgstr "خیر"
+
+#: modules/application-report/includes/Controllers/Web/NotificationController.php:31
+msgid "params is invalid"
+msgstr "پارامتر ها غیر معتبر هستند"
+
+#: modules/application-report/includes/Controllers/Web/NotificationController.php:63
+msgid "notification was sended"
+msgstr "نوتیفیکیشن ارسال شد"
+
+#: modules/application-report/includes/Controllers/Web/NotificationController.php:63
+msgid "error"
+msgstr "خطا"
+
+#: modules/application-report/includes/Controllers/Web/ReportController.php:34
+msgid "viewer paginate not working"
+msgstr "صفحه بندی کاربران آنلاین از کار افتاده است"
+
+#: modules/application-report/includes/Controllers/Web/ReportController.php:50
+msgid "Application Report"
+msgstr "آنالیز اپلیکیشن"
+
+#: modules/customer-vendor-talk/includes/Controllers/Api/Message.php:70
+msgid "message send"
+msgstr ""
+
+#: modules/customer-vendor-talk/includes/Controllers/Api/Message.php:87
+msgid "No Message Found"
+msgstr ""
+
+#: modules/customer-vendor-talk/includes/Controllers/Api/Product.php:27
+#, fuzzy
+#| msgid "related product by"
+msgid "invalid product"
+msgstr "نمایش محصولات مرتبط بر اساس"
+
+#: modules/customer-vendor-talk/includes/Controllers/Api/Product.php:34
+msgid "invalid vendor"
+msgstr ""
+
+#: modules/customer-vendor-talk/includes/Controllers/Api/Product.php:60
+#, fuzzy
+#| msgid "product content type"
+msgid "product status updated"
+msgstr "نوع توضیحات محصول"
+
+#: modules/customer-vendor-talk/includes/Init.php:48
+msgid "To make the customer vendor talk api worked Please first "
+msgstr ""
+"برای نحوه صحیح عملکرد ماژول چت فروشنده و خریدار دکان لطفا پیش از هر کار "
+
+#: modules/customer-vendor-talk/includes/Init.php:50
+msgid "Flush rewrite rules"
+msgstr "لینک ها را بازساری کن"
+
+#: modules/customer-vendor-talk/includes/Middlewares/Authentication.php:18
+msgid "Authentication failed,user not found"
+msgstr ""
+
+#: them_options/create_banner.php:2 them_options/create_banner.php:28
+#: them_options/create_banner.php:31 them_options/create_custompanel.php:2
+#: them_options/create_custompanel2.php:2
+#: them_options/create_custompanel3.php:2
+#: them_options/create_custompanel4.php:2
+#: them_options/create_custompanel5.php:13 them_options/create_menu.php:2
+#: them_options/create_slider.php:2 them_options/create_slider.php:24
+#: them_options/create_slider.php:32 them_options/create_sliderplus.php:2
+#: them_options/create_sliderplus.php:39 them_options/create_sliderplus.php:49
+#: them_options/create_text_ads.php:2 them_options/create_text_adsplus.php:2
+#: them_options/tabs/popup-home.php:34
+msgid "Description"
+msgstr "توضیحات"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_slider.php:22 them_options/create_slider.php:30
+#: them_options/create_sliderplus.php:37 them_options/create_sliderplus.php:47
+msgid "Banner address"
+msgstr "آدرس بنر"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_menu.php:23 them_options/create_slider.php:25
+#: them_options/create_slider.php:33
+msgid "Link"
+msgstr "پیوند (Link)"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Width px"
+msgstr "عرض px"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Height px"
+msgstr "ارتفاع px"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_custompanel3.php:26
+msgid "Category"
+msgstr "دسته بندی"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+msgid "Expire"
+msgstr "تاریخ انقضا"
+
+#: them_options/create_banner.php:28 them_options/create_banner.php:31
+#: them_options/create_custompanel.php:41
+#: them_options/create_custompanel.php:48
+#: them_options/create_custompanel2.php:51
+#: them_options/create_custompanel3.php:43
+#: them_options/create_custompanel3.php:48
+#: them_options/create_custompanel4.php:36
+#: them_options/create_custompanel4.php:44
+#: them_options/create_custompanel5.php:52 them_options/create_slider.php:26
+#: them_options/create_slider.php:34 them_options/create_sliderplus.php:43
+#: them_options/create_sliderplus.php:53
+#: them_options/create_text_adsplus.php:35
+#: them_options/create_text_adsplus.php:38
+msgid "Action"
+msgstr "کنترل"
+
+#: them_options/create_banner.php:43 them_options/create_banner.php:81
+#: them_options/create_custompanel.php:63
+#: them_options/create_custompanel.php:101
+#: them_options/create_custompanel2.php:66
+#: them_options/create_custompanel2.php:83
+#: them_options/create_custompanel2.php:141
+#: them_options/create_custompanel2.php:154
+#: them_options/create_custompanel4.php:63
+#: them_options/create_custompanel4.php:93
+#: them_options/create_custompanel5.php:77
+#: them_options/create_custompanel5.php:131 them_options/create_slider.php:44
+#: them_options/create_slider.php:61 them_options/create_sliderplus.php:65
+#: them_options/create_sliderplus.php:101
+msgid "Upload"
+msgstr "بارگذاری (Upload)"
+
+#: them_options/create_banner.php:71 them_options/create_banner.php:102
+#: them_options/create_custompanel.php:90
+#: them_options/create_custompanel.php:114
+#: them_options/create_custompanel2.php:129
+#: them_options/create_custompanel2.php:184
+#: them_options/create_custompanel3.php:72
+#: them_options/create_custompanel3.php:92
+#: them_options/create_custompanel4.php:78
+#: them_options/create_custompanel4.php:106
+#: them_options/create_custompanel5.php:103
+#: them_options/create_custompanel5.php:154 them_options/create_slider.php:50
+#: them_options/create_slider.php:67 them_options/create_sliderplus.php:90
+#: them_options/create_sliderplus.php:124
+#: them_options/create_text_adsplus.php:60
+#: them_options/create_text_adsplus.php:80
+msgid "Delete"
+msgstr "حذف"
+
+#: them_options/create_banner.php:112 them_options/create_custompanel.php:125
+#: them_options/create_custompanel2.php:196
+#: them_options/create_custompanel3.php:103
+#: them_options/create_custompanel4.php:117
+#: them_options/create_custompanel5.php:116 them_options/create_options.php:164
+#: them_options/create_slider.php:78 them_options/create_sliderplus.php:135
+#: them_options/create_text_adsplus.php:91 them_options/on5_functions.php:291
+msgid "Save"
+msgstr "ذخیره"
+
+#: them_options/create_banner.php:113 them_options/create_custompanel.php:126
+#: them_options/create_custompanel2.php:197
+#: them_options/create_custompanel3.php:104
+#: them_options/create_custompanel4.php:118
+#: them_options/create_custompanel5.php:117 them_options/create_menu.php:112
+#: them_options/create_slider.php:79 them_options/create_sliderplus.php:136
+#: them_options/create_text_adsplus.php:92
+msgid "Add "
+msgstr "اضافه کردن بالا "
+
+#: them_options/create_custompanel.php:26
+#: them_options/create_custompanel2.php:26
+#: them_options/create_custompanel4.php:20 them_options/create_list.php:10
+#: them_options/create_list.php:27 them_options/create_sliderplus.php:25
+#: them_options/create_text_adsplus.php:23
+#: them_options/tabs/dinamic/postBox.php:7
+msgid "All"
+msgstr "همه"
+
+#: them_options/create_custompanel.php:32
+#: them_options/create_custompanel2.php:32
+#: them_options/create_custompanel4.php:26
+#: them_options/create_sliderplus.php:31
+#: them_options/create_text_adsplus.php:29 them_options/on5-panel.php:571
+msgid "Open vendor page"
+msgstr "‬باز شدن صفحه فروشنده"
+
+#: them_options/create_custompanel.php:38
+#: them_options/create_custompanel.php:45
+#: them_options/create_custompanel2.php:43
+#: them_options/create_custompanel4.php:33
+#: them_options/create_custompanel4.php:41
+msgid "Banner address 1"
+msgstr "آدرس بنر 1"
+
+#: them_options/create_custompanel.php:39
+#: them_options/create_custompanel.php:46
+#: them_options/create_custompanel2.php:44
+#: them_options/create_custompanel2.php:47
+#: them_options/create_custompanel4.php:34
+#: them_options/create_custompanel4.php:42
+#: them_options/create_sliderplus.php:40 them_options/create_sliderplus.php:50
+#: them_options/create_text_adsplus.php:35
+#: them_options/create_text_adsplus.php:38 them_options/on5-panel.php:561
+#: them_options/tabs/popup-home.php:44
+msgid "Link type"
+msgstr "نوع لینک"
+
+#: them_options/create_custompanel.php:40
+#: them_options/create_custompanel.php:47
+#: them_options/create_custompanel2.php:45
+#: them_options/create_custompanel2.php:48
+#: them_options/create_custompanel4.php:35
+#: them_options/create_custompanel4.php:43
+#: them_options/create_sliderplus.php:41 them_options/create_sliderplus.php:51
+#: them_options/create_text_adsplus.php:35
+#: them_options/create_text_adsplus.php:38
+msgid "Value"
+msgstr "مقدار (Value)"
+
+#: them_options/create_custompanel2.php:35
+#: them_options/create_custompanel5.php:7
+msgid "One column"
+msgstr "یک ستون"
+
+#: them_options/create_custompanel2.php:36
+#: them_options/create_custompanel5.php:8
+msgid "Two column"
+msgstr "دو ستون"
+
+#: them_options/create_custompanel2.php:46
+msgid "Banner address 2"
+msgstr "آدرس بنر 2"
+
+#: them_options/create_custompanel2.php:49
+#: them_options/create_custompanel5.php:51
+msgid "Column"
+msgstr "ستون"
+
+#: them_options/create_custompanel2.php:50
+#: them_options/tabs/app-options.php:105 them_options/tabs/app-options.php:116
+#: them_options/tabs/app-options.php:127 them_options/tabs/app-options.php:138
+msgid "Show"
+msgstr "نمایش"
+
+#: them_options/create_custompanel3.php:25
+#: them_options/tabs/dinamic/slider.php:11
+msgid "Slider"
+msgstr "اسلایدر"
+
+#: them_options/create_custompanel3.php:28
+#: them_options/tabs/dinamic/oneColADV.php:11
+msgid "Banners ads"
+msgstr "تبلیغات بنری"
+
+#: them_options/create_custompanel3.php:29
+msgid "scroll Banners ads"
+msgstr "‬تبلیغات بنری با امکان اسکرول"
+
+#: them_options/create_custompanel3.php:30
+#: them_options/tabs/dinamic/productBox.php:5
+msgid "Product box"
+msgstr "باکس محصولات"
+
+#: them_options/create_custompanel3.php:31 them_options/tabs/dinamic/line.php:5
+msgid "Line"
+msgstr "خط"
+
+#: them_options/create_custompanel3.php:32
+#: them_options/tabs/dinamic/space.php:5
+msgid "Space"
+msgstr "فاصله"
+
+#: them_options/create_custompanel3.php:33
+#: them_options/tabs/dinamic/postBox.php:5
+msgid "Post box"
+msgstr "باکس مقالات (جدید)"
+
+#: them_options/create_custompanel3.php:34
+msgid "Product box Colorize"
+msgstr "محصولات شگفت انگیز (جدید)"
+
+#: them_options/create_custompanel3.php:35
+#: them_options/tabs/dinamic/scrollBox.php:11
+msgid "Scroll Box"
+msgstr "آیکن باکس (جدید)"
+
+#: them_options/create_custompanel3.php:42
+#: them_options/create_custompanel3.php:47
+msgid "Item"
+msgstr "مورد (Item)"
+
+#: them_options/create_custompanel5.php:9
+#, fuzzy
+#| msgid "Two column"
+msgid "Four column"
+msgstr "دو ستون"
+
+#: them_options/create_custompanel5.php:50
+msgid "Banners, from the right Banner link, Link type, Link value"
+msgstr ""
+
+#: them_options/create_list.php:11
+msgid "Nothing"
+msgstr "هیچ"
+
+#: them_options/create_options.php:22
+msgid "upload"
+msgstr "بارگذاری"
+
+#: them_options/create_slider.php:21 them_options/create_slider.php:29
+#: them_options/tabs/dinamic/postBox.php:51
+#: them_options/tabs/dinamic/productBox.php:49
+#: them_options/tabs/dinamic/productBoxColorize.php:67
+msgid "Sort"
+msgstr "ترتیب"
+
+#: them_options/create_sliderplus.php:42 them_options/create_sliderplus.php:52
+msgid "Show in"
+msgstr "نمایش در"
+
+#: them_options/create_text_ads.php:71
+msgid "save"
+msgstr "ذخیره"
+
+#: them_options/create_text_adsplus.php:35
+#: them_options/create_text_adsplus.php:38 them_options/on5-panel.php:549
+msgid "Text"
+msgstr "متن"
+
+#: them_options/html-panel.php:31
+msgid "import"
+msgstr "درون ریزی"
+
+#: them_options/html-panel.php:61
+msgid "Import Settings"
+msgstr "تنظیمات درون ریزی"
+
+#: them_options/html-panel.php:62
+msgid ""
+"Import default home page settings like slider and banners and product box."
+"note that import action remove all current settings"
+msgstr "درون ریزی تنظیمات اولیه صفحه اصلی و سایر تنظیمات موجود."
+
+#: them_options/html-panel.php:64
+msgid "Import configuration"
+msgstr "درون ریزی تنظیمات"
+
+#: them_options/on5-panel.php:417
+msgid "Saved changes."
+msgstr "تغییرات ذخیره شد."
+
+#: them_options/on5-panel.php:424
+msgid "Application settings"
+msgstr "تنظیمات اپلیکیشن"
+
+#: them_options/on5-panel.php:425 them_options/on5-panel.php:541
+msgid "Send notification"
+msgstr "ارسال نوتیفیکیشن"
+
+#: them_options/on5-panel.php:433
+msgid "You can not change options on site."
+msgstr "شما نمی توانید گزینه ها را در سایت تغییر دهید."
+
+#: them_options/on5-panel.php:529
+msgid "Notification sent."
+msgstr "نوتیفیکیشن ارسال شد."
+
+#: them_options/on5-panel.php:532
+msgid "Notification not send."
+msgstr "نوتیفیکیشن ارسال نشد."
+
+#: them_options/on5-panel.php:535
+msgid "Please fill all reqired fields."
+msgstr "لطفا تمام فیلدهای لازم را پر کنید."
+
+#: them_options/on5-panel.php:553
+msgid "Icon"
+msgstr "آیکن"
+
+#: them_options/on5-panel.php:578
+msgid "Link value"
+msgstr "مقدار لینک"
+
+#: them_options/on5-panel.php:586
+msgid "Send"
+msgstr "ارسال"
+
+#: them_options/on5_functions.php:124
+msgid "Delete app cache"
+msgstr "پاک کردن حافظه کش اپلیکیشن"
+
+#: them_options/on5_functions.php:129
+msgid "Delete cache"
+msgstr "پاک کردن کش"
+
+#: them_options/on5_functions.php:131
+msgid "You can delete application cache from this box."
+msgstr "شما میتوانید از این باکس کش اپلیکیشن را تخلیه کنید."
+
+#: them_options/on5_functions.php:137
+msgid "Deleted application cache"
+msgstr "پاک کردن حافظه کش اپلیکیشن"
+
+#: them_options/on5_functions.php:279 them_options/on5_functions.php:280
+#: them_options/on5_functions.php:286
+msgid "اعلان های اپلیکیشن"
+msgstr ""
+
+#: them_options/on5_functions.php:281
+msgid "ویرایش"
+msgstr ""
+
+#: them_options/on5_functions.php:282
+msgid "افزودن"
+msgstr ""
+
+#: them_options/on5_functions.php:283
+msgid "نمایش"
+msgstr ""
+
+#: them_options/on5_functions.php:284
+msgid "جستجو"
+msgstr ""
+
+#: them_options/on5_functions.php:324
+msgid "Email address"
+msgstr "آدرس ایمیل"
+
+#: them_options/on5_functions.php:330
+msgid "Phone"
+msgstr "تلفن"
+
+#: them_options/on5_functions.php:335
+msgid "Emergency phon number"
+msgstr "شماره تلفن اضطراری"
+
+#: them_options/on5_functions.php:348 them_options/on5_functions.php:351
+msgid "Application"
+msgstr "اپلیکیشن"
+
+#: them_options/on5_functions.php:357 them_options/on5_functions.php:360
+msgid "Application Settings"
+msgstr "تنظیمات اپلیکیشن"
+
+#: them_options/on5_functions.php:379 them_options/on5_functions.php:382
+msgid "Clear cashe"
+msgstr "حذف کش"
+
+#: them_options/tabs/about-options.php:5 them_options/tabs/about-options.php:73
+msgid "About US"
+msgstr "درباره ما"
+
+#: them_options/tabs/about-options.php:25
+msgid "Shop slogan"
+msgstr "شعار فروشگاه (مورد استفاده در صفحه اسپلش نسخه ios)"
+
+#: them_options/tabs/about-options.php:27
+msgid "Enter the shop slogan"
+msgstr "شعار فروشگاه را وارد کنید"
+
+#: them_options/tabs/about-options.php:31
+msgid "select top page logo"
+msgstr "لوگوی بالای صفحه را انتخاب کنید."
+
+#: them_options/tabs/about-options.php:33
+msgid "Select top page logo. PNG and width 700px height 445px"
+msgstr ""
+"لوگوی بالای صفحه را انتخاب کنید. PNG و عرض ۷۰۰ پیکسل - ارتفاع ۴۴۵ پیکسل"
+
+#: them_options/tabs/about-options.php:39
+msgid "Enter support Email"
+msgstr "ایمیل پشتیبانی را وارد کنید."
+
+#: them_options/tabs/about-options.php:43
+msgid "Telegram"
+msgstr "تلگرام"
+
+#: them_options/tabs/about-options.php:45
+msgid "Enter the telegram ID (without @)"
+msgstr "شناسه تلگرام را وارد کنید (بدون @)"
+
+#: them_options/tabs/about-options.php:49
+msgid "mubile number"
+msgstr "شماره موبایل"
+
+#: them_options/tabs/about-options.php:51
+msgid "Enter support phone"
+msgstr "شماره تماس پشتیبانی را وارد کنید."
+
+#: them_options/tabs/about-options.php:55
+msgid "copyright"
+msgstr "کپی رایت"
+
+#: them_options/tabs/about-options.php:57
+msgid "Enter the copyright text. maximum 12 char"
+msgstr "متن کپی رایت را وارد کنید حداکثر 12 کلمه"
+
+#: them_options/tabs/about-options.php:61
+msgid "Privacy"
+msgstr "حریم خصوصی"
+
+#: them_options/tabs/about-options.php:63
+msgid "Enter the privacy page url"
+msgstr "URL صفحه حریم خصوصی را وارد کنید"
+
+#: them_options/tabs/about-options.php:67
+msgid "Terms"
+msgstr "شرایط"
+
+#: them_options/tabs/about-options.php:69
+msgid "Enter the terms page url"
+msgstr "URL صفحه شرایط و قوانین را وارد کنید"
+
+#: them_options/tabs/about-options.php:75
+msgid "Enter the url of about us page"
+msgstr "آدرس صفحه درباره ما را وارد کنید"
+
+#: them_options/tabs/about-options.php:79
+msgid "Custom button"
+msgstr "دکمه سفارشی"
+
+#: them_options/tabs/about-options.php:85
+msgid "button text"
+msgstr "متن دکمه"
+
+#: them_options/tabs/about-options.php:87
+msgid "Enter the button text"
+msgstr "متن دکمه را وارد کنید"
+
+#: them_options/tabs/about-options.php:91
+msgid "URL button"
+msgstr "URL دکمه"
+
+#: them_options/tabs/about-options.php:93
+msgid "Enter the button url"
+msgstr "URL دکمه را وارد کنید"
+
+#: them_options/tabs/app-options.php:5
+msgid "General"
+msgstr "عمومی"
+
+#: them_options/tabs/app-options.php:15
+msgid "application title"
+msgstr "عنوان برنامه"
+
+#: them_options/tabs/app-options.php:17
+msgid ""
+"Enter the application title. use in register page and login page and etc..."
+msgstr "عنوان برنامه را برای نمایش در صفحه ثبت نام و ورود و غیره ... وارد کنید"
+
+#: them_options/tabs/app-options.php:21
+msgid "Splash screen logo"
+msgstr "لوگوی صفحه اسپلش (مخصوص نسخه ‬ios)"
+
+#: them_options/tabs/app-options.php:23
+msgid "Select the splash screen logo. PNG and 512px*512px"
+msgstr "لوگوی صفحه اسپلش را انتخاب کنید. PNG - 512px*512px"
+
+#: them_options/tabs/app-options.php:27
+msgid "Top page logo"
+msgstr "لوگو بالا صفحه"
+
+#: them_options/tabs/app-options.php:29
+msgid ""
+"Select the home page logo. this logo shows in top&left application home "
+"page. PNG witch 200px height 40px"
+msgstr ""
+"لوگوی صفحه اصلی را انتخاب کنید. این لوگو در بالا- راست نمایش داده خواهد شد. "
+"PNG 200px*40px"
+
+#: them_options/tabs/app-options.php:33
+msgid "Master application color"
+msgstr "رنگ اصلی اپلیکیشن"
+
+#: them_options/tabs/app-options.php:35
+msgid "Please select main application color"
+msgstr "لطفا رنگ اصلی برنامه را انتخاب کنید"
+
+#: them_options/tabs/app-options.php:39
+msgid "secondary application color"
+msgstr "رنگ مکمل اپلیکیشن"
+
+#: them_options/tabs/app-options.php:41
+msgid "Please select secondary application color"
+msgstr ""
+"لطفا رنگ مکمل اپلیکیشن را انتخاب کنید. توضیح اینکه معمولا برای گرفتن نتیجه "
+"بهتر رنگ مکمل را ۲ درجه از رنگ اصلی روشن تر و یا تیره تر انتخاب میکنند."
+
+#: them_options/tabs/app-options.php:45
+msgid "application icon color"
+msgstr "رنگ آیکن های اپلیکیشن"
+
+#: them_options/tabs/app-options.php:47
+msgid "Please select application icon color"
+msgstr "لطفا رنگ آیکون های برنامه را انتخاب کنید."
+
+#: them_options/tabs/app-options.php:53
+msgid "Blog"
+msgstr "وبلاگ"
+
+#: them_options/tabs/app-options.php:57
+msgid ""
+"Select categories that you want show their articles in application blog."
+msgstr ""
+"دسته هایی که میخواهید مطالب آنها در بخش بلاگ اپلیکیشن نمایش داده شوند را "
+"انتخاب کنید."
+
+#: them_options/tabs/app-options.php:61
+msgid "product categories menu"
+msgstr "منوی دسته بندی محصولات"
+
+#: them_options/tabs/app-options.php:65
+msgid ""
+"Select parent categories for show in product categories menu. pay attention "
+"that selected categories must have sub category."
+msgstr ""
+"دسته های اصلی را برای نمایش در منوی دسته بندی محصولات انتخاب کنید. توجه "
+"داشته باشید که دسته های انتخاب شده باید دارای زیر گروه باشند."
+
+#: them_options/tabs/app-options.php:70
+msgid "variation price show type"
+msgstr "نوع نمایش قیمت محصولات متغیر"
+
+#: them_options/tabs/app-options.php:72 them_options/tabs/app-options.php:75
+msgid "Single price"
+msgstr "تک قیمت"
+
+#: them_options/tabs/app-options.php:72
+msgid "Period prices"
+msgstr "بازه‌ی قیمت"
+
+#: them_options/tabs/app-options.php:74
+msgid "Can you select show type price in home page product boxes"
+msgstr "میتوانید نوع نمایش قیمت در باکس صفحه اصلی را انتخاب کنید"
+
+#: them_options/tabs/app-options.php:87
+msgid "Call number"
+msgstr "شماره تماس"
+
+#: them_options/tabs/app-options.php:89
+msgid "Enter the call number for call icon on top of home page."
+msgstr "بنر های تبلیغاتی را برای نمایش در دسته بندی ها وارد نمایید."
+
+#: them_options/tabs/app-options.php:101
+msgid "Show vendor avatar"
+msgstr "نمایش آواتار فروشنده\t"
+
+#: them_options/tabs/app-options.php:104 them_options/tabs/app-options.php:115
+#: them_options/tabs/app-options.php:126 them_options/tabs/app-options.php:137
+msgid "Hidden"
+msgstr "مخفی"
+
+#: them_options/tabs/app-options.php:108
+msgid "Show vendor avatar on product box in home page."
+msgstr "نمایش آواتار فروشنده در باکس محصولات"
+
+#: them_options/tabs/app-options.php:112
+msgid "Blog menu"
+msgstr "وبلاگ"
+
+#: them_options/tabs/app-options.php:119
+msgid "Show Blog menu item in home page."
+msgstr "نمایش دکمه منوی بلاگ در صفحه اصلی"
+
+#: them_options/tabs/app-options.php:123
+msgid "Shoping list"
+msgstr "لیست خرید"
+
+#: them_options/tabs/app-options.php:130
+msgid "Show Shoping list item in home page."
+msgstr "نمایش دکمه لیست خرید در صفحه اصلی"
+
+#: them_options/tabs/app-options.php:134
+msgid "Show new menu"
+msgstr "نمایش منوی جدید"
+
+#: them_options/tabs/app-options.php:141
+msgid "Show new menu in home page."
+msgstr "نمایش منوی جدید در صفحه اصلی"
+
+#: them_options/tabs/app-options.php:145
+msgid "compare system"
+msgstr "سیستم مقایسه"
+
+#: them_options/tabs/app-options.php:148 them_options/tabs/app-options.php:158
+#: them_options/tabs/app-options.php:165
+#: them_options/tabs/dinamic/productBox.php:60
+#: them_options/tabs/dinamic/productBoxColorize.php:78
+#: them_options/tabs/systemic-options.php:19
+#: them_options/tabs/systemic-options.php:53
+#: them_options/tabs/systemic-options.php:100
+#: them_options/tabs/systemic-options.php:107
+#: them_options/tabs/systemic-options.php:114
+#: them_options/tabs/systemic-options.php:130
+#: them_options/tabs/systemic-options.php:149
+msgid "Active"
+msgstr "فعال"
+
+#: them_options/tabs/app-options.php:149
+msgid "Inactive"
+msgstr "غیرفعال"
+
+#: them_options/tabs/app-options.php:152
+msgid "activation of compare system in application."
+msgstr "میتوانید منوی سفارشی برای اپلیکیشن خود را ایجاد کنید."
+
+#: them_options/tabs/app-options.php:156
+msgid "Send time field"
+msgstr "فیلد زمان ارسال"
+
+#: them_options/tabs/app-options.php:159
+msgid "If users must set send time, active this field"
+msgstr "اگر کاربران زمان ارسال را تنظیم کنند ، این قسمت را فعال کنید."
+
+#: them_options/tabs/app-options.php:163
+msgid "Show out of stock products at last"
+msgstr "نمایش محصولات ناموجود در انتها"
+
+#: them_options/tabs/app-options.php:166
+msgid ""
+"if user select sort based of stock status. out of stock product will shown "
+"at last"
+msgstr ""
+"زمانی که کاربر در صفحات آرشیو تیک محصولات موجود را بزند محصولات ناموجود در "
+"انتها نمایش داده می شوند."
+
+#: them_options/tabs/app-options.php:170
+msgid "Validate phone number"
+msgstr "شماره تلفن را تأیید کنید."
+
+#: them_options/tabs/app-options.php:172
+msgid "required"
+msgstr "ضروری"
+
+#: them_options/tabs/app-options.php:173
+msgid "would you like to validate phone number of users in checkout fields?"
+msgstr ""
+"آیا می خواهید شماره تلفن کاربران را در قسمت های پرداخت اعتبار سنجی کنید؟"
+
+#: them_options/tabs/app-options.php:180
+msgid "Password"
+msgstr "رمز عبور"
+
+#: them_options/tabs/app-options.php:181
+msgid "sms"
+msgstr "پیامک"
+
+#: them_options/tabs/app-options.php:184
+msgid "What's your verify type ? email or phone"
+msgstr "نوع تأیید شما چیست؟ ایمیل یا تلفن"
+
+#: them_options/tabs/app-options.php:188
+msgid "Show Full Name in register form"
+msgstr "نمایش نام کامل در فرم ثبت نام"
+
+#: them_options/tabs/app-options.php:190 them_options/tabs/app-options.php:197
+msgid "show"
+msgstr "نمایش"
+
+#: them_options/tabs/app-options.php:191
+msgid "Show Full Name field in register form"
+msgstr "فیلد نمایش نام کامل در فرم ثبت نام"
+
+#: them_options/tabs/app-options.php:195
+msgid "Show Vendors Phone"
+msgstr "نمایش تلفن فروشندگان"
+
+#: them_options/tabs/app-options.php:198
+msgid "Show vendors phone in information box in vendor store "
+msgstr "تلفن فروشندگان را در باکس اطلاعات فروشگاه فروشنده نشان دهید"
+
+#: them_options/tabs/app-options.php:202
+msgid "Backorder text"
+msgstr "متن پیش خرید"
+
+#: them_options/tabs/app-options.php:204
+msgid "enter backorder button text"
+msgstr "متن دکمه پیش خرید را وارد کنید"
+
+#: them_options/tabs/app-options.php:208
+msgid "Backorder email"
+msgstr " ایمیل پیش خرید"
+
+#: them_options/tabs/app-options.php:210
+msgid "enter email for backorder requests"
+msgstr "ایمیل را برای ارسال درخواست های پیش خرید ارسال نمایید"
+
+#: them_options/tabs/app-options.php:214
+msgid "Product English title"
+msgstr "نام انگلیسی محصول"
+
+#: them_options/tabs/app-options.php:216
+msgid "hide"
+msgstr "مخفی کردن"
+
+#: them_options/tabs/app-options.php:217
+msgid "Hide product english title in sigle product page"
+msgstr "مخفی کردن نام انگلیسی محصولات در صفحات داخلی محصول"
+
+#: them_options/tabs/app-options.php:221 them_options/tabs/app-options.php:223
+msgid "Force Login"
+msgstr "اجبار به ورود"
+
+#: them_options/tabs/app-options.php:224
+msgid "Force user to login at startup"
+msgstr "اجبار به ورود برای کاربران اپلیکیشن برای استفاده از اپلیکیشن"
+
+#: them_options/tabs/archiveads-options.php:5
+msgid "Categories banners ADS"
+msgstr "تبلیغات بنری دسته بندی ها"
+
+#: them_options/tabs/archiveads-options.php:14
+msgid "Enter the ads banners for archive pages"
+msgstr "بنر های تبلیغاتی را برای نمایش در دسته بندی ها وارد نمایید."
+
+#: them_options/tabs/archiveslider-options.php:5
+msgid "Archive sliders"
+msgstr "اسلایدر آرشیوها"
+
+#: them_options/tabs/archiveslider-options.php:15
+msgid ""
+"set slider banners for show in custom archives. width 800px height 400px"
+msgstr ""
+"بنر های اسلایدر را برای نمایش در دسته بندی های محصولاتتان انتخاب نمایید.. "
+"عرض 800px ارتفاع 400px"
+
+#: them_options/tabs/dinamic/categories.php:5
+msgid "product Categories"
+msgstr "دسته بندی محصولات"
+
+#: them_options/tabs/dinamic/categories.php:14
+msgid "Product categories"
+msgstr "دسته بندی محصولات"
+
+#: them_options/tabs/dinamic/categories.php:18
+msgid "you can insert categories in button type. please select that."
+msgstr ""
+"شما می توانید دسته ها را به شکل دکمه قرار دهید. لطفا آنها را انتخاب کنید."
+
+#: them_options/tabs/dinamic/categories.php:22
+msgid "type"
+msgstr "نوع"
+
+#: them_options/tabs/dinamic/categories.php:25
+msgid "show categories thumbnails"
+msgstr "نمایش تصاویر بندانگشتی دسته بندی ها"
+
+#: them_options/tabs/dinamic/categories.php:26
+msgid "show categories thumbnails with scroll"
+msgstr "نمایش تصاویر بندانگشتی دسته بندی ها همراه با اسکرول"
+
+#: them_options/tabs/dinamic/categories.php:27
+msgid "show categories green buttons"
+msgstr "نمایش دکمه دسته بندی ها"
+
+#: them_options/tabs/dinamic/categories.php:29
+#: them_options/tabs/dinamic/postBox.php:26
+#: them_options/tabs/dinamic/productBox.php:24
+#: them_options/tabs/dinamic/productBoxColorize.php:24
+msgid "Select the category"
+msgstr "انتخاب دسته بندی"
+
+#: them_options/tabs/dinamic/featured.php:5
+#: them_options/tabs/dinamic/featured.php:14
+msgid "Amazing box"
+msgstr "باکس شگفت انگیز"
+
+#: them_options/tabs/dinamic/featured.php:18
+msgid "this box show products that have offer AND have Schedule for offers."
+msgstr "این باکس محصولاتی را نشان می دهد که دارای تخفیف زمانبندی شده باشند."
+
+#: them_options/tabs/dinamic/featured.php:22
+msgid "products count"
+msgstr "تعداد محصولات"
+
+#: them_options/tabs/dinamic/featured.php:24
+msgid "Product count for show. max 12"
+msgstr "تعداد محصولات. حداکثر 12"
+
+#: them_options/tabs/dinamic/featured.php:34
+msgid "Feature icon"
+msgstr "آیکن"
+
+#: them_options/tabs/dinamic/featured.php:36
+msgid "Select icon for featured product PNG and 200px*50px"
+msgstr "انتخاب آیکون محصولات با فرمت png و سایز 200پیکسل در 50 پیکسل"
+
+#: them_options/tabs/dinamic/oneColADV.php:20
+#: them_options/tabs/dinamic/scrollADV.php:22
+msgid "Select the banners for show in home page"
+msgstr "بنر های دلخواه تان را برای نمایش در صفحه اصلی انتخاب نمایید."
+
+#: them_options/tabs/dinamic/postBox.php:16
+#: them_options/tabs/dinamic/productBox.php:14
+#: them_options/tabs/dinamic/productBoxColorize.php:14
+msgid "Box title"
+msgstr "عنوان باکس"
+
+#: them_options/tabs/dinamic/postBox.php:18
+#: them_options/tabs/dinamic/productBox.php:16
+#: them_options/tabs/dinamic/productBoxColorize.php:16
+msgid "Enter the title box"
+msgstr "عنوان باکس را وارد نمایید."
+
+#: them_options/tabs/dinamic/postBox.php:22
+#: them_options/tabs/dinamic/productBox.php:20
+#: them_options/tabs/dinamic/productBoxColorize.php:20
+#: them_options/tabs/single-options.php:37
+#: them_options/tabs/single-options.php:40
+msgid "category"
+msgstr "دسته بندی"
+
+#: them_options/tabs/dinamic/postBox.php:30
+msgid "post count"
+msgstr "تعداد مقالات"
+
+#: them_options/tabs/dinamic/postBox.php:32
+msgid "Enter post count for show in box. max 12"
+msgstr "تعداد مقاله قابل نمایش در باکس را وارد کنید. حداکثر 12"
+
+#: them_options/tabs/dinamic/postBox.php:36
+#: them_options/tabs/dinamic/productBox.php:34
+#: them_options/tabs/dinamic/productBoxColorize.php:52
+msgid "Order by"
+msgstr "مرتب سازی بر اساس"
+
+#: them_options/tabs/dinamic/postBox.php:40
+#: them_options/tabs/dinamic/productBox.php:38
+#: them_options/tabs/dinamic/productBoxColorize.php:56
+msgid "Created date"
+msgstr "تاریخ انتشار"
+
+#: them_options/tabs/dinamic/postBox.php:41
+#: them_options/tabs/dinamic/productBox.php:39
+#: them_options/tabs/dinamic/productBoxColorize.php:57
+msgid "Modified date"
+msgstr "تاریخ ویرایش"
+
+#: them_options/tabs/dinamic/postBox.php:43
+#: them_options/tabs/dinamic/productBox.php:41
+#: them_options/tabs/dinamic/productBoxColorize.php:59
+msgid "sale count"
+msgstr "تعداد فروش"
+
+#: them_options/tabs/dinamic/postBox.php:44
+#: them_options/tabs/dinamic/productBox.php:42
+#: them_options/tabs/dinamic/productBoxColorize.php:60
+msgid "View count"
+msgstr "تعداد بازدید"
+
+#: them_options/tabs/dinamic/postBox.php:45
+#: them_options/tabs/dinamic/productBox.php:43
+#: them_options/tabs/dinamic/productBoxColorize.php:61
+msgid "Comment count"
+msgstr "تعداد نظرات"
+
+#: them_options/tabs/dinamic/postBox.php:46
+#: them_options/tabs/dinamic/productBox.php:44
+#: them_options/tabs/dinamic/productBoxColorize.php:62
+msgid "Random"
+msgstr "تصادفی (Random)"
+
+#: them_options/tabs/dinamic/postBox.php:47
+msgid "Select order type for show posts."
+msgstr "نمایش ترتیب مقالات بر اساس"
+
+#: them_options/tabs/dinamic/postBox.php:54
+#: them_options/tabs/dinamic/productBox.php:52
+#: them_options/tabs/dinamic/productBoxColorize.php:70
+msgid "ASC"
+msgstr "صعودی"
+
+#: them_options/tabs/dinamic/postBox.php:54
+#: them_options/tabs/dinamic/productBox.php:52
+#: them_options/tabs/dinamic/productBoxColorize.php:70
+msgid "DESC"
+msgstr "نزولی"
+
+#: them_options/tabs/dinamic/postBox.php:55
+#: them_options/tabs/dinamic/productBox.php:53
+#: them_options/tabs/dinamic/productBoxColorize.php:71
+msgid "Select the sort type for show"
+msgstr "نوع مرتب سازی را انتخاب کنید"
+
+#: them_options/tabs/dinamic/postBox.php:59
+#: them_options/tabs/dinamic/productBox.php:65
+msgid "float"
+msgstr "شناوری"
+
+#: them_options/tabs/dinamic/postBox.php:62
+#: them_options/tabs/dinamic/productBox.php:68
+msgid "rtl"
+msgstr "راست چین"
+
+#: them_options/tabs/dinamic/postBox.php:62
+#: them_options/tabs/dinamic/productBox.php:68
+msgid "ltr"
+msgstr "چپ چین"
+
+#: them_options/tabs/dinamic/postBox.php:63
+#: them_options/tabs/dinamic/productBox.php:69
+msgid "Select the float type for show"
+msgstr "نوع مرتب سازی را انتخاب کنید"
+
+#: them_options/tabs/dinamic/productBox.php:28
+#: them_options/tabs/dinamic/productBoxColorize.php:46
+msgid "product count"
+msgstr "تعداد محصولات"
+
+#: them_options/tabs/dinamic/productBox.php:30
+#: them_options/tabs/dinamic/productBoxColorize.php:48
+msgid "Enter product count for show in box. max 12"
+msgstr "تعداد محصول قابل نمایش در باکس را وارد کنید. حداکثر 12"
+
+#: them_options/tabs/dinamic/productBox.php:45
+#: them_options/tabs/dinamic/productBoxColorize.php:63
+msgid "Select order type for show products."
+msgstr "نمایش ترتیب محصولات بر اساس"
+
+#: them_options/tabs/dinamic/productBox.php:57
+#: them_options/tabs/dinamic/productBoxColorize.php:75
+msgid "exist"
+msgstr "موجود"
+
+#: them_options/tabs/dinamic/productBox.php:61
+#: them_options/tabs/dinamic/productBoxColorize.php:79
+msgid "Only show exists products"
+msgstr "فقط محصولات موجود نشان داده شود"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:5
+msgid "Product box colorize"
+msgstr "محصولات شگفت انگیز (جدید)"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:28
+msgid "Background color"
+msgstr "رنگ پس زمینه"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:30
+msgid "Background color of product box"
+msgstr "رنگ پس زمینه باکس محصولات"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:34
+msgid "icon"
+msgstr "تصویر"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:36
+msgid "icon that will be shown on the right"
+msgstr "تصویر سمت راست باکس محصولات رنگی"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:40
+msgid "background image"
+msgstr "تصویر پیش زمینه"
+
+#: them_options/tabs/dinamic/productBoxColorize.php:42
+msgid "Background image will be shown all over the box"
+msgstr ""
+"تصویری که به عنوان پیش زمنیه پشت رنگ باکس نمایش داده می شود و قالبا بهتر است "
+"به صورت یک قالب آیکن باشد."
+
+#: them_options/tabs/dinamic/scrollADV.php:11
+msgid "Scroll Banners ads"
+msgstr "تبلیغات بنری"
+
+#: them_options/tabs/dinamic/scrollBox.php:22
+msgid "Scrolled box with title and icon and link"
+msgstr "باکس هایی با آیکن و تیتر با قابلیت لینک به صورت اسکرول"
+
+#: them_options/tabs/dinamic/slider.php:22
+msgid "Enter the banners for this slider"
+msgstr "بنرها را برای این اسلایدر وارد کنید"
+
+#: them_options/tabs/dinamic/space.php:14
+msgid "space value"
+msgstr "مقدار فاصله"
+
+#: them_options/tabs/dinamic/space.php:16
+msgid "Enter the space value for pixel"
+msgstr "مقدار فاصله را به پیکسل وارد نمایید."
+
+#: them_options/tabs/index-options.php:5
+msgid "Home page layout"
+msgstr "چیدمان صفحه اصلی"
+
+#: them_options/tabs/index-options.php:14
+msgid "Design your home page for application"
+msgstr "صفحه اصلی اپلیکیشن خود را طراحی کنید"
+
+#: them_options/tabs/manuItems-options.php:5
+msgid "Custom menu"
+msgstr "منوی سفارشی"
+
+#: them_options/tabs/manuItems-options.php:14
+msgid "can you make custom menu for your application"
+msgstr "میتوانید منوی سفارشی برای اپلیکیشن خود را ایجاد کنید"
+
+#: them_options/tabs/popup-home.php:5
+msgid "Pop up"
+msgstr "پنجره بازشونده اصلی"
+
+#: them_options/tabs/popup-home.php:19
+msgid "Popup Activation"
+msgstr "فعال سازی پنجره بازشونده صفحه اصلی"
+
+#: them_options/tabs/popup-home.php:24
+msgid "Image"
+msgstr "تصویر"
+
+#: them_options/tabs/popup-home.php:39
+msgid "Link Text"
+msgstr "متن لینک"
+
+#: them_options/tabs/popup-home.php:50
+msgid "Link Value"
+msgstr "مقدار لینک"
+
+#: them_options/tabs/single-options.php:5
+msgid "single options"
+msgstr "تنظیمات داخلی"
+
+#: them_options/tabs/single-options.php:16
+msgid "products count in archive page"
+msgstr "تعداد محصولات در صفحه آرشیو"
+
+#: them_options/tabs/single-options.php:18
+msgid "Enter the products count in archive page"
+msgstr "تعداد محصولات قابل نمایش در صفحه آرشیو وارد کنید"
+
+#: them_options/tabs/single-options.php:22
+msgid "Call text"
+msgstr "متن تماس"
+
+#: them_options/tabs/single-options.php:24
+msgid ""
+"In home page, som products have zero price. for they show (call) text. if "
+"you want to change it please enter the text that you want"
+msgstr ""
+"در صفحه اصلی برخی محصولات که قیمت صفر دارند. میتوانید برای آنها متن اختصاصی "
+"مانند (تماس بگیرید) قرار دهید. پیش فرض (تماس)"
+
+#: them_options/tabs/single-options.php:28
+msgid "Hide Out Of Stock Product"
+msgstr "مخفی کردن محصولات ناموجود"
+
+#: them_options/tabs/single-options.php:30
+msgid "Hide"
+msgstr "مخفی"
+
+#: them_options/tabs/single-options.php:31
+msgid "Hide out of stock product form archive and search query"
+msgstr "مخفی کردن محصولات ناموجود از آرشیو و جستجو"
+
+#: them_options/tabs/single-options.php:35
+msgid "related product by"
+msgstr "نمایش محصولات مرتبط بر اساس"
+
+#: them_options/tabs/single-options.php:37
+msgid "Woocommerce default"
+msgstr "پیش فرض ووکامرس"
+
+#: them_options/tabs/single-options.php:39
+msgid "show related product by which case?"
+msgstr "نمایش محصولات مرتبط بر اساس"
+
+#: them_options/tabs/social-options.php:5
+msgid "socials icons"
+msgstr "آیکون شبکه های اجتماعی"
+
+#: them_options/tabs/social-options.php:13
+msgid ""
+"this icons shown in buttom of app menu. only banner address and link using "
+msgstr ""
+"این آیکن ها در پایین منوی اپلیکیشن نمایش داده خواهند شد. تنها آدرس بنر و "
+"لینک استفاده خواهد شد."
+
+#: them_options/tabs/static-contents.php:5
+msgid "Static Pages"
+msgstr "صفحات قوانین و مقررات"
+
+#: them_options/tabs/static-contents.php:16
+msgid "Privacy And Policy"
+msgstr "حریم خصوصی"
+
+#: them_options/tabs/static-contents.php:21
+msgid "Terms And Conditions"
+msgstr "شرایط و ضوابط"
+
+#: them_options/tabs/static-contents.php:26
+msgid "Shopping Guildline"
+msgstr "تلفن همراه ارسال"
+
+#: them_options/tabs/systemic-options.php:5
+msgid "systemic options"
+msgstr "تنظیمات سیستم"
+
+#: them_options/tabs/systemic-options.php:16
+msgid "Caching mode"
+msgstr "سیستم کش (Caching)"
+
+#: them_options/tabs/systemic-options.php:20
+msgid "Deactive"
+msgstr "غیر فعال"
+
+#: them_options/tabs/systemic-options.php:23
+msgid "Caching mode increase your application load speed"
+msgstr "سیستم کش (Caching) سرعت اپلیکیشن شما را افزایش می دهد."
+
+#: them_options/tabs/systemic-options.php:27
+msgid "Application version"
+msgstr "نسخه برنامه"
+
+#: them_options/tabs/systemic-options.php:29
+msgid "Enter application version"
+msgstr "نسخه نرم افزار را وارد کنید"
+
+#: them_options/tabs/systemic-options.php:33
+msgid "English App Name"
+msgstr "نام انگلیسی اپلیکیشن"
+
+#: them_options/tabs/systemic-options.php:35
+msgid "English App Name has the same name you enter when making apk file"
+msgstr ""
+"نام انگلیسی اپلیکیشن شما دقیقا همان مقداری که در زمان ساخت اپلیکیشن در خط "
+"تولید نامگذاری کردید."
+
+#: them_options/tabs/systemic-options.php:39
+msgid "APK file"
+msgstr "فایل APK"
+
+#: them_options/tabs/systemic-options.php:41
+msgid "Upload and select application file. *.apk"
+msgstr "فایل APK برنامه را آپلود و انتخاب نمایید."
+
+#: them_options/tabs/systemic-options.php:45
+msgid "new version description"
+msgstr "توضیحات نسخه جدید"
+
+#: them_options/tabs/systemic-options.php:47
+msgid "Enter the new version descriptions. one item in one line."
+msgstr "توضیحات نسخه جدید را وارد کنید هر مورد در یک خط."
+
+#: them_options/tabs/systemic-options.php:51
+msgid "Fource update"
+msgstr "آپدیت اجباری"
+
+#: them_options/tabs/systemic-options.php:54
+msgid "If users must update to this version, active this field;"
+msgstr "اگر کاربران باید به این نسخه بروزرسانی کنند، این فیلد فعال باشد؛"
+
+#: them_options/tabs/systemic-options.php:58
+msgid "Archive level Start"
+msgstr "شروع سطح آرشیو"
+
+#: them_options/tabs/systemic-options.php:61
+msgid "Parent"
+msgstr "والد"
+
+#: them_options/tabs/systemic-options.php:62
+msgid "Sub category"
+msgstr "زیر دسته"
+
+#: them_options/tabs/systemic-options.php:65
+msgid ""
+"when that user select a sub categories, show type be parent category or sam "
+"category?"
+msgstr ""
+"هنگامی که کاربر یک آرشیو محصول را باز میکند صفحه همان آرشیو باز شود یا وارد "
+"صفحه آرشیو والدش شود؟"
+
+#: them_options/tabs/systemic-options.php:69
+msgid "view count custom field"
+msgstr "فیلد تعداد بازدید"
+
+#: them_options/tabs/systemic-options.php:71
+msgid "Set your custom field for view counter"
+msgstr ""
+"در صورتی که میخواهید تعداد بازدید اپلیکیشن با سایتتان نیز سینک شود نام "
+"کاستوم فیلد اختصاصی سایتتان را در این فیلد قرار دهید."
+
+#: them_options/tabs/systemic-options.php:75
+msgid "Payment type"
+msgstr "نوع پرداخت"
+
+#: them_options/tabs/systemic-options.php:78
+msgid "In browser"
+msgstr "در مرورگر"
+
+#: them_options/tabs/systemic-options.php:79
+msgid "In application"
+msgstr "درون برنامه"
+
+#: them_options/tabs/systemic-options.php:82
+msgid ""
+"In (in application) method, when user go for payment , do not exit from "
+"application. "
+msgstr "در حالت (درون برنامه)، کاربر هنگام پرداخت، از برنامه خارج نخواهد شد."
+
+#: them_options/tabs/systemic-options.php:86
+msgid "Register type"
+msgstr "نوع ثبت نام"
+
+#: them_options/tabs/systemic-options.php:89
+msgid "Only by email"
+msgstr "فقط از طریق ایمیل"
+
+#: them_options/tabs/systemic-options.php:90
+msgid "Only by mobile"
+msgstr "فقط از طریق موبایل"
+
+#: them_options/tabs/systemic-options.php:91
+msgid "by Email AND mobile"
+msgstr "با ایمیل یا اس ام اس"
+
+#: them_options/tabs/systemic-options.php:94
+msgid ""
+"Select your registration type in application. need to digits plugin for "
+"mobile registration."
+msgstr ""
+"نوع ثبت نام خود را در برنامه انتخاب کنید. در صورتی که از موارد ثبت نام با "
+"تلفن همراه استفاده می کنید حتما پلاگین دیجیتز (digits) را نصب و فعال داشته "
+"باشید."
+
+#: them_options/tabs/systemic-options.php:98
+msgid "Google map manifest"
+msgstr "نقشه گوگل مانیفست"
+
+#: them_options/tabs/systemic-options.php:101
+msgid "google map on application and orders"
+msgstr "نقشه گوگل در برنامه و سفارشات"
+
+#: them_options/tabs/systemic-options.php:105
+msgid "App send time field"
+msgstr "زمان ارسال سفارش"
+
+#: them_options/tabs/systemic-options.php:108
+msgid "Application send time field activation"
+msgstr "تنظیمات اپلیکیشن"
+
+#: them_options/tabs/systemic-options.php:112
+msgid "Debug mode"
+msgstr "محیط دیباگ"
+
+#: them_options/tabs/systemic-options.php:115
+msgid "if you dont have any information about it, do not active it"
+msgstr ""
+"این امکان برای پشتیبانان تیم فنی اپلیکیشن می باشد . در غیر اینصورت حتما "
+"غیرفعال باشد."
+
+#: them_options/tabs/systemic-options.php:119
+msgid "debug key"
+msgstr "کلید دیباگ"
+
+#: them_options/tabs/systemic-options.php:121
+msgid "Set your secret key for debug"
+msgstr "کلید مخفی خود را برای اشکال زدایی تنظیم کنید"
+
+#: them_options/tabs/systemic-options.php:128
+msgid "vendor grouping"
+msgstr "گروه بندی فروشندگان"
+
+#: them_options/tabs/systemic-options.php:131
+msgid "do you want activate state/city select box for vendors in app?"
+msgstr ""
+"آیا می خواهید باکس انتخاب استان / شهر را برای فروشندگان در برنامه فعال کنید؟"
+
+#: them_options/tabs/systemic-options.php:136
+msgid "Vendor group by"
+msgstr "گروه بندی فروشنده بر اساس"
+
+#: them_options/tabs/systemic-options.php:139
+msgid "state"
+msgstr "استان"
+
+#: them_options/tabs/systemic-options.php:140
+msgid "city"
+msgstr "شهر"
+
+#: them_options/tabs/systemic-options.php:143
+msgid "how to grouping vendors."
+msgstr "چگونه فروشندگان را گروه بندی کنیم."
+
+#: them_options/tabs/systemic-options.php:147
+msgid "hidden empty states"
+msgstr "مخفی شدن استان های خالی"
+
+#: them_options/tabs/systemic-options.php:150
+msgid "do you want hidden empty states in select box?"
+msgstr "آیا مایلید استان های خالی را نمایش ندهید؟"
+
+#: them_options/tabs/systemic-options.php:154
+msgid "hide vendor list on menu"
+msgstr "مخفی کردن منو لیست فروشندگان"
+
+#: them_options/tabs/systemic-options.php:156
+msgid "hidden"
+msgstr "مخفی"
+
+#: them_options/tabs/systemic-options.php:157
+msgid "if you want to hide vendor list on menu active this"
+msgstr ""
+"اگر مایل هستید لیست فروشندگان از منوی شما حذف گردد این گزینه را فعال کنید."
+
+#: them_options/tabs/systemic-options.php:161
+msgid "Dokan shipping type"
+msgstr "نحوه اعمال حمل و نقل روی سبد خرید"
+
+#: them_options/tabs/systemic-options.php:164
+msgid "regular shipping"
+msgstr "یک بار اعمال روی کل سبد خرید‬"
+
+#: them_options/tabs/systemic-options.php:165
+msgid "vendor shipping"
+msgstr "اعمال حمل و نقل به ازای هر فروشنده (پیش فرض دکان)"
+
+#: them_options/tabs/systemic-options.php:167
+msgid ""
+"select shipping type. vendor shipping is having seprate shipping method for "
+"each seller"
+msgstr ""
+"نوع اعمال تعرفه حمل و نقل را روی سفارش تعیین کنید. محاسبه به ازای هر فروشنده "
+"(روال پیش فرض دکان) یا محاسبه یک بار به ازای هر سبد خرید."
+
+#, fuzzy
+#~| msgid "Product box"
+#~ msgid "post box"
+#~ msgstr "باکس محصولات"
+
+#~ msgid "App Notifications"
+#~ msgstr "اعلان های اپلیکیشن"
+
+#~ msgid "App Announcements"
+#~ msgstr "اعلان های اپلیکیشن"
+
+#~ msgid "Notification"
+#~ msgstr "نوتیفیکشن"
+
+#~ msgid "Add new Announcement"
+#~ msgstr "افزودن اطلاعیه جدید"
+
+#~ msgid "This post shown only in Announcements section"
+#~ msgstr "این پست فقط در بخش اطلاعیه ها نمایش داده می شود"
+
+#~ msgid "Edit Announcement"
+#~ msgstr "ویرایش اطلاعیه"
+
+#~ msgid "New Announcements"
+#~ msgstr "اطلاعیه های جدید"
+
+#~ msgid "Search"
+#~ msgstr "جستجو"
+
+#~ msgid "Not found"
+#~ msgstr "پیدا نشد"
+
+#~ msgid "Not found in trash"
+#~ msgstr "در سطل زباله یافت نشد"
+
+#~ msgid "if you don"
+#~ msgstr ""
+#~ "این امکان برای پشتیبانان فنی اپلیکیشن می باشد . در غیر این صورت حتما این "
+#~ "حالت را غیر فعال کنید."
+
+#~ msgid "ioncube loader +5.6 Not installed."
+#~ msgstr "لودر ioncube +5.6 نصب نشده است."
+
+#~ msgid "Value for Event"
+#~ msgstr "مقدار برای رویداد"
+
+#~ msgid "Size"
+#~ msgstr "اندازه"
+
+#~ msgid "Event"
+#~ msgstr "رویداد"
+
+#~ msgid "Add bottom"
+#~ msgstr "اضافه کردن به پایین"
+
+#~ msgctxt "placeholder"
+#~ msgid "Emergency phone"
+#~ msgstr "تلفن اضطراری"
+
+#~ msgctxt "placeholder"
+#~ msgid "Email"
+#~ msgstr "ایمیل"
+
+#~ msgctxt "placeholder"
+#~ msgid "Mobile"
+#~ msgstr "موبایل"
+
+#~ msgid "Short description"
+#~ msgstr "توضیح کوتاه"
+
+#~ msgid "Full description"
+#~ msgstr "توضیحات کامل"
+
+#~ msgid ""
+#~ "you can select for show full description product or short description."
+#~ msgstr ""
+#~ "شما می توانید انتخاب کنید که توضیحات کامل محصول یا توضیحات کوتاه در "
+#~ "اپلیکیشن نمایش داده شوند."
+
+#~ msgid "connect application to sms panel "
+#~ msgstr "برنامه را به پنل اس ام اس وصل کنید"
+
+#~ msgid "how to connect application to sms panel"
+#~ msgstr "نحوه اتصال برنامه به پنل اس ام اس"
+
+#~ msgid "(Security code)"
+#~ msgstr "(کد امنیتی)"
+
+#~ msgid "Enter the security code."
+#~ msgstr "کد امنیتی را وارد کنید (security code)"
+
+#~ msgid "(Api key)"
+#~ msgstr "(کلید ای پی ای)"
+
+#~ msgid "Enter the Api key"
+#~ msgstr "کلید API را وارد کنید (Api key)"
+
+#~ msgid "your request count is not exist. Stock inventory is %s "
+#~ msgid_plural "your request count is not exist. Stock inventory is %s"
+#~ msgstr[0] "تعداد درخواستی شما در انبار موجود نیست. تعداد موجود %s است "
+#~ msgstr[1] "تعداد درخواستی شما در انبار موجود نیست. تعداد موجود %s است "
+
+#~ msgid "This order to "
+#~ msgstr "این سفارش به "
+
+#~ msgid ", address :"
+#~ msgstr "، نشانی :"
+
+#~ msgid ", phone : "
+#~ msgstr "، تلفن :"
+
+#~ msgid " Will be delivered."
+#~ msgstr "تحویل داده خواهد شد."
+
+#~ msgid "This order through "
+#~ msgstr "این سفارش از طریق"
+
+#~ msgid " and price :"
+#~ msgstr "و قیمت:"
+
+#~ msgid "A amazing android application for woocommerce."
+#~ msgstr "اپلیکیشن اندروید شگفت انگیز برای ووکامرس."
+
+#~ msgid "https://shop.onliner.ir/product/app-andorid-woocommerce/"
+#~ msgstr "https://storina.com/product/app-andorid-woocommerce/"
+
+#~ msgid "https://onliner.ir"
+#~ msgstr "https://storina.com"

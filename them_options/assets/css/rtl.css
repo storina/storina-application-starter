@@ -1,0 +1,104 @@
+.osa-settings-wrapper *:not([class*='icon']):not(.fa):not(i) {
+    font-family: iyekan !important;
+    letter-spacing: normal !important;
+}
+
+.osa-settings-wrapper div,.osa-settings-wrapper span,.osa-settings-wrapper h1,.osa-settings-wrapper h2,.osa-settings-wrapper h3,.osa-settings-wrapper h4,.osa-settings-wrapper h5,.osa-settings-wrapper h6,.osa-settings-wrapper p,.osa-settings-wrapper a,.osa-settings-wrapper section,.osa-settings-wrapper mark,.osa-settings-wrapper 
+ol,.osa-settings-wrapper ul,.osa-settings-wrapper li,.osa-settings-wrapper form,.osa-settings-wrapper table,.osa-settings-wrapper caption,.osa-settings-wrapper tbody,.osa-settings-wrapper tfoot,.osa-settings-wrapper thead,.osa-settings-wrapper tr,.osa-settings-wrapper th,.osa-settings-wrapper td,.osa-settings-wrapper article,.osa-settings-wrapper 
+aside,.osa-settings-wrapper details,.osa-settings-wrapper figcaption,.osa-settings-wrapper footer,.osa-settings-wrapper header,.osa-settings-wrapper hgroup,.osa-settings-wrapper menu,.osa-settings-wrapper nav,.osa-settings-wrapper output,.osa-settings-wrapper 
+input[type="text"] ,.osa-settings-wrapper input[type="textarea"] ,.osa-settings-wrapper input[type="submit"] {
+    font-family: iyekan !important;
+    letter-spacing: normal !important;
+}
+.osa-settings-wrapper a ,.osa-settings-wrapper span {
+    font-family: iyekan !important;
+}
+
+.osa-settings-wrapper h1,.osa-settings-wrapper h2,.osa-settings-wrapper h3,.osa-settings-wrapper h4,.osa-settings-wrapper h5,.osa-settings-wrapper h6 {
+    font-family: iyekan !important;
+}
+
+.osa-settings-wrapper p {
+    font-family: iyekan !important;
+}
+
+.osa-settings-wrapper {
+    display: flex;
+    background-color: #f9f9f9;
+    border: 1px solid #dfdfdf;
+    margin: 1.7em auto;
+}
+.osa-settings-wrapper .osa-setting-tabs {
+    width: 20%;
+    border-left: 1px solid #dfdfdf;
+    padding: 0;
+    margin: 0;
+}
+.osa-settings-wrapper .osa-setting-tabs li {
+    list-style: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+.osa-settings-wrapper .osa-setting-tabs li a {
+    display: block;
+    padding: 9px 10px;
+    border-bottom: 1px solid #dfdfdf;
+    text-decoration: none;
+    box-shadow: none;
+}
+.osa-settings-wrapper .osa-setting-tabs li.active a {
+    background-color: #fff;
+    position: relative;
+    left: -1px;
+    color: inherit;
+    box-shadow: none;
+}
+.osa-settings-wrapper .osa-setting-contents {
+    width: 80%;
+    background-color: white;
+}
+.osa-settings-wrapper .osa-setting-content-item {
+    display: none;
+}
+.osa-option-hr {
+    height: 10px;
+    border-bottom: 2px solid gray;
+    display: block;
+}
+.osa-option-hr-span {
+    font-size: 18px;
+    color: #000;
+    padding: 0 15px;
+    float: left;
+    background: #D9D9D9;
+}
+.osa-option-wrapper {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 1em;
+}
+.osa-submit-wrapper {
+    margin: .8em;
+}
+.osa-option-wrapper tbody.ui-sortable input[type="text"],
+.osa-option-wrapper tbody.ui-sortable select,
+.osa-option-wrapper tbody.ui-sortable textarea {
+    width: 100%;
+}
+.osa-option-wrapper tbody.ui-sortable textarea {
+    height: 28px;
+}
+.osa-submit-wrapper-table {
+    margin: .8em 0;
+}
+#app_privacy_policy,
+#‬app_terms_conditions,
+#app_shopping_guide {
+    width: 100%;
+    height: 10em;
+}
+.osa-settings-wrapper input[type="text"],
+.osa-settings-wrapper textarea, 
+.osa-settings-wrapper select {
+    width: 23em;
+}
