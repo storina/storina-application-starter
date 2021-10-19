@@ -55,7 +55,7 @@ class OSA_Router {
                 "lastViewed" => array("getView"),
                 "getContent" => array("getContent")
             ),
-            "OSA_archive" => array(
+            \STORINA\Controllers\Archive::class => array(
                 "archive" => array("archive"),
                 "search" => array("search"),
                 "bulkSearch" => array("bulkSearch"),
