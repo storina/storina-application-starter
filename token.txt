@@ -1,0 +1,32 @@
+
+
+Fatema@KimiaSystem MINGW64 ~/Desktop
+$ git clone https://github.com/storina/storina-application-starter.git
+Cloning into 'storina-application-starter'...
+fatal: I don't handle protocol 'https'
+
+Fatema@KimiaSystem MINGW64 ~/Desktop
+$ git clone git@github.com:storina/storina-application-starter.git
+Cloning into 'storina-application-starter'...
+The authenticity of host 'github.com (140.82.121.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.121.4' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+
+Fatema@KimiaSystem MINGW64 ~/Desktop
+$ git clone https://github.com/storina/storina-application-starter.git
+Cloning into 'storina-application-starter'...
+fatal: I don't handle protocol 'https'
+
+Fatema@KimiaSystem MINGW64 ~/Desktop
+$ git clone git@github.com:storina/storina-application-starter.git
+Cloning into 'storina-application-starter'...
+The authenticity of host 'github.com (140.82.121.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,140.82.121.4' (RSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.

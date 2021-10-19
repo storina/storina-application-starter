@@ -1,8 +1,10 @@
 <?php
 
+namespace STORINA\Controllers;
+
 defined('ABSPATH') || exit;
 
-class OSA_cache {
+class Cache {
 
     public $index_object;
     public $service_container;
