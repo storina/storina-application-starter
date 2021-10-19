@@ -2,7 +2,8 @@
 
 namespace STORINA\Controllers;
 
-use STORINA\Controllers\Cashe;
+use \WP_Query;
+use \STORINA\Controllers\Cache;
 
 defined('ABSPATH') || exit;
 
@@ -451,7 +452,7 @@ class Archive {
                 )
             );
         }
-        $wp_query = new WP_Query();
+        $wp_query = new \WP_Query();
         $wp_query->query(apply_filters("osa_archive_mostSale_query_args", $args, $this->user_id));
         if ($wp_query->have_posts()):
             while ($wp_query->have_posts()):
