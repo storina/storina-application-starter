@@ -20,10 +20,8 @@ class storina_application_init {
 
     public function __construct() {
         $this->define_constant();
-        $this->plugin_update_checker();
         $this->construct_debug();
         $this->boot_modules();
-        add_action("upgrader_process_complete",function(){});
         add_action("init", array($this, "plugin_init"));
         $this->boot_services();
         register_activation_hook(__FILE__, array($this, "register_activation_hook"));
@@ -116,11 +114,6 @@ class storina_application_init {
         load_plugin_textdomain('onlinerShopApp', false, basename(dirname(__FILE__)) . '/languages');
         $woocommerce = (class_exists("woocommerce")) ? "active" : "deactive";
         $onliner_shop_app = (function_exists("osa_get_option")) ? "active" : "deactive";
-    }
-
-    public function plugin_update_checker() {
-        require_once trailingslashit(__DIR__) . "inc/plugin-updater/plugin-update-checker.php";
-        Puc_v4_Factory::buildUpdateChecker('https://person.bilpay.ir/2/onlinerApi?getVersion', __FILE__, 'onlinerShopApp/onliner-shop-app.php');
     }
 
 }
