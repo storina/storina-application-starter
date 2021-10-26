@@ -77,7 +77,7 @@ function add_mobile_number_to_dashboard( $order ) {
 			<?php } ?>
             timestamp = '';
 			<?php if ( ! function_exists( 'jdate' ) ) {
-			include_once( OSA_PLUGIN_PATH . '/api/models/jdf.php' );
+			include_once( STORINA_PLUGIN_PATH . '/api/models/jdf.php' );
         } //where HttpRequest.php is the saved file
 			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 			$timestamp = intval( $timestamp / 1000 );

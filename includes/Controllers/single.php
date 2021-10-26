@@ -21,8 +21,8 @@ class Single {
         require_once( ABSPATH . "wp-load.php" );
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
         if (class_exists('JCWC_AdvancedAttrubutes')) {
-            $jcaa = OSA_PLUGIN_PATH . '../jc-woocommerce-advanced-attributes/libs/jcaa-integrations.php';
-            $bigikala = OSA_PLUGIN_PATH . '../Bigilala-Attributes/libs/jcaa-integrations.php';
+            $jcaa = STORINA_PLUGIN_PATH . '../jc-woocommerce-advanced-attributes/libs/jcaa-integrations.php';
+            $bigikala = STORINA_PLUGIN_PATH . '../Bigilala-Attributes/libs/jcaa-integrations.php';
             if (file_exists($bigikala)) {
                 include_once $bigikala;
             } else {
