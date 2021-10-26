@@ -6,6 +6,7 @@ use \WP_Query;
 use \STORINA\Controllers\Cache;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Index;
+use \STORINA\Controllers\Yith_Role_Based_Price;
 
 defined('ABSPATH') || exit;
 
@@ -22,7 +23,7 @@ class Archive {
     public function __construct($service_container) {
         $this->service_container = $service_container;
         require_once( ABSPATH . "wp-load.php" );
-        $this->yith_price_role = $this->service_container->get('OSA_price_based_roles');
+        $this->yith_price_role = $this->service_container->get(Yith_Role_Based_Price::class);
     }
 
     public function get_tax_level($id, $tax) {

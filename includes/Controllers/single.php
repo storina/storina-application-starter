@@ -1,6 +1,8 @@
 <?php
 
 use STORINA\Controllers\Cache;
+use \STORINA\Controllers\Yith_Role_Based_Price;
+
 
 defined('ABSPATH') || exit;
 
@@ -25,7 +27,7 @@ class OSA_single {
             }
         }
 
-        $this->yith_price_role = $this->service_container->get("OSA_price_based_roles");
+        $this->yith_price_role = $this->service_container->get(Yith_Role_Based_Price::class);
     }
 
     public function getContent(){

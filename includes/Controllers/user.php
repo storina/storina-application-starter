@@ -1,6 +1,7 @@
 <?php
 
 
+use \STORINA\Controllers\Yith_Role_Based_Price;
 use \STORINA\Controllers\Index;
 
 defined('ABSPATH') || exit;
@@ -22,7 +23,7 @@ class OSA_user {
         remove_action('allow_password_reset', 'gglcptch_lostpassword_check');
         remove_action('pre_comment_on_post', 'gglcptch_commentform_check');
         remove_filter('wp_authenticate_user', 'wp_authenticate_userssss', 10, 2);
-        $this->yith_price_role = $this->service_container->get("OSA_price_based_roles");
+        $this->yith_price_role = $this->service_container->get(Yith_Role_Based_Price::class);
     }
 
     public function resendCode() {

@@ -3,6 +3,7 @@
 namespace STORINA\Controllers;
 
 use \STORINA\Controllers\General;
+use \STORINA\Controllers\Yith_Role_Based_Price;
 
 defined('ABSPATH') || exit;
 
@@ -28,7 +29,7 @@ class Cart {
     }
 
     public function check_plugin_complate() {
-        $this->yith_price_role = $this->service_container->get('OSA_price_based_roles');
+        $this->yith_price_role = $this->service_container->get(Yith_Role_Based_Price::class);
 
         //Checkout Field Editor for WooCommerce BY ThemeHiGH
         if (class_exists("WC_Checkout_Field_Editor")) {
@@ -1415,7 +1416,7 @@ class Cart {
                 if ($item['type'] == 'simple') {
                     $product = wc_get_product($item['id']);
                     if (function_exists("YITH_Role_Based_Type")) {
-                        $price_based_role = $this->service_container->get("OSA_price_based_roles");
+                        $price_based_role = $this->service_container->get(Yith_Role_Based_Price::class);
                         $price_based_role->set_compute_price($product, $user_id);
                     }
                     if (owbd_activation()) {
@@ -1434,7 +1435,7 @@ class Cart {
                     );
                     $product = wc_get_product($item['variation_id']);
                     if (function_exists("YITH_Role_Based_Type")) {
-                        $price_based_role = $this->service_container->get("OSA_price_based_roles");
+                        $price_based_role = $this->service_container->get(Yith_Role_Based_Price::class);
                         $price_based_role->set_compute_price($product, $user_id);
                     }
                     if (owbd_activation()) {
