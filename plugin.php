@@ -45,7 +45,7 @@ class storina_application_init {
         define("STORINA_PDU", plugin_dir_url(__FILE__));
         define("STORINA_PDP", plugin_dir_path(__FILE__));
         define('STORINA_PLUGIN_PATH', plugin_dir_path(__FILE__));
-        define('OSA_STORAGE', plugin_dir_path(__FILE__) . "/assets/storage/");
+        define('STORINA_STORAGE', plugin_dir_path(__FILE__) . "/assets/storage/");
         define('OSA_PLUGIN_URL', plugin_dir_url(__FILE__));	
 	}
 
