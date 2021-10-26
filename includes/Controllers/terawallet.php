@@ -1,10 +1,8 @@
 <?php
 
-defined('ABSPATH') || exit;
+use STORINA\Controllers\Cart;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
+defined('ABSPATH') || exit;
 
 class OSA_terawallet {
 
@@ -23,7 +21,7 @@ class OSA_terawallet {
         $this->wpdb = $wpdb;
         $this->service_container = $service_container;
         $this->user = $this->service_container->get("OSA_user");
-        $this->cart = $this->service_container->get("OSA_cart");
+        $this->cart = $this->service_container->get(Cart::class);
         add_filter("osa_user_dologin_result", array($this,"update_user_wallet_login"),10,2);
         add_filter("osa_user_verify_result",array($this,"update_user_wallet_verify"),10,2);
         add_filter('woap_order_process_handle',[$this,'apply_wallet_order_process'],10,3);

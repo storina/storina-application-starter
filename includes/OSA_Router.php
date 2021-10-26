@@ -64,7 +64,7 @@ class OSA_Router {
                 "VendorListBasedCat" => array("vendors", "category_id"),
                 'categoryHierarchy' => ['categoryHierarchy']
             ),
-            "OSA_cart" => array(
+             \STORINA\Controllers\Cart::class=> array(
                 "retrive_cart" => array("retrive_cart"),
                 "add_to_cart" => array("add_to_cart"),
                 "removeFromCart" => array("removeFromCart"),

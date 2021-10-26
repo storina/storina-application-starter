@@ -26,7 +26,7 @@ class OSA_Autoload {
             "OSA_general" => trailingslashit(__DIR__) . "Controllers/general.php",
             "OSA_user" => trailingslashit(__DIR__) . "Controllers/user.php",
             \STORINA\Controllers\Archive::class => trailingslashit(__DIR__) . "Controllers/archive.php",
-            "OSA_cart" => trailingslashit(__DIR__) . "Controllers/cart.php",
+            \STORINA\Controllers\Cart::class => trailingslashit(__DIR__) . "Controllers/cart.php",
             "OSA_single" => trailingslashit(__DIR__) . "Controllers/single.php",
             "OSA_terawallet" => trailingslashit(__DIR__) . "Controllers/terawallet.php",
         );
