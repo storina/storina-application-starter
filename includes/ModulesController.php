@@ -11,21 +11,21 @@ class ModulesController {
         $this->bootstraps = [
             [            
                 'class' => \VOS\Init::class,
-                'path' => trailingslashit(WOAP_PDP) . 'modules/application-report/bootstrap.php',
+                'path' => trailingslashit(STORINA_PDP) . 'modules/application-report/bootstrap.php',
                 'version' => 1.0,
                 'web_slug' => 'vos',
                 'api_slug' => 'VOSApi'
             ],
             [            
                 'class' => \CRN\Init::class,
-                'path' => trailingslashit(WOAP_PDP) . 'modules/customer-vendor-talk/bootstrap.php',
+                'path' => trailingslashit(STORINA_PDP) . 'modules/customer-vendor-talk/bootstrap.php',
                 'version' => 1.0,
                 'web_slug' => 'crn',
                 'api_slug' => 'CRNApi'
             ],
             [            
                 'class' => \WOAP\Init::class,
-                'path' => trailingslashit(WOAP_PDP) . 'modules/woap-builder-service/bootstrap.php',
+                'path' => trailingslashit(STORINA_PDP) . 'modules/woap-builder-service/bootstrap.php',
                 'version' => 1.0,
                 'web_slug' => 'woap',
                 'api_slug' => 'WOAPApi'

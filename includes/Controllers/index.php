@@ -401,7 +401,7 @@ class Index {
     }
 
     private function oneColADV($elementID, $i) {
-        $element_options = include trailingslashit( WOAP_PDP ) . "them_options/tabs/dinamic/oneColADV.php";
+        $element_options = include trailingslashit( STORINA_PDP ) . "them_options/tabs/dinamic/oneColADV.php";
         $options = $element_options['option-names'];
         $banners_row = osa_get_option($options['banner']);
         $link_types_row = osa_get_option($options['link_type']);
@@ -747,7 +747,7 @@ class Index {
     }
 
     public function postBox($elementID,$i){
-        $option_keys = include trailingslashit( WOAP_PDP ) . 'them_options/tabs/dinamic/postBox.php';
+        $option_keys = include trailingslashit( STORINA_PDP ) . 'them_options/tabs/dinamic/postBox.php';
         foreach($option_keys as $option_key){
             $option_id = $option_key['id'];
             $post_box[$option_id] = osa_get_option($option_id);
@@ -807,7 +807,7 @@ class Index {
     }
 
     public function productBoxColorize($elementID,$i){
-        $option_keys = include trailingslashit( WOAP_PDP ) . 'them_options/tabs/dinamic/productBoxColorize.php';
+        $option_keys = include trailingslashit( STORINA_PDP ) . 'them_options/tabs/dinamic/productBoxColorize.php';
         foreach($option_keys as $option_key){
             $option_id = (is_array($option_key['id']))? current($option_key['id']) : $option_key['id'];
             $product_box_colorize[$option_id] = osa_get_option($option_id);
