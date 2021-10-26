@@ -16,8 +16,8 @@ class TableProvider {
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         $this->database_services = $database_services;
         $this->database_version = $database_version;
-        register_activation_hook(WOAP_FILE, [$this,"install_database"]);
-        register_uninstall_hook(WOAP_FILE, [__CLASS__,"uninstall_database"]);
+        register_activation_hook(STORINA_FILE, [$this,"install_database"]);
+        register_uninstall_hook(STORINA_FILE, [__CLASS__,"uninstall_database"]);
         add_action('plugins_loaded',[$this,'check_database']);
     }
 

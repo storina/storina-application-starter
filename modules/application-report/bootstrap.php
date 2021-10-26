@@ -9,7 +9,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define("VOS_FILE", WOAP_FILE);
+define("VOS_FILE", STORINA_FILE);
 define("VOS_PDU", trailingslashit(WOAP_PDU) . 'modules/application-report');
 define("VOS_PDP", trailingslashit(WOAP_PDP) . 'modules/application-report');
 define("VOS_TMP", trailingslashit(VOS_PDP) . "public");

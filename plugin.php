@@ -41,7 +41,7 @@ class storina_application_init {
     }
 
 	public function define_constant(){
-        define("WOAP_FILE", __FILE__);
+        define("STORINA_FILE", __FILE__);
         define("WOAP_PDU", plugin_dir_url(__FILE__));
         define("WOAP_PDP", plugin_dir_path(__FILE__));
         define('OSA_FILE', __FILE__);

@@ -25,7 +25,7 @@ class BuildLogic {
 	public function get_request_token(){
 		$home_url = home_url();
 		$timestamp = time();
-		$current_plugin_version = get_plugin_data(WOAP_FILE)['Version'];
+		$current_plugin_version = get_plugin_data(STORINA_FILE)['Version'];
 		return md5("{$home_url}-{$timestamp}-{$current_plugin_version}");
 	}
 
