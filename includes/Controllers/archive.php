@@ -5,6 +5,7 @@ namespace STORINA\Controllers;
 use \WP_Query;
 use \STORINA\Controllers\Cache;
 use \STORINA\Controllers\General;
+use \STORINA\Controllers\Index;
 
 defined('ABSPATH') || exit;
 
@@ -34,7 +35,7 @@ class Archive {
     public function store() {
         $general = $this->service_container->get(General::class);
         $data = array();
-        $index = $this->service_container->get('OSA_index');
+        $index = $this->service_container->get(Index::class);
         $vendor_id = intval($_POST['vendor_id']);
         $exist = $_POST['exist'];
         $sort = $_POST['sort'];
@@ -425,7 +426,7 @@ class Archive {
 
     private function mostSale($cat_id) {
         wp_reset_query();
-        $index = $this->service_container->get('OSA_index');
+        $index = $this->service_container->get(Index::class);
         $args = array(
             'post_type' => 'product',
             'posts_per_page' => 8,
@@ -521,7 +522,7 @@ class Archive {
 
     private function newest($cat_id) {
         wp_reset_query();
-        $index = $this->service_container->get('OSA_index');
+        $index = $this->service_container->get(Index::class);
 
         $args = array(
             'post_type' => 'product',
@@ -616,7 +617,7 @@ class Archive {
     }
 
     private function archiveLevel3() {
-        $index = $this->service_container->get('OSA_index');
+        $index = $this->service_container->get(Index::class);
         $cat_id = $_POST['id'];
         $exist = $_POST['exist'];
         $sort = $_POST['sort'];
@@ -909,7 +910,7 @@ class Archive {
 
         $exist = $_POST['exist'];
         if ($s != '') {
-            $index = $this->service_container->get('OSA_index');
+            $index = $this->service_container->get(Index::class);
             wp_reset_query();
             $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
             $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;

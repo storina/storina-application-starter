@@ -1,10 +1,9 @@
 <?php
 
-defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
+use \STORINA\Controllers\Index;
+
+defined('ABSPATH') || exit;
 
 class OSA_user {
 
@@ -1385,7 +1384,7 @@ class OSA_user {
     }
 
     public function vendorProduct(){
-        $index = $this->service_container->get("OSA_index");
+        $index = $this->service_container->get(Index::class);
         $user_id = $this->get_userID_byToken($_POST['userToken']);
         $paged = (isset($_POST['paged']))? $_POST['paged'] : 1;
         if(empty($user_id)){

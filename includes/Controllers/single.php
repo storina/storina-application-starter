@@ -4,9 +4,6 @@ use STORINA\Controllers\Cache;
 
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
 
 class OSA_single {
 
@@ -89,7 +86,7 @@ class OSA_single {
     }
 
     public function get() {
-        $index_object = $this->service_container->get("OSA_index");
+        $index_object = $this->service_container->get(Index::class);
         date_default_timezone_set('Asia/Tehran');
         $masterID = $_POST['id'];
 

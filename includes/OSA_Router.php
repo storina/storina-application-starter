@@ -26,7 +26,7 @@ class OSA_Router {
                 "edit_address" => array("edit_address"),
                 "vendorProduct" => array("vendorProduct")
             ),
-            "OSA_index" => array(
+             \STORINA\Controllers\Index::class => array(
                 "index" => array("get"),
             ),
             \STORINA\Controllers\General::class => array(

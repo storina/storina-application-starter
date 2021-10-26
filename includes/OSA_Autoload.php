@@ -17,7 +17,7 @@ class OSA_Autoload {
         $this->requires = array(
             "OSA_wc_checkout_field_editor" => trailingslashit(__DIR__) . "Controllers/wc_checkout_field_editor.php",
             "OSA_price_based_roles" => trailingslashit(__DIR__) . "Controllers/price_based_roles.php",
-            "OSA_index" => trailingslashit(__DIR__) . "Controllers/index.php",
+            \STORINA\Controllers\Index::class => trailingslashit(__DIR__) . "Controllers/index.php",
             \STORINA\Controllers\Cache::class => trailingslashit(__DIR__) . "Controllers/cache.php",
             \STORINA\Controllers\General::class => trailingslashit(__DIR__) . "Controllers/general.php",
             "OSA_user" => trailingslashit(__DIR__) . "Controllers/user.php",

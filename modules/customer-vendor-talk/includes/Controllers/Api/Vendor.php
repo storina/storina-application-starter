@@ -4,6 +4,7 @@ namespace CRN\Controllers\Api;
 
 use WP_Query;
 use CRN\Controllers\Web\UserController;
+use \STORINA\Controllers\Index;
 
 class Vendor {
 
@@ -19,7 +20,7 @@ class Vendor {
 
     public function products(){
         global $osa_autoload;
-        $index = $osa_autoload->service_provider->get("OSA_index");
+        $index = $osa_autoload->service_provider->get(Index::class);
         $user_id = $this->user_controller->get_user_by_token($_POST['userToken']);
         $paged = (isset($_POST['paged']))? $_POST['paged'] : 1;
         if(empty($user_id)){

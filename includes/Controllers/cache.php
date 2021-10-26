@@ -3,6 +3,7 @@
 namespace STORINA\Controllers;
 
 use \STORINA\Controllers\General;
+use \STORINA\Controllers\Index;
 
 defined('ABSPATH') || exit;
 
@@ -13,7 +14,7 @@ class Cache {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        $this->index_object = $this->service_container->get('OSA_index');
+        $this->index_object = $this->service_container->get(Index::class);
         require_once( ABSPATH . "wp-load.php" );
     }
 
@@ -110,7 +111,7 @@ class Cache {
             }
 
             if ($sales_price_to) {
-                $index_object = $this->service_container->get('OSA_index');
+                $index_object = $this->service_container->get(Index::class);
                 $single['data']['different'] = $this->index_object->extract_time_with_now($sales_price_to);
             }
             $result = $single;
