@@ -5,6 +5,7 @@ namespace STORINA\Controllers;
 use STORINA\Controllers\Cache;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Yith_Role_Based_Price;
+use \STORINA\Controllers\Terawallet;
 
 
 defined('ABSPATH') || exit;
@@ -36,7 +37,7 @@ class Index {
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
         do_action('osa_index_get_action_init',$this->user_id);
-        $woo_wallet = $this->service_container->get("OSA_terawallet");
+        $woo_wallet = $this->service_container->get(Terawallet::class);
         $woo_ballance = (function_exists("woo_wallet")) ? $woo_wallet->get_wallet_ballance($user_id) : -1;
         $min_topup_amount = ( function_exists("woo_wallet") ) ? (int) woo_wallet()->settings_api->get_option('min_topup_amount', '_wallet_settings_general', 0) : -1;
         $max_topup_amount = ( function_exists("woo_wallet") ) ? (int) woo_wallet()->settings_api->get_option('max_topup_amount', '_wallet_settings_general', 0) : -1;

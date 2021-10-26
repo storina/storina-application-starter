@@ -4,6 +4,7 @@ namespace STORINA\Controllers;
 
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Yith_Role_Based_Price;
+use \STORINA\Controllers\Terawallet;
 
 defined('ABSPATH') || exit;
 
@@ -1847,7 +1848,7 @@ class Cart {
             $addressType = $_POST['addressType'];
             global $wpdb, $googleID;
             if (function_exists("woo_wallet")) {
-                $terawallet = $this->service_container->get("OSA_terawallet");
+                $terawallet = $this->service_container->get(Terawallet::class);
                 $cart_id = $terawallet->get_cart_id_by_googleID($googleID);
                 $terawallet->delete_cart_meta($cart_id);
             }

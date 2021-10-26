@@ -72,7 +72,7 @@ class OSA_Router {
                 "removeCoupon" => array("removeCoupon"),
                 "orderHistory" => array("orderHistory"),
             ),
-            "OSA_terawallet" => array(
+            \STORINA\Controllers\Terawallet::class => array(
                 "walletCharge" => array("increase_ballance"),
                 "applyWallet" => array("trigger_charge","apply"),
                 "spyWallet" => array("trigger_charge","spy"),

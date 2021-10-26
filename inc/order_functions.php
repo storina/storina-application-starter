@@ -285,8 +285,8 @@ function osa_update_terawallet($order_id){
         return;
     }
     global $osa_autoload;
-    $terawallet          = $osa_autoload->service_provider->get('OSA_terawallet');
-    $wallet_applyed_ballance = get_post_meta($order_id, OSA_terawallet::meta_key,true);
+    $terawallet          = $osa_autoload->service_provider->get(\STORINA\Controllers\Terawallet::class);
+    $wallet_applyed_ballance = get_post_meta($order_id, \STORINA\Controllers\Terawallet::meta_key,true);
     if(!$terawallet->check_wallet_key($wallet_applyed_ballance)){
         return;
     }
@@ -305,7 +305,7 @@ function osa_update_terawallet($order_id){
         return;
     }
 	#do_action( 'woo_wallet_payment_processed', $order_id, $transaction_id);
-    delete_post_meta($order_id, OSA_terawallet::meta_key);
+    delete_post_meta($order_id, \STORINA\Controllers\Terawallet::meta_key);
 }
 
 add_filter("osa_index_get_app_info",function($app_info){

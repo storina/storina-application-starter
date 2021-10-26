@@ -1,11 +1,13 @@
 <?php
 
+namespace STORINA\Controllers;
+
 use STORINA\Controllers\Cart;
 use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
 
-class OSA_terawallet {
+class Terawallet {
 
     public $user;
     public $cart;
