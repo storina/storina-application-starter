@@ -3,6 +3,7 @@
 namespace STORINA\Controllers;
 
 use \STORINA\Controllers\WC_Checkout_Editor;
+use \STORINA\Libraries\JDate;
 use \STORINA\Controllers\User;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Yith_Role_Based_Price;
@@ -901,7 +902,7 @@ class Cart {
                 $masterOrder['order_number'] = 'OKC-' . $order_data['id'];
                 //$date_created                = $order_data['date_created']->date( 'Y-m-d H:i' );
                 $timestamp = $order_data['date_created']->getTimestamp();
-                $orderDate = (is_rtl())? OSA_JDate::jdate('h:i j/m/y', $timestamp) : date('j/m/y h:i', $timestamp);
+                $orderDate = (is_rtl())? JDate::jdate('h:i j/m/y', $timestamp) : date('j/m/y h:i', $timestamp);
                 $masterOrder['created_at'] = $orderDate;
                 $files = $this->exportOrderFiles($masterOrder['order_id']);
                 $products = array();
@@ -1217,7 +1218,7 @@ class Cart {
             $files = $this->exportOrderFiles($orderID);
             $masterOrder['order_number'] = 'OKC-' . $order_data['id'];
             $timestamp = $order_data['date_created']->getTimestamp();
-            $orderDate = (is_rtl())? OSA_JDate::jdate('h:i j/m/y', $timestamp) : date('j/m/y h:i', $timestamp);
+            $orderDate = (is_rtl())? JDate::jdate('h:i j/m/y', $timestamp) : date('j/m/y h:i', $timestamp);
             $masterOrder['created_at'] = $orderDate;
             $masterOrder['status'] = $order_data['status'];
             $masterOrder['total'] = intval($order_data['total']);
@@ -1494,7 +1495,7 @@ class Cart {
             }
 
             if (is_rtl()) {
-                update_post_meta($order->id, 'time4Send', OSA_JDate::jdate('l d F Y - H:i', $timestamp));
+                update_post_meta($order->id, 'time4Send', JDate::jdate('l d F Y - H:i', $timestamp));
             } else {
                 update_post_meta($order->id, 'time4Send', date('l d F Y - H:i', $timestamp));
             }

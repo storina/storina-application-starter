@@ -2,7 +2,7 @@
 
 namespace CRN\Controllers\Api;
 
-use OSA_JDate;
+use \STORINA\Libraries\JDate;
 use WC_Product;
 use CRN\Models\Message as MessageModel;
 use CRN\Controllers\Logic\UserLogic;

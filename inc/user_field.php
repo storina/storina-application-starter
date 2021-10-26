@@ -204,7 +204,7 @@ function phone_display_admin_order_meta( $order ) {
     echo '<p><strong>'.__('Shipping mobile :', 'onlinerShopApp').':</strong> <br/>' . get_post_meta( $order->id, 'shipping_mobile', true ) . '</p>';
 	$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
-	$date = (is_rtl())? OSA_JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
+	$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 		echo '<p><strong>' . __('Send box time and date :','onlinerShopApp') . '</strong> <br/>' . $date . '</p>';
 
 }
@@ -228,7 +228,7 @@ function add_mobile_number_to_dashboard($order){
 			<?php } 
 			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 			$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
-			$date = (is_rtl())? OSA_JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
+			$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 			if(!empty($timestamp)){
 			?>
             timestamp = '<li><a href="#">' + <?=__('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?= $date; ?></span></a></li>';
@@ -246,7 +246,7 @@ add_action( "woocommerce_email_after_order_table", "sendDate_email_after_order_t
 function sendDate_email_after_order_table( $order ) {
 	$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
-	$time = (is_rtl())? OSA_JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
+	$time = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 	if($timestamp)
 		echo '<p><strong>'.__('Send box time and date :','onlinerShopApp').'</strong>'. $time .'</p>';
 

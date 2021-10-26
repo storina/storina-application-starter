@@ -2,6 +2,7 @@
 
 namespace STORINA\Controllers;
 
+use \STORINA\Libraries\JDate;
 use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
@@ -158,7 +159,7 @@ class General {
         $comments = get_comments($args);
         foreach ($comments as $comment) {
             $new = strtotime($comment->comment_date);
-            $date = ( is_rtl() ) ? OSA_JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
+            $date = ( is_rtl() ) ? JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
 
             $like_count = get_comment_meta($comment->comment_ID, 'cld_like_count', true);
             if (empty($like_count)) {
@@ -205,7 +206,7 @@ class General {
         $comments = get_comments($likeArgs);
         foreach ($comments as $comment) {
             $new = strtotime($comment->comment_date);
-            $date = ( is_rtl() ) ? OSA_JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
+            $date = ( is_rtl() ) ? JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
 
             $like_count = get_comment_meta($comment->comment_ID, 'cld_like_count', true);
             if (empty($like_count)) {
@@ -244,7 +245,7 @@ class General {
         $comments = get_comments($likeArgs);
         foreach ($comments as $comment) {
             $new = strtotime($comment->comment_date);
-            $date = ( is_rtl() ) ? OSA_JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
+            $date = ( is_rtl() ) ? JDate::jdate('Y-m-d h:i:s', $new) : date('Y-m-d h:i:s', $new);
 
             $like_count = get_comment_meta($comment->comment_ID, 'cld_like_count', true);
             if (empty($like_count)) {

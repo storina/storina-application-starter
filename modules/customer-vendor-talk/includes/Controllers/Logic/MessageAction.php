@@ -2,7 +2,7 @@
 
 namespace CRN\Controllers\Logic;
 
-use OSA_JDate;
+use \STORINA\Libraries\JDate;
 use WC_Product;
 use CRN\Models\Message;
 use CRN\Controllers\Logic\NotifAction;
@@ -63,8 +63,8 @@ class MessageAction {
     public function prepare_message_data($message,$user_id){
         $message_data = $message->get_data();
         $message_data['owner'] = ($message->get_data("owner_id") == $user_id);
-        $message_data['updated_at_jalali_date'] = OSA_JDate::jdate('Y/m/d' , $message->get_data('updated_at'));
-        $message_data['updated_at_jalali_time'] = OSA_JDate::jdate('H:i' , $message->get_data('updated_at'));
+        $message_data['updated_at_jalali_date'] = JDate::jdate('Y/m/d' , $message->get_data('updated_at'));
+        $message_data['updated_at_jalali_time'] = JDate::jdate('H:i' , $message->get_data('updated_at'));
         $message_data['message_id'] = $message->id;
         return $message_data;
     }

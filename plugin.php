@@ -62,7 +62,7 @@ class storina_application_init {
     public function boot_modules() {
         $requires = array(
             "includes/helpers.php",
-            "includes/Libraries/OSA_JDate.php",
+            "includes/Libraries/jdate.php",
             "inc/woocommerce.php",
             "inc/persian-woocommerce-shipping.php",
             "inc/location-query-filter.php",
