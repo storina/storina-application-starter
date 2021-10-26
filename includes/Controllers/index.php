@@ -2,6 +2,7 @@
 
 namespace STORINA\Controllers;
 
+use \STORINA\Controllers\User;
 use STORINA\Controllers\Cache;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Yith_Role_Based_Price;
@@ -33,7 +34,7 @@ class Index {
         $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
 
         $userToken = $_POST['userToken'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
         do_action('osa_index_get_action_init',$this->user_id);

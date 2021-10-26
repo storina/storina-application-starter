@@ -3,6 +3,7 @@
 namespace CRN\Controllers\Web;
 
 use WP_User;
+use \STORINA\Controllers\User;
 use CRN\Models\Message;
 
 class UserController {
@@ -26,7 +27,7 @@ class UserController {
 
     public function get_user_by_token($user_token){
         global $osa_autoload;
-        $user_action = $osa_autoload->service_provider->get('OSA_user');
+        $user_action = $osa_autoload->service_provider->get(User::class);
         $user_token = $_POST['userToken'];
         $user_id = $user_action->get_userID_byToken($user_token);
         return $user_id;

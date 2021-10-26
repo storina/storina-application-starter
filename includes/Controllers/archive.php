@@ -3,6 +3,7 @@
 namespace STORINA\Controllers;
 
 use \WP_Query;
+use \STORINA\Controllers\User;
 use \STORINA\Controllers\Cache;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Index;
@@ -268,7 +269,7 @@ class Archive {
         $record = $OSA_cache->getCache('archive', $cat_id . $sort, $page, $exist)->json;
         $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
         $userToken = $_POST['userToken'];
-        $user_action = $this->service_container->get('OSA_user');
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
         $user = get_user_by('id', $user_id);
@@ -931,7 +932,7 @@ class Archive {
                 $args['author__in'] = $activeVendors;
             }
             $userToken = $_POST['userToken'];
-            $user_action = $this->service_container->get('OSA_user');
+            $user_action = $this->service_container->get(User::class);
             $user_id = $user_action->get_userID_byToken($userToken);
             $this->user_id = $user_id;
             do_action('osa_archive_search_action_init',$s,$user_id);

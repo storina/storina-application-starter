@@ -8,7 +8,7 @@ class OSA_Router {
 
     public function __construct() {
         $this->map = array(
-            "OSA_user" => array(
+            \STORINA\Controllers\User::class => array(
                 "resendCode" => array("resendCode"),
                 "verify" => array("verify"),
                 "Register" => array("register"),

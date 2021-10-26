@@ -1,12 +1,10 @@
 <?php
 
+namespace STORINA\Controllers;
+
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-class OSA_wc_checkout_field_editor {
+class WC_Checkout_Editor {
 
     private $slug;
     public $address_type;

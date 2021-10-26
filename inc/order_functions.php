@@ -336,7 +336,7 @@ function osa_add_notif_token() {
 		return;
 	}
 	global $osa_autoload;
-	$user_action = $osa_autoload->service_provider->get('OSA_user');
+	$user_action = $osa_autoload->service_provider->get(\STORINA\Controllers\User::class);
 	$user_id = $user_action->get_userID_byToken($user_token);
 	if (!is_numeric($user_id)) {
 		return;

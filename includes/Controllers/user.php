@@ -1,5 +1,6 @@
 <?php
 
+namespace STORINA\Controllers;
 
 use \STORINA\Controllers\Yith_Role_Based_Price;
 use \STORINA\Controllers\Index;
@@ -7,7 +8,7 @@ use \STORINA\Controllers\Terawallet;
 
 defined('ABSPATH') || exit;
 
-class OSA_user {
+class User {
 
     public $yith_price_role = false;
     public $user_id = false;

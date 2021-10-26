@@ -2,6 +2,8 @@
 
 namespace STORINA\Controllers;
 
+use \STORINA\Controllers\WC_Checkout_Editor;
+use \STORINA\Controllers\User;
 use \STORINA\Controllers\General;
 use \STORINA\Controllers\Yith_Role_Based_Price;
 use \STORINA\Controllers\Terawallet;
@@ -23,7 +25,7 @@ class Cart {
         require_once( ABSPATH . "wp-load.php" );
         if (isset($_POST['userToken'])) {
             $userToken = $_POST['userToken'];
-            $user_action = $this->service_container->get('OSA_user');
+            $user_action = $this->service_container->get(User::class);
             $this->user_id = $user_action->get_userID_byToken($userToken);
         }
         $this->check_plugin_complate();
@@ -34,17 +36,17 @@ class Cart {
 
         //Checkout Field Editor for WooCommerce BY ThemeHiGH
         if (class_exists("WC_Checkout_Field_Editor")) {
-            $this->wc_checkout_fields_editor = $this->service_container->get('OSA_wc_checkout_field_editor');
+            $this->wc_checkout_fields_editor = $this->service_container->get(WC_Checkout_Editor::class);
             $this->wc_checkout_fields_editor->set_slug("old");
         } elseif (class_exists("THWCFD_Utils")) {
-            $this->wc_checkout_fields_editor = $this->service_container->get("OSA_wc_checkout_field_editor");
+            $this->wc_checkout_fields_editor = $this->service_container->get(WC_Checkout_Editor::class);
             $this->wc_checkout_fields_editor->set_slug("new");
         }
     }
 
     public function retrive_cart() {
         $userToken = ( isset($_POST['userToken']) ) ? $_POST['userToken'] : "";
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $basket = $this->get_cart(true);
         $result = array(
@@ -289,7 +291,7 @@ class Cart {
         $osa_get_option = osa_get_option('woocommerce_ship_to_countries');
         if ($osa_get_option != 'disabled') {
             $addressType = @$sessionRecord->addressType;
-            $user_action = $this->service_container->get("OSA_user");
+            $user_action = $this->service_container->get(User::class);
             $userToken = @$_POST['userToken'];
             $user_id = $user_action->get_userID_byToken($userToken);
             $address = get_user_meta($user_id, $addressType . '_address_1', true);
@@ -882,7 +884,7 @@ class Cart {
     public function orderHistory() {
 
         $userToken = $_POST['userToken'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             $AllOrders = array();
@@ -1032,7 +1034,7 @@ class Cart {
 
     public function removeCoupon() {
         $userToken = $_POST['userToken'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
 
@@ -1083,7 +1085,7 @@ class Cart {
         $couponCode = strtolower($_POST['couponCode']);
         $userToken = $_POST['userToken'];
         $googleID = $_POST['googleID'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             wc_empty_cart();
@@ -1189,7 +1191,7 @@ class Cart {
     public function getOrder() {
         $userToken = $_POST['userToken'];
         $masterID = $_POST['id'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             $orderID = $_POST['id'];
@@ -1322,7 +1324,7 @@ class Cart {
         }
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             wc_empty_cart();
@@ -1681,7 +1683,7 @@ class Cart {
         $userToken = $_POST['userToken'];
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             $this->cartReview();
@@ -1743,7 +1745,7 @@ class Cart {
 
     public function cartReview() {
         $userToken = $_POST['userToken'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             $chosenShippingMethodID = $_POST['shipping_method_id'];
@@ -1796,7 +1798,7 @@ class Cart {
         }
         $cart = $this->update_items($cart);
 
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         //var_dump($user_id);
         if ($user_id) {

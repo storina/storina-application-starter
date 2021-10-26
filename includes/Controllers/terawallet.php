@@ -2,7 +2,8 @@
 
 namespace STORINA\Controllers;
 
-use STORINA\Controllers\Cart;
+use \STORINA\Controllers\User;
+use \STORINA\Controllers\Cart;
 use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
@@ -23,7 +24,7 @@ class Terawallet {
         global $wpdb;
         $this->wpdb = $wpdb;
         $this->service_container = $service_container;
-        $this->user = $this->service_container->get("OSA_user");
+        $this->user = $this->service_container->get(User::class);
         $this->cart = $this->service_container->get(Cart::class);
         add_filter("osa_user_dologin_result", array($this,"update_user_wallet_login"),10,2);
         add_filter("osa_user_verify_result",array($this,"update_user_wallet_verify"),10,2);

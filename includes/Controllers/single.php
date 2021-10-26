@@ -2,7 +2,8 @@
 
 namespace STORINA\Controllers;
 
-use STORINA\Controllers\Cache;
+use \STORINA\Controllers\User;
+use \STORINA\Controllers\Cache;
 use \STORINA\Controllers\Yith_Role_Based_Price;
 
 
@@ -95,7 +96,7 @@ class Single {
         $masterID = $_POST['id'];
 
         $userToken = ( isset($_POST['userToken']) ) ? $_POST['userToken'] : "";
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
         do_action('osa_single_get_action_init',$masterID,$this->user_id);
@@ -526,7 +527,7 @@ class Single {
     private function wishlistStatus() {
         $userToken = $_POST['userToken'];
         $id = $_POST['id'];
-        $user_action = $this->service_container->get("OSA_user");
+        $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             global $wpdb;
@@ -1141,7 +1142,7 @@ class Single {
         $report_content = $_POST['report_content'];
 
         $product_object = wc_get_product($product_id);
-        $user = $this->service_container->get("OSA_user");
+        $user = $this->service_container->get(User::class);
         $user_id = $user->get_userID_byToken($user_token);
         $user_object = get_user_by('ID', $user_id);
 
