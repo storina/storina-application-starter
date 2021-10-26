@@ -4,7 +4,7 @@
   Plugin Name: Storina Application Starter
   Plugin URI: https://storina.com
   Description: The REST API works on a person shopping application. It compatible with any woocommerce websites.
-  Version: 1.0.0
+  Version: 1.1.0
   Author: storina
   License: A "Slug" license name e.g. GPL2
  */
