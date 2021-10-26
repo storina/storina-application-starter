@@ -45,7 +45,7 @@ class OSA_Router {
                 "staticContents" => array("staticContents"),
                 "cities" => array("cities")
             ),
-            "OSA_single" => array(
+            \STORINA\Controllers\Single::class => array(
                 "productReport" => array("report_product"),
                 "single" => array("get"),
                 "lastViewed" => array("getView"),

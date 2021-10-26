@@ -23,7 +23,7 @@ class OSA_Autoload {
             "OSA_user" => trailingslashit(__DIR__) . "Controllers/user.php",
             \STORINA\Controllers\Archive::class => trailingslashit(__DIR__) . "Controllers/archive.php",
             \STORINA\Controllers\Cart::class => trailingslashit(__DIR__) . "Controllers/cart.php",
-            "OSA_single" => trailingslashit(__DIR__) . "Controllers/single.php",
+            \STORINA\Controllers\Single::class => trailingslashit(__DIR__) . "Controllers/single.php",
             "OSA_terawallet" => trailingslashit(__DIR__) . "Controllers/terawallet.php",
         );
     }

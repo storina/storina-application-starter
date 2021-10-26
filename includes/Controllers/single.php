@@ -1,5 +1,7 @@
 <?php
 
+namespace STORINA\Controllers;
+
 use STORINA\Controllers\Cache;
 use \STORINA\Controllers\Yith_Role_Based_Price;
 
@@ -7,7 +9,7 @@ use \STORINA\Controllers\Yith_Role_Based_Price;
 defined('ABSPATH') || exit;
 
 
-class OSA_single {
+class Single {
 
     public $user_id = false;
     public $yith_price_role = false;
