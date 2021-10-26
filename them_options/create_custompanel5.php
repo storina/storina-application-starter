@@ -1,7 +1,7 @@
 <?php 
 $option_names = $page['option-names'];
 global $osa_autoload;
-$general = $osa_autoload->service_provider->get('OSA_general');
+$general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 $action = $general->clickEventList();
 $columns = [
     1 => __("One column",'onlinerShopApp'),

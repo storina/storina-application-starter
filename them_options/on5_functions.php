@@ -199,7 +199,7 @@ add_action('woocommerce_cart_is_empty', function() {
         return;
     }
     global $osa_autoload;
-    $general = $osa_autoload->service_provider->get('OSA_general');
+    $general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
     $domain  = $_SERVER['SERVER_NAME'];
     $domain  = $general->validateDomain( $domain, true, '' );
     ob_start();
@@ -225,7 +225,7 @@ add_action('woocommerce_cart_is_empty', function() {
 
 function bta_link_in_emptyCart() {
 	global $osa_autoload;
-	$general          = $osa_autoload->service_provider->get('OSA_general');
+	$general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	$domain  = $_SERVER['SERVER_NAME'];
 	$domain  = $general->validateDomain( $domain, true, '' );
 	
@@ -248,7 +248,7 @@ function bta_link( $order_id ) {
             return;
         }
 	global $osa_autoload;
-	$general          = $osa_autoload->service_provider->get('OSA_general');
+	$general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	$domain  = str_replace( array('https://www.', 'http://www.', 'http://', 'https://' ), '', home_url() );
 	$english_app_title = osa_get_option("english_app_name");
 	$domain  = $general->validateDomain( $domain, true, '', $english_app_title );
@@ -440,7 +440,7 @@ add_filter('osa_index_get_app_info',function($app_info,$user_id){
 		return $app_info;
 	}
 	global $osa_autoload;
-	$general = $osa_autoload->service_provider->get('OSA_general');
+	$general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	$link_type = osa_get_option('app_popup_link_type');
 	$link_value = osa_get_option('app_popup_link_value');
 	$link_action = $general->clickEvent($link_type,$link_value);

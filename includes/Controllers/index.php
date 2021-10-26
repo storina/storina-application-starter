@@ -1,6 +1,7 @@
 <?php
 
 use STORINA\Controllers\Cache;
+use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
 
@@ -27,7 +28,7 @@ class OSA_index {
         $OSA_cache = $this->service_container->get(Cache::class);
         $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
         $record = $OSA_cache->getCache('index', $itemID);
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
 
         $userToken = $_POST['userToken'];
@@ -239,7 +240,7 @@ class OSA_index {
                 ),
                 'posts_per_page' => $count
             );
-            $general = $this->service_container->get("OSA_general");
+            $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
             if (strlen($_POST['vendor_town']) > 2) {
                 $args['author__in'] = $activeVendors;
@@ -331,7 +332,7 @@ class OSA_index {
     }
 
     private function sliderItems($elementID, $iiii) {
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $titles = osa_get_option('top_slider_titles' . $elementID[$iiii]);
         $banners = osa_get_option('top_slider_images' . $elementID[$iiii]);
         $links = osa_get_option('top_slider_links' . $elementID[$iiii]);
@@ -404,7 +405,7 @@ class OSA_index {
         $link_types_row = osa_get_option($options['link_type']);
         $link_values_row = osa_get_option($options['link_value']);
         $banner_columns = osa_get_option($options['column']);
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $onClickModel = $general->clickEvent($typeLinkBanner1[$i], $linkBanner1[$i]);
         if(!empty($banners_row)){
             for($i=0;$i<count($banners_row);$i++){
@@ -435,7 +436,7 @@ class OSA_index {
     }
 
     private function scrollADV($elementID, $iiii) {
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         //                             Horizontal images
         $banners = osa_get_option('Sbanner_banner' . $elementID[$iiii]);
         $typeLinkBanner = osa_get_option('Sbanner_linkType' . $elementID[$iiii]);
@@ -511,7 +512,7 @@ class OSA_index {
             }
             $args['order'] = $BoxOrder;
         }
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;
@@ -782,7 +783,7 @@ class OSA_index {
     }
 
     public function scrollBox($element_id,$i){
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $titles = osa_get_option('Sb_title' . $element_id[$i]);
         $icon_links = osa_get_option('Sb_banner' . $element_id[$i]);
         $link_types = osa_get_option('Sb_linkType' . $element_id[$i]);

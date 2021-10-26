@@ -2,6 +2,8 @@
 
 namespace STORINA\Controllers;
 
+use \STORINA\Controllers\General;
+
 defined('ABSPATH') || exit;
 
 class Cache {
@@ -46,7 +48,7 @@ class Cache {
             $itemID = $itemID . '/' . $page . $param;
         }
         $result = '';
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $table = $wpdb->prefix . 'OSA_cache';
         $Record = $wpdb->get_row("SELECT * FROM $table WHERE type = '$type' AND itemID = '$itemID'");
         if (!$Record) {

@@ -1,6 +1,7 @@
 <?php
 
 use STORINA\Controllers\Cart;
+use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
 

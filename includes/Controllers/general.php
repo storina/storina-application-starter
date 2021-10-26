@@ -1,12 +1,12 @@
 <?php
 
+namespace STORINA\Controllers;
+
+use \STORINA\Controllers\General;
+
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-class OSA_general {
+class General {
 
     public $log_id;
     public $service_container;
@@ -1094,7 +1094,7 @@ class OSA_general {
     }
 
     public function get_vendor_towns() {
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $type = osa_get_option('appVendorlist');
         $app_vendor_grouping = osa_get_option('app_vendor_grouping');
         $states = array();

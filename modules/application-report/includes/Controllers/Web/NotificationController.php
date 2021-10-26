@@ -3,6 +3,7 @@
 namespace VOS\Controllers\Web;
 
 use VOS\Models\Viewer;
+use \STORINA\Controllers\General;
 
 class NotificationController {
 
@@ -20,7 +21,7 @@ class NotificationController {
 
     public function get_notification_handler(){
         global $osa_autoload;
-        return $osa_autoload->service_provider->get('OSA_general');
+        return $osa_autoload->service_provider->get(General::class);
     }
 
     public function send_notification(){

@@ -2,6 +2,8 @@
 
 namespace STORINA\Controllers;
 
+use \STORINA\Controllers\General;
+
 defined('ABSPATH') || exit;
 
 class Cart {
@@ -57,7 +59,7 @@ class Cart {
         WC()->session->destroy_session();
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cart_array = $general->pre_get_items();
         $cart = $cart_array['cart_new'];
         $prods = $basket = array();
@@ -383,7 +385,7 @@ class Cart {
     }
 
     public function make_variations($item_id) {
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $_product = new WC_Product_Variation($item_id);
         $variation = $_product->get_variation_attributes();
         if (is_a($variation, 'WC_Product_Variation')) {
@@ -407,7 +409,7 @@ class Cart {
                 if (!is_wp_error($term) && !empty($term->name)) {
                     $term_id = $term->term_id;
                     $attrID = wc_attribute_taxonomy_id_by_name($tax);
-                    $general = $this->service_container->get("OSA_general");
+                    $general = $this->service_container->get(General::class);
                     $jcaa_attribute_type = $general->get_attr_setting($attrID, 'jcaa_attribute_type');
                     //var_dump(wc_get_attribute_id());
                     //$jcaa_attribute_label = $this->get_attr_setting($attrID, 'jcaa_attribute_label');
@@ -741,7 +743,7 @@ class Cart {
 
 
         global $wpdb, $sessionRecord;
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $table = $wpdb->prefix . 'OSA_cart';
         $cart = $general->get_items();
         $validation = apply_filters('woap_add_to_cart_validation',$validation,$item,$cart);
@@ -853,7 +855,7 @@ class Cart {
 
     public function removeFromCart() {
         $id = $_POST['id'];
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cart = $general->get_items();
 
         foreach ($cart as $index => $cart_item) {
@@ -1083,7 +1085,7 @@ class Cart {
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             wc_empty_cart();
-            $general = $this->service_container->get("OSA_general");
+			$general = $this->service_container->get(General::class);
             $cart = $general->get_items();
             foreach ($cart as $item => $values) {
                 WC()->cart->add_to_cart($values['product_id'], $values['quantity'], $values['variation_id'], $values['variation']);
@@ -1322,7 +1324,7 @@ class Cart {
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
             wc_empty_cart();
-            $general = $this->service_container->get("OSA_general");
+            $general = $this->service_container->get(General::class);
             $cart = $general->get_items();
             foreach ($cart as $item => $values) {
                 WC()->cart->add_to_cart($values['product_id'], $values['quantity'], $values['variation_id'], $values['variation']);
@@ -1620,7 +1622,7 @@ class Cart {
 
     private function get_shipping_method() {
         wc_empty_cart();
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cart = $general->get_items();
         foreach ($cart as $item => $values) {
             WC()->cart->add_to_cart($values['product_id'], $values['quantity'], $values['variation_id'], $values['variation']);
@@ -1682,7 +1684,7 @@ class Cart {
         if ($user_id) {
             $this->cartReview();
             wc_empty_cart();
-            $general = $this->service_container->get("OSA_general");
+            $general = $this->service_container->get(General::class);
             $cart = $general->get_items();
             foreach ($cart as $item => $values) {
                 WC()->cart->add_to_cart($values['product_id'], $values['quantity'], $values['variation_id'], $values['variation']);
@@ -1767,7 +1769,7 @@ class Cart {
         $product_count = $_POST['product_count'];
 
         $product_count = json_decode(stripcslashes($product_count), true);
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cart = $general->get_items();
         foreach ($product_count as $productID => $item) {
             $tmp = explode('_', $productID);

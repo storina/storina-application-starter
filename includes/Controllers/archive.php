@@ -4,6 +4,7 @@ namespace STORINA\Controllers;
 
 use \WP_Query;
 use \STORINA\Controllers\Cache;
+use \STORINA\Controllers\General;
 
 defined('ABSPATH') || exit;
 
@@ -31,7 +32,7 @@ class Archive {
     }
 
     public function store() {
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $data = array();
         $index = $this->service_container->get('OSA_index');
         $vendor_id = intval($_POST['vendor_id']);
@@ -193,7 +194,7 @@ class Archive {
 
             return ( $data );
         }
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
         $count = - 1;
         $offset = ( $page - 1 ) * $count;
@@ -299,7 +300,7 @@ class Archive {
     }
 
     private function slider($cat_id) {
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $slider_images = osa_get_option('apparchive_slider_images');
         //$slider_titles = osa_get_option('apparchive_slider_titles');
         $slider_links = osa_get_option('apparchive_slider_links');
@@ -370,7 +371,7 @@ class Archive {
     }
 
     private function banners($cat_id) {
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $banners1 = osa_get_option('HArchive_banner1');
         $linkBanner1 = osa_get_option('HArchive_linkBanner1');
         $typeLinkBanner1 = osa_get_option('HArchive_typeLinkBanner1');
@@ -431,7 +432,7 @@ class Archive {
             'meta_key' => 'total_sales',
             'orderby' => 'meta_value_num',
         );
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;
@@ -526,7 +527,7 @@ class Archive {
             'post_type' => 'product',
             'posts_per_page' => 8,
         );
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;
@@ -630,7 +631,7 @@ class Archive {
             'paged' => $paged,
             'posts_per_page' => $count,
         );
-        $general = $this->service_container->get('OSA_general');
+        $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;
@@ -922,7 +923,7 @@ class Archive {
                 'paged' => $paged,
                 'posts_per_page' => $count,
             );
-            $general = $this->service_container->get('OSA_general');
+            $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
             if (strlen($_POST['vendor_town']) > 2) {
                 $args['author__in'] = $activeVendors;

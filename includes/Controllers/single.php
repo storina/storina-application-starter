@@ -34,7 +34,7 @@ class OSA_single {
     public function getContent(){
         $post_id = (is_numeric($_POST['id']))? $_POST['id'] : 0;
         $product = wc_get_product($post_id);
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         return $general->extractContent($product->get_description());
     }
     
@@ -103,7 +103,7 @@ class OSA_single {
         $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('single', $masterID);
         $backorder_text = osa_get_option('app_backorder_text');
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
         $viewCounter = $this->save_post_view($masterID); // افزایش تعداد بازدید
         if (!empty($record) AND $cache == true) {
@@ -550,7 +550,7 @@ class OSA_single {
                 unset($attributes['position']);
                 unset($attributes['visible']);
                 unset($attributes['variation']);
-                $general = $this->service_container->get("OSA_general");
+                $general = $this->service_container->get(General::class);
                 //$jcaa_attribute_size = $general->get_attr_setting($attributes['id'], 'jcaa_attribute_size');
                 //$jcaa_attribute_style = $general->get_attr_setting($attributes['id'], 'jcaa_attribute_style');
                 $jcaa_attribute_type = $general->get_attr_setting($attributes['id'], 'jcaa_attribute_type');
@@ -860,7 +860,7 @@ class OSA_single {
                     )
                 )
             );
-            $general = $this->service_container->get("OSA_general");
+            $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
             if (strlen($_POST['vendor_town']) > 2) {
                 $args['author__in'] = $activeVendors;
@@ -876,7 +876,7 @@ class OSA_single {
                 'meta_value' => 'instock',
                 'post__not_in' => array($masterID)
                     ));
-            $general = $this->service_container->get("OSA_general");
+            $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
             if (strlen($_POST['vendor_town']) > 2) {
                 $args['author__in'] = $activeVendors;
@@ -936,7 +936,7 @@ class OSA_single {
             'meta_key' => 'total_sales',
             'orderby' => 'meta_value_num',
         );
-        $general = $this->service_container->get("OSA_general");
+        $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;

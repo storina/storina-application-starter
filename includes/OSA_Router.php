@@ -2,10 +2,6 @@
 
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
 class OSA_Router {
 
     public $map;
@@ -33,7 +29,7 @@ class OSA_Router {
             "OSA_index" => array(
                 "index" => array("get"),
             ),
-            "OSA_general" => array(
+            \STORINA\Controllers\General::class => array(
                 "layeredCategories" => array("layeredCategories"),
                 "backorderForm" => array("backorderForm"),
                 "singleComment" => array("singleComment"),

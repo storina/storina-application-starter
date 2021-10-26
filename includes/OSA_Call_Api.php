@@ -2,9 +2,7 @@
 
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
+use \STORINA\Controllers\General;
 
 class OSA_Call_Api {
 
@@ -15,7 +13,7 @@ class OSA_Call_Api {
     public function __construct($service_provider) {
         $this->router = new OSA_Router();
         $this->service_provider = $service_provider;
-        $this->general = $service_provider->get('OSA_general');
+        $this->general = $service_provider->get(General::class);
         add_action('generate_rewrite_rules', array($this, 'add_rewrite_rule'));
         add_action('query_vars', array($this, 'add_query_vars'));
         add_action('parse_request', array($this, 'parse_api_request'));

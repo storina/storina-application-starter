@@ -20,7 +20,7 @@
         $product_cats[ - 1 ] = __( "All", 'onlinerShopApp' );
         $product_cats        = hierarchical_category_tree2( 0, 'product_cat' );
         global $osa_autoload;
-        $general             = $osa_autoload->service_provider->get('OSA_general');
+        $general             = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
         $action              = $general->clickEventList();
         if ( function_exists( 'dokan_get_store_info' ) ) {
             $action['VendorPage'] = __( 'Open vendor page', 'onlinerShopApp' );

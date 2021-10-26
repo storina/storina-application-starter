@@ -2,10 +2,6 @@
 
 defined('ABSPATH') || exit;
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
 class OSA_Autoload {
 
     public $service_provider;
@@ -23,7 +19,7 @@ class OSA_Autoload {
             "OSA_price_based_roles" => trailingslashit(__DIR__) . "Controllers/price_based_roles.php",
             "OSA_index" => trailingslashit(__DIR__) . "Controllers/index.php",
             \STORINA\Controllers\Cache::class => trailingslashit(__DIR__) . "Controllers/cache.php",
-            "OSA_general" => trailingslashit(__DIR__) . "Controllers/general.php",
+            \STORINA\Controllers\General::class => trailingslashit(__DIR__) . "Controllers/general.php",
             "OSA_user" => trailingslashit(__DIR__) . "Controllers/user.php",
             \STORINA\Controllers\Archive::class => trailingslashit(__DIR__) . "Controllers/archive.php",
             \STORINA\Controllers\Cart::class => trailingslashit(__DIR__) . "Controllers/cart.php",

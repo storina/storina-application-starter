@@ -11,7 +11,7 @@ if($pages){
 array_push($pages, $info);
 }else{$pages = Array ($info);}
 global $osa_autoload;
-$general = $osa_autoload->service_provider->get('OSA_general');
+$general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 $types = $general->clickEventList();
 $options=array(
     array(

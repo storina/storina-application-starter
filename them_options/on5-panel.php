@@ -494,7 +494,7 @@ function uploadFileFromUrl( $postID, $url, $title = '' ) {
 }
 function ONLINER_send_notif(){
         global $osa_autoload;
-        $general          = $osa_autoload->service_provider->get('OSA_general');
+        $general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	//error_reporting(E_ALL);
 	wp_enqueue_script('jquery');
 	if(function_exists('wp_enqueue_media')){
