@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 $stylesheet = ("fa_IR" == get_locale())? "rtl.css" : "style.css";
 wp_enqueue_style('osa-rtl-style', trailingslashit(THEMOPTION_OSAU) . 'assets/css/' . $stylesheet);
-wp_enqueue_style('woap-iran-yekan',trailingslashit(WOAP_PDU) . "assets/css/iran-yekan.css");
+wp_enqueue_style('woap-iran-yekan',trailingslashit(STORINA_PDU) . "assets/css/iran-yekan.css");
 ?>
 <link rel="stylesheet" type="text/css" href="<?= THEMOPTION_OSAU; ?>css/screen.css">
 <?php

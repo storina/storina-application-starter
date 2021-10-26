@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 
 define("WOAB_PRU", plugin_basename(__FILE__));
 define("WOAB_PRT", basename(__DIR__));
-define("WOAB_PDU", trailingslashit(WOAP_PDU) . 'modules/woap-builder-service');
+define("WOAB_PDU", trailingslashit(STORINA_PDU) . 'modules/woap-builder-service');
 define("WOAB_PDP", trailingslashit(WOAP_PDP) . 'modules/woap-builder-service');
 define("WOAB_TMP", trailingslashit(WOAB_PDP) . "public/");
 define("WOAB_ADM", trailingslashit(WOAB_PDP) . "admin/");

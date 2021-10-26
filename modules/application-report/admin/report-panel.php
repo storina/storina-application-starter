@@ -2,7 +2,7 @@
 if (!current_user_can('manage_options')) {
     return;
 }
-wp_enqueue_style('woap-iran-yekan',trailingslashit(WOAP_PDU) . "assets/css/iran-yekan.css");
+wp_enqueue_style('woap-iran-yekan',trailingslashit(STORINA_PDU) . "assets/css/iran-yekan.css");
 wp_enqueue_style('osa-report-admin-style',trailingslashit( VOS_PDU ) . 'admin/assets/css/style.css');
 wp_enqueue_script('osa-report-chartjs-library', trailingslashit( VOS_PDU ) . 'admin/assets/js/chart.js', ['jquery'], true, 1);
 wp_enqueue_script('osa-report-main-script', trailingslashit( VOS_PDU ) . 'admin/assets/js/script.js', ['jquery','osa-report-chartjs-library'], true, 1);
