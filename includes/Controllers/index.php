@@ -770,7 +770,7 @@ class Index {
                 $output['id'] = get_the_ID(  );
                 $output['title'] = get_the_title(  );
                 $output['image'] = (has_post_thumbnail())? get_the_post_thumbnail_url() : STORINA_PLUGIN_URL . "/assets/images/notp.png"; 
-                $output['excerpt'] = woap_content_excerpt(get_the_content( ),150);
+                $output['excerpt'] = storina_content_excerpt(get_the_content( ),150);
                 $data[] = $output;
                 //OUTPUT
             }
