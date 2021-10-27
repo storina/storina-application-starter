@@ -27,62 +27,59 @@ function storina_content_excerpt($content,$count) {
     return $output;
 }
 
-if(! function_exists('hierarchical_category_tree3')){
-	function hierarchical_category_tree3( $cat,$tax,&$category_list=[] ) {
-		$categories = get_categories('taxonomy='.$tax.'&hide_empty=0&orderby=name&hierarchical=true&parent='.$cat);
-		foreach ($categories as $category ) {
-			$ancestors = get_ancestors( $category->cat_ID, $tax );
-			$str = str_repeat('&nbsp;_&nbsp;',count($ancestors));
-			$category_list[$category->cat_ID] = $str.$category->cat_name.' ('.$category->count.')';
-			hierarchical_category_tree3( $category->cat_ID,$tax,$category_list );
-		}
-		return $category_list ?? [];
+function storina_hierarchical_category_tree3( $cat,$tax,&$category_list=[] ) {
+	$categories = get_categories('taxonomy='.$tax.'&hide_empty=0&orderby=name&hierarchical=true&parent='.$cat);
+	foreach ($categories as $category ) {
+		$ancestors = get_ancestors( $category->cat_ID, $tax );
+		$str = str_repeat('&nbsp;_&nbsp;',count($ancestors));
+		$category_list[$category->cat_ID] = $str.$category->cat_name.' ('.$category->count.')';
+		storina_hierarchical_category_tree3( $category->cat_ID,$tax,$category_list );
 	}
-}
-if(! function_exists('hierarchical_category_array2')) {
-	function hierarchical_category_array2($cat, $tax)
-	{
-		global $product_terms;
-		$taxonomy = array(
-			$tax
-		);
-		$args = array(
-			'hide_empty' => false,
-			'parent' => $cat,
-		);
-		$productcategories = get_terms($taxonomy, $args);
-		$tmp = array();
-		foreach ($productcategories as $category_list) {
-			$args = array(
-				'hide_empty' => true,
-				'parent' => $category_list->term_id,
-			);
-			$childs = get_terms($taxonomy, $args);
-			if (!empty($childs)) {
-				$childArray = array();
-				foreach ($childs as $child) {
-					$childArray[] = array(
-						'name' => $child->name,
-						'id' => $child->term_id,
-					);
-				}
-				$product_terms[] = array(
-					'name' => $category_list->name,
-					'id' => $category_list->term_id,
-					'childs' => $childArray,
-				);
-			} else {
-				$product_terms[] = array(
-					'name' => $category_list->name,
-					'id' => $category_list->term_id,
-				);
-			}
-		}
-		return $product_terms;
-	}
+	return $category_list ?? [];
 }
 
-function deleteSingleCache($post_id){
+function storina_hierarchical_category_array2($cat, $tax)
+{
+	global $product_terms;
+	$taxonomy = array(
+		$tax
+	);
+	$args = array(
+		'hide_empty' => false,
+		'parent' => $cat,
+	);
+	$productcategories = get_terms($taxonomy, $args);
+	$tmp = array();
+	foreach ($productcategories as $category_list) {
+		$args = array(
+			'hide_empty' => true,
+			'parent' => $category_list->term_id,
+		);
+		$childs = get_terms($taxonomy, $args);
+		if (!empty($childs)) {
+			$childArray = array();
+			foreach ($childs as $child) {
+				$childArray[] = array(
+					'name' => $child->name,
+					'id' => $child->term_id,
+				);
+			}
+			$product_terms[] = array(
+				'name' => $category_list->name,
+				'id' => $category_list->term_id,
+				'childs' => $childArray,
+			);
+		} else {
+			$product_terms[] = array(
+				'name' => $category_list->name,
+				'id' => $category_list->term_id,
+			);
+		}
+	}
+	return $product_terms;
+}
+
+function storina_single_cache($post_id){
 	global $wpdb;
 	$table = $wpdb->prefix.'OSA_cache';
 	$wpdb->delete( $table, array( 'type' => 'single','itemID' => $post_id ) );
@@ -90,17 +87,17 @@ function deleteSingleCache($post_id){
 	$wpdb->delete( $table, array( 'type' => 'archive' ) );
 }
 
-add_action( 'save_post', 'deleteSingleCache' );
-add_action( 'delete_post', 'deleteSingleCache' );
+add_action( 'save_post', 'storina_single_cache' );
+add_action( 'delete_post', 'storina_single_cache' );
 
-function deleteTermCache($term_id, $taxonomy){
+function storina_delete_term_cache($term_id, $taxonomy){
 	global $wpdb;
 	$table = $wpdb->prefix.'OSA_cache';
 	$wpdb->delete( $table, array( 'type' => 'index','itemID' => 0 ) );
 	$wpdb->delete( $table, array( 'type' => 'archive' ,'itemID' => $term_id) );
 }
-add_action( 'edited_product_cat', 'deleteTermCache', 10, 2 );
-add_action( 'deleted_product_cat', 'deleteTermCache', 10, 2 );
+add_action( 'edited_product_cat', 'storina_delete_term_cache', 10, 2 );
+add_action( 'deleted_product_cat', 'storina_delete_term_cache', 10, 2 );
 
 function deleteIdexCache(){
 	global $wpdb;

@@ -5,7 +5,7 @@ $info=array(
 	'title'       => __( "Post box", "onlinerShopApp" ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 $category[-1] = __("All",'onlinerShopApp');
-$category = hierarchical_category_tree3(0,'category');
+$category = storina_hierarchical_category_tree3(0,'category');
 global $pages;
 if($pages){
     array_push($pages, $info);
