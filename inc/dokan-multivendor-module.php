@@ -1,7 +1,7 @@
 <?php
 
 add_action('init',function(){
-    if(!osa_spmv_dokan_multivendor_activation()){
+    if(!storina_spmv_dokan_multivendor_activation()){
         return;
     }
     $query_vars_filters = array(
@@ -22,17 +22,13 @@ add_action('init',function(){
     $vendor_town = $_POST['vendor_town'] ?? false;
     foreach ($query_vars_filters as $filter){
         if(false == ($vendor_town > 2) && false){
-            add_filter($filter, "osa_spmv_archive_filter",20,1);
+            add_filter($filter, "storina_spmv_archive_filter",20,1);
         }
     }
-    add_filter("osa_single_get_data", "osa_spmv_set_other_product", 10, 2);
+    add_filter("osa_single_get_data", "storina_spmv_set_other_product", 10, 2);
 });
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-function osa_spmv_dokan_multivendor_activation(){
+function storina_spmv_dokan_multivendor_activation(){
     if(!function_exists("dokan_get_option")){
         return false;
     }
@@ -40,7 +36,7 @@ function osa_spmv_dokan_multivendor_activation(){
     return ('on' == $enable_option)? true : false;
 }
 
-function osa_spmv_archive_filter($query_args){
+function storina_spmv_archive_filter($query_args){
     global $wpdb;
     $table = $wpdb->prefix . "dokan_product_map";
     $result = (array) $wpdb->get_results("SELECT GROUP_CONCAT(product_id) FROM {$table} GROUP by map_id", ARRAY_N);
@@ -58,7 +54,7 @@ function osa_spmv_archive_filter($query_args){
 }
 
 
-function osa_spmv_get_other_products($product_id){
+function storina_spmv_get_other_products($product_id){
     global $wpdb;
     $map_id = (int) get_post_meta($product_id, "_has_multi_vendor",true);
     $table = $wpdb->prefix . "dokan_product_map";
@@ -69,8 +65,8 @@ function osa_spmv_get_other_products($product_id){
     return $products;
 }
 
-function osa_spmv_set_other_product($finall,$master_id){
-    $other_ids = (array) osa_spmv_get_other_products($master_id);
+function storina_spmv_set_other_product($finall,$master_id){
+    $other_ids = (array) storina_spmv_get_other_products($master_id);
     foreach($other_ids as $other_id){
         $array_ids[] = $other_id['product_id'];
     }
@@ -108,7 +104,7 @@ function osa_spmv_set_other_product($finall,$master_id){
         }
     }
 
-     $single_product_multiple_vendor = (count($data) > 1)? array_values(osa_array_sort($data,"price")) : array();
+     $single_product_multiple_vendor = (count($data) > 1)? array_values(storina_array_sort($data,"price")) : array();
      $finall['single_product_multiple_vendor'] = apply_filters('woap_single_data_spmv_other_products',$single_product_multiple_vendor);
      return $finall;
 }
