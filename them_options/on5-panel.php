@@ -11,7 +11,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 define('STORINA_THEME_OPTION', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
 
-function update_options2() {
+function storina_update_option2() {
 	$import_nonce_value = (isset($_POST['osa_import_configuration_nonce_key']))? $_POST['osa_import_configuration_nonce_key'] : null;
 	$import_verify_nonce = wp_verify_nonce($import_nonce_value,'osa_import_configuration_nonce_value');
 	if ( isset( $_POST['submit_osa_import'],$import_nonce_value ) && false != $import_verify_nonce ) {
@@ -417,17 +417,16 @@ function update_options2() {
 	echo '<div class="updated"><p>'.__('Saved changes.','onlinerShopApp').'</p></div>';
 }//end if
 }
-add_action( 'admin_menu', 'ONLINER_app_menu' );
 
 /** Step 1. */
-function ONLINER_app_menu() {
-	add_menu_page( 'onliner app options', __('Application settings','onlinerShopApp'), 'manage_options', 'ONLINER_options', 'ONLINER_app_options' );
-	add_submenu_page( 'ONLINER_options', __('Send notification','onlinerShopApp'), __('Send notification','onlinerShopApp'), 'manage_options', 'onliner-send-notification', 'ONLINER_send_notif');
+add_action( 'admin_menu', function () {
+	add_menu_page( 'onliner app options', __('Application settings','onlinerShopApp'), 'manage_options', 'ONLINER_options', 'storina_app_options' );
+	add_submenu_page( 'ONLINER_options', __('Send notification','onlinerShopApp'), __('Send notification','onlinerShopApp'), 'manage_options', 'onliner-send-notification', 'storina_send_notif');
         do_action("osa_admin_menu_application_main");
-}
+} );
 
 /** Step 3. */
-function ONLINER_app_options() {
+function storina_app_options() {
 
 	if ( !current_user_can( 'manage_options' ) )  {
 		wp_die( __('You can not change options on site.','onlinerShopApp') );
@@ -437,7 +436,7 @@ function ONLINER_app_options() {
 	global $pages;
 	$options_page = $pages = array();
 	require("include.php");
-	update_options2();
+	storina_update_option2();
 	global $pages;
 	$pages        = array();
 	$options_page = array();
@@ -445,14 +444,14 @@ function ONLINER_app_options() {
 	require_once("html-panel.php");
 }
 
-function pippin_get_image_id( $image_url ) {
+function storina_pippin_get_image_id( $image_url ) {
 	global $wpdb;
 	$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ) );
 
 	return $attachment[0];
 }
 
-function uploadFileFromUrl( $postID, $url, $title = '' ) {
+function storina_upload_from_url( $postID, $url, $title = '' ) {
 	require_once( ABSPATH . "wp-load.php" );
 	require_once( ABSPATH . "wp-admin/includes/image.php" );
 	require_once( ABSPATH . "wp-admin/includes/file.php" );
@@ -488,7 +487,8 @@ function uploadFileFromUrl( $postID, $url, $title = '' ) {
 
 	return $id;
 }
-function ONLINER_send_notif(){
+
+function storina_send_notif(){
         global $osa_autoload;
         $general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	//error_reporting(E_ALL);
@@ -516,11 +516,11 @@ function ONLINER_send_notif(){
 					'post_content'   => $desc
 				);
 				$post_id       = wp_insert_post( $args );
-				$attachment_id = pippin_get_image_id( $icon );
+				$attachment_id = storina_pippin_get_image_id( $icon );
 				if ( $attachment_id > 0 ) {
 					$attach_id = $attachment_id;
 				} else {
-					$attach_id = uploadFileFromUrl( $post_id, $icon, $title );
+					$attach_id = storina_upload_from_url( $post_id, $icon, $title );
 				}
 				if ( $post_id ) {
 					set_post_thumbnail( $post_id, $attach_id );
