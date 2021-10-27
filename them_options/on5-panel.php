@@ -9,11 +9,7 @@
  * License: GPL2
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-define('THEMOPTION_OSAU', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
-
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
+define('STORINA_THEME_OPTION', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
 
 function update_options2() {
 	$import_nonce_value = (isset($_POST['osa_import_configuration_nonce_key']))? $_POST['osa_import_configuration_nonce_key'] : null;
