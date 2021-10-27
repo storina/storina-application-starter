@@ -1,19 +1,15 @@
 <?php
-add_action( 'user_register', 'sync_digits', 10, 1 );
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-function sync_digits( $user_id ) {
+add_action( 'user_register', function ( $user_id ) {
 
 	if ( ! isset( $_POST['action'] ) ) // یعنی اگه از تو سایت ثبت نام شده بود
 	{
 		update_user_meta( $user_id, 'userStatus', true );
 	}
 
-}
+} , 10, 1 );
 
-function wooc_show_customer_meta_fields( $fields ) {
+
+add_filter( 'woocommerce_customer_meta_fields', function ( $fields ) {
 	$fields['billing']['fields']['billing_lat']   = array(
 		'label'       => __( 'Google map lat', 'onlinerShopApp' ),
 		'description' => ''
@@ -32,14 +28,12 @@ function wooc_show_customer_meta_fields( $fields ) {
 	);
 
 	return $fields;
-}
+} );
 
-add_filter( 'woocommerce_customer_meta_fields', 'wooc_show_customer_meta_fields' );
+add_action( 'show_user_profile', 'storina_app_user_fields' );
+add_action( 'edit_user_profile', 'storina_app_user_fields' );
 
-add_action( 'show_user_profile', 'app_user_fields' );
-add_action( 'edit_user_profile', 'app_user_fields' );
-
-function app_user_fields( $user ) { ?>
+function storina_app_user_fields( $user ) { ?>
 
 <h3><?=__('Extra information','onlinerShopApp')?></h3>
 <table class="form-table">
@@ -112,10 +106,10 @@ function app_user_fields( $user ) { ?>
 </table>
 <?php }
 
-add_action( 'personal_options_update', 'save_user_fields' );
-add_action( 'edit_user_profile_update', 'save_user_fields' );
+add_action( 'personal_options_update', 'storina_save_user_fields' );
+add_action( 'edit_user_profile_update', 'storina_save_user_fields' );
 
-function save_user_fields( $user_id ) {
+function storina_save_user_fields( $user_id ) {
 
     if ( !current_user_can( 'edit_user', $user_id ) )
         return false;
@@ -134,21 +128,11 @@ function save_user_fields( $user_id ) {
 		update_usermeta( $user_id, 'shipping_status', 'active' );
 	}
 
-    /*update_usermeta( $user_id, '_activity_type', $_POST['activity_type'] );
-    update_usermeta( $user_id, '_activity_info', $_POST['activity_info'] );*/
 }
 
 
 // Hook in
-add_filter( 'woocommerce_checkout_fields', 'osa_custom_checkout_fields' );
-
-// Our hooked in function - $fields is passed via the filter!
-function osa_custom_checkout_fields( $fields ) {
-    /*$fields['billing']['billing_phone'] = array(
-        'type' => 'text',
-        'label' => __('تلفن ثابت', 'woocommerce'),
-        'placeholder' => _x('تلفن ثابت', 'placeholder', 'woocommerce')
-    );*/
+add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
     if(is_admin()){
 	    $fields['billing']['billing_mobile'] = array(
 		    'type' => 'text',
@@ -179,18 +163,13 @@ function osa_custom_checkout_fields( $fields ) {
     }
 
     return $fields;
-}
-
-
-
+});
 
 
 /**
  * Display field value on the order edit page
  */
-add_action( 'woocommerce_admin_order_data_after_billing_address', 'phone_display_admin_order_meta', 10, 1 );
-
-function phone_display_admin_order_meta( $order ) {
+add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $order ) {
 	$mobile = get_post_meta( $order->id, 'billing_mobile', true );
 	if ( $mobile ) {
 		echo '<p><strong>' . __( 'Mobile :', 'onlinerShopApp' ) . '</strong> <br/>' . $mobile . '</p>';
@@ -207,11 +186,10 @@ function phone_display_admin_order_meta( $order ) {
 	$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 		echo '<p><strong>' . __('Send box time and date :','onlinerShopApp') . '</strong> <br/>' . $date . '</p>';
 
-}
+} , 10, 1 );
 
 
-add_action('dokan_order_detail_after_order_items','add_mobile_number_to_dashboard',5,1);
-function add_mobile_number_to_dashboard($order){
+add_action('dokan_order_detail_after_order_items', function ($order){
 	$billing_mobile = get_post_meta( $order->id, 'billing_mobile', true );
 	$shipping_mobile = get_post_meta( $order->id, 'shipping_mobile', true );
 	?>
@@ -238,16 +216,15 @@ function add_mobile_number_to_dashboard($order){
         //$('.customer-details').append('<?= $billing_mobile.$shipping_mobile; ?>');
     </script>
 	<?php
-}
+} ,5,1);
 
 
-add_action( "woocommerce_email_after_order_table", "sendDate_email_after_order_table", 10, 1 );
-
-function sendDate_email_after_order_table( $order ) {
+add_action( "woocommerce_email_after_order_table", function ( $order ) {
 	$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 	$time = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 	if($timestamp)
 		echo '<p><strong>'.__('Send box time and date :','onlinerShopApp').'</strong>'. $time .'</p>';
 
-}
+} , 10, 1 );
+
