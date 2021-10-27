@@ -1,10 +1,6 @@
 <?php 
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-function osa_location_query_filter_run(){
+add_action("init", function (){
     if(!isset($_POST['vendor_town']) || false == (strlen($_POST['vendor_town']) > 2) ){
         return;
     }
@@ -13,7 +9,7 @@ function osa_location_query_filter_run(){
     );
     foreach($filters as $filter){
         add_filter($filter,function($query_args){
-            $vendor_ids = osa_get_vendors_based_on_location();
+            $vendor_ids = storina_get_vendors_based_on_location();
             if(!empty($vendor_ids)){
                 $query_args["author__in"] = $vendor_ids;
             }elseif(empty($vendor_ids)){
@@ -23,10 +19,9 @@ function osa_location_query_filter_run(){
             return $query_args;
         },10,1);
     }
-}
-add_action("init","osa_location_query_filter_run");
+} );
 
-function osa_get_vendors_based_on_location(){
+function storina_get_vendors_based_on_location(){
     if (!function_exists('dokan_is_seller_enabled')) {
         return array();
     }
