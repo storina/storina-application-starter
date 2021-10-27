@@ -1731,16 +1731,6 @@ class Cart {
                 )
             );
         }
-        if (shj_order_delivery_activation()) {
-            $result['data']['shj_order_delivery_time'] = shj_order_delivery_time();
-        }
-        if (bhr_order_delivery_activation()) {
-            $bhr_odt = bhr_order_delivery_time($user_id);
-            if (!empty($bhr_odt)) {
-                $result['data']['bhr_order_delivery_time'] = $bhr_odt;
-            }
-        }
-
         return ( $result );
     }
 

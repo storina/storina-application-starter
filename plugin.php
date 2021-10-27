@@ -64,9 +64,6 @@ class storina_application_init {
             "inc/location-query-filter.php",
             "inc/dokan-multivendor-module.php",
             "inc/dokan-functions.php",
-            "inc/order-delivery-time/bhr-order-delivery-time.php",
-            "inc/order-delivery-time/bhr-order-delivery-time.php",
-            "inc/order-delivery-time/shj-order-delivery-time.php",
             "inc/woocommerce-bulk-discount.php",
             "includes/ModulesController.php",
         );
