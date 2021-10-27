@@ -12,9 +12,6 @@
 if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
 
 class storina_application_init {
 
@@ -46,7 +43,7 @@ class storina_application_init {
         define("STORINA_PDP", plugin_dir_path(__FILE__));
         define('STORINA_PLUGIN_PATH', plugin_dir_path(__FILE__));
         define('STORINA_STORAGE', plugin_dir_path(__FILE__) . "/assets/storage/");
-        define('OSA_PLUGIN_URL', plugin_dir_url(__FILE__));	
+        define('STORINA_PLUGIN_URL', plugin_dir_url(__FILE__));	
 	}
 
     public function construct_debug() {

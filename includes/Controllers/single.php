@@ -57,7 +57,7 @@ class Single {
                 $img_id = get_post_thumbnail_id($post_id);
                 $src = wp_get_attachment_image_src($img_id, 'medium')[0];
             } else {
-                $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
             }
             $Post['image'] = $src;
             $instock = get_post_meta($post_id, '_stock_status', true);
@@ -897,7 +897,7 @@ class Single {
                 $img_id = get_post_thumbnail_id($related_id);
                 $src = wp_get_attachment_image_src($img_id, 'medium')[0];
             } else {
-                $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
             }
             $relatedPost['image'] = $src;
             $relatedPost['stock_quantity'] = ( $product->get_stock_quantity() ) ? intval($product->get_stock_quantity()) : 0;
@@ -964,7 +964,7 @@ class Single {
                     $img_id = get_post_thumbnail_id(get_the_id());
                     $src = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $pro['image'] = $src;
                 $productInfo['stock_quantity'] = ( $product->get_stock_quantity() ) ? intval($product->get_stock_quantity()) : 0;

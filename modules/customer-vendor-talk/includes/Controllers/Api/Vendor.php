@@ -52,7 +52,7 @@ class Vendor {
                 //INDEX
                 $product_info['id'] = get_the_ID();
                 $product_info['title'] = html_entity_decode(get_the_title());
-                $product_info['thumbnail'] = (has_post_thumbnail()) ? current(wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium')) : OSA_PLUGIN_URL . "/assets/images/notp.png";
+                $product_info['thumbnail'] = (has_post_thumbnail()) ? current(wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium')) : STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 $product_info['type'] = ( $product->get_type() == 'grouped' OR $product->get_type() == 'simple_catalogue' ) ? 'simple_catalogue' : $product->get_type();
                 $prices = $index->filter_prices($product);
                 $product_info['regular_price'] = trim($prices['regular_price']);

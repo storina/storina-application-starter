@@ -103,7 +103,7 @@ class General {
             $thumbnail_id = get_term_meta($term->term_id, 'thumbnail_id', true);
             $catThumb = wp_get_attachment_image_src($thumbnail_id, 'medium');
             if ($catThumb[0] == "") {
-                $catThumb[0] = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                $catThumb[0] = STORINA_PLUGIN_URL . "/assets/images/notp.png";
             }
             $tmp = array();
             $tmp['parent'] = array(
@@ -124,7 +124,7 @@ class General {
                 $thumbnail_id = get_term_meta($child->term_id, 'thumbnail_id', true);
                 $catThumb = wp_get_attachment_image_src($thumbnail_id, 'medium');
                 if ($catThumb[0] == "") {
-                    $catThumb[0] = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $catThumb[0] = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
 
                 $filteredChilds['image'] = $catThumb[0];
@@ -462,7 +462,7 @@ class General {
                     $img_id = get_post_thumbnail_id(get_the_id());
                     $src = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $posts[] = array(
                     'id' => get_the_id(),
@@ -508,7 +508,7 @@ class General {
                     $img_id = get_post_thumbnail_id(get_the_id());
                     $src = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $posts[] = array(
                     'id' => get_the_id(),
@@ -647,7 +647,7 @@ class General {
             $img_id = get_post_thumbnail_id($id);
             $src = wp_get_attachment_image_src($img_id, 'medium')[0];
         } else {
-            $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+            $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
         }
         $post_content = $this->extractContent($post->post_content);
         $post = array(

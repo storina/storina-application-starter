@@ -52,7 +52,7 @@ function my_enqueue( $hook ) {
 	$host        = explode( '.', $domain_name );
 	$host        = array_reverse( $host );
 	if ( $host[0] == 'ir' ) {
-		wp_enqueue_script( 'app_custom', OSA_PLUGIN_URL . 'assets/js/custom.js' );
+		wp_enqueue_script( 'app_custom', STORINA_PLUGIN_URL . 'assets/js/custom.js' );
 	}
 
 }

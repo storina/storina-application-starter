@@ -273,7 +273,7 @@ class Index {
                         $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                     }
                     if (empty($thumb)) {
-                        $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                        $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                     }
 
                     $sales_price_to = get_post_meta($product_id, '_sale_price_dates_to', true);
@@ -565,7 +565,7 @@ class Index {
                     $img_id = get_post_thumbnail_id($post->ID);
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $productInfo['id'] = get_the_ID();
                 $productInfo['title'] = html_entity_decode(get_the_title());
@@ -769,7 +769,7 @@ class Index {
                 //OUTPUT
                 $output['id'] = get_the_ID(  );
                 $output['title'] = get_the_title(  );
-                $output['image'] = (has_post_thumbnail())? get_the_post_thumbnail_url() : OSA_PLUGIN_URL . "/assets/images/notp.png"; 
+                $output['image'] = (has_post_thumbnail())? get_the_post_thumbnail_url() : STORINA_PLUGIN_URL . "/assets/images/notp.png"; 
                 $output['excerpt'] = woap_content_excerpt(get_the_content( ),150);
                 $data[] = $output;
                 //OUTPUT
@@ -857,7 +857,7 @@ class Index {
                 $output['title'] = $product->get_title();
                 $output['image_id'] = $product->get_image_id();
                 $output['sale_date_to'] = isset($date_time)? $this->extract_time_with_now($sale_date_timestamp) : false;
-                $output['image'] = wp_get_attachment_url( intval($product->get_image_id()) ) ?: trailingslashit( OSA_PLUGIN_URL ) . "assets/images/notp.png";
+                $output['image'] = wp_get_attachment_url( intval($product->get_image_id()) ) ?: trailingslashit( STORINA_PLUGIN_URL ) . "assets/images/notp.png";
                 $output['stock_quantity'] = $product->get_stock_quantity() ?? 0;
                 $output['stock_status'] = $product->get_stock_status();
                 $output['type'] = $product->get_type();

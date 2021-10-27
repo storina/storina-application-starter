@@ -164,7 +164,7 @@ class Cart {
                     $img_id = get_post_thumbnail_id($pID);
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $pro['thumbnail'] = $thumb;
 
@@ -956,7 +956,7 @@ class Cart {
                         $img_id = get_post_thumbnail_id($tmpPro['product_id']);
                         $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                     } else {
-                        $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                        $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                     }
                     $tmpPro['image'] = $thumb;
                     $tmpPro['files'] = ( $files[$tmpPro['product_id']] ) ? $files[$tmpPro['product_id']] : array();
@@ -1246,7 +1246,7 @@ class Cart {
                     $img_id = get_post_thumbnail_id($line_item['product_id']);
                     $src = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $src = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $src = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $en_name = ( get_post_meta($line_item['product_id'], '_subtitle', true) ) ? get_post_meta($line_item['product_id'], '_subtitle', true) : get_post_meta($line_item['product_id'], '_ENtitle', true);
                 $vendor = array();

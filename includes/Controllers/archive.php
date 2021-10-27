@@ -131,7 +131,7 @@ class Archive {
                     $img_id = get_post_thumbnail_id($post->ID);
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $product_id = get_the_ID();
                 $productInfo['id'] = $product_id;
@@ -466,7 +466,7 @@ class Archive {
                     $img_id = get_post_thumbnail_id($post->ID);
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $product_id = get_the_ID();
                 $productInfo['id'] = $product_id;
@@ -562,7 +562,7 @@ class Archive {
                     $img = wp_get_attachment_image_src($img_id, 'full')[0];
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $product_id = get_the_ID();
                 $productInfo['id'] = $product_id;
@@ -677,7 +677,7 @@ class Archive {
                     $img_id = get_post_thumbnail_id($post->ID);
                     $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                 } else {
-                    $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                    $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                 }
                 $product_id = get_the_ID();
                 $productInfo['id'] = $product_id;
@@ -957,7 +957,7 @@ class Archive {
                         $img_id = get_post_thumbnail_id($product_id);
                         $thumb = wp_get_attachment_image_src($img_id, 'medium')[0];
                     } else {
-                        $thumb = $img = OSA_PLUGIN_URL . "/assets/images/notp.png";
+                        $thumb = $img = STORINA_PLUGIN_URL . "/assets/images/notp.png";
                     }
                     $product_id = get_the_ID();
                     $productInfo['id'] = $product_id;
@@ -1072,7 +1072,7 @@ class Archive {
 			if(!empty($child_terms)){
 				foreach($child_terms as $child_term){
 					$thumbnail_id = get_term_meta($child_term->term_id,'thumbnail_id',true);
-					$thumbnail_url = wp_get_attachment_url($thumbnail_id) ?: trailingslashit( OSA_PLUGIN_URL ) . "assets/images/notp.png";
+					$thumbnail_url = wp_get_attachment_url($thumbnail_id) ?: trailingslashit( STORINA_PLUGIN_URL ) . "assets/images/notp.png";
 					$childrens[] = [
 						'id' => $child_term->term_id,
 						'name' => $child_term->name,
