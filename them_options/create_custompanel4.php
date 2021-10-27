@@ -18,7 +18,7 @@
         global $product_cats;
         $product_cats        = array();
         $product_cats[ - 1 ] = __( "All", 'onlinerShopApp' );
-        $product_cats        = hierarchical_category_tree2( 0, 'product_cat' );
+        $product_cats        = storina_hierarchical_category_tree2( 0, 'product_cat' );
         global $osa_autoload;
         $general             = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
         $action              = $general->clickEventList();
