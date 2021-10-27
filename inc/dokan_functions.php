@@ -6,12 +6,7 @@
  * Time: 1:22 PM
  */
 /** Adding Settings extra menu in Settings tabs Dahsboard */
-add_filter( 'dokan_get_dashboard_settings_nav', 'dokan_add_settings_menu' );
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
-function dokan_add_settings_menu( $settings_tab ) {
+add_filter( 'dokan_get_dashboard_settings_nav',function ( $settings_tab ) {
 	$settings_tab['OSA'] = array(
 		'title' => __( 'آنلاینر اپ', 'dokan' ),
 		'icon'  => '<i class="fa fa-mobile"></i>',
@@ -20,19 +15,17 @@ function dokan_add_settings_menu( $settings_tab ) {
 	);
 
 	return $settings_tab;
-}
+});
 
-add_filter( 'dokan_dashboard_settings_heading_title', 'dokan_load_settings_header', 11, 2 );
-function dokan_load_settings_header( $header, $query_vars ) {
+
+add_filter( 'dokan_dashboard_settings_heading_title', function ( $header, $query_vars ) {
 	if ( $query_vars == 'OSA' ) {
 		$header = __( 'تنظیمات اپلیکیشن', 'dokan' );
 	}
-
 	return $header;
-}
+}, 11, 2 );
 
-add_action( 'dokan_render_settings_content', 'dokan_render_settings_content', 10 );
-function dokan_render_settings_content( $query_vars ) {
+add_action( 'dokan_render_settings_content', function ( $query_vars ) {
 	if ( isset( $query_vars['settings'] ) && $query_vars['settings'] == 'OSA' ) {
 		$user = wp_get_current_user();
 		if ( ! in_array( 'seller', (array) $user->roles ) ) {
@@ -57,10 +50,9 @@ function dokan_render_settings_content( $query_vars ) {
 		require( __DIR__ . "/../vendor_options/include.php" );
 		include( __DIR__ . "/../vendor_options/html-panel.php" );
 	}
-}
+} , 10 );
 
-add_action( 'dokan_order_detail_after_order_items', 'add_mobile_number_to_dashboard', 5, 1 );
-function add_mobile_number_to_dashboard( $order ) {
+add_action( 'dokan_order_detail_after_order_items', function ( $order ) {
 	$billing_mobile  = get_post_meta( $order->id, 'billing_mobile', true );
 	$shipping_mobile = get_post_meta( $order->id, 'shipping_mobile', true );
 	?>
@@ -92,7 +84,7 @@ function add_mobile_number_to_dashboard( $order ) {
     </script>
 	<?php
 
-}
+} , 5, 1 );
 
 /**
  * dokan vendor shipping implements
