@@ -1,47 +1,25 @@
 <?php
-/** require_once (ONLINER_FUNCTIONS . 'functions.metaboxes.php');    in function
- *
- * HighThemes Options Framework
- * twitter : http://twitter.com/theHighthemes
- *
- */
 
-/**
- * Page, Post, Portfolio, and Slideshow Metaboxes
- */
-/* Posts */
-/*-----------------------------------------------------------------------------------*/
-/*
-add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
-*/
-if ( ! function_exists( 'add_app_map_box' ) ) {
-
-	function add_app_map_box() {
-		global $post;
-		$order_id     = $post->ID;
-		$address_type = get_post_meta( $order_id, 'address_type', true );
-		$user_id      = get_post_meta( $order_id, '_customer_user', true );
-		$billing_lat  = get_user_meta( $user_id, $address_type . '_lat', true );
-		$billing_lng  = get_user_meta( $user_id, $address_type . '_lng', true );
-		$api_key      = osa_get_option( 'app_map_api_code' );
-		if ( $billing_lat AND $billing_lng AND $address_type ) {
-			add_meta_box(
-				'address_on_map',
-				'آدرس روی نقشه',
-				'app_show_map',
-				'shop_order',
-				'normal',
-				'high' );
-		}
+add_action( 'add_meta_boxes', function () {
+	global $post;
+	$order_id     = $post->ID;
+	$address_type = get_post_meta( $order_id, 'address_type', true );
+	$user_id      = get_post_meta( $order_id, '_customer_user', true );
+	$billing_lat  = get_user_meta( $user_id, $address_type . '_lat', true );
+	$billing_lng  = get_user_meta( $user_id, $address_type . '_lng', true );
+	$api_key      = osa_get_option( 'app_map_api_code' );
+	if ( $billing_lat AND $billing_lng AND $address_type ) {
+		add_meta_box(
+			'address_on_map',
+			'آدرس روی نقشه',
+			'storina_app_show_map',
+			'shop_order',
+			'normal',
+			'high' );
 	}
-}
-add_action( 'add_meta_boxes', 'add_app_map_box' );
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
+} );
 
-function my_enqueue( $hook ) {
-	// Only add to the edit.php admin page.
+add_action( 'admin_enqueue_scripts', function ( $hook ) {
 	// See WP docs.
 	if ( 'post.php' !== $hook ) {
 		return;
@@ -55,73 +33,35 @@ function my_enqueue( $hook ) {
 		wp_enqueue_script( 'app_custom', STORINA_PLUGIN_URL . 'assets/js/custom.js' );
 	}
 
-}
+} );
 
-add_action( 'admin_enqueue_scripts', 'my_enqueue' );
-$prefix = "_";
-if ( ! function_exists( 'app_show_map' ) ) {
-	function app_show_map() {
-		global $post;
-		$order_id     = $post->ID;
-		$address_type = get_post_meta( $order_id, 'address_type', true );
-		if ( ! $address_type ) {
-			$address_type = 'billing';
-		}
-		$user_id     = get_post_meta( $order_id, '_customer_user', true );
-		$billing_lat = get_user_meta( $user_id, $address_type . '_lat', true );
-		$billing_lng = get_user_meta( $user_id, $address_type . '_lng', true );
-		?>
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-		<script type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-		<div id="map" style="height: 300px"></div>
-		<script>
-			var map = L.map('map').setView([<?= $billing_lat ?>, <?= $billing_lng ?>], 17);
-
-			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-				attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-			}).addTo(map);
-			L.marker([<?= $billing_lat ?>, <?= $billing_lng ?>]).addTo(map)
-				.openPopup();
-		</script>
-	<?php }
-
-}
-
-// Save the Data
-/*if ( ! function_exists('save_custom_post_meta') ) {
-	function save_custom_post_meta($post_id) {
-		global $custom_post_meta_fields;
-		if(isset($_POST['custom_post_meta_box_nonce'])){
-
-			if (!wp_verify_nonce($_POST['custom_post_meta_box_nonce'], basename(__FILE__)))
-				return $post_id;
-			if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-				return $post_id;
-			if ('page' == $_POST['post_type']) {
-				if (!current_user_can('edit_page', $post_id))
-					return $post_id;
-			} elseif (!current_user_can('edit_post', $post_id)) {
-				return $post_id;
-			}
-
-			// loop through fields and save the data
-			foreach ($custom_post_meta_fields as $field) {
-				$old = get_post_meta($post_id, $field['id'], true);
-				$new = $_POST[$field['id']];
-				if ($new && $new != $old) {
-					update_post_meta($post_id, $field['id'], $new);
-				} elseif ('' == $new && $old) {
-					delete_post_meta($post_id, $field['id'], $old);
-				}
-			}
-		}
+function storina_app_show_map() {
+	global $post;
+	$order_id     = $post->ID;
+	$address_type = get_post_meta( $order_id, 'address_type', true );
+	if ( ! $address_type ) {
+		$address_type = 'billing';
 	}
+	$user_id     = get_post_meta( $order_id, '_customer_user', true );
+	$billing_lat = get_user_meta( $user_id, $address_type . '_lat', true );
+	$billing_lng = get_user_meta( $user_id, $address_type . '_lng', true );
+	?>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+	<script type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	<div id="map" style="height: 300px"></div>
+	<script>
+		var map = L.map('map').setView([<?= $billing_lat ?>, <?= $billing_lng ?>], 17);
+
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
+		L.marker([<?= $billing_lat ?>, <?= $billing_lng ?>]).addTo(map)
+			.openPopup();
+	</script>
+<?php
 }
-add_action('save_post', 'save_custom_post_meta');*/
-add_action( 'woocommerce_admin_order_data_after_shipping_address', 'order_shipping_details_after_customer_details', 20, 1 );
-add_action( 'woocommerce_admin_order_data_after_billing_address', 'order_billing_details_after_customer_details', 20, 1 );
-//add_action( 'woocommerce_order_details_after_order_table', 'order_details_after_customer_details', 20, 1 );
-function order_shipping_details_after_customer_details( $order ) {
+
+add_action( 'woocommerce_admin_order_data_after_shipping_address', function ( $order ) {
 	if ( ! class_exists( 'WC_Checkout_Field_Editor' ) ) {
 		return;
 	}
@@ -175,9 +115,9 @@ function order_shipping_details_after_customer_details( $order ) {
 	};
 
 
-}
+} , 20, 1 );
 
-function order_billing_details_after_customer_details( $order ) {
+add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $order ) {
 	if ( ! class_exists( 'WC_Checkout_Field_Editor' ) ) {
 		return;
 	}
@@ -229,10 +169,9 @@ function order_billing_details_after_customer_details( $order ) {
 	};
 
 
-}
+} , 20, 1 );
 
-add_filter( 'manage_edit-shop_order_columns', 'show_order_chanel', 15 );
-function show_order_chanel( $columns ) {
+add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 
 	//remove column
 	unset( $columns['tags'] );
@@ -241,10 +180,17 @@ function show_order_chanel( $columns ) {
 	$columns['chanel'] = __( 'From', 'onlinerShopApp' );
 
 	return $columns;
-}
+} , 15 );
 
-add_action( 'manage_shop_order_posts_custom_column', 'show_chanel_for_order', 10, 2 );
-function location_column_header( $columns ) {
+add_action( 'manage_shop_order_posts_custom_column', function ( $column, $postid ) {
+	if ( $column == 'chanel' ) {
+		$purchase_type = get_post_meta( $postid, 'purchase_type', true );
+		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? __( 'App', 'onlinerShopApp' ) : 'Website' ) . '</strong>';
+	}
+} , 10, 2 );
+
+
+add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 
 	$new_columns = array();
 
@@ -258,29 +204,20 @@ function location_column_header( $columns ) {
 	}
 
 	return $new_columns;
-}
+} , 20 );
 
-add_filter( 'manage_edit-shop_order_columns', 'location_column_header', 20 );
 
-function cw_add_order_chanel_column_style() {
+add_action( 'admin_print_styles', function () {
 	$css = '.widefat .column-order_date,.widefat .manage-column.column-chanel { width: 5%; }';
 	wp_add_inline_style( 'woocommerce_admin_styles', $css );
-}
+} );
 
-add_action( 'admin_print_styles', 'cw_add_order_chanel_column_style' );
 
-function show_chanel_for_order( $column, $postid ) {
-	if ( $column == 'chanel' ) {
-		$purchase_type = get_post_meta( $postid, 'purchase_type', true );
-		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? __( 'App', 'onlinerShopApp' ) : 'Website' ) . '</strong>';
-	}
-}
+add_action('woocommerce_thankyou','storina_update_terawallet');
+add_action("woocommerce_payment_complete","storina_update_terawallet");
+add_action("woocommerce_order_status_completed","storina_update_terawallet");
 
-add_action('woocommerce_thankyou','osa_update_terawallet');
-add_action("woocommerce_payment_complete","osa_update_terawallet");
-add_action("woocommerce_order_status_completed","osa_update_terawallet");
-
-function osa_update_terawallet($order_id){
+function storina_update_terawallet($order_id){
     if(!function_exists("woo_wallet")){
         return;
     }
@@ -328,8 +265,7 @@ add_filter('osa_theme_options_app',function($options){
 });
 
 
-add_action("osa_init_response", "osa_add_notif_token");
-function osa_add_notif_token() {
+add_action("osa_init_response", function () {
 	$user_token = (!empty($_POST['userToken']))? $_POST['userToken'] : null;
 	$notif_token = (!empty($_POST['notifToken']))? $_POST['notifToken'] : null;
 	if(!isset($user_token,$notif_token)){
@@ -342,10 +278,9 @@ function osa_add_notif_token() {
 		return;
 	}
 	update_user_meta($user_id, 'notifToken', $notif_token);
-}
+} );
 
-add_filter('posts_clauses',
-function ($posts_clauses) {
+add_filter('posts_clauses', function ($posts_clauses) {
 	global $wpdb;
 	$action = $_POST['action'] ?? null;
 	$level = $_POST['level'] ?? null;
