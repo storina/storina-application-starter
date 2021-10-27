@@ -3,7 +3,7 @@
 /**
  * prepare state id cities based on tapin state cities
  */
-function woap_pws_prepare_tapin_cities() {
+function storina_pws_prepare_tapin_cities() {
 	if(!function_exists('PWS')){
 		return [];
     }
@@ -17,7 +17,7 @@ function woap_pws_prepare_tapin_cities() {
 /**
  * prepare state id cities based on regular state_city taxonomy
  */
-function woap_pws_prepare_regular_cities(){
+function storina_pws_prepare_regular_cities(){
 	if(!function_exists('PWS')){
 		return [];
     }
@@ -44,7 +44,7 @@ function woap_pws_prepare_regular_cities(){
  * search city id from zone resource using city name
  */
 
-function woap_pws_search_city_id($city_name,$zone){
+function storina_pws_search_city_id($city_name,$zone){
     foreach($zone as $state_id => $state_resource){
         $cities = $state_resource['cities'];
         $city_id = array_search($city_name,$cities);
@@ -59,7 +59,7 @@ function woap_pws_search_city_id($city_name,$zone){
  * check if persian woocommerce shipping and tapin is enables
  */
 
-function woap_pws_is_tapin_enabled(){
+function storina_pws_is_tapin_enabled(){
 	if(!function_exists('PWS')){
 		return false;
     }
@@ -70,7 +70,7 @@ function woap_pws_is_tapin_enabled(){
  * add filter on shipping cart package on regular persian shipping methods
  */
 add_filter('woap_shipping_package_data',function($shipping_data,$user_id){
-    if(woap_pws_is_tapin_enabled()){
+    if(storina_pws_is_tapin_enabled()){
         return $shipping_data;
     }
 	$taxonomy = 'state_city';
@@ -84,7 +84,7 @@ add_filter('woap_shipping_package_data',function($shipping_data,$user_id){
  * add filter on cart package based on tapin shipping method
  */
 add_filter('woap_shipping_package_data',function($shipping_data,$user_id){
-    if(!woap_pws_is_tapin_enabled()){
+    if(!storina_pws_is_tapin_enabled()){
         return $shipping_data;
     }
     $city = $shipping_data['shipping_city'];
@@ -122,7 +122,7 @@ add_filter('woap_index_address_fields',function($address_fields){
  */
 
 add_filter('woap_go_payment_address_props',function($order,$addresses,$type){
-    if(!woap_pws_is_tapin_enabled()){
+    if(!storina_pws_is_tapin_enabled()){
         return;
     }
     $zone = PWS_Tapin::zone();
@@ -130,7 +130,7 @@ add_filter('woap_go_payment_address_props',function($order,$addresses,$type){
     $state_id = $chosen_address["state"];
     $state_name = PWS()::get_state($state_id);
     $city_name = $chosen_address['city'];
-    $city_id = woap_pws_search_city_id($city_name,$zone);
+    $city_id = storina_pws_search_city_id($city_name,$zone);
     $order_id = $order->get_id();
     if(isset($state_id,$city_id)){
         update_post_meta($order_id,'_shipping_state',$state_name);
