@@ -180,9 +180,9 @@ class Cart {
                             $total += $pro['regular_price'] * $values['quantity'];
                             $subtotal += $pro['regular_price'] * $values['quantity'];
                         }
-                        if (true == owbd_activation()) {
-                            $owbd_price = owbd_get_product_price($productVariations, $values['quantity']);
-                            $pro['product_formule'] = owbd_calculate_formule($productVariations);
+                        if (true == storina_wbd_activation()) {
+                            $owbd_price = storina_wbd_get_product_price($productVariations, $values['quantity']);
+                            $pro['product_formule'] = storina_wbd_calculate_formule($productVariations);
                             $pro['regular_price'] = $owbd_price['price'];
                             $pro['sale_price'] = "";
                             $pro['owbd_discount'] = (string) $owbd_price['discount'];
@@ -207,9 +207,9 @@ class Cart {
                             $pro['regular_price'] = $this->yith_price_role->get_compute_price_render($productVariations, $this->user_id);
                             $pro['sale_price'] = "";
                         }
-                        if (true == owbd_activation()) {
-                            $owbd_price = owbd_get_product_price($productVariations, $values['quantity']);
-                            $pro['product_formule'] = owbd_calculate_formule($productVariations);
+                        if (true == storina_wbd_activation()) {
+                            $owbd_price = storina_wbd_get_product_price($productVariations, $values['quantity']);
+                            $pro['product_formule'] = storina_wbd_calculate_formule($productVariations);
                             $pro['regular_price'] = $owbd_price['price'];
                             $pro['sale_price'] = "";
                             $pro['owbd_discount'] = (string) $owbd_price['discount'];
@@ -229,10 +229,10 @@ class Cart {
                             $total += $pro['regular_price'] * $values['quantity'];
                             $subtotal += $pro['regular_price'] * $values['quantity'];
                         }
-                        if (true == owbd_activation()) {
+                        if (true == storina_wbd_activation()) {
 
-                            $owbd_price = owbd_get_product_price($product, $values['quantity']);
-                            $pro['product_formule'] = owbd_calculate_formule($product);
+                            $owbd_price = storina_wbd_get_product_price($product, $values['quantity']);
+                            $pro['product_formule'] = storina_wbd_calculate_formule($product);
                             $pro['regular_price'] = $owbd_price['price'];
                             $pro['sale_price'] = "";
                             $pro['owbd_discount'] = (string) $owbd_price['discount'];
@@ -258,9 +258,9 @@ class Cart {
                             $pro['regular_price'] = $this->yith_price_role->get_compute_price_render($product, $this->user_id);
                             $pro['sale_price'] = "";
                         }
-                        if (true == owbd_activation()) {
-                            $owbd_price = owbd_get_product_price($product, $values['quantity']);
-                            $pro['product_formule'] = owbd_calculate_formule($product);
+                        if (true == storina_wbd_activation()) {
+                            $owbd_price = storina_wbd_get_product_price($product, $values['quantity']);
+                            $pro['product_formule'] = storina_wbd_calculate_formule($product);
                             $pro['regular_price'] = $owbd_price['price'];
                             $pro['sale_price'] = "";
                             $pro['owbd_discount'] = (string) $owbd_price['discount'];
@@ -381,7 +381,7 @@ class Cart {
         foreach($basket['total'] as $key => &$value){
             $value = ('integer' == $price_num_type)? intval($value) : number_format($value , $price_num_decimals);
         }
-        if (owbd_activation()) {
+        if (storina_wbd_activation()) {
             $basket['total']['total'] = intval($subtotal - $couponDiscount + $shippingTotal);
         }
         $basket['notice'] = (empty($cart_array['cart_diff'])) ? 0 : 1;
@@ -1423,8 +1423,8 @@ class Cart {
                         $price_based_role = $this->service_container->get(Yith_Role_Based_Price::class);
                         $price_based_role->set_compute_price($product, $user_id);
                     }
-                    if (owbd_activation()) {
-                        owbd_set_product_price($product, $item['quantity']);
+                    if (storina_wbd_activation()) {
+                        storina_wbd_set_product_price($product, $item['quantity']);
                     }
                     $order->add_product($product, $item['quantity']); // This is an existing SIMPLE product
                 } else {
@@ -1442,8 +1442,8 @@ class Cart {
                         $price_based_role = $this->service_container->get(Yith_Role_Based_Price::class);
                         $price_based_role->set_compute_price($product, $user_id);
                     }
-                    if (owbd_activation()) {
-                        owbd_set_product_price($product, $item['quantity']);
+                    if (storina_wbd_activation()) {
+                        storina_wbd_set_product_price($product, $item['quantity']);
                     }
                     $variation_arr = $item['variation_arr'];
                     $variation_arr2 = array();

@@ -3,7 +3,7 @@
 /**
  * check is woocommerce bulk discount active
  */
-function owbd_activation() {
+function storina_wbd_activation() {
     return (class_exists('Woo_Bulk_Discount_Plugin_t4m'));
 }
 
@@ -13,7 +13,7 @@ function owbd_activation() {
  * @param type $quantity
  * @return type
  */
-function owbd_get_product_price($product, $quantity) {
+function storina_wbd_get_product_price($product, $quantity) {
     if (is_numeric($product)) {
         $product = wc_get_product($product);
     }
@@ -52,9 +52,9 @@ function owbd_get_product_price($product, $quantity) {
 
     $quantity_discount_value = get_post_meta($real_product_id, $quantity_map[$quantity_final_key], true);
     $result = array(
-        "row" => ($quantity_final_key) ? owbd_calculate_price_row($product, $quantity, $type, $quantity_discount_value) : $product->get_price() * $quantity,
-        "price" => ($quantity_final_key) ? owbd_calculate_price_column($product, $quantity, $type, $quantity_discount_value) : $product->get_price(),
-        "discount" => ($quantity_final_key) ? owbd_calculate_price_discount($product, $quantity, $type, $quantity_discount_value) : $product->get_regular_price() - $product->get_sale_price(),
+        "row" => ($quantity_final_key) ? storina_wbd_calculate_price_row($product, $quantity, $type, $quantity_discount_value) : $product->get_price() * $quantity,
+        "price" => ($quantity_final_key) ? storina_wbd_calculate_price_column($product, $quantity, $type, $quantity_discount_value) : $product->get_price(),
+        "discount" => ($quantity_final_key) ? storina_wbd_calculate_price_discount($product, $quantity, $type, $quantity_discount_value) : $product->get_regular_price() - $product->get_sale_price(),
     );
     return $result;
 }
@@ -67,7 +67,7 @@ function owbd_get_product_price($product, $quantity) {
  * @param type $value
  * @return type
  */
-function owbd_calculate_price_row($product, $quantity, $type, $value) {
+function storina_wbd_calculate_price_row($product, $quantity, $type, $value) {
     $price = (int) $product->get_price();
     if (is_numeric($product)) {
         $product = wc_get_product($product);
@@ -90,7 +90,7 @@ function owbd_calculate_price_row($product, $quantity, $type, $value) {
  * @param type $value
  * @return type
  */
-function owbd_calculate_price_column($product, $quantity, $type, $value) {
+function storina_wbd_calculate_price_column($product, $quantity, $type, $value) {
     $price = (int) $product->get_price();
     if (is_numeric($product)) {
         $product = wc_get_product($product);
@@ -113,7 +113,7 @@ function owbd_calculate_price_column($product, $quantity, $type, $value) {
  * @param type $value
  * @return type
  */
-function owbd_calculate_price_discount($product, $quantity, $type, $value) {
+function storina_wbd_calculate_price_discount($product, $quantity, $type, $value) {
     $price = (int) $product->get_price();
     if (is_numeric($product)) {
         $product = wc_get_product($product);
@@ -133,7 +133,7 @@ function owbd_calculate_price_discount($product, $quantity, $type, $value) {
  * @param type $product
  * @return type
  */
-function owbd_calculate_formule($product) {
+function storina_wbd_calculate_formule($product) {
     if (is_numeric($product)) {
         $product = wc_get_product($product);
     }
@@ -163,10 +163,10 @@ function owbd_calculate_formule($product) {
  * @param type $product
  * @param type $quantity
  */
-function owbd_set_product_price($product, $quantity) {
+function storina_wbd_set_product_price($product, $quantity) {
     if (is_numeric($product)) {
         $product = wc_get_prodcut($product);
     }
-    $price = owbd_get_product_price($product, $quantity);
+    $price = storina_wbd_get_product_price($product, $quantity);
     $product->set_price($price['price']);
 }
