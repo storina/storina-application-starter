@@ -413,7 +413,7 @@ function storina_update_option2() {
 		}//end if
 		$count++;
 	}// end foreach
-	deleteIdexCache();
+	storina_delete_index_cache();
 	echo '<div class="updated"><p>'.__('Saved changes.','onlinerShopApp').'</p></div>';
 }//end if
 }

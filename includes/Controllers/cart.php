@@ -1802,7 +1802,7 @@ class Cart {
                 $status = get_user_meta($user_id, $address_type . '_status', true);
                 if($status == 'active'){
                     $address_fields = $general->get_address_fields($address_type);
-                    //$data[$address_type] = mwe_get_formatted_address( $address_type, $user_id );
+                    //$data[$address_type] = storina_get_formatted_addresses( $address_type, $user_id );
                     foreach ($address_fields as $address_field) {
                         $value = get_user_meta($user_id, $address_field['id'], true);
                         if ($address_field['id'] == 'billing_state' OR $address_field['id'] == 'shipping_state') {

@@ -99,39 +99,39 @@ function storina_delete_term_cache($term_id, $taxonomy){
 add_action( 'edited_product_cat', 'storina_delete_term_cache', 10, 2 );
 add_action( 'deleted_product_cat', 'storina_delete_term_cache', 10, 2 );
 
-function deleteIdexCache(){
+function storina_delete_index_cache(){
 	global $wpdb;
 	$table = $wpdb->prefix.'OSA_cache';
 	$wpdb->delete( $table, array( 'type' => 'index','itemID' => 0 ) );
 	$wpdb->delete( $table, array( 'type' => 'archive' ) );
 }
-function empty_carts($post_id){
+function storina_empty_carts($post_id){
 	if ( 'product' != get_post_type( $post_id ))
 	return;
 	global $wpdb;
 	$table = $wpdb->prefix.'OSA_cart';
 	$delete = $wpdb->query("DELETE FROM $table WHERE 1 = 1;");
 }
-add_action( 'trashed_post', 'empty_carts', 10 );
-add_action( 'delete_post', 'empty_carts', 10 );
+add_action( 'trashed_post', 'storina_empty_carts', 10 );
+add_action( 'delete_post', 'storina_empty_carts', 10 );
 
 
 
 
-function deleteCashe_widgets() {
+function storina_delete_cache_widget() {
 	global $wp_meta_boxes;
 
-	wp_add_dashboard_widget('custom_help_widget', __("Delete app cache","onlinerShopApp"), 'deleteCashe_dashboard');
+	wp_add_dashboard_widget('custom_help_widget', __("Delete app cache","onlinerShopApp"), 'storina_delete_cache_dashboard');
 }
 
-function deleteCashe_dashboard() { ?>
+function storina_delete_cache_dashboard() { ?>
 	 <form action="" method="POST" style="display: inline;">
         <input class="button" type="submit" name="delede_cache" value="<?=__("Delete cache","onlinerShopApp");?>"/>
     </form>
     <p><br/><?=__("You can delete application cache from this box.","onlinerShopApp");?></p>
 <?php
 }
-function deleteCashe_notice() {
+function storina_delete_cache_notice() {
 	?>
     <div class="updated">
         <p><?=__("Deleted application cache","onlinerShopApp");?></p>
@@ -139,25 +139,24 @@ function deleteCashe_notice() {
 	<?php
 }
 
-add_action( 'plugins_loaded', 'check_current_user' );
-function check_current_user() {
+add_action( 'plugins_loaded', function () {
 	// Your CODE with user data
 	$current_user = wp_get_current_user();
 
 	// Your CODE with user capability check
 	if ( current_user_can('manage_options') ) {
-		add_action('wp_dashboard_setup', 'deleteCashe_widgets');
+		add_action('wp_dashboard_setup', 'storina_delete_cache_widget');
 		if ( isset( $_POST['delede_cache'] ) || isset( $_GET['delede_cache'] ) ) {
 			$delete = deleteAllCache();
 			if($delete){
-				add_action( 'admin_notices', 'deleteCashe_notice' );
+				add_action( 'admin_notices', 'storina_delete_cache_notice' );
 			}
 		}
 	}
-}
+} );
 
 
-function mwe_get_formatted_address($type,$user_id) {
+function storina_get_formatted_addresses($type,$user_id) {
 	$address['first_name'] = get_user_meta( $user_id, $type.'_first_name', true );
 	$address['last_name'] = get_user_meta( $user_id, $type.'_last_name', true );
 	$address['company'] = get_user_meta( $user_id, $type.'_company', true );
@@ -177,7 +176,7 @@ function mwe_get_formatted_address($type,$user_id) {
 /*
 add_action( 'woocommerce_before_cart', 'back_to_app_link' );*/
 if ( wp_is_mobile() ) {
-    add_action( 'woocommerce_thankyou', 'bta_link', 10, 1 );
+    add_action( 'woocommerce_thankyou', 'back_to_application', 10, 1 );
 }
 
 add_action('woocommerce_cart_is_empty', function() {
@@ -219,7 +218,7 @@ add_action('woocommerce_cart_is_empty', function() {
     
 });
 
-function bta_link_in_emptyCart() {
+function storina_back_to_app_empty_cart() {
 	global $osa_autoload;
 	$general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	$domain  = $_SERVER['SERVER_NAME'];
@@ -238,7 +237,7 @@ function bta_link_in_emptyCart() {
 	return;
 }
 
-function bta_link( $order_id ) {
+function back_to_application( $order_id ) {
         $purchase_type = get_post_meta( $order_id, 'purchase_type', true );
         if(!wp_is_mobile() || $purchase_type !== 'app'){
             return;
@@ -273,7 +272,7 @@ function bta_link( $order_id ) {
 	return;
 }
 
-function on5_post_types() {
+add_action( "init", function () {
     // Articles
 	$labels = array(
 		'name'               => __("اعلان های اپلیکیشن",'onlinerShopApp'),
@@ -302,22 +301,19 @@ function on5_post_types() {
 	);
 	register_post_type( 'Announcements', $args );
 	flush_rewrite_rules();
-}
-add_action( "init", 'on5_post_types',1 );
-add_filter('upload_mimes', 'acp_custom_mimes');
+} );
 
-function acp_custom_mimes ( $existing_mimes=array() ) {
+add_filter('upload_mimes', function ( $existing_mimes=array() ) {
 // ' with mime type '<code>application/vnd.android.package-archive</code>'
 	$existing_mimes['apk'] = 'application/vnd.android.package-archive';
 	return $existing_mimes;
-}
-
+});
 
 
 /**
  * WooCommerce new order email customer details
  */
-function wc_customer_details( $fields, $sent_to_admin, $order ) {
+add_filter( 'woocommerce_email_customer_details_fields', function ( $fields, $sent_to_admin, $order ) {
 	if ( empty( $fields ) ) {
 		if ( $order->get_billing_email() ) {
 			$fields['billing_email'] = array(
@@ -338,11 +334,9 @@ function wc_customer_details( $fields, $sent_to_admin, $order ) {
 
 	}
 	return $fields;
-}
-add_filter( 'woocommerce_email_customer_details_fields', 'wc_customer_details', 10, 3 );
+} , 10, 3 );
 
-add_action( 'admin_bar_menu', 'osa_add_toolbar_items', 100 );
-function osa_add_toolbar_items( $admin_bar ) {
+add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'    => 'application',
 		'title' => __("Application","onlinerShopApp"),
@@ -384,7 +378,7 @@ function osa_add_toolbar_items( $admin_bar ) {
 			'class'  => ''
 		),
 	) );
-}
+} , 100 );
 
 add_action('update_option', function( $option_name, $old_value, $value ) {
     $map = array(
@@ -419,11 +413,11 @@ add_action("init", function(){
 		"osa_single_get_getMostSale_product_item_info",
 	);
 	foreach($filters as $filter){
-		add_filter($filter, "osa_product_item_info_filter",10, 2);
+		add_filter($filter, "storina_product_item_info_filter",10, 2);
 	}
 });
 
-function osa_product_item_info_filter($product_info,$product_id){
+function storina_product_item_info_filter($product_info,$product_id){
 	if("yes" == get_post_meta($product_id, "_sold_individually", true)){
 		$product_info['sold_individually'] = true;
 	}
