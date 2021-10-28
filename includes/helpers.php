@@ -26,7 +26,7 @@ function storina_return_html_content($path){
 }
 
 
-function osa_array_sort($array, $on, $order=SORT_ASC){
+function storina_array_sort($array, $on, $order=SORT_ASC){
     $new_array = array();
     $sortable_array = array();
     if (count($array) > 0) {
