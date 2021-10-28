@@ -861,7 +861,7 @@ class General {
                 "version" => "5.0.0",
                 "download_url" => "https://onlinerapp.ir/apk/plugin/onlinerShopApp.zip",
                 "sections" => array(
-                    "description" => (string) osa_return_html_content(trailingslashit(STORINA_STORAGE) . "version-info.php"),
+                    "description" => (string) storina_return_html_content(trailingslashit(STORINA_STORAGE) . "version-info.php"),
                 )
             );
             wp_send_json($versionInfo);

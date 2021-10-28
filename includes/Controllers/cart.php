@@ -1397,7 +1397,7 @@ class Cart {
             // Now we create the order
             $order = wc_create_order();
             if (shj_order_delivery_activation()) {
-                osa_fire_function("odt_implement_goPayment", array($order));
+                storina_fire_function("odt_implement_goPayment", array($order));
             }
             if (bhr_order_delivery_activation()) {
                 bhr_implement_goPayment($order);

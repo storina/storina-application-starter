@@ -12,14 +12,14 @@ function storina_update_option($option_key,$option_value){
     return update_option($option_name, $option_value);
 }
 
-function osa_fire_function($function_name,$params=array()){
+function storina_fire_function($function_name,$params=array()){
     if(!function_exists($function_name)){
         return;
     }
     call_user_func_array($function_name,$params);
 }
 
-function osa_return_html_content($path){
+function storina_return_html_content($path){
     ob_start();
     include $path;
     return ob_get_clean();
