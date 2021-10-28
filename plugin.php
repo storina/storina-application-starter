@@ -77,10 +77,10 @@ class storina_application_init {
     public function boot_services(){
         $requires = array(
             #Api
-            "includes/OSA_Service_Provider.php",
-            "includes/OSA_Router.php",
-            "includes/OSA_Call_Api.php",
-            "includes/OSA_Autoload.php",
+            "includes/Service_Provider.php",
+            "includes/Router.php",
+            "includes/Call_Api.php",
+            "includes/Autoload.php",
             #Web
             "them_options/on5_functions.php",
             "them_options/on5-panel.php",

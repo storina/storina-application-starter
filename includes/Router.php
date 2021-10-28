@@ -2,7 +2,7 @@
 
 defined('ABSPATH') || exit;
 
-class OSA_Router {
+class Router {
 
     public $map;
 

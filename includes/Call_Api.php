@@ -1,17 +1,19 @@
 <?php
 
+namespace STORINA;
+
 defined('ABSPATH') || exit;
 
 use \STORINA\Controllers\General;
 
-class OSA_Call_Api {
+class Call_Api {
 
     public $service_provider;
     public $router;
     public $general;
 
     public function __construct($service_provider) {
-        $this->router = new OSA_Router();
+        $this->router = new Router();
         $this->service_provider = $service_provider;
         $this->general = $service_provider->get(General::class);
         add_action('generate_rewrite_rules', array($this, 'add_rewrite_rule'));

@@ -1,16 +1,20 @@
 <?php
 
+namespace STORINA;
+
+use STORINA\Service_Provider;
+
 defined('ABSPATH') || exit;
 
-class OSA_Autoload {
+class Autoload {
 
     public $service_provider;
     public $requires;
 
     public function __construct() {
         $this->init();
-        $this->service_provider = new OSA_Service_Provider($this->requires);
-        new OSA_Call_Api($this->service_provider);
+        $this->service_provider = new Service_Provider($this->requires);
+        new Call_Api($this->service_provider);
     }
 
     public function init() {
@@ -31,4 +35,4 @@ class OSA_Autoload {
 }
 
 global $osa_autoload;
-$osa_autoload = new OSA_Autoload;
+$osa_autoload = new Autoload;
