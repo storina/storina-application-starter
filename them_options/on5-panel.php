@@ -31,38 +31,38 @@ function storina_update_option2() {
 		$VendorAvatar          = storina_get_option( 'VendorAvatar' );
 
 		if ( ! $title ) {
-			osa_update_option( 'app_title', 'اپلیکیشن اندروید' );
+			storina_update_option( 'app_title', 'اپلیکیشن اندروید' );
 		}
 		if ( ! $app_masterColor ) {
-			osa_update_option( 'app_masterColor', 'F21D2B' );
+			storina_update_option( 'app_masterColor', 'F21D2B' );
 		}
 		if ( ! $app_secondColor ) {
-			osa_update_option( 'app_secondColor', 'CF1111' );
+			storina_update_option( 'app_secondColor', 'CF1111' );
 		}
 		if ( ! $Archive_product_count ) {
-			osa_update_option( 'Archive_product_count', 8 );
+			storina_update_option( 'Archive_product_count', 8 );
 		}
 
 		if ( ! $zeroPriceText ) {
-			osa_update_option( 'zeroPriceText', 'zero' );
+			storina_update_option( 'zeroPriceText', 'zero' );
 		}
 		if ( ! $appArchiveType ) {
-			osa_update_option( 'appArchiveType', 'sub' );
+			storina_update_option( 'appArchiveType', 'sub' );
 		}
 		if ( ! $viewCounterField ) {
-			osa_update_option( 'viewCounterField', 'post-views' );
+			storina_update_option( 'viewCounterField', 'post-views' );
 		}
 		if ( ! $payType ) {
-			osa_update_option( 'payType', 'inAppPay' );
+			storina_update_option( 'payType', 'inAppPay' );
 		}
 		if ( ! $variation_priceType ) {
-			osa_update_option( 'variation_priceType', 1 );
+			storina_update_option( 'variation_priceType', 1 );
 		}
 		if ( ! $app_callNumber ) {
-			osa_update_option( 'app_callNumber', '09355240891' );
+			storina_update_option( 'app_callNumber', '09355240891' );
 		}
 		if ( ! $VendorAvatar ) {
-			osa_update_option( 'VendorAvatar', 'hidden' );
+			storina_update_option( 'VendorAvatar', 'hidden' );
 		}
 
 		// about option
@@ -77,34 +77,34 @@ function storina_update_option2() {
 		$app_aboutButtonText = storina_get_option( 'app_aboutButtonText' );
 		$app_aboutButtonLink = storina_get_option( 'app_aboutButtonLink' );
 		if ( ! $app_slogan ) {
-			osa_update_option( 'app_slogan', 'بخر بفروش و آنلاین باش' );
+			storina_update_option( 'app_slogan', 'بخر بفروش و آنلاین باش' );
 		}
 		if ( ! $app_Email ) {
-			osa_update_option( 'app_Email', 'app@x.ir' );
+			storina_update_option( 'app_Email', 'app@x.ir' );
 		}
 		if ( ! $app_telegramID ) {
-			osa_update_option( 'app_telegramID', '@ali_akherati' );
+			storina_update_option( 'app_telegramID', '@ali_akherati' );
 		}
 		if ( ! $app_phone ) {
-			osa_update_option( 'app_phone', '09355600355' );
+			storina_update_option( 'app_phone', '09355600355' );
 		}
 		if ( ! $app_copyright ) {
-			osa_update_option( 'app_copyright', 'کلیه حقوق مادی و معنوی این اپلیکیشن متعلق به شرکت ایکس است.' );
+			storina_update_option( 'app_copyright', 'کلیه حقوق مادی و معنوی این اپلیکیشن متعلق به شرکت ایکس است.' );
 		}
 		if ( ! $app_privacyLink ) {
-			osa_update_option( 'app_privacyLink', 'https://person.bilpay.ir/privacy-policy/' );
+			storina_update_option( 'app_privacyLink', 'https://person.bilpay.ir/privacy-policy/' );
 		}
 		if ( ! $app_termsLink ) {
-			osa_update_option( 'app_termsLink', 'https://person.bilpay.ir/tos/' );
+			storina_update_option( 'app_termsLink', 'https://person.bilpay.ir/tos/' );
 		}
 		if ( ! $app_aboutLink ) {
-			osa_update_option( 'app_aboutLink', 'https://person.bilpay.ir/about-person/' );
+			storina_update_option( 'app_aboutLink', 'https://person.bilpay.ir/about-person/' );
 		}
 		if ( ! $app_aboutButtonText ) {
-			osa_update_option( 'app_aboutButtonText', 'مشاهده سایت' );
+			storina_update_option( 'app_aboutButtonText', 'مشاهده سایت' );
 		}
 		if ( ! $app_aboutButtonLink ) {
-			osa_update_option( 'app_aboutButtonLink', 'https://storina.com' );
+			storina_update_option( 'app_aboutButtonLink', 'https://storina.com' );
 		}
 
 		// index option
@@ -131,8 +131,8 @@ function storina_update_option2() {
 				'categories_2',
 				'productBox_2'
 			);
-			osa_update_option( 'appindex_element', $index_types );
-			osa_update_option( 'appindex_ID', $index_IDs );
+			storina_update_option( 'appindex_element', $index_types );
+			storina_update_option( 'appindex_ID', $index_IDs );
 		}
 		//slider
 
@@ -144,7 +144,7 @@ function storina_update_option2() {
 				'https://person.bilpay.ir/2/wp-content/uploads/2019/03/1278674567845378126378.jpg',
 				'https://person.bilpay.ir/2/wp-content/uploads/2019/03/12786e332784781263.jpg'
 			);
-			osa_update_option( 'top_slider_imagesslide_1', $banners );
+			storina_update_option( 'top_slider_imagesslide_1', $banners );
 		}
 
 		// cat
@@ -155,23 +155,23 @@ function storina_update_option2() {
 		) );
 		$indexAppCatscat_1 = storina_get_option( 'indexAppCatscat_1' );
 		if ( empty( $indexAppCatscat_1 ) OR ! $indexAppCatscat_1 ) {
-			osa_update_option( 'indexAppCatscat_1', $product_cat_ids );
-			osa_update_option( 'indexAppCatTypecat_1', 'Thumbnail' );
+			storina_update_option( 'indexAppCatscat_1', $product_cat_ids );
+			storina_update_option( 'indexAppCatTypecat_1', 'Thumbnail' );
 		}
 
 		//featured
 		$indexAppFeaturesfeature_1 = storina_get_option( 'indexAppFeaturesfeature_1' );
 		if ( empty( $indexAppFeaturesfeature_1 ) OR ! $indexAppFeaturesfeature_1 ) {
-			osa_update_option( 'indexAppFeaturesfeature_1', $product_cat_ids );
-			osa_update_option( 'indexAppFeaturesCountfeature_1', 4 );
+			storina_update_option( 'indexAppFeaturesfeature_1', $product_cat_ids );
+			storina_update_option( 'indexAppFeaturesCountfeature_1', 4 );
 		}
 
 		// product box
 
 		$indexAppBoxproductBox_1 = storina_get_option( 'indexAppBoxproductBox_1' );
 		if ( empty( $indexAppBoxproductBox_1 ) OR ! $indexAppBoxproductBox_1 ) {
-			osa_update_option( 'indexAppBoxproductBox_1', 0 );
-			osa_update_option( 'indexAppBoxTitleproductBox_1', 'جدیدترین محصولات' );
+			storina_update_option( 'indexAppBoxproductBox_1', 0 );
+			storina_update_option( 'indexAppBoxTitleproductBox_1', 'جدیدترین محصولات' );
 		}
 
 		//oneColADV_1
@@ -182,22 +182,22 @@ function storina_update_option2() {
 				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/0203094892838904.jpg',
 				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/9932003948742.jpg'
 			);
-			osa_update_option( 'Hbanner_banner1oneColADV_1', $banners );
+			storina_update_option( 'Hbanner_banner1oneColADV_1', $banners );
 		}
 		// cat
 		$indexAppCatscategories_2 = storina_get_option( 'indexAppCatscategories_2' );
 		if ( empty( $indexAppCatscategories_2 ) OR ! $indexAppCatscategories_2 ) {
-			osa_update_option( 'indexAppCatscategories_2', $product_cat_ids );
-			osa_update_option( 'indexAppCatTypecategories_2', 'scrollButtons' );
+			storina_update_option( 'indexAppCatscategories_2', $product_cat_ids );
+			storina_update_option( 'indexAppCatTypecategories_2', 'scrollButtons' );
 		}
 		// product box
 
 		$indexAppBoxproductBox_2 = storina_get_option( 'indexAppBoxproductBox_2' );
 		if ( empty( $indexAppBoxproductBox_2 ) OR ! $indexAppBoxproductBox_2 ) {
-			osa_update_option( 'indexAppBoxproductBox_2', 0 );
-			osa_update_option( 'indexAppBoxTitleproductBox_2', 'تازه ترین محصولات' );
+			storina_update_option( 'indexAppBoxproductBox_2', 0 );
+			storina_update_option( 'indexAppBoxTitleproductBox_2', 'تازه ترین محصولات' );
 		}
-		osa_update_option( "dig_otp_size", 6 );
+		storina_update_option( "dig_otp_size", 6 );
 	}
 	if ( isset( $_POST['submit_theme_options'] ) ) {
 	$apptype_form = $_POST['apptype_form'];
@@ -223,10 +223,10 @@ function storina_update_option2() {
 					$title = $slider['title'];
 					$text = $slider['text'];
 					$link = $slider['link'];
-					osa_update_option($image_name,$address);
-					osa_update_option($link_name,$link);
-					osa_update_option($title_name,$title);
-					osa_update_option($caption_name,$text);
+					storina_update_option($image_name,$address);
+					storina_update_option($link_name,$link);
+					storina_update_option($title_name,$title);
+					storina_update_option($caption_name,$text);
 					break;
 				case 'sliderplus':
 					$slider_name   = $page['slider_name'];
@@ -243,12 +243,12 @@ function storina_update_option2() {
 					$link          = $slider['link'];
 					$typeLink      = $slider['typeLink'];
 					$category      = $slider['category'];
-					osa_update_option( $image_name, $address );
-					osa_update_option( $link_name, $link );
-					osa_update_option( $typeLink_name, $typeLink );
-					osa_update_option( $title_name, $title );
-					osa_update_option( $caption_name, $text );
-					osa_update_option( $category_name, $category );
+					storina_update_option( $image_name, $address );
+					storina_update_option( $link_name, $link );
+					storina_update_option( $typeLink_name, $typeLink );
+					storina_update_option( $title_name, $title );
+					storina_update_option( $caption_name, $text );
+					storina_update_option( $category_name, $category );
 					break;
 				case 'options':
 					$counter = 0;
@@ -260,7 +260,7 @@ function storina_update_option2() {
 								{
 									$tmp_name     = $h['id'];
 									$tmp_textarea = stripslashes( $_POST[ $tmp_name ] );
-									osa_update_option( $tmp_name, $tmp_textarea );
+									storina_update_option( $tmp_name, $tmp_textarea );
 									break;
 								}
 							case 'text':
@@ -269,24 +269,24 @@ function storina_update_option2() {
 							case 'picture':
 								{
 									$tmp_name = $h['id'];
-									osa_update_option( $tmp_name, $_POST[ $tmp_name ] );
+									storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
 									break;
 								}
 							case 'color':
 								$tmp_name = $h['id'];
-								osa_update_option( $tmp_name, $_POST[ $tmp_name ] );
+								storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
 								break;
 							case 'listbox':
 								{
 									$tmp_name = $h['id'];
-									osa_update_option( $tmp_name, $_POST[ $tmp_name ] );
+									storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
 								}
 							case 'checkbox':
 								{
 									$count = count( $h['id'] );
 									for ( $i = 0; $i < $count; $i ++ ) {
 										$tmp_name = $h['id'][ $i ];
-										osa_update_option( $tmp_name, $_POST[ $tmp_name ] );
+										storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
 									}
 
 									break;
@@ -314,14 +314,14 @@ function storina_update_option2() {
 					$height_banner    = $banners['height'];
 					$relation_banner  = $banners['banner_relation'];
 					$expire_banner    = $banners['banner_expire'];
-					osa_update_option( $banner_addresses, $address_banner );
-					osa_update_option( $banner_links, $link_banner );
-					osa_update_option( $banner_titles, $title_banner );
-					osa_update_option( $banner_captions, $text_banner );
-					osa_update_option( $widths_banner, $width_banner );
-					osa_update_option( $heights_banner, $height_banner );
-					osa_update_option( $relations_banner, $relation_banner );
-					osa_update_option( $expires_banner, $expire_banner );
+					storina_update_option( $banner_addresses, $address_banner );
+					storina_update_option( $banner_links, $link_banner );
+					storina_update_option( $banner_titles, $title_banner );
+					storina_update_option( $banner_captions, $text_banner );
+					storina_update_option( $widths_banner, $width_banner );
+					storina_update_option( $heights_banner, $height_banner );
+					storina_update_option( $relations_banner, $relation_banner );
+					storina_update_option( $expires_banner, $expire_banner );
 					break;
 				case 'text_ads':
 					$text_ads_name     = $page['text_ads_name'];
@@ -339,12 +339,12 @@ function storina_update_option2() {
 					$follow_text_ads   = $text_ads['follow'];
 					$expire_text_ads   = $text_ads['expire'];
 					$color_text_ads    = $text_ads['color'];
-					osa_update_option( $text_ads_titles, $title_text_ads );
-					osa_update_option( $text_ads_links, $link_text_ads );
-					osa_update_option( $text_ads_captions, $text_text_ads );
-					osa_update_option( $text_ads_follow, $follow_text_ads );
-					osa_update_option( $text_ads_expire, $expire_text_ads );
-					osa_update_option( $text_ads_color, $color_text_ads );
+					storina_update_option( $text_ads_titles, $title_text_ads );
+					storina_update_option( $text_ads_links, $link_text_ads );
+					storina_update_option( $text_ads_captions, $text_text_ads );
+					storina_update_option( $text_ads_follow, $follow_text_ads );
+					storina_update_option( $text_ads_expire, $expire_text_ads );
+					storina_update_option( $text_ads_color, $color_text_ads );
 					break;
 				case 'text_adsplus':
 
@@ -359,10 +359,10 @@ function storina_update_option2() {
 					$text     = $slider['text'];
 					$link     = $slider['link'];
 					$typeLink = $slider['typeLink'];
-					osa_update_option( $link_name, $link );
-					osa_update_option( $typeLink_name, $typeLink );
-					osa_update_option( $title_name, $title );
-					osa_update_option( $caption_name, $text );
+					storina_update_option( $link_name, $link );
+					storina_update_option( $typeLink_name, $typeLink );
+					storina_update_option( $title_name, $title );
+					storina_update_option( $caption_name, $text );
 					break;
 				case 'custom':
 				case 'custom2':
@@ -393,14 +393,14 @@ function storina_update_option2() {
 						$custom_option2_value[ $i ] = 'ID_' . rand( 1, 999999 );
 					}
 				}
-					osa_update_option( $custom_option2, $custom_option2_value );
-					osa_update_option( $custom_option3, $custom_option3_value );
-					osa_update_option( $custom_option4, $custom_option4_value );
-					osa_update_option( $custom_option5, $custom_option5_value );
-					osa_update_option( $custom_option6, $custom_option6_value );
-					osa_update_option( $custom_option7, $custom_option7_value );
-					osa_update_option( $custom_option8, $custom_option8_value );
-					osa_update_option( $custom_option9, $custom_option9_value );
+					storina_update_option( $custom_option2, $custom_option2_value );
+					storina_update_option( $custom_option3, $custom_option3_value );
+					storina_update_option( $custom_option4, $custom_option4_value );
+					storina_update_option( $custom_option5, $custom_option5_value );
+					storina_update_option( $custom_option6, $custom_option6_value );
+					storina_update_option( $custom_option7, $custom_option7_value );
+					storina_update_option( $custom_option8, $custom_option8_value );
+					storina_update_option( $custom_option9, $custom_option9_value );
 					break;
 					case 'woap-home-adc':
 						foreach($page['option-names'] as $option_name){

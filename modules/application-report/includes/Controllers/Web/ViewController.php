@@ -38,7 +38,7 @@ class ViewController {
             $destination_name =  self::daily_postviews_key . "_{$destination_index}";
             $origin_value = storina_get_option($origin_name);
             $origin_value_validated = (empty($origin_value))? 0 : $origin_value;
-            osa_update_option($destination_name,$origin_value_validated);
+            storina_update_option($destination_name,$origin_value_validated);
         }
         update_option(self::daily_postviews_key,0);
     }
