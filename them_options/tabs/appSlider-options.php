@@ -1,6 +1,6 @@
 <?php
-$element = osa_get_option('appindex_element');
-$elementID = osa_get_option('appindex_ID');
+$element = storina_get_option('appindex_element');
+$elementID = storina_get_option('appindex_ID');
 $i = 0;
 if(! empty($element)){
 foreach ($element as $item) {

@@ -13,14 +13,14 @@
         $custom_option7 = $page['custom_option7'];
         $custom_option8 = $page['custom_option8'];
         $custom_option9 = $page['custom_option9'];
-        $custom_option_value2 = osa_get_option($custom_option2);
-        $custom_option_value3 = osa_get_option($custom_option3);
-        $custom_option_value4 = osa_get_option($custom_option4);
-        $custom_option_value5 = osa_get_option($custom_option5);
-        $custom_option_value6 = osa_get_option($custom_option6);
-        $custom_option_value7 = osa_get_option($custom_option7);
-        $custom_option_value8 = osa_get_option($custom_option8);
-        $custom_option_value9 = osa_get_option($custom_option9);
+        $custom_option_value2 = storina_get_option($custom_option2);
+        $custom_option_value3 = storina_get_option($custom_option3);
+        $custom_option_value4 = storina_get_option($custom_option4);
+        $custom_option_value5 = storina_get_option($custom_option5);
+        $custom_option_value6 = storina_get_option($custom_option6);
+        $custom_option_value7 = storina_get_option($custom_option7);
+        $custom_option_value8 = storina_get_option($custom_option8);
+        $custom_option_value9 = storina_get_option($custom_option9);
         global $product_cats;
         $product_cats        = array();
         $product_cats[ - 1 ] = __( "All", 'onlinerShopApp' );
@@ -116,7 +116,7 @@
                 </tr>
             <?php }
 
-            //$value = osa_get_option(); ?>
+            //$value = storina_get_option(); ?>
 
         </table>
         <div class="osa-submit-wrapper-table">

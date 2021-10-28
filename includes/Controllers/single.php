@@ -104,9 +104,9 @@ class Single {
         //     check cache
         $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('single', $masterID);
-        $backorder_text = osa_get_option('app_backorder_text');
+        $backorder_text = storina_get_option('app_backorder_text');
         $general = $this->service_container->get(General::class);
-        $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
+        $cache = ( storina_get_option('appCacheStatus') == 'inactive' ) ? false : true;
         $viewCounter = $this->save_post_view($masterID); // افزایش تعداد بازدید
         if (!empty($record) AND $cache == true) {
             $this->saveView($masterID); // ثبت در جدول بازدید شده ها
@@ -282,7 +282,7 @@ class Single {
                 }
 
                 $final['name'] = html_entity_decode($product->get_name());
-                if ("true" == osa_get_option('app_showProductNameEnglish')) {
+                if ("true" == storina_get_option('app_showProductNameEnglish')) {
                     $final['en_name'] = "";
                 } else {
                     $final['en_name'] = ( get_post_meta($final['id'], '_subtitle', true) ) ? get_post_meta($final['id'], '_subtitle', true) : get_post_meta($final['id'], '_ENtitle', true);
@@ -394,7 +394,7 @@ class Single {
                     $vendor_biography = $store_settings['vendor_biography'];
                     $vendor_send_time = ( $dps_processing ) ? "آماده ارسال از $dps_processing روز آینده" : 'آماده ارسال از انبار ' . get_bloginfo('name');
 					$vendor_id = get_the_author_meta('ID');
-                    $vendor_info = (osa_get_option('VendorAvatar') == 'Show')? array(
+                    $vendor_info = (storina_get_option('VendorAvatar') == 'Show')? array(
                         'vendor_id' => intval(get_the_author_meta('ID')),
                         'store_name' => $store_settings['store_name'],
                         'phone' => $store_settings['phone'],
@@ -463,7 +463,7 @@ class Single {
     }
 
     private function save_post_view($postID) {
-        $viewCountFiled = ( osa_get_option('viewCounterField') ) ? osa_get_option('viewCounterField') : 'post-views';
+        $viewCountFiled = ( storina_get_option('viewCounterField') ) ? storina_get_option('viewCounterField') : 'post-views';
         if (!$viewCountFiled) {
             $viewCountFiled = 'post-views';
         }
@@ -808,7 +808,7 @@ class Single {
     private function related($masterID) {
         global $woocommerce;
         // Get Related Products from SAME Sub-category
-        $related_type = osa_get_option('related_product_by');
+        $related_type = storina_get_option('related_product_by');
         //echo $related_type;
         if ($related_type == 1) {
             $tags_array = array(0);
@@ -943,7 +943,7 @@ class Single {
         if (strlen($_POST['vendor_town']) > 2) {
             $args['author__in'] = $activeVendors;
         }
-        if (osa_get_option('app_disableExist') == 'true') {
+        if (storina_get_option('app_disableExist') == 'true') {
             $args['meta_query'] = array(
                 array(
                     'key' => '_stock_status',
@@ -1150,7 +1150,7 @@ class Single {
         $user_email = $user_object->user_email;
 
         $product_title = $product_object->get_title();
-        $admin_email = osa_get_option('admin_email');
+        $admin_email = storina_get_option('admin_email');
 
         ob_start();
         ?>

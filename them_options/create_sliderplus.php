@@ -12,12 +12,12 @@
 		$title_name = $page['title_name'];
 		$caption_name = $page['caption_name'];
 		$category_name = $page['category_name'];
-		$addresses = osa_get_option($image_name);
-		$links = osa_get_option($link_name);
-		$typeLinks = osa_get_option($typeLink_name);
-		$titles = osa_get_option($title_name);
-		$captions = osa_get_option($caption_name);
-		$cats = osa_get_option($category_name);
+		$addresses = storina_get_option($image_name);
+		$links = storina_get_option($link_name);
+		$typeLinks = storina_get_option($typeLink_name);
+		$titles = storina_get_option($title_name);
+		$captions = storina_get_option($caption_name);
+		$cats = storina_get_option($category_name);
 
 		
 		global $product_cats;
@@ -126,7 +126,7 @@
 		</tr>
 		<?php }
 		
-		//$value = osa_get_option(); ?>
+		//$value = storina_get_option(); ?>
 		
 		</table>
 <div class="osa-submit-wrapper-table">

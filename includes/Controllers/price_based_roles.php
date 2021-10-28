@@ -16,7 +16,7 @@ class Yith_Role_Based_Price{
                 "regular", "on_sale", "your_price"
             ),
         );
-        $this->user_settings = osa_get_option("ywcrbp_show_prices_for_role");
+        $this->user_settings = storina_get_option("ywcrbp_show_prices_for_role");
     }
 
     public function get_user_role($user_id) {
@@ -69,7 +69,7 @@ class Yith_Role_Based_Price{
         $children_prices_min = min($children_prices);
         $children_prices_max = max($children_prices);
         $to = __('To', 'onlinerShopApp');
-        if ("0" == osa_get_option("get_compute_price_render")) {
+        if ("0" == storina_get_option("get_compute_price_render")) {
             return (string) $children_prices_min;
         }
         return "{$children_prices_min} {$to} {$children_prices_max}";

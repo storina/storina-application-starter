@@ -181,7 +181,7 @@ class User {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $checkMail = $this->checkEmail($email);
-        $registerType = osa_get_option('registerType');
+        $registerType = storina_get_option('registerType');
         if ($registerType == 'email') {
             if (!$checkMail) {
                 $result = array(
@@ -245,7 +245,7 @@ class User {
             $result = wp_update_user(
                     array(
                         'ID' => intval($user_id),
-                        'role' => apply_filters("osa_user_register_user_role",osa_get_option('default_role')),
+                        'role' => apply_filters("osa_user_register_user_role",storina_get_option('default_role')),
                         'user_email' => $email,
                         'display_name' => $name,
                         'first_name' => $name
@@ -566,7 +566,7 @@ class User {
         $user_id = $user_by_id->ID;
         if ($user_id) {
             $user = get_user_by('id', $user_id);
-            $app_loginVerifyType = osa_get_option('app_loginVerifyType');
+            $app_loginVerifyType = storina_get_option('app_loginVerifyType');
 
             if ($app_loginVerifyType == 'password') {
                 $result = $this->doLogin($creds, $user, 1);
@@ -660,7 +660,7 @@ class User {
         $userToken = $_POST['userToken'];
 
         $checkMail = $this->checkEmail($email);
-        $registerType = osa_get_option('registerType');
+        $registerType = storina_get_option('registerType');
         $user_id = email_exists($email);
         if ($registerType == 'email') {
 
@@ -1315,7 +1315,7 @@ class User {
             "email" => $email,
             "fullname" => $fullname,
             'googleID' => $_POST['googleID'],
-            "role" => apply_filters("osa_user_register_user_role",osa_get_option('default_role')),
+            "role" => apply_filters("osa_user_register_user_role",storina_get_option('default_role')),
         );
         update_option($user_token,$session_data);
         return $result;

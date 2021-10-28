@@ -17,18 +17,18 @@ function storina_update_option2() {
 	if ( isset( $_POST['submit_osa_import'],$import_nonce_value ) && false != $import_verify_nonce ) {
 
 		//app option
-		$title                 = osa_get_option( 'app_title' );
-		$app_masterColor       = osa_get_option( 'app_masterColor' );
-		$app_secondColor       = osa_get_option( 'app_secondColor' );
-		$Archive_product_count = osa_get_option( 'Archive_product_count' );
+		$title                 = storina_get_option( 'app_title' );
+		$app_masterColor       = storina_get_option( 'app_masterColor' );
+		$app_secondColor       = storina_get_option( 'app_secondColor' );
+		$Archive_product_count = storina_get_option( 'Archive_product_count' );
 		
-		$zeroPriceText         = osa_get_option( 'zeroPriceText' );
-		$appArchiveType        = osa_get_option( 'appArchiveType' );
-		$viewCounterField      = osa_get_option( 'viewCounterField' );
-		$payType               = osa_get_option( 'payType' );
-		$variation_priceType   = osa_get_option( 'variation_priceType' );
-		$app_callNumber        = osa_get_option( 'app_callNumber' );
-		$VendorAvatar          = osa_get_option( 'VendorAvatar' );
+		$zeroPriceText         = storina_get_option( 'zeroPriceText' );
+		$appArchiveType        = storina_get_option( 'appArchiveType' );
+		$viewCounterField      = storina_get_option( 'viewCounterField' );
+		$payType               = storina_get_option( 'payType' );
+		$variation_priceType   = storina_get_option( 'variation_priceType' );
+		$app_callNumber        = storina_get_option( 'app_callNumber' );
+		$VendorAvatar          = storina_get_option( 'VendorAvatar' );
 
 		if ( ! $title ) {
 			osa_update_option( 'app_title', 'اپلیکیشن اندروید' );
@@ -66,16 +66,16 @@ function storina_update_option2() {
 		}
 
 		// about option
-		$app_slogan          = osa_get_option( 'app_slogan' );
-		$app_Email           = osa_get_option( 'app_Email' );
-		$app_telegramID      = osa_get_option( 'app_telegramID' );
-		$app_phone           = osa_get_option( 'app_phone' );
-		$app_copyright       = osa_get_option( 'app_copyright' );
-		$app_privacyLink     = osa_get_option( 'app_privacyLink' );
-		$app_termsLink       = osa_get_option( 'app_termsLink' );
-		$app_aboutLink       = osa_get_option( 'app_aboutLink' );
-		$app_aboutButtonText = osa_get_option( 'app_aboutButtonText' );
-		$app_aboutButtonLink = osa_get_option( 'app_aboutButtonLink' );
+		$app_slogan          = storina_get_option( 'app_slogan' );
+		$app_Email           = storina_get_option( 'app_Email' );
+		$app_telegramID      = storina_get_option( 'app_telegramID' );
+		$app_phone           = storina_get_option( 'app_phone' );
+		$app_copyright       = storina_get_option( 'app_copyright' );
+		$app_privacyLink     = storina_get_option( 'app_privacyLink' );
+		$app_termsLink       = storina_get_option( 'app_termsLink' );
+		$app_aboutLink       = storina_get_option( 'app_aboutLink' );
+		$app_aboutButtonText = storina_get_option( 'app_aboutButtonText' );
+		$app_aboutButtonLink = storina_get_option( 'app_aboutButtonLink' );
 		if ( ! $app_slogan ) {
 			osa_update_option( 'app_slogan', 'بخر بفروش و آنلاین باش' );
 		}
@@ -109,8 +109,8 @@ function storina_update_option2() {
 
 		// index option
 
-		$index_types = osa_get_option( 'appindex_element' );
-		$index_IDs   = osa_get_option( 'appindex_ID' );
+		$index_types = storina_get_option( 'appindex_element' );
+		$index_IDs   = storina_get_option( 'appindex_ID' );
 
 		if ( empty( $index_types ) OR ! $index_types ) {
 			$index_types = array(
@@ -136,7 +136,7 @@ function storina_update_option2() {
 		}
 		//slider
 
-		$top_slider_imagesslide_1 = osa_get_option( 'top_slider_imagesslide_1' );
+		$top_slider_imagesslide_1 = storina_get_option( 'top_slider_imagesslide_1' );
 		if ( empty( $top_slider_imagesslide_1 ) OR ! $top_slider_imagesslide_1 ) {
 			$banners = array(
 				'https://person.bilpay.ir/2/wp-content/uploads/2018/12/gif1-1.gif',
@@ -153,14 +153,14 @@ function storina_update_option2() {
 			'hide_empty' => false,
 			'fields'     => 'ids',
 		) );
-		$indexAppCatscat_1 = osa_get_option( 'indexAppCatscat_1' );
+		$indexAppCatscat_1 = storina_get_option( 'indexAppCatscat_1' );
 		if ( empty( $indexAppCatscat_1 ) OR ! $indexAppCatscat_1 ) {
 			osa_update_option( 'indexAppCatscat_1', $product_cat_ids );
 			osa_update_option( 'indexAppCatTypecat_1', 'Thumbnail' );
 		}
 
 		//featured
-		$indexAppFeaturesfeature_1 = osa_get_option( 'indexAppFeaturesfeature_1' );
+		$indexAppFeaturesfeature_1 = storina_get_option( 'indexAppFeaturesfeature_1' );
 		if ( empty( $indexAppFeaturesfeature_1 ) OR ! $indexAppFeaturesfeature_1 ) {
 			osa_update_option( 'indexAppFeaturesfeature_1', $product_cat_ids );
 			osa_update_option( 'indexAppFeaturesCountfeature_1', 4 );
@@ -168,14 +168,14 @@ function storina_update_option2() {
 
 		// product box
 
-		$indexAppBoxproductBox_1 = osa_get_option( 'indexAppBoxproductBox_1' );
+		$indexAppBoxproductBox_1 = storina_get_option( 'indexAppBoxproductBox_1' );
 		if ( empty( $indexAppBoxproductBox_1 ) OR ! $indexAppBoxproductBox_1 ) {
 			osa_update_option( 'indexAppBoxproductBox_1', 0 );
 			osa_update_option( 'indexAppBoxTitleproductBox_1', 'جدیدترین محصولات' );
 		}
 
 		//oneColADV_1
-		$Hbanner_banner1oneColADV_1 = osa_get_option( 'Hbanner_banner1oneColADV_1' );
+		$Hbanner_banner1oneColADV_1 = storina_get_option( 'Hbanner_banner1oneColADV_1' );
 		if ( empty( $Hbanner_banner1oneColADV_1 ) OR ! $Hbanner_banner1oneColADV_1 ) {
 			$banners = array(
 				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/328748283229039093.jpg',
@@ -185,14 +185,14 @@ function storina_update_option2() {
 			osa_update_option( 'Hbanner_banner1oneColADV_1', $banners );
 		}
 		// cat
-		$indexAppCatscategories_2 = osa_get_option( 'indexAppCatscategories_2' );
+		$indexAppCatscategories_2 = storina_get_option( 'indexAppCatscategories_2' );
 		if ( empty( $indexAppCatscategories_2 ) OR ! $indexAppCatscategories_2 ) {
 			osa_update_option( 'indexAppCatscategories_2', $product_cat_ids );
 			osa_update_option( 'indexAppCatTypecategories_2', 'scrollButtons' );
 		}
 		// product box
 
-		$indexAppBoxproductBox_2 = osa_get_option( 'indexAppBoxproductBox_2' );
+		$indexAppBoxproductBox_2 = storina_get_option( 'indexAppBoxproductBox_2' );
 		if ( empty( $indexAppBoxproductBox_2 ) OR ! $indexAppBoxproductBox_2 ) {
 			osa_update_option( 'indexAppBoxproductBox_2', 0 );
 			osa_update_option( 'indexAppBoxTitleproductBox_2', 'تازه ترین محصولات' );

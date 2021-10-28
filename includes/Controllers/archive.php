@@ -42,7 +42,7 @@ class Archive {
         $exist = $_POST['exist'];
         $sort = $_POST['sort'];
         $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
-        $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+        $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
         $data['status'] = true;
@@ -88,7 +88,7 @@ class Archive {
                 $args['order'] = 'DESC';
                 break;
             case 'view':
-                $viewCounterField = ( osa_get_option('viewCounterField') ) ? osa_get_option('viewCounterField') : 'post-views';
+                $viewCounterField = ( storina_get_option('viewCounterField') ) ? storina_get_option('viewCounterField') : 'post-views';
                 if ($viewCounterField) {
                     $args['orderby'] = 'meta_value_num';
                     $args['meta_key'] = $viewCounterField;
@@ -155,7 +155,7 @@ class Archive {
                 }
 
                 $productInfo['in_stock'] = $product->is_in_stock();
-                if (function_exists('dokan_get_store_info') AND osa_get_option('VendorAvatar') == 'Show') {
+                if (function_exists('dokan_get_store_info') AND storina_get_option('VendorAvatar') == 'Show') {
                     $store_settings = dokan_get_store_info(get_the_author_meta('ID'));
                     $store_settings['address']['street_1'] = ( $store_settings['address']['street_1'] ) ? $store_settings['address']['street_1'] : '';
                     $store_settings['address']['street_2'] = ( $store_settings['address']['street_2'] ) ? $store_settings['address']['street_2'] : '';
@@ -267,7 +267,7 @@ class Archive {
         // check cache
         $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('archive', $cat_id . $sort, $page, $exist)->json;
-        $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
+        $cache = ( storina_get_option('appCacheStatus') == 'inactive' ) ? false : true;
         $userToken = $_POST['userToken'];
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
@@ -304,12 +304,12 @@ class Archive {
 
     private function slider($cat_id) {
         $general = $this->service_container->get(General::class);
-        $slider_images = osa_get_option('apparchive_slider_images');
-        //$slider_titles = osa_get_option('apparchive_slider_titles');
-        $slider_links = osa_get_option('apparchive_slider_links');
-        $slider_typeLinks = osa_get_option('apparchive_slider_typeLinks');
-        $slider_categories = osa_get_option('apparchive_slider_category');
-        //$slider_caption = osa_get_option('archive_slider_captions');
+        $slider_images = storina_get_option('apparchive_slider_images');
+        //$slider_titles = storina_get_option('apparchive_slider_titles');
+        $slider_links = storina_get_option('apparchive_slider_links');
+        $slider_typeLinks = storina_get_option('apparchive_slider_typeLinks');
+        $slider_categories = storina_get_option('apparchive_slider_category');
+        //$slider_caption = storina_get_option('archive_slider_captions');
         //$slide_count = count($slider_images) - 1;
         $i = 0;
         $images = array();
@@ -375,14 +375,14 @@ class Archive {
 
     private function banners($cat_id) {
         $general = $this->service_container->get(General::class);
-        $banners1 = osa_get_option('HArchive_banner1');
-        $linkBanner1 = osa_get_option('HArchive_linkBanner1');
-        $typeLinkBanner1 = osa_get_option('HArchive_typeLinkBanner1');
-        $banners2 = osa_get_option('HArchive_banner2');
-        $linkBanner2 = osa_get_option('HArchive_linkBanner2');
-        $typeLinkBanner2 = osa_get_option('HArchive_typeLinkBanner2');
-        $col = osa_get_option('HArchive_col');
-        $adv_category = osa_get_option('HArchive_option9');
+        $banners1 = storina_get_option('HArchive_banner1');
+        $linkBanner1 = storina_get_option('HArchive_linkBanner1');
+        $typeLinkBanner1 = storina_get_option('HArchive_typeLinkBanner1');
+        $banners2 = storina_get_option('HArchive_banner2');
+        $linkBanner2 = storina_get_option('HArchive_linkBanner2');
+        $typeLinkBanner2 = storina_get_option('HArchive_typeLinkBanner2');
+        $col = storina_get_option('HArchive_col');
+        $adv_category = storina_get_option('HArchive_option9');
 
         $i = 0;
         $nice = array();
@@ -448,7 +448,7 @@ class Archive {
                 'terms' => $cat_id
             )
         );
-        if (osa_get_option('app_disableExist') == 'true') {
+        if (storina_get_option('app_disableExist') == 'true') {
             $args['meta_query'] = array(
                 array(
                     'key' => '_stock_status',
@@ -490,7 +490,7 @@ class Archive {
 
                 //$productInfo['sale_price_dates_to']   = $prices['sale_price_dates_to'];
                 //$productInfo['sale_price_dates_from'] = $prices['sale_price_dates_from'];
-                if (function_exists('dokan_get_store_info') AND osa_get_option('VendorAvatar') == 'Show') {
+                if (function_exists('dokan_get_store_info') AND storina_get_option('VendorAvatar') == 'Show') {
                     $store_settings = dokan_get_store_info(get_the_author_meta('ID'));
                     $store_settings['address']['street_1'] = ( $store_settings['address']['street_1'] ) ? $store_settings['address']['street_1'] : '';
                     $store_settings['address']['street_2'] = ( $store_settings['address']['street_2'] ) ? $store_settings['address']['street_2'] : '';
@@ -542,7 +542,7 @@ class Archive {
                 'terms' => $cat_id
             )
         );
-        if (osa_get_option('app_disableExist') == 'true') {
+        if (storina_get_option('app_disableExist') == 'true') {
             $args['meta_query'] = array(
                 array(
                     'key' => '_stock_status',
@@ -587,7 +587,7 @@ class Archive {
                 //$productInfo['sale_price_dates_to']   = $prices['sale_price_dates_to'];
                 //$productInfo['sale_price_dates_from'] = $prices['sale_price_dates_from'];
                 //$productInfo['in_stock']              = ( get_post_meta( $product_id, '_stock_status', true ) == 'instock' ) ? true : false;
-                if (function_exists('dokan_get_store_info') AND osa_get_option('VendorAvatar') == 'Show') {
+                if (function_exists('dokan_get_store_info') AND storina_get_option('VendorAvatar') == 'Show') {
                     $store_settings = dokan_get_store_info(get_the_author_meta('ID'));
                     $store_settings['address']['street_1'] = ( $store_settings['address']['street_1'] ) ? $store_settings['address']['street_1'] : '';
                     $store_settings['address']['street_2'] = ( $store_settings['address']['street_2'] ) ? $store_settings['address']['street_2'] : '';
@@ -624,7 +624,7 @@ class Archive {
         $exist = $_POST['exist'];
         $sort = $_POST['sort'];
         $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
-        $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+        $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
         wp_reset_query();
@@ -915,10 +915,10 @@ class Archive {
             $index = $this->service_container->get(Index::class);
             wp_reset_query();
             $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
-            $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+            $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
             $offset = ( $page - 1 ) * $count;
-            $branchCatID = osa_get_option('appBranchCat');
+            $branchCatID = storina_get_option('appBranchCat');
             $args = array(
                 's' => $s,
                 'offset' => $offset,
@@ -1047,7 +1047,7 @@ class Archive {
     }
 
     public function categoryHierarchy(){
-        $parent_ids = osa_get_option('appProCats');
+        $parent_ids = storina_get_option('appProCats');
 		$taxonomy_args = ['taxonomy' => 'product_cat' , 'hide_empty' => false];
 		if(0 != $parent_ids && count($parent_ids) > 0){
 			$taxonomy_args['include'] = $parent_ids;
@@ -1110,7 +1110,7 @@ class Archive {
                 $args['order'] = 'DESC';
                 break;
             case 'view':
-                $viewCounterField = ( osa_get_option('viewCounterField') ) ? osa_get_option('viewCounterField') : 'post-views';
+                $viewCounterField = ( storina_get_option('viewCounterField') ) ? storina_get_option('viewCounterField') : 'post-views';
                 if ($viewCounterField) {
                     $args['orderby'] = 'meta_value_num';
                     $args['meta_key'] = $viewCounterField;

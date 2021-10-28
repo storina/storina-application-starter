@@ -7,7 +7,7 @@ add_action( 'add_meta_boxes', function () {
 	$user_id      = get_post_meta( $order_id, '_customer_user', true );
 	$billing_lat  = get_user_meta( $user_id, $address_type . '_lat', true );
 	$billing_lng  = get_user_meta( $user_id, $address_type . '_lng', true );
-	$api_key      = osa_get_option( 'app_map_api_code' );
+	$api_key      = storina_get_option( 'app_map_api_code' );
 	if ( $billing_lat AND $billing_lng AND $address_type ) {
 		add_meta_box(
 			'address_on_map',
@@ -24,7 +24,7 @@ add_action( 'admin_enqueue_scripts', function ( $hook ) {
 	if ( 'post.php' !== $hook ) {
 		return;
 	}
-	//$api_key = osa_get_option( 'app_map_api_code' );
+	//$api_key = storina_get_option( 'app_map_api_code' );
 	wp_enqueue_script( 'app_google_map', 'https://maps.google.com/maps/api/js?key=' . $api_key . '&language=fa' );
 	$domain_name = $_SERVER['HTTP_HOST'];
 	$host        = explode( '.', $domain_name );
@@ -246,7 +246,7 @@ function storina_update_terawallet($order_id){
 }
 
 add_filter("osa_index_get_app_info",function($app_info){
-	$faq_shortcode_id = osa_get_option('app_faq_shortcode_id');
+	$faq_shortcode_id = storina_get_option('app_faq_shortcode_id');
 	$app_info['faqHidden'] = (!class_exists('SP_EASY_ACCORDION_FREE') || empty($faq_shortcode_id))? true : false;
 	return $app_info;
 },10,1);
@@ -284,7 +284,7 @@ add_filter('posts_clauses', function ($posts_clauses) {
 	global $wpdb;
 	$action = $_POST['action'] ?? null;
 	$level = $_POST['level'] ?? null;
-	$settings = osa_get_option('stock_out_order') ?? false;
+	$settings = storina_get_option('stock_out_order') ?? false;
 	$action_structure = ('archive' == $action && '3' == $level);
     if ($settings && $action_structure) {
         $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";

@@ -21,8 +21,8 @@ class Cart {
     public function __construct($service_container) {
         $this->service_container = $service_container;
         define('DOMAIN', str_replace('https://', 'http://', get_bloginfo('url')));
-        define('CONSUMER_KEY', osa_get_option('cunsomer_key'));
-        define('CONSUMER_SECRET', osa_get_option('Secret_key'));
+        define('CONSUMER_KEY', storina_get_option('cunsomer_key'));
+        define('CONSUMER_SECRET', storina_get_option('Secret_key'));
         require_once( ABSPATH . "wp-load.php" );
         if (isset($_POST['userToken'])) {
             $userToken = $_POST['userToken'];
@@ -289,8 +289,8 @@ class Cart {
         }
 
 
-        $osa_get_option = osa_get_option('woocommerce_ship_to_countries');
-        if ($osa_get_option != 'disabled') {
+        $storina_get_option = storina_get_option('woocommerce_ship_to_countries');
+        if ($storina_get_option != 'disabled') {
             $addressType = @$sessionRecord->addressType;
             $user_action = $this->service_container->get(User::class);
             $userToken = @$_POST['userToken'];
@@ -376,7 +376,7 @@ class Cart {
             'shipping_total' => ($shippingTotal),
             'total' => ($total - $couponDiscount + $shippingTotal),
         );
-        $price_num_decimals = osa_get_option('woocommerce_price_num_decimals');
+        $price_num_decimals = storina_get_option('woocommerce_price_num_decimals');
         $price_num_type = (intval($price_num_decimals) > 0)? 'float' : 'integer';
         foreach($basket['total'] as $key => &$value){
             $value = ('integer' == $price_num_type)? intval($value) : number_format($value , $price_num_decimals);
@@ -1859,8 +1859,8 @@ class Cart {
             );
 
 
-            $osa_get_option = osa_get_option('woocommerce_ship_to_countries');
-            if ($osa_get_option != 'disabled') {
+            $storina_get_option = storina_get_option('woocommerce_ship_to_countries');
+            if ($storina_get_option != 'disabled') {
 
                 $address = get_user_meta($user_id, $addressType . '_address_1', true);
                 $city = get_user_meta($user_id, $addressType . '_city', true);
@@ -1952,8 +1952,8 @@ class Cart {
         if ('completed' !== $order->get_status()) {
             $order->set_status('processing');
         }
-        $checkout_permalink = get_permalink(osa_get_option("woocommerce_checkout_page_id"));
-        $order_received_endpoint = osa_get_option("woocommerce_checkout_order_received_endpoint");
+        $checkout_permalink = get_permalink(storina_get_option("woocommerce_checkout_page_id"));
+        $order_received_endpoint = storina_get_option("woocommerce_checkout_order_received_endpoint");
         $order_id = $order->id;
         $order_key = $order->order_key;
         $order_received_link = trailingslashit($checkout_permalink) . trailingslashit($order_received_endpoint) . trailingslashit($order_id);

@@ -31,7 +31,7 @@ class Index {
         $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
         $record = $OSA_cache->getCache('index', $itemID);
         $general = $this->service_container->get(General::class);
-        $cache = ( osa_get_option('appCacheStatus') == 'inactive' ) ? false : true;
+        $cache = ( storina_get_option('appCacheStatus') == 'inactive' ) ? false : true;
 
         $userToken = $_POST['userToken'];
         $user_action = $this->service_container->get(User::class);
@@ -43,28 +43,28 @@ class Index {
         $min_topup_amount = ( function_exists("woo_wallet") ) ? (int) woo_wallet()->settings_api->get_option('min_topup_amount', '_wallet_settings_general', 0) : -1;
         $max_topup_amount = ( function_exists("woo_wallet") ) ? (int) woo_wallet()->settings_api->get_option('max_topup_amount', '_wallet_settings_general', 0) : -1;
         $user = get_user_by('id', $user_id);
-        $element = osa_get_option('appindex_element');
-        $elementID = osa_get_option('appindex_ID');
+        $element = storina_get_option('appindex_element');
+        $elementID = storina_get_option('appindex_ID');
         // caching
         if (!empty($record) AND $cache == true AND ! in_array('reseler', (array) $user->roles) AND false) {
             $index = $record;
             $version = $_POST['currentVersion'];
             $appinfo = array(
                 "zeroPriceText" => __("Call", "onlinerShopApp"),
-                    /* "new_app_version" => intval( osa_get_option( 'app_version' ) ),
+                    /* "new_app_version" => intval( storina_get_option( 'app_version' ) ),
                       "description"     => array(),
                       "isForce"         => false,
                       "url"             => '' */
             );
-            if (floatval($version) < floatval(osa_get_option('app_version'))) {
+            if (floatval($version) < floatval(storina_get_option('app_version'))) {
 
-                $description = explode(PHP_EOL, osa_get_option('app_versionText'));
+                $description = explode(PHP_EOL, storina_get_option('app_versionText'));
                 $appinfo = array(
-                    "zeroPriceText" => ( osa_get_option('zeroPriceText') ) ? osa_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
-                    "new_app_version" => intval(osa_get_option('app_version')),
+                    "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                    "new_app_version" => intval(storina_get_option('app_version')),
                     "description" => $description,
-                    "isForce" => ( osa_get_option('app_UpdateFource') == 'true' ) ? true : false,
-                    "url" => osa_get_option('app_url')
+                    "isForce" => ( storina_get_option('app_UpdateFource') == 'true' ) ? true : false,
+                    "url" => storina_get_option('app_url')
                 );
             }
 
@@ -97,27 +97,27 @@ class Index {
             $iiii ++;
         }
         $version = $_POST['currentVersion'];
-        if (floatval($version) < floatval(osa_get_option('app_version'))) {
-            $description = explode(PHP_EOL, osa_get_option('app_versionText'));
+        if (floatval($version) < floatval(storina_get_option('app_version'))) {
+            $description = explode(PHP_EOL, storina_get_option('app_versionText'));
             $appInfo = array(
-                "zeroPriceText" => ( osa_get_option('zeroPriceText') ) ? osa_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
-                "new_app_version" => intval(osa_get_option('app_version')),
+                "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                "new_app_version" => intval(storina_get_option('app_version')),
                 "description" => $description,
-                "isForce" => ( osa_get_option('app_UpdateFource') == 'true' ) ? true : false,
-                "url" => osa_get_option('app_url'),
+                "isForce" => ( storina_get_option('app_UpdateFource') == 'true' ) ? true : false,
+                "url" => storina_get_option('app_url'),
             );
         } else {
             $appInfo = array(
-                'zeroPriceText' => ( osa_get_option('zeroPriceText') ) ? osa_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
-                    /* "new_app_version" => intval( osa_get_option( 'app_version' ) ),
+                'zeroPriceText' => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                    /* "new_app_version" => intval( storina_get_option( 'app_version' ) ),
                       "description"     => array(),
                       "isForce"         => false,
                       "url"             => '' */
             );
         }
         $socials = array();
-        $socialUrls = osa_get_option('social_icon_links');
-        $socialIcons = osa_get_option('social_icon_images');
+        $socialUrls = storina_get_option('social_icon_links');
+        $socialIcons = storina_get_option('social_icon_images');
         if (!empty($socialIcons)) {
             for ($i = 0; $i < count($socialIcons); $i ++) {
                 $socials[] = array(
@@ -127,9 +127,9 @@ class Index {
             }
         }
 
-        $menuTitles = osa_get_option('menu_titles');
-        $menuLinks = osa_get_option('menu_links');
-        $menuTypeLinks = osa_get_option('menu_typeLink');
+        $menuTitles = storina_get_option('menu_titles');
+        $menuLinks = storina_get_option('menu_links');
+        $menuTypeLinks = storina_get_option('menu_typeLink');
         $menuItems = array();
         foreach ($menuTitles as $i => $menu_title) {
             $onClickModel = $general->clickEvent($menuTypeLinks[$i], $menuLinks[$i]);
@@ -146,34 +146,34 @@ class Index {
             'shipping' => $general->get_address_fields('shipping')
         );
         $add_to_cart_permission = (function_exists("YITH_Role_Based_Type")) ? $this->yith_price_role->user_settings_add_to_cart($user_id) : 'true';
-        $backorder_text = osa_get_option('app_backorder_text');
+        $backorder_text = storina_get_option('app_backorder_text');
         $appInfo['min_topup_amount'] = $min_topup_amount;
         $appInfo['max_topup_amount'] = $max_topup_amount;
         $appInfo['woo_ballance'] = $woo_ballance;
         $appInfo['store_notice'] = array(
-            "key" => (empty(osa_get_option("woocommerce_demo_store"))) ? "no" : osa_get_option("woocommerce_demo_store"),
-            "value" => osa_get_option("woocommerce_demo_store_notice")
+            "key" => (empty(storina_get_option("woocommerce_demo_store"))) ? "no" : storina_get_option("woocommerce_demo_store"),
+            "value" => storina_get_option("woocommerce_demo_store_notice")
         );
         $app_settings = array(
-            'outofstockorder' => ( osa_get_option('stock_out_order') == 'true' ) ? true : false,
-            'ArchiveBrowse' => ( osa_get_option('appArchiveType') ) ? osa_get_option('appArchiveType') : 'sub',
-            'payType' => ( osa_get_option('payType') ) ? osa_get_option('payType') : 'inAppPay',
-            'blog' => ( osa_get_option('appblogsetting') == 'Hidden' ) ? false : true,
-            'shopinglist' => ( osa_get_option('appShopinglist') == 'Hidden' ) ? false : true,
-            'vendorlist' => ( osa_get_option('app_hidden_menu_vendor_list') == "true" || !(function_exists('dokan_is_seller_enabled')) ) ? false : true,
-            'newMenu' => ( osa_get_option('showNewMenu') == 'Show' ) ? true : false,
-            'vendor_grouping' => ( osa_get_option('app_vendor_grouping') == 'true' ) ? true : false,
-            'compare' => ( osa_get_option('appcompareactive') == 'Active' ) ? true : false,
+            'outofstockorder' => ( storina_get_option('stock_out_order') == 'true' ) ? true : false,
+            'ArchiveBrowse' => ( storina_get_option('appArchiveType') ) ? storina_get_option('appArchiveType') : 'sub',
+            'payType' => ( storina_get_option('payType') ) ? storina_get_option('payType') : 'inAppPay',
+            'blog' => ( storina_get_option('appblogsetting') == 'Hidden' ) ? false : true,
+            'shopinglist' => ( storina_get_option('appShopinglist') == 'Hidden' ) ? false : true,
+            'vendorlist' => ( storina_get_option('app_hidden_menu_vendor_list') == "true" || !(function_exists('dokan_is_seller_enabled')) ) ? false : true,
+            'newMenu' => ( storina_get_option('showNewMenu') == 'Show' ) ? true : false,
+            'vendor_grouping' => ( storina_get_option('app_vendor_grouping') == 'true' ) ? true : false,
+            'compare' => ( storina_get_option('appcompareactive') == 'Active' ) ? true : false,
             'dokan' => ( function_exists('dokan_get_store_info') ) ? true : false,
-            'callNumber' => ( osa_get_option('app_callNumber') ) ? osa_get_option('app_callNumber') : '',
-            'map_api' => ( osa_get_option('app_map_api') == 'true' ) ? true : false,
+            'callNumber' => ( storina_get_option('app_callNumber') ) ? storina_get_option('app_callNumber') : '',
+            'map_api' => ( storina_get_option('app_map_api') == 'true' ) ? true : false,
             'backorder_text' => ( $backorder_text ) ? $backorder_text : 'پیش خرید',
-            'registerType' => ( osa_get_option('registerType') AND osa_get_option('registerType') != 'Choose that' ) ? osa_get_option('registerType') : 'email',
-            'app_verifyFource' => ( osa_get_option('app_verifyFource') == 'true' ) ? true : false,
-            'app_registerNameField' => ( osa_get_option('app_registerNameField') == 'true' ) ? true : false,
-            'app_showVendorPhone' => ( osa_get_option('app_showVendorPhone') == 'false' ) ? false : true,
-            'app_loginVerifyType' => ( osa_get_option('app_loginVerifyType') == 'password' ) ? 'password' : 'sms',
-            'send_time_field' => ( osa_get_option('app_send_time_field') == 'true' ) ? true : false,
+            'registerType' => ( storina_get_option('registerType') AND storina_get_option('registerType') != 'Choose that' ) ? storina_get_option('registerType') : 'email',
+            'app_verifyFource' => ( storina_get_option('app_verifyFource') == 'true' ) ? true : false,
+            'app_registerNameField' => ( storina_get_option('app_registerNameField') == 'true' ) ? true : false,
+            'app_showVendorPhone' => ( storina_get_option('app_showVendorPhone') == 'false' ) ? false : true,
+            'app_loginVerifyType' => ( storina_get_option('app_loginVerifyType') == 'password' ) ? 'password' : 'sms',
+            'send_time_field' => ( storina_get_option('app_send_time_field') == 'true' ) ? true : false,
             'socials' => $socials,
             'address_fields' => apply_filters('woap_index_address_fields',$address_fields,$user_id),
             'menuItems' => $menuItems,
@@ -183,7 +183,7 @@ class Index {
             ),
             'default_en' => 'fa',
             'addToCartPermission' => $add_to_cart_permission,
-            'force_login' => ("true" == (osa_get_option("app_ForceLogin"))) ? "true" : "false",
+            'force_login' => ("true" == (storina_get_option("app_ForceLogin"))) ? "true" : "false",
             'woocommerce_ship_to_destination' => get_option('woocommerce_ship_to_destination'),
         );
         $result = array(
@@ -192,13 +192,13 @@ class Index {
                 'home' => $home,
                 'cartCount' => count($general->get_items()),
                 'logos' => array(
-                    'app_icon' => osa_get_option('app_icon'),
-                    'splashLogo' => ( osa_get_option('app_logo') ) ? str_replace('https://', 'http://', osa_get_option('app_logo')) : '',
-                    'indexLogo' => ( osa_get_option('app_TopLogo') ) ? str_replace('https://', 'http://', osa_get_option('app_TopLogo')) : '',
-                    'appTitle' => ( osa_get_option('app_title') ) ? osa_get_option('app_title') : __('Onliner', 'onlinerShopApp'),
-                    'masterColor' => ( osa_get_option('app_masterColor') ) ? osa_get_option('app_masterColor') : false,
-                    'secondColor' => ( osa_get_option('app_secondColor') ) ? osa_get_option('app_secondColor') : false,
-                    'IconsColor' => ( osa_get_option('app_IconColor') ) ? osa_get_option('app_IconColor') : false,
+                    'app_icon' => storina_get_option('app_icon'),
+                    'splashLogo' => ( storina_get_option('app_logo') ) ? str_replace('https://', 'http://', storina_get_option('app_logo')) : '',
+                    'indexLogo' => ( storina_get_option('app_TopLogo') ) ? str_replace('https://', 'http://', storina_get_option('app_TopLogo')) : '',
+                    'appTitle' => ( storina_get_option('app_title') ) ? storina_get_option('app_title') : __('Onliner', 'onlinerShopApp'),
+                    'masterColor' => ( storina_get_option('app_masterColor') ) ? storina_get_option('app_masterColor') : false,
+                    'secondColor' => ( storina_get_option('app_secondColor') ) ? storina_get_option('app_secondColor') : false,
+                    'IconsColor' => ( storina_get_option('app_IconColor') ) ? storina_get_option('app_IconColor') : false,
                 ),
                 'appInfo' => apply_filters("osa_index_get_app_info", $appInfo, $this->user_id),
                 'appSetting' => apply_filters("osa_index_get_app_settings", $app_settings),
@@ -213,13 +213,13 @@ class Index {
 
     private function featured($elementID, $iiii) {
         //                             featured
-        $cat_ids = osa_get_option('indexAppFeatures' . $elementID[$iiii]);
-        $count = osa_get_option('indexAppFeaturesCount' . $elementID[$iiii]);
+        $cat_ids = storina_get_option('indexAppFeatures' . $elementID[$iiii]);
+        $count = storina_get_option('indexAppFeaturesCount' . $elementID[$iiii]);
 
-        date_default_timezone_set(osa_get_option('timezone_string'));
+        date_default_timezone_set(storina_get_option('timezone_string'));
         $data = $productInfo = array();
         $data['type'] = 'featured';
-        $data['icon'] = osa_get_option("osn_feature_product_icon");
+        $data['icon'] = storina_get_option("osn_feature_product_icon");
         if (!empty($cat_ids)) {
 
             $args = array(
@@ -335,10 +335,10 @@ class Index {
 
     private function sliderItems($elementID, $iiii) {
         $general = $this->service_container->get(General::class);
-        $titles = osa_get_option('top_slider_titles' . $elementID[$iiii]);
-        $banners = osa_get_option('top_slider_images' . $elementID[$iiii]);
-        $links = osa_get_option('top_slider_links' . $elementID[$iiii]);
-        $typeLinks = osa_get_option('top_slider_typeLinks' . $elementID[$iiii]);
+        $titles = storina_get_option('top_slider_titles' . $elementID[$iiii]);
+        $banners = storina_get_option('top_slider_images' . $elementID[$iiii]);
+        $links = storina_get_option('top_slider_links' . $elementID[$iiii]);
+        $typeLinks = storina_get_option('top_slider_typeLinks' . $elementID[$iiii]);
         //var_dump($banners);
         $i = 0;
         $slides['type'] = 'slider';
@@ -360,8 +360,8 @@ class Index {
 
     private function categories($elementID, $iiii) {
         //                             category
-        $cat_ids = osa_get_option('indexAppCats' . $elementID[$iiii]);
-        $show_type = osa_get_option('indexAppCatType' . $elementID[$iiii]);
+        $cat_ids = storina_get_option('indexAppCats' . $elementID[$iiii]);
+        $show_type = storina_get_option('indexAppCatType' . $elementID[$iiii]);
         $data = array();
         $data['type'] = 'categories';
         $data['showtype'] = ( $show_type ) ? $show_type : 'scrollButtons';
@@ -403,10 +403,10 @@ class Index {
     private function oneColADV($elementID, $i) {
         $element_options = include trailingslashit( STORINA_PDP ) . "them_options/tabs/dinamic/oneColADV.php";
         $options = $element_options['option-names'];
-        $banners_row = osa_get_option($options['banner']);
-        $link_types_row = osa_get_option($options['link_type']);
-        $link_values_row = osa_get_option($options['link_value']);
-        $banner_columns = osa_get_option($options['column']);
+        $banners_row = storina_get_option($options['banner']);
+        $link_types_row = storina_get_option($options['link_type']);
+        $link_values_row = storina_get_option($options['link_value']);
+        $banner_columns = storina_get_option($options['column']);
         $general = $this->service_container->get(General::class);
         $onClickModel = $general->clickEvent($typeLinkBanner1[$i], $linkBanner1[$i]);
         if(!empty($banners_row)){
@@ -440,9 +440,9 @@ class Index {
     private function scrollADV($elementID, $iiii) {
         $general = $this->service_container->get(General::class);
         //                             Horizontal images
-        $banners = osa_get_option('Sbanner_banner' . $elementID[$iiii]);
-        $typeLinkBanner = osa_get_option('Sbanner_linkType' . $elementID[$iiii]);
-        $linkBanner = osa_get_option('Sbanner_linkValue' . $elementID[$iiii]);
+        $banners = storina_get_option('Sbanner_banner' . $elementID[$iiii]);
+        $typeLinkBanner = storina_get_option('Sbanner_linkType' . $elementID[$iiii]);
+        $linkBanner = storina_get_option('Sbanner_linkValue' . $elementID[$iiii]);
         $i = 0;
         $rows = array();
         $rows['type'] = 'scrollAds';
@@ -467,14 +467,14 @@ class Index {
 
     private function productBox($elementID, $iiii) {
         //                             featured
-        $BoxTitle = osa_get_option('indexAppBoxTitle' . $elementID[$iiii]);
-        $BoxSort = osa_get_option('indexAppBoxSort' . $elementID[$iiii]);
-        $BoxOrder = osa_get_option('indexAppBoxOrder' . $elementID[$iiii]);
-        $BoxFloat = osa_get_option('indexAppBoxFloat' . $elementID[$iiii]);
-        $BoxExist = osa_get_option('indexAppBoxExist' . $elementID[$iiii]);
-        $cat_ids = osa_get_option('indexAppBox' . $elementID[$iiii]);
-        $count = osa_get_option('indexAppBoxCount' . $elementID[$iiii]);
-        date_default_timezone_set(osa_get_option('timezone_string'));
+        $BoxTitle = storina_get_option('indexAppBoxTitle' . $elementID[$iiii]);
+        $BoxSort = storina_get_option('indexAppBoxSort' . $elementID[$iiii]);
+        $BoxOrder = storina_get_option('indexAppBoxOrder' . $elementID[$iiii]);
+        $BoxFloat = storina_get_option('indexAppBoxFloat' . $elementID[$iiii]);
+        $BoxExist = storina_get_option('indexAppBoxExist' . $elementID[$iiii]);
+        $cat_ids = storina_get_option('indexAppBox' . $elementID[$iiii]);
+        $count = storina_get_option('indexAppBoxCount' . $elementID[$iiii]);
+        date_default_timezone_set(storina_get_option('timezone_string'));
         $termtmp = get_term_by('id', $cat_ids, 'product_cat');
         $data = $productInfo = array();
         $data['type'] = 'productBox';
@@ -505,7 +505,7 @@ class Index {
                     $args['meta_key'] = 'total_sales';
                     break;
                 case 'view':
-                    $viewCounterField = ( osa_get_option('viewCounterField') ) ? osa_get_option('viewCounterField') : 'post-views';
+                    $viewCounterField = ( storina_get_option('viewCounterField') ) ? storina_get_option('viewCounterField') : 'post-views';
                     if ($viewCounterField) {
                         $args['orderby'] = 'meta_value_num';
                         $args['meta_key'] = $viewCounterField;
@@ -587,7 +587,7 @@ class Index {
                 //$productInfo['sale_price_dates_to']   = $prices['sale_price_dates_to'];
                 //$productInfo['sale_price_dates_from'] = $prices['sale_price_dates_from'];
 
-                if (function_exists('dokan_get_store_info') AND osa_get_option('VendorAvatar') == 'Show') {
+                if (function_exists('dokan_get_store_info') AND storina_get_option('VendorAvatar') == 'Show') {
                     $store_settings = dokan_get_store_info(get_the_author_meta('ID'));
                     $store_settings['address']['street_1'] = ( $store_settings['address']['street_1'] ) ? $store_settings['address']['street_1'] : '';
                     $store_settings['address']['street_2'] = ( $store_settings['address']['street_2'] ) ? $store_settings['address']['street_2'] : '';
@@ -629,7 +629,7 @@ class Index {
             $variations = $product->get_available_variations();
             //$productInfo['regular_price'] = get_post_meta(get_the_ID(),'_price',true);
             //$productInfo['sale_price'] = get_post_meta(get_the_ID(),'_sale_price',true);
-            $variation_priceType = osa_get_option('variation_priceType');
+            $variation_priceType = storina_get_option('variation_priceType');
             $PriceRange = null;
             if ($variation_priceType == 1) {
                 $PriceRange = $this->getVariationPriceRange($variations);
@@ -740,7 +740,7 @@ class Index {
     private function space($elementID, $iiii) {
         //                        Free space
         $FreeSpace['type'] = 'space';
-        $FreeSpace['dp'] = intval(osa_get_option('space' . $elementID[$iiii]));
+        $FreeSpace['dp'] = intval(storina_get_option('space' . $elementID[$iiii]));
 
 //echo json_encode($FreeSpace);
         return $FreeSpace;
@@ -750,7 +750,7 @@ class Index {
         $option_keys = include trailingslashit( STORINA_PDP ) . 'them_options/tabs/dinamic/postBox.php';
         foreach($option_keys as $option_key){
             $option_id = $option_key['id'];
-            $post_box[$option_id] = osa_get_option($option_id);
+            $post_box[$option_id] = storina_get_option($option_id);
         }
         $query_args = [
             'post_type' => ['post'],
@@ -786,10 +786,10 @@ class Index {
 
     public function scrollBox($element_id,$i){
         $general = $this->service_container->get(General::class);
-        $titles = osa_get_option('Sb_title' . $element_id[$i]);
-        $icon_links = osa_get_option('Sb_banner' . $element_id[$i]);
-        $link_types = osa_get_option('Sb_linkType' . $element_id[$i]);
-        $link_values = osa_get_option('Sb_linkValue' . $element_id[$i]);
+        $titles = storina_get_option('Sb_title' . $element_id[$i]);
+        $icon_links = storina_get_option('Sb_banner' . $element_id[$i]);
+        $link_types = storina_get_option('Sb_linkType' . $element_id[$i]);
+        $link_values = storina_get_option('Sb_linkValue' . $element_id[$i]);
         $count = max(count($titles),count($icon_links),count($link_types),count($link_vlaues));
         $data = $output = [];
         for($i=0;$i<$count;$i++){
@@ -810,7 +810,7 @@ class Index {
         $option_keys = include trailingslashit( STORINA_PDP ) . 'them_options/tabs/dinamic/productBoxColorize.php';
         foreach($option_keys as $option_key){
             $option_id = (is_array($option_key['id']))? current($option_key['id']) : $option_key['id'];
-            $product_box_colorize[$option_id] = osa_get_option($option_id);
+            $product_box_colorize[$option_id] = storina_get_option($option_id);
         }
         $query_args = [
             'post_type' => ['product'],

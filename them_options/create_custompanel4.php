@@ -10,11 +10,11 @@
         $custom_option4 = $page['custom_option4'];
         $custom_option5 = $page['custom_option5'];
         $custom_option6 = $page['custom_option6'];
-        $custom_option_value2 = osa_get_option($custom_option2);
-        $custom_option_value3 = osa_get_option($custom_option3);
-        $custom_option_value4 = osa_get_option($custom_option4);
-        $custom_option_value5 = osa_get_option($custom_option5);
-        $custom_option_value6 = osa_get_option($custom_option6);
+        $custom_option_value2 = storina_get_option($custom_option2);
+        $custom_option_value3 = storina_get_option($custom_option3);
+        $custom_option_value4 = storina_get_option($custom_option4);
+        $custom_option_value5 = storina_get_option($custom_option5);
+        $custom_option_value6 = storina_get_option($custom_option6);
         global $product_cats;
         $product_cats        = array();
         $product_cats[ - 1 ] = __( "All", 'onlinerShopApp' );
@@ -108,7 +108,7 @@
                 </tr>
             <?php }
 
-            //$value = osa_get_option(); ?>
+            //$value = storina_get_option(); ?>
 
         </table>
         <div class="osa-submit-wrapper-table">

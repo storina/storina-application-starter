@@ -10,11 +10,11 @@
 	$cat1_names = $page['cat1_name'];
 	$cat2_names = $page['cat2_name'];
 	$cat3_names = $page['cat3_name'];
-	$menu_namess = osa_get_option($menu_names);
-	$link_namess = osa_get_option($link_names);
-	$cat1_namess = osa_get_option($cat1_names);
-	$cat2_namess = osa_get_option($cat2_names);
-	$cat3_namess = osa_get_option($cat3_names);
+	$menu_namess = storina_get_option($menu_names);
+	$link_namess = storina_get_option($link_names);
+	$cat1_namess = storina_get_option($cat1_names);
+	$cat2_namess = storina_get_option($cat2_names);
+	$cat3_namess = storina_get_option($cat3_names);
 
 	?>
 	<div class="clear"></div>
@@ -103,7 +103,7 @@
 	</td>
 	</tr>
 	<?php }
-	//$value = osa_get_option(); ?>
+	//$value = storina_get_option(); ?>
 	</table>
 	<div class="osa-submit-wrapper-table">
 		<input type="hidden" name="apptype_form" value="FAQ">

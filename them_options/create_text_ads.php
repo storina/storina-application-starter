@@ -11,12 +11,12 @@
 		$text_ads_follow = $page['text_ads_follow'];
 		$text_ads_expire = $page['text_ads_expire'];
 		$text_ads_color = $page['text_ads_color'];
-		$titles = osa_get_option($text_ads_titles);
-		$links = osa_get_option($text_ads_links);
-		$captions = osa_get_option($text_ads_captions);
-		$followes = osa_get_option($text_ads_follow);
-		$expires = osa_get_option($text_ads_expire);
-		$colors = osa_get_option($text_ads_color);
+		$titles = storina_get_option($text_ads_titles);
+		$links = storina_get_option($text_ads_links);
+		$captions = storina_get_option($text_ads_captions);
+		$followes = storina_get_option($text_ads_follow);
+		$expires = storina_get_option($text_ads_expire);
+		$colors = storina_get_option($text_ads_color);
 		?>
 		<div class="clear"></div>
 		<table>
@@ -62,7 +62,7 @@
 		</tr>
 		<?php }
 		
-		//$value = osa_get_option(); ?>
+		//$value = storina_get_option(); ?>
 		
 		</table>
 <div class="osa-submit-wrapper-table">

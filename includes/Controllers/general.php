@@ -23,7 +23,7 @@ class General {
     }
 
     public function get_attr_setting($attribute_id, $key = null) {
-        $settings = osa_get_option("_jcaa_attr_settings_{$attribute_id}");
+        $settings = storina_get_option("_jcaa_attr_settings_{$attribute_id}");
 
         if ($settings && isset($settings[$key])) {
             return $settings[$key];
@@ -91,7 +91,7 @@ class General {
     }
 
     public function layeredCategories() {
-        $cats = osa_get_option('appProCats');
+        $cats = storina_get_option('appProCats');
         $args = array(
             'taxonomy' => 'product_cat',
             'include' => $cats,
@@ -148,7 +148,7 @@ class General {
             'orderByLike' => array()
         );
         $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
-        $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+        $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         $args = array(
             'post_id' => $id,
@@ -341,14 +341,14 @@ class General {
                 'comment_type' => '',
                 'comment_parent' => 0,
                 'comment_date' => $time,
-                'comment_approved' => ( osa_get_option('comment_moderation') ) ? 0 : 1,
+                'comment_approved' => ( storina_get_option('comment_moderation') ) ? 0 : 1,
             );
             if ($commentId = wp_insert_comment($data)) {
                 update_comment_meta($commentId, 'rating', $rating);
                 $final = array(
                     'status' => true,
                     'data' => array(
-                        'comment_approved' => ( osa_get_option('comment_moderation') ) ? "false" : "true",
+                        'comment_approved' => ( storina_get_option('comment_moderation') ) ? "false" : "true",
                     )
                 );
             } else {
@@ -367,7 +367,7 @@ class General {
 
     public function faq() {
         wp_reset_query();
-        $faq_shortcode_id = osa_get_option('app_faq_shortcode_id');
+        $faq_shortcode_id = storina_get_option('app_faq_shortcode_id');
         if (!$faq_shortcode_id) {
             $result = array(
                 'status' => true,
@@ -416,18 +416,18 @@ class General {
 
     public function aboutUS() {
         $final = array(
-            'top_logo' => str_replace('https://', 'http://', osa_get_option('app_aboutlogo')),
-            'app_slogan' => ( osa_get_option('app_slogan') ) ? osa_get_option('app_slogan') : __('Your shop slogan here.', 'onlinerShopApp'),
-            'app_Email' => ( osa_get_option('app_Email') ) ? osa_get_option('app_Email') : 'yorEmail@gmail.com',
-            'app_telegramID' => ( osa_get_option('app_telegramID') ) ? osa_get_option('app_telegramID') : 'TelegramID',
-            'app_phone' => ( osa_get_option('app_phone') ) ? osa_get_option('app_phone') : '09152222222',
-            'app_copyright' => ( osa_get_option('app_copyright') ) ? osa_get_option('app_copyright') : __('All right reserved.', 'onlinerShopApp'),
-            'app_privacyLink' => osa_get_option('app_privacyLink'),
-            'app_termsLink' => osa_get_option('app_termsLink'),
-            'app_aboutLink' => osa_get_option('app_aboutLink'),
+            'top_logo' => str_replace('https://', 'http://', storina_get_option('app_aboutlogo')),
+            'app_slogan' => ( storina_get_option('app_slogan') ) ? storina_get_option('app_slogan') : __('Your shop slogan here.', 'onlinerShopApp'),
+            'app_Email' => ( storina_get_option('app_Email') ) ? storina_get_option('app_Email') : 'yorEmail@gmail.com',
+            'app_telegramID' => ( storina_get_option('app_telegramID') ) ? storina_get_option('app_telegramID') : 'TelegramID',
+            'app_phone' => ( storina_get_option('app_phone') ) ? storina_get_option('app_phone') : '09152222222',
+            'app_copyright' => ( storina_get_option('app_copyright') ) ? storina_get_option('app_copyright') : __('All right reserved.', 'onlinerShopApp'),
+            'app_privacyLink' => storina_get_option('app_privacyLink'),
+            'app_termsLink' => storina_get_option('app_termsLink'),
+            'app_aboutLink' => storina_get_option('app_aboutLink'),
             'customButton' => array(
-                'text' => osa_get_option('app_aboutButtonText'),
-                'link' => osa_get_option('app_aboutButtonLink'),
+                'text' => storina_get_option('app_aboutButtonText'),
+                'link' => storina_get_option('app_aboutButtonLink'),
             )
         );
         $result = array(
@@ -441,7 +441,7 @@ class General {
     public function Announcements() {
         $posts = array();
         $page = $_POST['page'];
-        $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+        $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         global $wp_query;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -485,9 +485,9 @@ class General {
 
     public function blogArchive() {
         $posts = array();
-        $cats = ( isset($_POST['id']) ) ? stripslashes($_POST['id']) : osa_get_option('appBlog');
+        $cats = ( isset($_POST['id']) ) ? stripslashes($_POST['id']) : storina_get_option('appBlog');
         $page = $_POST['page'];
-        $count = ( osa_get_option('Archive_product_count') ) ? osa_get_option('Archive_product_count') : 8;
+        $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         global $wp_query;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -775,8 +775,8 @@ class General {
             $email = stripslashes($_POST['email']);
             $desc = stripslashes($_POST['desc']);
             $quantity = stripslashes($_POST['quantity']);
-            $sale_email = osa_get_option('app_backorder_email');
-            $to = ( $sale_email ) ? $sale_email : osa_get_option('admin_email');
+            $sale_email = storina_get_option('app_backorder_email');
+            $to = ( $sale_email ) ? $sale_email : storina_get_option('admin_email');
             $subject = 'درخواست پیش خرید محصول توسط ' . $name;
             $title = get_the_title($masterID);
             $link = get_permalink($masterID);
@@ -1003,7 +1003,7 @@ class General {
         } else {
             $domain = $this->validateDomain($_SERVER['HTTP_HOST'], false, '');
             $domain = $this->get_master_domain($domain);
-            $english_app_title = osa_get_option("english_app_name");
+            $english_app_title = storina_get_option("english_app_name");
             $domain = $this->validateDomain($domain, true, 'app.', $english_app_title);
             $token = "/topics/" . $domain;
         }
@@ -1096,14 +1096,14 @@ class General {
 
     public function get_vendor_towns() {
         $general = $this->service_container->get(General::class);
-        $type = osa_get_option('appVendorlist');
-        $app_vendor_grouping = osa_get_option('app_vendor_grouping');
+        $type = storina_get_option('appVendorlist');
+        $app_vendor_grouping = storina_get_option('app_vendor_grouping');
         $states = array();
         $vendor_ids = $general->vendor_ids();
 
         if ($app_vendor_grouping == 'true') {
             if ($type == 'state') {
-                if (osa_get_option('app_hidden_empty_state') == 'true') {
+                if (storina_get_option('app_hidden_empty_state') == 'true') {
                     foreach ($vendor_ids as $vendor_id) {
                         //$vendorOrig                         = get_userdata( $activeVendors[ $i ]->ID );
                         $store_settings = dokan_get_store_info($vendor_id);
@@ -1167,7 +1167,7 @@ class General {
         $town = $_POST['vendor_town'];
         $AllVendors = get_users($args);
         $activeVendors = array();
-        $type = osa_get_option('appVendorlist');
+        $type = storina_get_option('appVendorlist');
         $type = ( $type == 'state' ) ? $type : 'city';
         foreach ($AllVendors as $vendor) {
             if (dokan_is_seller_enabled($vendor->ID)) {
@@ -1289,9 +1289,9 @@ class General {
 
     public function staticContents(){
         return array(
-            osa_get_option('app_privacy_policy'),
-            osa_get_option('app_terms_conditions'),
-            osa_get_option('app_shopping_guide'),
+            storina_get_option('app_privacy_policy'),
+            storina_get_option('app_terms_conditions'),
+            storina_get_option('app_shopping_guide'),
         );
     }
 

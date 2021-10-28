@@ -17,7 +17,7 @@ function storina_wbd_get_product_price($product, $quantity) {
     if (is_numeric($product)) {
         $product = wc_get_product($product);
     }
-    $type = osa_get_option("woocommerce_t4m_discount_type");
+    $type = storina_get_option("woocommerce_t4m_discount_type");
     $real_product_id = ("simple" == $product->get_type()) ? $product->get_id() : $product->get_parent_id();
     $quantity_enabled = get_post_meta($real_product_id, "_bulkdiscount_enabled", true);
     $quantity_key = array(
@@ -138,7 +138,7 @@ function storina_wbd_calculate_formule($product) {
         $product = wc_get_product($product);
     }
     $product_id = ("simple" == $product->get_type()) ? $product->get_id() : $product->get_parent_id();
-    $type = osa_get_option("woocommerce_t4m_discount_type");
+    $type = storina_get_option("woocommerce_t4m_discount_type");
     $type_key = (empty($type))? "percent" : $type;
     $type_string = (empty($type))? $type : "_{$type}";
     $result = array(

@@ -34,7 +34,7 @@ function storina_get_vendors_based_on_location(){
     $town = $_POST['vendor_town'];
     $AllVendors = get_users($args);
     $activeVendors = array();
-    $type = osa_get_option('appVendorlist');
+    $type = storina_get_option('appVendorlist');
     $type = ( $type == 'state' ) ? $type : 'city';
     foreach ($AllVendors as $vendor) {
         if (dokan_is_seller_enabled($vendor->ID)) {

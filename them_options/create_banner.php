@@ -13,14 +13,14 @@
 		$banner_height = $page['banner_heights'];
 		$banner_relation = $page['banner_relation'];
 		$banner_expire = $page['banner_expire'];
-		$addresses = osa_get_option($banner_addresses);
-		$links = osa_get_option($banner_links);
-		$titles = osa_get_option($banner_titles);
-		$captions = osa_get_option($banner_captions);
-		$widths = osa_get_option($banner_width);
-		$heights = osa_get_option($banner_height);
-		$relations = osa_get_option($banner_relation);
-		$expires = osa_get_option($banner_expire);
+		$addresses = storina_get_option($banner_addresses);
+		$links = storina_get_option($banner_links);
+		$titles = storina_get_option($banner_titles);
+		$captions = storina_get_option($banner_captions);
+		$widths = storina_get_option($banner_width);
+		$heights = storina_get_option($banner_height);
+		$relations = storina_get_option($banner_relation);
+		$expires = storina_get_option($banner_expire);
 		?>
 		<div class="clear"></div>
 		<table class="wp-list-table widefat fixed">
@@ -103,7 +103,7 @@
 		</td>
 		</tr>
 		<?php }
-		//$value = osa_get_option(); ?>
+		//$value = storina_get_option(); ?>
 		
 		</table>
 		<div class="osa-submit-wrapper-table">

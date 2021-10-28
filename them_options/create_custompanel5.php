@@ -53,10 +53,10 @@ $columns = [
             </thead>
             <tbody class="woap-adc-tbody">
             <?php 
-            $banners = osa_get_option($option_names['banner']);
-            $link_types = osa_get_option($option_names['link_type']);
-            $link_values = osa_get_option($option_names['link_value']);
-            $banner_columns = osa_get_option($option_names['column']);
+            $banners = storina_get_option($option_names['banner']);
+            $link_types = storina_get_option($option_names['link_type']);
+            $link_values = storina_get_option($option_names['link_value']);
+            $banner_columns = storina_get_option($option_names['column']);
             if(!empty($banners)){
                 for($i=0;$i<count($banners);$i++){
                     ?>

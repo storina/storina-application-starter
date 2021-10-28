@@ -107,7 +107,7 @@ class storina_application_init {
     public function plugin_init() {
         load_plugin_textdomain('onlinerShopApp', false, basename(dirname(__FILE__)) . '/languages');
         $woocommerce = (class_exists("woocommerce")) ? "active" : "deactive";
-        $onliner_shop_app = (function_exists("osa_get_option")) ? "active" : "deactive";
+        $onliner_shop_app = (function_exists("storina_get_option")) ? "active" : "deactive";
     }
 
 }

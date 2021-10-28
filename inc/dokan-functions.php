@@ -10,7 +10,7 @@
  */
 
 add_filter('woap_confirm_shipping_method_resources',function($shipping_resources,$cart){
-    $shipping_type = osa_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
+    $shipping_type = storina_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
     $dokan_activation = function_exists('dokan');
     $client_type = $_POST['client_type'] ?? 'ios';
     if('regular_shipping' == $shipping_type || !$dokan_activation || 'ios' == $client_type){
@@ -34,7 +34,7 @@ add_filter('woap_confirm_shipping_method_resources',function($shipping_resources
 },10,2);
 
 add_filter('woap_get_cart_shipping_total_cost',function($shipping_cost,$active_shipping_methods,$cart_row){
-    $shipping_type = osa_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
+    $shipping_type = storina_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
     $dokan_activation = function_exists('dokan');
     $chosen_shipping_ids = json_decode(stripslashes($cart_row->shipping_method_id));
     $client_type = $_POST['client_type'] ?? 'ios';
@@ -48,7 +48,7 @@ add_filter('woap_get_cart_shipping_total_cost',function($shipping_cost,$active_s
 },10,3);
 
 add_filter('woap_get_shipping_methods_chosen_ids',function($chosen_method_ids,$active_shipping_methods,$cart_row){
-    $shipping_type = osa_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
+    $shipping_type = storina_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
     $dokan_activation = function_exists('dokan');
     $chosen_shipping_ids = json_decode(stripslashes($cart_row->shipping_method_id));
     $client_type = $_POST['client_type'] ?? 'ios';
@@ -63,14 +63,14 @@ add_filter('woap_get_shipping_methods_chosen_ids',function($chosen_method_ids,$a
 },10,3);
 
 add_filter('woap_gopayment_shipping_status',function($status){
-    $shipping_type = osa_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
+    $shipping_type = storina_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
     $dokan_activation = function_exists('dokan');
     $client_type = $_POST['client_type'] ?? 'ios';
     return ('vendor_shipping' == $shipping_type && $dokan_activation && 'android' == $client_type)? false : $status;
 });
 
 add_action('woap_gopayment_vendor_shipping',function($shipping_rate_resources,$order){
-    $shipping_type = osa_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
+    $shipping_type = storina_get_option('app_dokan_shipping_type') ?: 'regular_shipping';
     $dokan_activation = function_exists('dokan');
     $client_type = $_POST['client_type'] ?? 'ios';
     if('regular_shipping' == $shipping_type || !$dokan_activation || 'ios' == $client_type){

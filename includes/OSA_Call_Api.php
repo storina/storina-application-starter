@@ -102,7 +102,7 @@ class OSA_Call_Api {
     }
 
     function set_error_log($action, $googleID, $id, $script, $post, $repond) {
-        if ('true' != osa_get_option('debug_mode')) {
+        if ('true' != storina_get_option('debug_mode')) {
             return;
         }
         global $wpdb;

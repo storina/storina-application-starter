@@ -9,11 +9,11 @@
 		$link_name = $page['link_name'];
 		$title_name = $page['title_name'];
 		$caption_name = $page['caption_name'];
-		$addresses = osa_get_option($image_name);
-		$links = osa_get_option($link_name);
-		$titles = osa_get_option($title_name);
+		$addresses = storina_get_option($image_name);
+		$links = storina_get_option($link_name);
+		$titles = storina_get_option($title_name);
 		
-		$captions = osa_get_option($caption_name);
+		$captions = storina_get_option($caption_name);
 		
 		?>
 		<table class="wp-list-table widefat fixed">
@@ -69,7 +69,7 @@
 		</tr>
 		<?php }
 		
-		//$value = osa_get_option(); ?>
+		//$value = storina_get_option(); ?>
 		
 		</table>
 		<div class="osa-submit-wrapper-table">

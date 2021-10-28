@@ -60,12 +60,12 @@ class Cache {
             $this->update_featured_sale_to($index);
             $index['data']['cartCount'] = count($general->get_items());
             $currentVersion = @$_POST['currentVersion'];
-            if (floatval($currentVersion) < floatval(osa_get_option('app_version'))) {
+            if (floatval($currentVersion) < floatval(storina_get_option('app_version'))) {
                 $uploadModel = array(
-                    "new_app_version" => osa_get_option('app_version'),
-                    "description" => explode(PHP_EOL, osa_get_option('app_versionText')),
-                    "isForce" => ( osa_get_option('app_UpdateFource') == 'true' ) ? true : false,
-                    "url" => osa_get_option('app_url'),
+                    "new_app_version" => storina_get_option('app_version'),
+                    "description" => explode(PHP_EOL, storina_get_option('app_versionText')),
+                    "isForce" => ( storina_get_option('app_UpdateFource') == 'true' ) ? true : false,
+                    "url" => storina_get_option('app_url'),
                 );
             } else {
                 $uploadModel = array();

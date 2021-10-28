@@ -245,7 +245,7 @@ function back_to_application( $order_id ) {
 	global $osa_autoload;
 	$general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 	$domain  = str_replace( array('https://www.', 'http://www.', 'http://', 'https://' ), '', home_url() );
-	$english_app_title = osa_get_option("english_app_name");
+	$english_app_title = storina_get_option("english_app_name");
 	$domain  = $general->validateDomain( $domain, true, '', $english_app_title );
 	$filtred_doamin = apply_filters("osa_filtered_bta_link", $domain);
 	echo '<a id="backtoapp" href="app://app.' . $filtred_doamin . '/credit/1">برای بازگشت به اپلیکیشن کلیک کنید</a>';
@@ -425,14 +425,14 @@ function storina_product_item_info_filter($product_info,$product_id){
 }
 
 add_filter('osa_index_get_app_info',function($app_info,$user_id){
-	$popup_activation = osa_get_option('app_popup_activation') ?: null;
+	$popup_activation = storina_get_option('app_popup_activation') ?: null;
 	if('true' != $popup_activation){
 		return $app_info;
 	}
 	global $osa_autoload;
 	$general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
-	$link_type = osa_get_option('app_popup_link_type');
-	$link_value = osa_get_option('app_popup_link_value');
+	$link_type = storina_get_option('app_popup_link_type');
+	$link_value = storina_get_option('app_popup_link_value');
 	$link_action = $general->clickEvent($link_type,$link_value);
 	$options = [
 		"‬app_popup_body",
@@ -441,7 +441,7 @@ add_filter('osa_index_get_app_info',function($app_info,$user_id){
 		'app_popup_link_text',
 	];
 	foreach($options as $option){
-		$popup_home[$option] = osa_get_option($option);
+		$popup_home[$option] = storina_get_option($option);
 	}
 	$popup_home['link_action'] = $link_action;
 	$app_info['popup_home'] = array_values($popup_home);
