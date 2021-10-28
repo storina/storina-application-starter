@@ -96,12 +96,12 @@ class storina_application_init {
     }
 
     public function register_activation_hook() {
-        deleteAllCache();
+        storina_delete_all_cache();
         osa_create_tables();
     }
 
     public function register_deactivation_hook() {
-        deleteAllCache();
+        storina_delete_all_cache();
     }
 
     public function plugin_init() {

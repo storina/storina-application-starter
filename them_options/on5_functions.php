@@ -147,7 +147,7 @@ add_action( 'plugins_loaded', function () {
 	if ( current_user_can('manage_options') ) {
 		add_action('wp_dashboard_setup', 'storina_delete_cache_widget');
 		if ( isset( $_POST['delede_cache'] ) || isset( $_GET['delede_cache'] ) ) {
-			$delete = deleteAllCache();
+			$delete = storina_delete_all_cache();
 			if($delete){
 				add_action( 'admin_notices', 'storina_delete_cache_notice' );
 			}
@@ -385,7 +385,7 @@ add_action('update_option', function( $option_name, $old_value, $value ) {
         "active_plugins","uninstall_plugins"
     );
     if(in_array($option_name, $map)){
-        deleteAllCache();
+        storina_delete_all_cache();
     }
 }, 10, 3);
 

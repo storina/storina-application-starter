@@ -56,14 +56,14 @@ function storina_array_sort($array, $on, $order=SORT_ASC){
     return $new_array;
 }
 
-function deleteAllCache(){
+function storina_delete_all_cache(){
 	global $wpdb;
 	$table = $wpdb->prefix.'OSA_cache';
 	$delete = $wpdb->query("TRUNCATE TABLE $table");
 	return $delete;
 }
 
-function osa_create_tables(){
+function storina_create_tables(){
     flush_rewrite_rules();
     global $wpdb;
     $sql     = 'CREATE TABLE IF NOT EXISTS ' . $wpdb->prefix . 'commentLikes (
