@@ -30,20 +30,20 @@ class Message {
     }
 
     public function new(){
-        $owner_id = $this->user_controller->get_user_by_token($_POST['userToken']);
+        $owner_id = $this->user_controller->get_user_by_token(sanitize_text_field($_POST['userToken']));
         $authentication = apply_filters('crn_authentication_middleware',['status'=>true],$owner_id);
 	if(!$authentication['status']){
 		return $authentication;
 	}
         $data = array(
-            "customer_id" => $_POST['customer_id'],
-            "vendor_id" => $_POST['vendor_id'],
-            'product_id' => $_POST['product_id'],
-            "content" => $_POST['content'],
+            "customer_id" => sanitize_text_field($_POST['customer_id']),
+            "vendor_id" => sanitize_text_field($_POST['vendor_id']),
+            'product_id' => sanitize_text_field($_POST['product_id']),
+            "content" => sanitize_text_field($_POST['content']),
             "attachment_slug" => null,
             "owner_id" => $owner_id,
             'updated_at' => time(),
-            "seen" => (isset($_POST['seen']))? $_POST['seen'] : 0,
+            "seen" => (isset(sanitize_text_field($_POST['seen'])))? sanitize_text_field($_POST['seen']) : 0,
         );
         if(!empty($_FILES['attachment']['name'])){
             $attachment_slug = $this->attachment_action->upload($_FILES['attachment']);
@@ -59,7 +59,7 @@ class Message {
                 "messages" => $error->get_error_message()
             ));
         }
-        $notif_result = $this->message_action->send_notif($_POST,$owner_id);
+        $notif_result = $this->message_action->send_notif(sanitize_text_field($_POST),$owner_id);
         $attachment_slug_path = $message->get_data("attachment_slug");
         $attachment_slug = trailingslashit( home_url() ) . $attachment_slug_path;
         $message->set_data(array("attachment_slug" => (!empty($attachment_slug_path))? $attachment_slug : ""));
@@ -75,11 +75,11 @@ class Message {
     }
 
     public function all(){
-        $user_id = (int) $this->user_controller->get_user_by_token($_POST['userToken']);
-        $customer_id = (int) $_POST['customer_id'];
-        $vendor_id = (int) $_POST['vendor_id'];
-        $product_id = (int) $_POST['product_id'];
-        $paged =(int) $_POST['paged'];
+        $user_id = (int) $this->user_controller->get_user_by_token(sanitize_text_field($_POST['userToken']));
+        $customer_id = (int) sanitize_text_field($_POST['customer_id']);
+        $vendor_id = (int) sanitize_text_field($_POST['vendor_id']);
+        $product_id = (int) sanitize_text_field($_POST['product_id']);
+        $paged =(int) sanitize_text_field($_POST['paged']);
         $per_page =(int) self::message_per_page;
         $start = (int) ($paged-1)*$per_page;
         $end = (int) ($per_page*$paged)-1;
@@ -102,12 +102,12 @@ class Message {
     }
 
     public function user() {
-        $user_id = (int) $this->user_controller->get_user_by_token($_POST['userToken']);
+        $user_id = (int) $this->user_controller->get_user_by_token(sanitize_text_field($_POST['userToken']));
         $authentication = apply_filters('crn_authentication_middleware',['status'=>true],$user_id);
 	if(!$authentication['status']){
 		return $authentication;
 	}
-        $paged =(int) $_POST['paged'];
+        $paged =(int) sanitize_text_field($_POST['paged']);
         $per_page =(int) self::message_per_page;
         $start = (int) ($paged-1)*$per_page;
         $end = (int) ($per_page*$paged)-1;
