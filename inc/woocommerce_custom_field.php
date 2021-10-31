@@ -28,7 +28,7 @@ add_action( 'woocommerce_product_options_general_product_data', function () {
 
 // Save Fields
 add_action( 'woocommerce_process_product_meta', function ( $post_id ){
-    $woocommerce_text_field = $_POST['_subtitle'];
+    $woocommerce_text_field = sanitize_text_field($_POST['_subtitle']);
     if( !empty( $woocommerce_text_field ) )
         update_post_meta( $post_id, '_subtitle', esc_attr( $woocommerce_text_field ) );
 } );
