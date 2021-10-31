@@ -34,15 +34,15 @@ class Single {
     }
 
     public function getContent(){
-        $post_id = (is_numeric($_POST['id']))? $_POST['id'] : 0;
+        $post_id = (is_numeric(sanitize_text_field($_POST['id'])))? sanitize_text_field($_POST['id']) : 0;
         $product = wc_get_product($post_id);
         $general = $this->service_container->get(General::class);
         return $general->extractContent($product->get_description());
     }
     
     public function getView() {
-        $googleID = $_POST['googleID'];
-        $count = $_POST['count'];
+        $googleID = sanitize_text_field($_POST['googleID']);
+        $count = sanitize_text_field($_POST['count']);
         $posts = array();
         global $wpdb;
         $table = $wpdb->prefix . 'OSA_view_log';
@@ -93,9 +93,9 @@ class Single {
     public function get() {
         $index_object = $this->service_container->get(Index::class);
         date_default_timezone_set('Asia/Tehran');
-        $masterID = $_POST['id'];
+        $masterID = sanitize_text_field($_POST['id']);
 
-        $userToken = ( isset($_POST['userToken']) ) ? $_POST['userToken'] : "";
+        $userToken = ( isset(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
@@ -476,7 +476,7 @@ class Single {
     }
 
     private function saveView($postID) {
-        $googleID = strip_tags($_POST['googleID']);
+        $googleID = strip_tags(sanitize_text_field($_POST['googleID']));
         global $wpdb;
         $table = $wpdb->prefix . 'OSA_view_log';
         $Record = $wpdb->get_row("SELECT * FROM $table WHERE googleID = '$googleID'");
@@ -525,8 +525,8 @@ class Single {
     }
 
     private function wishlistStatus() {
-        $userToken = $_POST['userToken'];
-        $id = $_POST['id'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $id = sanitize_text_field($_POST['id']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
@@ -864,7 +864,7 @@ class Single {
             );
             $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
-            if (strlen($_POST['vendor_town']) > 2) {
+            if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
                 $args['author__in'] = $activeVendors;
             }
 
@@ -880,7 +880,7 @@ class Single {
                     ));
             $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
-            if (strlen($_POST['vendor_town']) > 2) {
+            if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
                 $args['author__in'] = $activeVendors;
             }
         }
@@ -933,14 +933,14 @@ class Single {
         $args = array(
             'tax_query' => $tax_query,
             'post_type' => 'product',
-            'post__not_in' => array($_POST['id']),
+            'post__not_in' => array(sanitize_text_field($_POST['id'])),
             'posts_per_page' => 8,
             'meta_key' => 'total_sales',
             'orderby' => 'meta_value_num',
         );
         $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
-        if (strlen($_POST['vendor_town']) > 2) {
+        if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
             $args['author__in'] = $activeVendors;
         }
         if (storina_get_option('app_disableExist') == 'true') {
@@ -1137,9 +1137,9 @@ class Single {
     }
 
     public function report_product() {
-        $product_id = $_POST['product_id'];
-        $user_token = $_POST['userToken'];
-        $report_content = $_POST['report_content'];
+        $product_id = sanitize_text_field($_POST['product_id']);
+        $user_token = sanitize_text_field($_POST['userToken']);
+        $report_content = sanitize_text_field($_POST['report_content']);
 
         $product_object = wc_get_product($product_id);
         $user = $this->service_container->get(User::class);
