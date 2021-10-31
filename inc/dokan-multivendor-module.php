@@ -19,7 +19,7 @@ add_action('init',function(){
         "osa_single_related_query_args",
         "osa_single_getMostSales_query_args",
     );
-    $vendor_town = $_POST['vendor_town'] ?? false;
+    $vendor_town = sanitize_text_field($_POST['vendor_town']) ?? false;
     foreach ($query_vars_filters as $filter){
         if(false == ($vendor_town > 2) && false){
             add_filter($filter, "storina_spmv_archive_filter",20,1);
