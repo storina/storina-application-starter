@@ -36,7 +36,7 @@ class General {
 
     public function pre_get_items() {
         global $wpdb, $sessionRecord;
-        $googleID = $_POST['googleID'];
+        $googleID = sanitize_text_field($_POST['googleID']);
         $cart = array();
         $table = $wpdb->prefix . 'OSA_cart';
         $sessionRecord = $wpdb->get_row("SELECT * FROM $table WHERE googleID = '$googleID'");
@@ -142,12 +142,12 @@ class General {
     }
 
     public function singleComment() {
-        $id = $product_id = $_POST['id'];
+        $id = $product_id = sanitize_text_field($_POST['id']);
         $data = array(
             'orderByDate' => array(),
             'orderByLike' => array()
         );
-        $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
+        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         $args = array(
@@ -282,11 +282,11 @@ class General {
     }
 
     public function insertComment() {
-        $userToken = $_POST['userToken'];
-        $postId = $_POST['post_ID'];
-        $rating = $_POST['rating'];
-        $comment = $_POST['comment'];
-        $author = $_POST['name'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $postId = sanitize_text_field($_POST['post_ID']);
+        $rating = sanitize_text_field($_POST['rating']);
+        $comment = sanitize_text_field($_POST['comment']);
+        $author = sanitize_text_field($_POST['name']);
         $time = current_time('mysql');
         global $wpdb;
         $table_name = $wpdb->prefix . 'usermeta';
@@ -330,8 +330,8 @@ class General {
                 );
             }
         } else {
-            $user_email = sanitize_email($_POST['user_emaill']);
-            $user_url = esc_url($_POST['user_url']);
+            $user_email = sanitize_email(sanitize_text_field($_POST['user_emaill']));
+            $user_url = esc_url(sanitize_text_field($_POST['user_url']));
             $data = array(
                 'comment_post_ID' => $postId,
                 'comment_author' => $author,
@@ -440,7 +440,7 @@ class General {
 
     public function Announcements() {
         $posts = array();
-        $page = $_POST['page'];
+        $page = sanitize_text_field($_POST['page']);
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         global $wp_query;
@@ -485,8 +485,8 @@ class General {
 
     public function blogArchive() {
         $posts = array();
-        $cats = ( isset($_POST['id']) ) ? stripslashes($_POST['id']) : storina_get_option('appBlog');
-        $page = $_POST['page'];
+        $cats = ( isset(sanitize_text_field($_POST['id'])) ) ? stripslashes(sanitize_text_field($_POST['id'])) : storina_get_option('appBlog');
+        $page = sanitize_text_field($_POST['page']);
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         global $wp_query;
@@ -641,7 +641,7 @@ class General {
     }
 
     public function blogSingle() {
-        $id = $_POST['id'];
+        $id = sanitize_text_field($_POST['id']);
         $post = get_post($id);
         if (has_post_thumbnail($id)) {
             $img_id = get_post_thumbnail_id($id);
@@ -768,13 +768,13 @@ class General {
     }
 
     public function backorderForm() {
-        $masterID = stripcslashes($_POST['id']);
+        $masterID = stripcslashes(sanitize_text_field($_POST['id']));
         if (get_post_status($masterID)) {
-            $name = stripslashes($_POST['name']);
-            $phone = stripslashes($_POST['phone']);
-            $email = stripslashes($_POST['email']);
-            $desc = stripslashes($_POST['desc']);
-            $quantity = stripslashes($_POST['quantity']);
+            $name = stripslashes(sanitize_text_field($_POST['name']));
+            $phone = stripslashes(sanitize_text_field($_POST['phone']));
+            $email = stripslashes(sanitize_text_field($_POST['email']));
+            $desc = stripslashes(sanitize_text_field($_POST['desc']));
+            $quantity = stripslashes(sanitize_text_field($_POST['quantity']));
             $sale_email = storina_get_option('app_backorder_email');
             $to = ( $sale_email ) ? $sale_email : storina_get_option('admin_email');
             $subject = 'درخواست پیش خرید محصول توسط ' . $name;
@@ -866,8 +866,8 @@ class General {
             );
             wp_send_json($versionInfo);
         }
-        if (isset($_POST['action'])) {
-            return $_POST['action'];
+        if (isset(sanitize_text_field($_POST['action']))) {
+            return sanitize_text_field($_POST['action']);
         } else {
             $result = array(
                 'status' => false,
@@ -1164,7 +1164,7 @@ class General {
             'number' => $count,
             'fields' => array('ID'),
         );
-        $town = $_POST['vendor_town'];
+        $town = sanitize_text_field($_POST['vendor_town']);
         $AllVendors = get_users($args);
         $activeVendors = array();
         $type = storina_get_option('appVendorlist');
@@ -1190,7 +1190,7 @@ class General {
         if (!function_exists('dokan_is_seller_enabled')) {
             return array();
         }
-        $category_id = $_POST['cat_id'];
+        $category_id = sanitize_text_field($_POST['cat_id']);
         $category_list = array_map('intval', get_term_children($category_id, "product_cat"));
         $category_list[] = (int) $category_id;
         $args = array(
@@ -1234,7 +1234,7 @@ class General {
     }
 
     public function getStrings() {
-        $lng = $_POST['lng'];
+        $lng = sanitize_text_field($_POST['lng']);
         $result = array(
             'status' => true,
             'data' => array(
@@ -1274,7 +1274,7 @@ class General {
 
     public function getState() {
         $countries_obj = new WC_Countries;
-        $country_code = $_POST['country'];
+        $country_code = sanitize_text_field($_POST['country']);
         $states = array();
         foreach ($countries_obj->get_states($country_code) as $code => $name) {
             $key['fa'] = $name;
