@@ -14,7 +14,7 @@ class UserController {
     }
 
     public function add_vendor_info($app_settings){
-        $user_id = $this->get_user_by_token($_POST['userToken']);
+        $user_id = $this->get_user_by_token(sanitize_text_field($_POST['userToken']));
         $user = get_user_by( 'id', $user_id );
         $vendor_capability = "";
         if(is_numeric($user_id) || false != $user instanceof WP_User){
@@ -28,13 +28,13 @@ class UserController {
     public function get_user_by_token($user_token){
         global $osa_autoload;
         $user_action = $osa_autoload->service_provider->get(User::class);
-        $user_token = $_POST['userToken'];
+        $user_token = sanitize_text_field($_POST['userToken']);
         $user_id = $user_action->get_userID_byToken($user_token);
         return $user_id;
     }
 
     public function add_message_status($app_settings){
-        $user_id = $this->get_user_by_token($_POST['userToken']);
+        $user_id = $this->get_user_by_token(sanitize_text_field($_POST['userToken']));
         $user = get_user_by('id', $user_id);
         if($user instanceof WP_User){
             $user_roles = $user->roles;
