@@ -95,7 +95,7 @@ class Single {
         date_default_timezone_set('Asia/Tehran');
         $masterID = sanitize_text_field($_POST['id']);
 
-        $userToken = ( isset(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
+        $userToken = ( !empty(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
