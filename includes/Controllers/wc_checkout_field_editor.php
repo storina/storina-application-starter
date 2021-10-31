@@ -63,7 +63,7 @@ class WC_Checkout_Editor {
             return $fields;
         }
         $this->slug = (class_exists("THWCFD_Utils"))? "new" : "old";
-        $this->address_type = (isset(sanitize_text_field($_POST['addressType'])))? sanitize_text_field($_POST['addressType']) : "billing";
+        $this->address_type = (!empty(sanitize_text_field($_POST['addressType'])))? sanitize_text_field($_POST['addressType']) : "billing";
         $custom_fields = $this->get_fields();
         for($i=0;$i<count($fields);$i++){
             $key = $fields[$i]['id'];
