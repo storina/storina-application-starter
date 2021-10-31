@@ -24,7 +24,7 @@ class ProductController {
     }
 
     public function add_spmv_chat_initializer($multi_vendor_products){
-        $user_token = $_POST['userToken'] ?: null;
+        $user_token = sanitize_text_field($_POST['userToken']) ?: null;
         if(empty($multi_vendor_products) || !isset($user_token)){
             return $multi_vendor_products;
         }
