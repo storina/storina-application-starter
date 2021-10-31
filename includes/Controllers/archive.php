@@ -41,7 +41,7 @@ class Archive {
         $vendor_id = intval(sanitize_text_field($_POST['vendor_id']));
         $exist = sanitize_text_field($_POST['exist']);
         $sort = sanitize_text_field($_POST['sort']);
-        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
+        $page = ( !empty(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
@@ -198,7 +198,7 @@ class Archive {
             return ( $data );
         }
         $general = $this->service_container->get(General::class);
-        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
+        $page = ( !empty(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = - 1;
         $offset = ( $page - 1 ) * $count;
 // "enable_tnc";s:0:""
@@ -623,7 +623,7 @@ class Archive {
         $cat_id = sanitize_text_field($_POST['id']);
         $exist = sanitize_text_field($_POST['exist']);
         $sort = sanitize_text_field($_POST['sort']);
-        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
+        $page = ( !empty(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
@@ -648,7 +648,7 @@ class Archive {
                 'terms' => $cat_id
             );
         }
-        if (isset(sanitize_text_field($_POST['filter']))) {
+        if (!empty(sanitize_text_field($_POST['filter']))) {
 
             $filters = json_decode(stripcslashes(sanitize_text_field($_POST['filter'])), true);
             foreach ($filters as $attr_id => $term_ids) {
@@ -859,16 +859,16 @@ class Archive {
         return $final_attr;
     }
 
-nitize_text_field(    public function bulkSearch() {
-	        $keywords = json_decode(stripcslashes($_POST['keywords']), true);
-			        foreach ($keywords as $keyword) {
-						            $bulk_box[] = $this->search($keyword, true);
-									        }
-			        $bulk_result = array(
-						            'status' => true,
-									            'data' => $bulk_box,
-												        );
-			)
+    public function bulkSearch() {
+        $keywords = json_decode(stripcslashes(sanitize_text_field($_POST['keywords'])), true);
+        foreach ($keywords as $keyword) {
+            $bulk_box[] = $this->search($keyword, true);
+        }
+        $bulk_result = array(
+            'status' => true,
+            'data' => $bulk_box,
+        );
+
         return ( $bulk_result );
     }
 
@@ -914,7 +914,7 @@ nitize_text_field(    public function bulkSearch() {
         if ($s != '') {
             $index = $this->service_container->get(Index::class);
             wp_reset_query();
-            $page = ( isset(sanitize_text_field($_POST['page'])) ) ? $_POST['page'] : 1;
+            $page = ( !empty(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
             $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
             $offset = ( $page - 1 ) * $count;
