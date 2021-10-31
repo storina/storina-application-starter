@@ -23,7 +23,7 @@ class Call_Api {
 
     public function prepare_response($action, $log_id) {
         do_action("osa_init_response");
-        if (isset(sanitize_text_field($_POST['googleID']))) {
+        if (!empty(sanitize_text_field($_POST['googleID']))) {
             global $googleID;
             $googleID = sanitize_text_field($_POST['googleID']);
         }
@@ -43,12 +43,12 @@ class Call_Api {
         $new_rules = array();
         $new_rules['^onlinerApi'] = 'index.php?onapi=true';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-        if (isset(sanitize_text_field($_POST['action']))) {
+        if (!empty(sanitize_text_field($_POST['action']))) {
             set_query_var('onlinerApi', sanitize_text_field($_POST['action']));
         } else {
             $arr = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
             $index = array_search('onlinerApi', $arr);
-            $action = (is_numeric($index) && isset($arr[$index++])) ? $arr[$index++] : false;
+            $action = (is_numeric($index) && !empty($arr[$index++])) ? $arr[$index++] : false;
             set_query_var('onlinerApi', $action);
         }
     }
@@ -81,10 +81,10 @@ class Call_Api {
                 ),
             ));
         }
-        $action = ( isset($_GET['getVersion'])) ? 'getVersion' : $q_var;
+        $action = ( !empty($_GET['getVersion'])) ? 'getVersion' : $q_var;
         //trigger exception in a "try" block
         try {
-            if (isset(sanitize_text_field($_POST['action']))) {
+            if (!empty(sanitize_text_field($_POST['action']))) {
                 $log_id = $this->set_error_log('insert', '', '', sanitize_text_field($_POST['action']), sanitize_text_field($_POST), '');
             }
             $this->prepare_response($action, $log_id);
