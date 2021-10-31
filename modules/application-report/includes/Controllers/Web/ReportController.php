@@ -27,7 +27,7 @@ class ReportController {
     }
 
     public function viewer_pagination_action(){
-        $paged = (int) $_POST['paged'];
+        $paged = (int) sanitize_text_field($_POST['paged']);
         if(!is_numeric($paged)){
             wp_send_json([
                 'status' => false,
