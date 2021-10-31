@@ -28,12 +28,12 @@ class Index {
         //     check cache
 
         $OSA_cache = $this->service_container->get(Cache::class);
-        $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
+        $itemID = ( strlen(sanitize_text_field($_POST['vendor_town'])) > 2 ) ? sanitize_text_field($_POST['vendor_town']) : 0;
         $record = $OSA_cache->getCache('index', $itemID);
         $general = $this->service_container->get(General::class);
         $cache = ( storina_get_option('appCacheStatus') == 'inactive' ) ? false : true;
 
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
@@ -48,7 +48,7 @@ class Index {
         // caching
         if (!empty($record) AND $cache == true AND ! in_array('reseler', (array) $user->roles) AND false) {
             $index = $record;
-            $version = $_POST['currentVersion'];
+            $version = sanitize_text_field($_POST['currentVersion']);
             $appinfo = array(
                 "zeroPriceText" => __("Call", "onlinerShopApp"),
                     /* "new_app_version" => intval( storina_get_option( 'app_version' ) ),
@@ -96,7 +96,7 @@ class Index {
             $home[] = $this->$item($elementID, $iiii);
             $iiii ++;
         }
-        $version = $_POST['currentVersion'];
+        $version = sanitize_text_field($_POST['currentVersion']);
         if (floatval($version) < floatval(storina_get_option('app_version'))) {
             $description = explode(PHP_EOL, storina_get_option('app_versionText'));
             $appInfo = array(
@@ -205,7 +205,7 @@ class Index {
                 'states' => $states,
             )
         );
-        $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
+        $itemID = ( strlen(sanitize_text_field($_POST['vendor_town'])) > 2 ) ? sanitize_text_field($_POST['vendor_town']) : 0;
         $OSA_cache->setCache(json_encode($result), 'index', $itemID);
 
         return ( $result );
@@ -244,7 +244,7 @@ class Index {
             );
             $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
-            if (strlen($_POST['vendor_town']) > 2) {
+            if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
                 $args['author__in'] = $activeVendors;
             }
             if (array_search('0', $cat_ids) === false) {
@@ -516,7 +516,7 @@ class Index {
         }
         $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
-        if (strlen($_POST['vendor_town']) > 2) {
+        if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
             $args['author__in'] = $activeVendors;
         }
         $args['post_type'] = 'product';
