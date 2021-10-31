@@ -67,7 +67,7 @@ class User {
 		FROM $table_name
 		WHERE meta_key = 'userToken' AND meta_value = '$token'";
         $check_exist = $wpdb->get_row($query);
-        if (isset($check_exist->user_id)) {
+        if (!empty($check_exist->user_id)) {
             return $check_exist->user_id;
         } else {
             return false;
@@ -132,7 +132,7 @@ class User {
         $otp = sanitize_text_field($_POST['code']);
         $userToken = $user_token = sanitize_text_field($_POST['userToken']);
         $session_data = $this->get_digits_details($userToken);
-        if(empty($session_data) || !isset($session_data['username'])){
+        if(empty($session_data) || empty($session_data['username'])){
             return array(
                 "status" => false,
                 "message" => "session data not set"
@@ -220,7 +220,7 @@ class User {
         $parts = explode("@", $email);
         $username = $parts[0] . rand(1000, 9999);
         $user_id = email_exists($email);
-        $fullname = ( isset(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $parts[0];
+        $fullname = ( !empty(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $parts[0];
         if (!$user_id) {
             $result = $this->registerCore($username, $password, $email, $fullname);
         } else {
@@ -237,7 +237,7 @@ class User {
 
     public function registerCore($username, $password, $email, $name) {
         $user_id = wp_create_user($username, $password);
-        $billing_state = ( isset(sanitize_text_field($_POST['state'])) ) ? sanitize_text_field($_POST['state']) : "";
+        $billing_state = ( !empty(sanitize_text_field($_POST['state'])) ) ? sanitize_text_field($_POST['state']) : "";
         if (!empty($billing_state) and ! empty($user_id)) {
             update_user_meta($user_id, "billing_state", $billing_state);
         }
@@ -329,7 +329,7 @@ class User {
     }
 
     private function parvankalaCustomize($user_id) {
-        if (isset(sanitize_text_field($_POST['state']))) {
+        if (!empty(sanitize_text_field($_POST['state']))) {
             $state = sanitize_text_field($_POST['state']);
             update_user_meta($user_id, 'billing_state', $state);
         }
@@ -353,7 +353,7 @@ class User {
         $validMobile = (0 != substr($validMobile, 0, 1)) ? "0{$validMobile}" : $validMobile;
         $user_id1 = username_exists($validMobile);
         $user_id2 = username_exists(ltrim($validMobile, '0'));
-        $fullname = ( isset(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $validMobile;
+        $fullname = ( !empty(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $validMobile;
         if ($user_id1 || $user_id2) {
             $result = array(
                 'status' => false,
@@ -363,7 +363,7 @@ class User {
                 )
             );
         } else {
-            $password = ( isset(sanitize_text_field($_POST['password'])) ) ? sanitize_text_field($_POST['password']) : wp_generate_password();
+            $password = ( !empty(sanitize_text_field($_POST['password'])) ) ? sanitize_text_field($_POST['password']) : wp_generate_password();
             //$validMobile = ltrim( $validMobile, '0' );
             $country_code = getUserCountryCode();
             $result = $this->digits_register_request($validMobile, $password, '', $fullname, $country_code, ltrim($validMobile,'0'));
@@ -598,7 +598,7 @@ class User {
         }
         $creds = array(
             'user_password' => sanitize_text_field($_POST['password']),
-            'remember' => isset(sanitize_text_field($_POST['rememberme'])),
+            'remember' => !empty(sanitize_text_field($_POST['rememberme'])),
         );
         if ($is_mobile) { // if is mobile number
             $user_by_id = get_user_by('ID', $user_id);
@@ -1389,7 +1389,7 @@ class User {
     public function vendorProduct(){
         $index = $this->service_container->get(Index::class);
         $user_id = $this->get_userID_byToken(sanitize_text_field($_POST['userToken']));
-        $paged = (isset(sanitize_text_field($_POST['paged'])))? sanitize_text_field($_POST['paged']) : 1;
+        $paged = (!empty(sanitize_text_field($_POST['paged'])))? sanitize_text_field($_POST['paged']) : 1;
         if(empty($user_id)){
             wp_send_json(array(
                 "status" => false,
