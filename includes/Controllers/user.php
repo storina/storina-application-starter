@@ -793,7 +793,7 @@ class User {
             return false;
         }
 
-        sanitize_text_field($_POST['user_login']) = $user_login;
+        $user_login = sanitize_text_field($_POST['user_login']);
         if (class_exists('WC_Shortcode_My_Account')) {
             $success = WC_Shortcode_My_Account::retrieve_password();
             $result = true;
