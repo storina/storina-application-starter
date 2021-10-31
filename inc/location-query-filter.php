@@ -1,7 +1,7 @@
 <?php 
 
 add_action("init", function (){
-    if(!isset($_POST['vendor_town']) || false == (strlen($_POST['vendor_town']) > 2) ){
+    if(!isset(sanitize_text_field($_POST['vendor_town'])) || false == (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) ){
         return;
     }
     $filters = array(
@@ -31,7 +31,7 @@ function storina_get_vendors_based_on_location(){
         'number' => $count,
         'fields' => array('ID'),
     );
-    $town = $_POST['vendor_town'];
+    $town = sanitize_text_field($_POST['vendor_town']);
     $AllVendors = get_users($args);
     $activeVendors = array();
     $type = storina_get_option('appVendorlist');
