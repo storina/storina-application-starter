@@ -40,7 +40,7 @@ class User {
 
             return ( $result );
         }
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         $user = get_user_by('ID', $user_id);
         $session_data = $this->get_digits_details($userToken);
@@ -129,8 +129,8 @@ class User {
 
     public function verify() {
         $this->digits_is_active(true);
-        $otp = $_POST['code'];
-        $userToken = $user_token = $_POST['userToken'];
+        $otp = sanitize_text_field($_POST['code']);
+        $userToken = $user_token = sanitize_text_field($_POST['userToken']);
         $session_data = $this->get_digits_details($userToken);
         if(empty($session_data) || !isset($session_data['username'])){
             return array(
@@ -178,8 +178,8 @@ class User {
     }
 
     public function register() {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+        $email = sanitize_text_field($_POST['email']);
+        $password = sanitize_text_field($_POST['password']);
         $checkMail = $this->checkEmail($email);
         $registerType = storina_get_option('registerType');
         if ($registerType == 'email') {
@@ -220,7 +220,7 @@ class User {
         $parts = explode("@", $email);
         $username = $parts[0] . rand(1000, 9999);
         $user_id = email_exists($email);
-        $fullname = ( isset($_POST['name']) ) ? $_POST['name'] : $parts[0];
+        $fullname = ( isset(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $parts[0];
         if (!$user_id) {
             $result = $this->registerCore($username, $password, $email, $fullname);
         } else {
@@ -237,7 +237,7 @@ class User {
 
     public function registerCore($username, $password, $email, $name) {
         $user_id = wp_create_user($username, $password);
-        $billing_state = ( isset($_POST['state']) ) ? $_POST['state'] : "";
+        $billing_state = ( isset(sanitize_text_field($_POST['state'])) ) ? sanitize_text_field($_POST['state']) : "";
         if (!empty($billing_state) and ! empty($user_id)) {
             update_user_meta($user_id, "billing_state", $billing_state);
         }
@@ -329,8 +329,8 @@ class User {
     }
 
     private function parvankalaCustomize($user_id) {
-        if (isset($_POST['state'])) {
-            $state = $_POST['state'];
+        if (isset(sanitize_text_field($_POST['state']))) {
+            $state = sanitize_text_field($_POST['state']);
             update_user_meta($user_id, 'billing_state', $state);
         }
     }
@@ -353,7 +353,7 @@ class User {
         $validMobile = (0 != substr($validMobile, 0, 1)) ? "0{$validMobile}" : $validMobile;
         $user_id1 = username_exists($validMobile);
         $user_id2 = username_exists(ltrim($validMobile, '0'));
-        $fullname = ( isset($_POST['name']) ) ? $_POST['name'] : $validMobile;
+        $fullname = ( isset(sanitize_text_field($_POST['name'])) ) ? sanitize_text_field($_POST['name']) : $validMobile;
         if ($user_id1 || $user_id2) {
             $result = array(
                 'status' => false,
@@ -363,7 +363,7 @@ class User {
                 )
             );
         } else {
-            $password = ( isset($_POST['password']) ) ? $_POST['password'] : wp_generate_password();
+            $password = ( isset(sanitize_text_field($_POST['password'])) ) ? sanitize_text_field($_POST['password']) : wp_generate_password();
             //$validMobile = ltrim( $validMobile, '0' );
             $country_code = getUserCountryCode();
             $result = $this->digits_register_request($validMobile, $password, '', $fullname, $country_code, ltrim($validMobile,'0'));
@@ -395,7 +395,7 @@ class User {
     }
 
     private function doLogin($creds, $user, $userStatus) {
-        $pass = $_POST['password'];
+        $pass = sanitize_text_field($_POST['password']);
         $username = $user->user_login;
         $userValid = wp_authenticate($username, $pass);
 
@@ -588,7 +588,7 @@ class User {
     }
 
     public function login() {
-        $email = trim($_POST['email']);
+        $email = trim(sanitize_text_field($_POST['email']));
         $is_mobile = $this->validMobile($email);
         $user_id = username_exists($is_mobile);
         if (strlen($is_mobile) == 11 AND ! $user_id) {
@@ -597,8 +597,8 @@ class User {
             
         }
         $creds = array(
-            'user_password' => $_POST['password'],
-            'remember' => isset($_POST['rememberme']),
+            'user_password' => sanitize_text_field($_POST['password']),
+            'remember' => isset(sanitize_text_field($_POST['rememberme'])),
         );
         if ($is_mobile) { // if is mobile number
             $user_by_id = get_user_by('ID', $user_id);
@@ -641,8 +641,8 @@ class User {
     }
 
     public function setPassword() {
-        $password = $_POST['key'];
-        $userToken = $_POST['userToken'];
+        $password = sanitize_text_field($_POST['key']);
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         wp_set_password($password, $user_id);
         $result = array(
@@ -656,8 +656,8 @@ class User {
     }
 
     public function forgetPass() {
-        $email = ( $_POST['email'] );
-        $userToken = $_POST['userToken'];
+        $email = ( sanitize_text_field($_POST['email']) );
+        $userToken = sanitize_text_field($_POST['userToken']);
 
         $checkMail = $this->checkEmail($email);
         $registerType = storina_get_option('registerType');
@@ -793,7 +793,7 @@ class User {
             return false;
         }
 
-        $_POST['user_login'] = $user_login;
+        sanitize_text_field($_POST['user_login']) = $user_login;
         if (class_exists('WC_Shortcode_My_Account')) {
             $success = WC_Shortcode_My_Account::retrieve_password();
             $result = true;
@@ -814,7 +814,7 @@ class User {
     }
 
     public function getProfile() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
             $user = get_userdata($user_id);
@@ -867,19 +867,19 @@ class User {
     }
 
     public function setProfile() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
 
-            $display_name = $_POST['name'];
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
-            $verifyPass = $_POST['verifyPass'];
+            $display_name = sanitize_text_field($_POST['name']);
+            $email = sanitize_text_field($_POST['email']);
+            $pass = sanitize_text_field($_POST['pass']);
+            $verifyPass = sanitize_text_field($_POST['verifyPass']);
 
-            $avatar = $_POST['avatar'];
+            $avatar = sanitize_text_field($_POST['avatar']);
 
 
-            //$path = "uploads/".$_POST['name'].".png";
+            //$path = "uploads/".sanitize_text_field($_POST['name']).".png";
             //$actualpath = $path;
             //file_put_contents($path,base64_decode($avatar));
             //echo base64_decode($avatar);
@@ -932,8 +932,8 @@ class User {
     }
 
     public function addToWishlist() {
-        $userToken = $_POST['userToken'];
-        $product_id = $_POST['product_id'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $product_id = sanitize_text_field($_POST['product_id']);
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
             if (function_exists('YITH_WCWL')) {
@@ -974,8 +974,8 @@ class User {
     }
 
     public function removeFromWishlist() {
-        $userToken = $_POST['userToken'];
-        $product_id = $_POST['product_id'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $product_id = sanitize_text_field($_POST['product_id']);
 
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
@@ -1017,7 +1017,7 @@ class User {
     }
 
     public function Wishlist() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         $this->user_id = $user_id;
         if ($user_id) {
@@ -1089,11 +1089,11 @@ class User {
     }
 
     public function commentLike() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
-            $commentId = $_POST['commentId'];
-            $likeAction = $_POST['likeAction'];
+            $commentId = sanitize_text_field($_POST['commentId']);
+            $likeAction = sanitize_text_field($_POST['likeAction']);
             $like_count = get_comment_meta($commentId, 'cld_like_count', true);
             $dislike_count = get_comment_meta($commentId, 'cld_dislike_count', true);
             global $wpdb;
@@ -1182,7 +1182,7 @@ class User {
     }
 
     public function get_addresses() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_id = $this->get_userID_byToken($userToken);
         if ($user_id) {
             $data = array();
@@ -1252,8 +1252,8 @@ class User {
     }
 
     public function edit_address() {
-        $userToken = $_POST['userToken'];
-        $addressType = $_POST['addressType'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $addressType = sanitize_text_field($_POST['addressType']);
         $user_id = $this->get_userID_byToken($userToken);
         if (!is_numeric($user_id)) {
             return array(
@@ -1263,7 +1263,7 @@ class User {
                 )
             );
         }
-        $fields = json_decode(stripcslashes($_POST['fields']), true);
+        $fields = json_decode(stripcslashes(sanitize_text_field($_POST['fields'])), true);
         foreach($fields as $key => $value){
             if(strpos($key, "email") && !is_email($value) && !empty($value)){
                 $errors[$key] = __("Email is invalid","onlinerShopApp");
@@ -1278,7 +1278,7 @@ class User {
         foreach ($fields as $key => $value) {
             update_user_meta($user_id, $key, $value);
         }
-        $status = $_POST[$addressType . '_status'];
+        $status = sanitize_text_field($_POST[$addressType . '_status']);
         update_user_meta($user_id, $addressType . '_status', $status);
         $result = array(
             'status' => true,
@@ -1314,7 +1314,7 @@ class User {
             "password" => $password,
             "email" => $email,
             "fullname" => $fullname,
-            'googleID' => $_POST['googleID'],
+            'googleID' => sanitize_text_field($_POST['googleID']),
             "role" => apply_filters("osa_user_register_user_role",storina_get_option('default_role')),
         );
         update_option($user_token,$session_data);
@@ -1388,8 +1388,8 @@ class User {
 
     public function vendorProduct(){
         $index = $this->service_container->get(Index::class);
-        $user_id = $this->get_userID_byToken($_POST['userToken']);
-        $paged = (isset($_POST['paged']))? $_POST['paged'] : 1;
+        $user_id = $this->get_userID_byToken(sanitize_text_field($_POST['userToken']));
+        $paged = (isset(sanitize_text_field($_POST['paged'])))? sanitize_text_field($_POST['paged']) : 1;
         if(empty($user_id)){
             wp_send_json(array(
                 "status" => false,
