@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 define('STORINA_THEME_OPTION', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
 
 function storina_update_option2() {
-	$import_nonce_value = (isset(sanitize_text_field($_POST['osa_import_configuration_nonce_key'])))? sanitize_text_field($_POST['osa_import_configuration_nonce_key']) : null;
+	$import_nonce_value = (!empty(sanitize_text_field($_POST['osa_import_configuration_nonce_key'])))? sanitize_text_field($_POST['osa_import_configuration_nonce_key']) : null;
 	$import_verify_nonce = wp_verify_nonce($import_nonce_value,'osa_import_configuration_nonce_value');
-	if ( isset( sanitize_text_field($_POST['submit_osa_import']),$import_nonce_value ) && false != $import_verify_nonce ) {
+	if ( !empty( sanitize_text_field($_POST['submit_osa_import'])) && !empty($import_nonce_value) && false != $import_verify_nonce ) {
 
 		//app option
 		$title                 = storina_get_option( 'app_title' );
@@ -199,7 +199,7 @@ function storina_update_option2() {
 		}
 		storina_update_option( "dig_otp_size", 6 );
 	}
-	if ( isset( sanitize_text_field($_POST['submit_theme_options']) ) ) {
+	if ( !empty( sanitize_text_field($_POST['submit_theme_options']) ) ) {
 	$apptype_form = sanitize_text_field($_POST['apptype_form']);
 	$appname_form = sanitize_text_field($_POST['appname_form']);
 	$count = 0;
@@ -496,7 +496,7 @@ function storina_send_notif(){
 	if(function_exists('wp_enqueue_media')){
 		wp_enqueue_media();
 	}
-	if ( isset( sanitize_text_field($_POST['send_notif']) ) ) {
+	if ( !empty( sanitize_text_field($_POST['send_notif']) ) ) {
 		$title     = sanitize_text_field($_POST['notif_title']);
 		$desc      = sanitize_text_field($_POST['notif_desc']);
 		$icon      = sanitize_text_field($_POST['notif_icon']);
