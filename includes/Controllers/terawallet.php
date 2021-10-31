@@ -52,9 +52,9 @@ class Terawallet {
      * @return JSON
      */
     public function increase_ballance() {
-        $wallet_balance = (int) $_POST['woo_wallet_balance_to_add'];
-        $paymentMethod = $_POST['paymentMethod'];
-        $user_token = $_POST['userToken'];
+        $wallet_balance = (int) sanitize_text_field($_POST['woo_wallet_balance_to_add']);
+        $paymentMethod = sanitize_text_field($_POST['paymentMethod']);
+        $user_token = sanitize_text_field($_POST['userToken']);
 
         $user_id = $this->user->get_userID_byToken($user_token);
         if (!$user_id) {
@@ -258,8 +258,8 @@ class Terawallet {
      * @return JSON
      */
     public function trigger_charge($type) {
-        $google_id = $_POST['googleID'];
-        $user_token = $_POST['userToken'];
+        $google_id = sanitize_text_field($_POST['googleID']);
+        $user_token = sanitize_text_field($_POST['userToken']);
         //get cart id
         $cart_id = $this->get_cart_id_by_googleID($google_id);
         if (!$cart_id) {
