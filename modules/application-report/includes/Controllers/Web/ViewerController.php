@@ -17,12 +17,12 @@ class ViewerController {
 
     public function viewer_action_run($user_id){
         $authentication = (is_numeric($user_id) && false != $user_id)? true : false;
-        $identifier = (is_numeric($user_id) && false != $user_id)? $user_id : $_POST['googleID'];
+        $identifier = (is_numeric($user_id) && false != $user_id)? $user_id : sanitize_text_field($_POST['googleID']);
         $viewer = Viewer::get_viewer_by_identifier($identifier);
         $expire_time = time() + self::expire_plus;
-        $client_type = $_POST['client_type'] ?? '';
-        $current_version = (isset($_POST['currentVersion']))? $_POST['currentVersion'] : null;
-        $notif_token = $_POST['notifToken'] ?? 'empty result';
+        $client_type = sanitize_text_field($_POST['client_type']) ?? '';
+        $current_version = (isset(sanitize_text_field($_POST['currentVersion'])))? sanitize_text_field($_POST['currentVersion']) : null;
+        $notif_token = sanitize_text_field($_POST['notifToken']) ?? 'empty result';
         if($viewer instanceof Viewer){
             $data = [
                 'expire_time' => $expire_time,
