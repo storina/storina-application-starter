@@ -22,7 +22,7 @@ class ApiProvider {
 		$prefix = 'crn';
 		$time = time();
 		$option_name = "{$prefix}-{$time}";
-		$request_body=http_build_query($_POST);
+		$request_body=http_build_query(sanitize_text_field($_POST));
 		$request_rule = "{$module}/{$action}";
 		$option_value = [
 			'request_body' => $request_body,
