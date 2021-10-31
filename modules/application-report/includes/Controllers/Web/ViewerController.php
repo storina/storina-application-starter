@@ -21,7 +21,7 @@ class ViewerController {
         $viewer = Viewer::get_viewer_by_identifier($identifier);
         $expire_time = time() + self::expire_plus;
         $client_type = sanitize_text_field($_POST['client_type']) ?? '';
-        $current_version = (isset(sanitize_text_field($_POST['currentVersion'])))? sanitize_text_field($_POST['currentVersion']) : null;
+        $current_version = (!empty(sanitize_text_field($_POST['currentVersion'])))? sanitize_text_field($_POST['currentVersion']) : null;
         $notif_token = sanitize_text_field($_POST['notifToken']) ?? 'empty result';
         if($viewer instanceof Viewer){
             $data = [

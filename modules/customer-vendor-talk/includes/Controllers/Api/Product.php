@@ -37,7 +37,7 @@ class Product {
                 "message" => __("invalid vendor","crn")
             ));
         }
-        $parent_id = (isset(sanitize_text_field($_POST['id'])))? sanitize_text_field($_POST['id']) : null;
+        $parent_id = (!empty(sanitize_text_field($_POST['id'])))? sanitize_text_field($_POST['id']) : null;
         if($product->is_type('variation') && isset($parent_id)){
             $product_parent = wc_get_product($parent_id);
             if($product_parent instanceof WC_Product){

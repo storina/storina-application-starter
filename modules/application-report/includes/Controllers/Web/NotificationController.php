@@ -26,7 +26,7 @@ class NotificationController {
 
     public function send_notification(){
         $identifier = sanitize_text_field($_POST['identifier']);
-        if(!is_numeric($identifier) || !isset(sanitize_text_field($_POST['title']),sanitize_text_field($_POST['body']))){
+        if(!is_numeric($identifier) || !empty(sanitize_text_field($_POST['title'])) || !empty(sanitize_text_field($_POST['body']))){
             wp_send_json([
                 'status' => false,
                 'message' => __("params is invalid","onlinerShopApp")

@@ -43,7 +43,7 @@ class Message {
             "attachment_slug" => null,
             "owner_id" => $owner_id,
             'updated_at' => time(),
-            "seen" => (isset(sanitize_text_field($_POST['seen'])))? sanitize_text_field($_POST['seen']) : 0,
+            "seen" => (!empty(sanitize_text_field($_POST['seen'])))? sanitize_text_field($_POST['seen']) : 0,
         );
         if(!empty($_FILES['attachment']['name'])){
             $attachment_slug = $this->attachment_action->upload($_FILES['attachment']);

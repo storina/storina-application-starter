@@ -16,7 +16,7 @@ class SearchExpressionController {
     public function update_search_expression($expression_value,$user_id){
         $google_id = sanitize_text_field($_POST['googleID']) ?? 0;
         $operator = $user_id ?: $google_id;
-        $expression = (isset(sanitize_text_field($_POST['s'])))? sanitize_text_field($_POST['s']) : $expression_value;
+        $expression = (!empty(sanitize_text_field($_POST['s'])))? sanitize_text_field($_POST['s']) : $expression_value;
         if(empty($expression)){
             return;
         }

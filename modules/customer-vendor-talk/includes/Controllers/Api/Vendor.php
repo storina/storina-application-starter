@@ -22,7 +22,7 @@ class Vendor {
         global $osa_autoload;
         $index = $osa_autoload->service_provider->get(Index::class);
         $user_id = $this->user_controller->get_user_by_token(sanitize_text_field($_POST['userToken']));
-        $paged = (isset(sanitize_text_field($_POST['paged'])))? sanitize_text_field($_POST['paged']) : 1;
+        $paged = (!empty(sanitize_text_field($_POST['paged'])))? sanitize_text_field($_POST['paged']) : 1;
         if(empty($user_id)){
             return(array(
                 "status" => false,
