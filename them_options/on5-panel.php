@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 define('STORINA_THEME_OPTION', trailingslashit(STORINA_PLUGIN_URL).'them_options/'); // for use in themplate
 
 function storina_update_option2() {
-	$import_nonce_value = (isset($_POST['osa_import_configuration_nonce_key']))? $_POST['osa_import_configuration_nonce_key'] : null;
+	$import_nonce_value = (isset(sanitize_text_field($_POST['osa_import_configuration_nonce_key'])))? sanitize_text_field($_POST['osa_import_configuration_nonce_key']) : null;
 	$import_verify_nonce = wp_verify_nonce($import_nonce_value,'osa_import_configuration_nonce_value');
-	if ( isset( $_POST['submit_osa_import'],$import_nonce_value ) && false != $import_verify_nonce ) {
+	if ( isset( sanitize_text_field($_POST['submit_osa_import']),$import_nonce_value ) && false != $import_verify_nonce ) {
 
 		//app option
 		$title                 = storina_get_option( 'app_title' );
@@ -199,9 +199,9 @@ function storina_update_option2() {
 		}
 		storina_update_option( "dig_otp_size", 6 );
 	}
-	if ( isset( $_POST['submit_theme_options'] ) ) {
-	$apptype_form = $_POST['apptype_form'];
-	$appname_form = $_POST['appname_form'];
+	if ( isset( sanitize_text_field($_POST['submit_theme_options']) ) ) {
+	$apptype_form = sanitize_text_field($_POST['apptype_form']);
+	$appname_form = sanitize_text_field($_POST['appname_form']);
 	$count = 0;
 	global $options_page;
 	global $pages;
@@ -218,7 +218,7 @@ function storina_update_option2() {
 					$link_name = $page['link_name'];
 					$title_name = $page['title_name'];
 					$caption_name = $page['caption_name'];
-					$slider = $_POST[$slider_name];
+					$slider = sanitize_text_field($_POST[$slider_name]);
 					$address = $slider['address'];
 					$title = $slider['title'];
 					$text = $slider['text'];
@@ -236,7 +236,7 @@ function storina_update_option2() {
 					$title_name    = $page['title_name'];
 					$caption_name  = $page['caption_name'];
 					$category_name = $page['category_name'];
-					$slider        = $_POST[ $slider_name ];
+					$slider        = sanitize_text_field($_POST[ $slider_name ]);
 					$address       = $slider['address'];
 					$title         = $slider['title'];
 					$text          = $slider['text'];
@@ -259,7 +259,7 @@ function storina_update_option2() {
 							case 'codearea':
 								{
 									$tmp_name     = $h['id'];
-									$tmp_textarea = stripslashes( $_POST[ $tmp_name ] );
+									$tmp_textarea = stripslashes( sanitize_text_field($_POST[ $tmp_name ]) );
 									storina_update_option( $tmp_name, $tmp_textarea );
 									break;
 								}
@@ -269,24 +269,24 @@ function storina_update_option2() {
 							case 'picture':
 								{
 									$tmp_name = $h['id'];
-									storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
+									storina_update_option( $tmp_name, sanitize_text_field($_POST[ $tmp_name ]) );
 									break;
 								}
 							case 'color':
 								$tmp_name = $h['id'];
-								storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
+								storina_update_option( $tmp_name, sanitize_text_field($_POST[ $tmp_name ]) );
 								break;
 							case 'listbox':
 								{
 									$tmp_name = $h['id'];
-									storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
+									storina_update_option( $tmp_name, sanitize_text_field($_POST[ $tmp_name ]) );
 								}
 							case 'checkbox':
 								{
 									$count = count( $h['id'] );
 									for ( $i = 0; $i < $count; $i ++ ) {
 										$tmp_name = $h['id'][ $i ];
-										storina_update_option( $tmp_name, $_POST[ $tmp_name ] );
+										storina_update_option( $tmp_name, sanitize_text_field($_POST[ $tmp_name ]) );
 									}
 
 									break;
@@ -305,7 +305,7 @@ function storina_update_option2() {
 					$heights_banner   = $page['banner_heights'];
 					$relations_banner = $page['banner_relation'];
 					$expires_banner   = $page['banner_expire'];
-					$banners          = $_POST[ $banner ];
+					$banners          = sanitize_text_field($_POST[ $banner ]);
 					$address_banner   = $banners['address'];
 					$title_banner     = $banners['title'];
 					$text_banner      = $banners['text'];
@@ -332,7 +332,7 @@ function storina_update_option2() {
 					$types_banner      = $page['banner_type'];
 					$text_ads_expire   = $page['text_ads_expire'];
 					$text_ads_color    = $page['text_ads_color'];
-					$text_ads          = $_POST[ $text_ads_name ];
+					$text_ads          = sanitize_text_field($_POST[ $text_ads_name ]);
 					$title_text_ads    = $text_ads['title'];
 					$link_text_ads     = $text_ads['link'];
 					$text_text_ads     = $text_ads['text'];
@@ -354,7 +354,7 @@ function storina_update_option2() {
 					$title_name    = $page['title_name'];
 					$caption_name  = $page['caption_name'];
 
-					$slider = $_POST[ $slider_name ];
+					$slider = sanitize_text_field($_POST[ $slider_name ]);
 					$title    = $slider['title'];
 					$text     = $slider['text'];
 					$link     = $slider['link'];
@@ -376,7 +376,7 @@ function storina_update_option2() {
 					$custom_option8     = $page['custom_option8'];
 					$custom_option9     = $page['custom_option9'];
 
-					$custom_option        = $_POST[ $custom_option_name ];
+					$custom_option        = sanitize_text_field($_POST[ $custom_option_name ]);
 					$custom_option2_value = $custom_option['option2'];
 					@$custom_option3_value = @$custom_option['option3'];
 					$custom_option4_value = $custom_option['option4'];
@@ -404,7 +404,7 @@ function storina_update_option2() {
 					break;
 					case 'woap-home-adc':
 						foreach($page['option-names'] as $option_name){
-							$option_value = $_POST[$option_name];
+							$option_value = sanitize_text_field($_POST[$option_name]);
 							update_option($option_name,$option_value);
 						}
 						break;
@@ -496,12 +496,12 @@ function storina_send_notif(){
 	if(function_exists('wp_enqueue_media')){
 		wp_enqueue_media();
 	}
-	if ( isset( $_POST['send_notif'] ) ) {
-		$title     = $_POST['notif_title'];
-		$desc      = $_POST['notif_desc'];
-		$icon      = $_POST['notif_icon'];
-		$linkType  = $_POST['notif_linkType'];
-		$linkValue = $_POST['notif_linkValue'];
+	if ( isset( sanitize_text_field($_POST['send_notif']) ) ) {
+		$title     = sanitize_text_field($_POST['notif_title']);
+		$desc      = sanitize_text_field($_POST['notif_desc']);
+		$icon      = sanitize_text_field($_POST['notif_icon']);
+		$linkType  = sanitize_text_field($_POST['notif_linkType']);
+		$linkValue = sanitize_text_field($_POST['notif_linkValue']);
 		if ( isset( $title ) AND isset( $desc ) AND isset( $icon ) AND isset( $linkType ) AND isset( $linkValue ) ) {
 
 			$onClickModel = $general->clickEvent( $linkType, $linkValue );
