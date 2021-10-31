@@ -16,13 +16,13 @@ class Product {
     }
 
     public function update(){
-        $user_id = $this->user_controller->get_user_by_token($_POST['userToken']);
+        $user_id = $this->user_controller->get_user_by_token(sanitize_text_field($_POST['userToken']));
         $authentication = apply_filters('crn_authentication_middleware',['status'=>true],$user_id);
 		if(!$authentication['status']){
 			return $authentication;
 		}
-        $product_id = $_POST['product_id'];
-        $stock_status = $_POST['stock_status'];
+        $product_id = sanitize_text_field($_POST['product_id']);
+        $stock_status = sanitize_text_field($_POST['stock_status']);
         $product = wc_get_product($product_id);
         if(false == $product instanceof WC_Product){
             return(array(
@@ -37,7 +37,7 @@ class Product {
                 "message" => __("invalid vendor","crn")
             ));
         }
-        $parent_id = (isset($_POST['id']))? $_POST['id'] : null;
+        $parent_id = (isset(sanitize_text_field($_POST['id'])))? sanitize_text_field($_POST['id']) : null;
         if($product->is_type('variation') && isset($parent_id)){
             $product_parent = wc_get_product($parent_id);
             if($product_parent instanceof WC_Product){
