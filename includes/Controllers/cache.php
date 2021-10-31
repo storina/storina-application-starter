@@ -59,7 +59,7 @@ class Cache {
             $index = json_decode($Record->json, true);
             $this->update_featured_sale_to($index);
             $index['data']['cartCount'] = count($general->get_items());
-            $currentVersion = @$_POST['currentVersion'];
+            $currentVersion = @sanitize_text_field($_POST['currentVersion']);
             if (floatval($currentVersion) < floatval(storina_get_option('app_version'))) {
                 $uploadModel = array(
                     "new_app_version" => storina_get_option('app_version'),
