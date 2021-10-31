@@ -147,7 +147,7 @@ class General {
             'orderByDate' => array(),
             'orderByLike' => array()
         );
-        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
+        $page = ( !empty(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
         $args = array(
@@ -485,7 +485,7 @@ class General {
 
     public function blogArchive() {
         $posts = array();
-        $cats = ( isset(sanitize_text_field($_POST['id'])) ) ? stripslashes(sanitize_text_field($_POST['id'])) : storina_get_option('appBlog');
+        $cats = ( !empty(sanitize_text_field($_POST['id'])) ) ? stripslashes(sanitize_text_field($_POST['id'])) : storina_get_option('appBlog');
         $page = sanitize_text_field($_POST['page']);
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $offset = ( $page - 1 ) * $count;
@@ -866,7 +866,7 @@ class General {
             );
             wp_send_json($versionInfo);
         }
-        if (isset(sanitize_text_field($_POST['action']))) {
+        if (!empty(sanitize_text_field($_POST['action']))) {
             return sanitize_text_field($_POST['action']);
         } else {
             $result = array(
