@@ -1,7 +1,7 @@
 <?php
 add_action( 'user_register', function ( $user_id ) {
 
-	if ( ! isset( $_POST['action'] ) ) // یعنی اگه از تو سایت ثبت نام شده بود
+	if ( ! isset( sanitize_text_field($_POST['action']) ) ) // یعنی اگه از تو سایت ثبت نام شده بود
 	{
 		update_user_meta( $user_id, 'userStatus', true );
 	}
@@ -115,16 +115,16 @@ function storina_save_user_fields( $user_id ) {
         return false;
 
     /* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
-    //update_usermeta( $user_id, 'userToken', $_POST['userToken'] );
-	update_usermeta( $user_id, 'gender', $_POST['gender'] );
-	update_usermeta( $user_id, 'melliCode', $_POST['melliCode'] );
-	update_usermeta( $user_id, 'birthYear', $_POST['birthYear'] );
-	update_usermeta( $user_id, 'birthMonth', $_POST['birthMonth'] );
-	update_usermeta( $user_id, 'birthDay', $_POST['birthDay'] );
-	if ( isset( $_POST['billing_address_1'] ) AND $_POST['billing_address_1'] != '' ) {
+    //update_usermeta( $user_id, 'userToken', sanitize_text_field($_POST['userToken']) );
+	update_usermeta( $user_id, 'gender', sanitize_text_field($_POST['gender']) );
+	update_usermeta( $user_id, 'melliCode', sanitize_text_field($_POST['melliCode']) );
+	update_usermeta( $user_id, 'birthYear', sanitize_text_field($_POST['birthYear']) );
+	update_usermeta( $user_id, 'birthMonth', sanitize_text_field($_POST['birthMonth']) );
+	update_usermeta( $user_id, 'birthDay', sanitize_text_field($_POST['birthDay']) );
+	if ( isset( sanitize_text_field($_POST['billing_address_1']) ) AND sanitize_text_field($_POST['billing_address_1']) != '' ) {
 		update_usermeta( $user_id, 'billing_status', 'active' );
 	}
-	if ( isset( $_POST['shipping_address_1'] ) AND $_POST['shipping_address_1'] != '' ) {
+	if ( isset( sanitize_text_field($_POST['shipping_address_1']) ) AND sanitize_text_field($_POST['shipping_address_1']) != '' ) {
 		update_usermeta( $user_id, 'shipping_status', 'active' );
 	}
 
