@@ -2,3 +2,5 @@
 .*.php
 *.map
 .swp
+*.sw*
+^.*.php
