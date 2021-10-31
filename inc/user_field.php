@@ -1,7 +1,7 @@
 <?php
 add_action( 'user_register', function ( $user_id ) {
 
-	if ( ! isset( sanitize_text_field($_POST['action']) ) ) // یعنی اگه از تو سایت ثبت نام شده بود
+	if ( ! empty( sanitize_text_field($_POST['action']) ) ) // یعنی اگه از تو سایت ثبت نام شده بود
 	{
 		update_user_meta( $user_id, 'userStatus', true );
 	}
@@ -121,10 +121,10 @@ function storina_save_user_fields( $user_id ) {
 	update_usermeta( $user_id, 'birthYear', sanitize_text_field($_POST['birthYear']) );
 	update_usermeta( $user_id, 'birthMonth', sanitize_text_field($_POST['birthMonth']) );
 	update_usermeta( $user_id, 'birthDay', sanitize_text_field($_POST['birthDay']) );
-	if ( isset( sanitize_text_field($_POST['billing_address_1']) ) AND sanitize_text_field($_POST['billing_address_1']) != '' ) {
+	if ( !empty( sanitize_text_field($_POST['billing_address_1']) ) AND sanitize_text_field($_POST['billing_address_1']) != '' ) {
 		update_usermeta( $user_id, 'billing_status', 'active' );
 	}
-	if ( isset( sanitize_text_field($_POST['shipping_address_1']) ) AND sanitize_text_field($_POST['shipping_address_1']) != '' ) {
+	if ( !empty( sanitize_text_field($_POST['shipping_address_1']) ) AND sanitize_text_field($_POST['shipping_address_1']) != '' ) {
 		update_usermeta( $user_id, 'shipping_status', 'active' );
 	}
 
