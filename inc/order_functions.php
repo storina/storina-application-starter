@@ -266,8 +266,8 @@ add_filter('osa_theme_options_app',function($options){
 
 
 add_action("osa_init_response", function () {
-	$user_token = (!empty($_POST['userToken']))? $_POST['userToken'] : null;
-	$notif_token = (!empty($_POST['notifToken']))? $_POST['notifToken'] : null;
+	$user_token = (!empty(sanitize_text_field($_POST['userToken'])))? sanitize_text_field($_POST['userToken']) : null;
+	$notif_token = (!empty(sanitize_text_field($_POST['notifToken'])))? sanitize_text_field($_POST['notifToken']) : null;
 	if(!isset($user_token,$notif_token)){
 		return;
 	}
@@ -282,8 +282,8 @@ add_action("osa_init_response", function () {
 
 add_filter('posts_clauses', function ($posts_clauses) {
 	global $wpdb;
-	$action = $_POST['action'] ?? null;
-	$level = $_POST['level'] ?? null;
+	$action = sanitize_text_field($_POST['action']) ?? null;
+	$level = sanitize_text_field($_POST['level']) ?? null;
 	$settings = storina_get_option('stock_out_order') ?? false;
 	$action_structure = ('archive' == $action && '3' == $level);
     if ($settings && $action_structure) {
