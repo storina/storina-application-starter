@@ -146,7 +146,7 @@ add_action( 'plugins_loaded', function () {
 	// Your CODE with user capability check
 	if ( current_user_can('manage_options') ) {
 		add_action('wp_dashboard_setup', 'storina_delete_cache_widget');
-		if ( isset( sanitize_text_field($_POST['delede_cache']) ) || isset( $_GET['delede_cache'] ) ) {
+		if ( !empty( sanitize_text_field($_POST['delede_cache']) ) || !empty( $_GET['delede_cache'] ) ) {
 			$delete = storina_delete_all_cache();
 			if($delete){
 				add_action( 'admin_notices', 'storina_delete_cache_notice' );
@@ -391,7 +391,7 @@ add_action('update_option', function( $option_name, $old_value, $value ) {
 
 
 add_filter('woocommerce_is_purchasable', function ($purchasable, $product) {
-    if (isset(sanitize_text_field($_POST['userToken']))) {
+    if (!empty(sanitize_text_field($_POST['userToken']))) {
         return $product->exists() && 'publish' === $product->get_status() && '' !== $product->get_price();
     }
     return $purchasable;
