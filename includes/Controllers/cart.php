@@ -24,8 +24,8 @@ class Cart {
         define('CONSUMER_KEY', storina_get_option('cunsomer_key'));
         define('CONSUMER_SECRET', storina_get_option('Secret_key'));
         require_once( ABSPATH . "wp-load.php" );
-        if (isset($_POST['userToken'])) {
-            $userToken = $_POST['userToken'];
+        if (isset(sanitize_text_field($_POST['userToken']))) {
+            $userToken = sanitize_text_field($_POST['userToken']);
             $user_action = $this->service_container->get(User::class);
             $this->user_id = $user_action->get_userID_byToken($userToken);
         }
@@ -46,7 +46,7 @@ class Cart {
     }
 
     public function retrive_cart() {
-        $userToken = ( isset($_POST['userToken']) ) ? $_POST['userToken'] : "";
+        $userToken = ( isset(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $basket = $this->get_cart(true);
@@ -293,7 +293,7 @@ class Cart {
         if ($storina_get_option != 'disabled') {
             $addressType = @$sessionRecord->addressType;
             $user_action = $this->service_container->get(User::class);
-            $userToken = @$_POST['userToken'];
+            $userToken = @sanitize_text_field($_POST['userToken']);
             $user_id = $user_action->get_userID_byToken($userToken);
             $address = get_user_meta($user_id, $addressType . '_address_1', true);
             $city = get_user_meta($user_id, $addressType . '_city', true);
@@ -688,14 +688,14 @@ class Cart {
             'status' => true,
             'messages' => []
         ];
-        $product_id = ( isset($_POST['product_id']) ) ? $_POST['product_id'] : null;
+        $product_id = ( isset(sanitize_text_field($_POST['product_id'])) ) ? sanitize_text_field($_POST['product_id']) : null;
         if(empty($product_id)){
             return;
         }
-        $quantity = ( isset($_POST['quantity']) && ("yes" !=  get_post_meta($product_id, "_sold_individually", true))) ? $_POST['quantity'] : 1;
+        $quantity = ( isset(sanitize_text_field($_POST['quantity'])) && ("yes" !=  get_post_meta($product_id, "_sold_individually", true))) ? sanitize_text_field($_POST['quantity']) : 1;
 
-        $variation_id = ( isset($_POST['variation_id']) ) ? $_POST['variation_id'] : null;
-        $meta_variations_tmp = ( isset($_POST['meta_variation']) ) ? $_POST['meta_variation'] : null;
+        $variation_id = ( isset(sanitize_text_field($_POST['variation_id'])) ) ? sanitize_text_field($_POST['variation_id']) : null;
+        $meta_variations_tmp = ( isset(sanitize_text_field($_POST['meta_variation'])) ) ? sanitize_text_field($_POST['meta_variation']) : null;
 
 
         $variation = array();
@@ -722,7 +722,7 @@ class Cart {
             foreach ($createdVariation as $item) {
                 $variation[$item['name']] = $item['option'];
             }
-            $variation_arr = (isset($_POST['variation'])) ? $_POST['variation'] : 0;
+            $variation_arr = (isset(sanitize_text_field($_POST['variation']))) ? sanitize_text_field($_POST['variation']) : 0;
         } else {
             $manage_stock = get_post_meta($product_id, '_manage_stock', true);
             $stock = get_post_meta($product_id, '_stock', true);
@@ -859,7 +859,7 @@ class Cart {
     }
 
     public function removeFromCart() {
-        $id = $_POST['id'];
+        $id = sanitize_text_field($_POST['id']);
         $general = $this->service_container->get(General::class);
         $cart = $general->get_items();
 
@@ -884,7 +884,7 @@ class Cart {
 
     public function orderHistory() {
 
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
@@ -1034,7 +1034,7 @@ class Cart {
     }
 
     public function removeCoupon() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
@@ -1083,9 +1083,9 @@ class Cart {
     }
 
     public function applyCoupon() {
-        $couponCode = strtolower($_POST['couponCode']);
-        $userToken = $_POST['userToken'];
-        $googleID = $_POST['googleID'];
+        $couponCode = strtolower(sanitize_text_field($_POST['couponCode']));
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $googleID = sanitize_text_field($_POST['googleID']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
@@ -1190,12 +1190,12 @@ class Cart {
     }
 
     public function getOrder() {
-        $userToken = $_POST['userToken'];
-        $masterID = $_POST['id'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $masterID = sanitize_text_field($_POST['id']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
-            $orderID = $_POST['id'];
+            $orderID = sanitize_text_field($_POST['id']);
             $order = wc_get_order($orderID);
             //var_dump($order);
             $order_data = $order->get_data();
@@ -1317,11 +1317,11 @@ class Cart {
     }
 
     public function goPayment() {
-        $userToken = $_POST['userToken'];
-        $timestamp = $_POST['timestamp'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $timestamp = sanitize_text_field($_POST['timestamp']);
 
-        if (isset($_POST['orderNote'])) {
-            $orderNote = $_POST['orderNote'];
+        if (isset(sanitize_text_field($_POST['orderNote']))) {
+            $orderNote = sanitize_text_field($_POST['orderNote']);
         }
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
@@ -1463,7 +1463,7 @@ class Cart {
             if ($addressType == 'shipping') {
                 $order->set_address($addresses['shipping'], 'shipping');
             }
-            $paymentMethod = $_POST['paymentMethod'];
+            $paymentMethod = sanitize_text_field($_POST['paymentMethod']);
 
 			$ship_destination=get_option('woocommerce_ship_to_destination');
 			if('billing' == $ship_destination){
@@ -1681,7 +1681,7 @@ class Cart {
     }
 
     public function paymentMethod() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
         $user_action = $this->service_container->get(User::class);
@@ -1697,7 +1697,7 @@ class Cart {
 
 
             $available_gateways = WC()->payment_gateways->payment_gateways();
-            $this->gatewayValidation($available_gateways, $_POST['shipping_method_id']);
+            $this->gatewayValidation($available_gateways, sanitize_text_field($_POST['shipping_method_id']));
             $gateway = array();
             foreach ($available_gateways as $available_gateway) {
                 $tmp = null;
@@ -1735,11 +1735,11 @@ class Cart {
     }
 
     public function cartReview() {
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         if ($user_id) {
-            $chosenShippingMethodID = $_POST['shipping_method_id'];
+            $chosenShippingMethodID = sanitize_text_field($_POST['shipping_method_id']);
             global $wpdb, $googleID;
             $table = $wpdb->prefix . 'OSA_cart';
             $wpdb->update(
@@ -1760,8 +1760,8 @@ class Cart {
         global $woocommerce;
         do_action('woap_prepare_woocommerce_add_to_cart',$woocommerce);
         remove_filter( 'woocommerce_cart_shipping_packages', 'dokan_custom_split_shipping_packages' );
-        $userToken = $_POST['userToken'];
-        $product_count = $_POST['product_count'];
+        $userToken = sanitize_text_field($_POST['userToken']);
+        $product_count = sanitize_text_field($_POST['product_count']);
 
         $product_count = json_decode(stripcslashes($product_count), true);
         $general = $this->service_container->get(General::class);
@@ -1838,7 +1838,7 @@ class Cart {
 
             $data = null;
 
-            $addressType = $_POST['addressType'];
+            $addressType = sanitize_text_field($_POST['addressType']);
             global $wpdb, $googleID;
             if (function_exists("woo_wallet")) {
                 $terawallet = $this->service_container->get(Terawallet::class);
