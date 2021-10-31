@@ -38,10 +38,10 @@ class Archive {
         $general = $this->service_container->get(General::class);
         $data = array();
         $index = $this->service_container->get(Index::class);
-        $vendor_id = intval($_POST['vendor_id']);
-        $exist = $_POST['exist'];
-        $sort = $_POST['sort'];
-        $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
+        $vendor_id = intval(sanitize_text_field($_POST['vendor_id']));
+        $exist = sanitize_text_field($_POST['exist']);
+        $sort = sanitize_text_field($_POST['sort']);
+        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
@@ -198,7 +198,7 @@ class Archive {
             return ( $data );
         }
         $general = $this->service_container->get(General::class);
-        $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
+        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = - 1;
         $offset = ( $page - 1 ) * $count;
 // "enable_tnc";s:0:""
@@ -258,17 +258,17 @@ class Archive {
     }
 
     public function archive() {
-        $cat_level = $_POST['level'];
-        $page = $_POST['page'];
-        $cat_id = $_POST['id'];
-        $exist = $_POST['exist'];
-        $sort = $_POST['sort'];
+        $cat_level = sanitize_text_field($_POST['level']);
+        $page = sanitize_text_field($_POST['page']);
+        $cat_id = sanitize_text_field($_POST['id']);
+        $exist = sanitize_text_field($_POST['exist']);
+        $sort = sanitize_text_field($_POST['sort']);
 
         // check cache
         $OSA_cache = $this->service_container->get(Cache::class);
         $record = $OSA_cache->getCache('archive', $cat_id . $sort, $page, $exist)->json;
         $cache = ( storina_get_option('appCacheStatus') == 'inactive' ) ? false : true;
-        $userToken = $_POST['userToken'];
+        $userToken = sanitize_text_field($_POST['userToken']);
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $this->user_id = $user_id;
@@ -282,7 +282,7 @@ class Archive {
         } elseif ($cat_level == 3) {
             $final = $this->archiveLevel3();
         }
-        $itemID = ( strlen($_POST['vendor_town']) > 2 ) ? $_POST['vendor_town'] : 0;
+        $itemID = ( strlen(sanitize_text_field($_POST['vendor_town'])) > 2 ) ? sanitize_text_field($_POST['vendor_town']) : 0;
         //$OSA_cache->setCache( json_encode( $final ), 'archive', $cat_id, $page, $exist.$itemID ); // in khat kar nemikone
         $OSA_cache->setCache(json_encode($final), 'archive', $cat_id, $page, $exist);
 
@@ -290,7 +290,7 @@ class Archive {
     }
 
     private function archiveLevel2() {
-        $cat_id = $_POST['id'];
+        $cat_id = sanitize_text_field($_POST['id']);
         $final['slider'] = $this->slider($cat_id);
         global $product_terms;
         $product_terms = array();
@@ -437,7 +437,7 @@ class Archive {
         );
         $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
-        if (strlen($_POST['vendor_town']) > 2) {
+        if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
             $args['author__in'] = $activeVendors;
         }
 
@@ -532,7 +532,7 @@ class Archive {
         );
         $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
-        if (strlen($_POST['vendor_town']) > 2) {
+        if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
             $args['author__in'] = $activeVendors;
         }
         $args['tax_query'] = array(
@@ -620,10 +620,10 @@ class Archive {
 
     private function archiveLevel3() {
         $index = $this->service_container->get(Index::class);
-        $cat_id = $_POST['id'];
-        $exist = $_POST['exist'];
-        $sort = $_POST['sort'];
-        $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
+        $cat_id = sanitize_text_field($_POST['id']);
+        $exist = sanitize_text_field($_POST['exist']);
+        $sort = sanitize_text_field($_POST['sort']);
+        $page = ( isset(sanitize_text_field($_POST['page'])) ) ? sanitize_text_field($_POST['page']) : 1;
         $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
         $offset = ( $page - 1 ) * $count;
@@ -636,7 +636,7 @@ class Archive {
         );
         $general = $this->service_container->get(General::class);
         $activeVendors = $general->vendor_ids();
-        if (strlen($_POST['vendor_town']) > 2) {
+        if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
             $args['author__in'] = $activeVendors;
         }
 
@@ -648,9 +648,9 @@ class Archive {
                 'terms' => $cat_id
             );
         }
-        if (isset($_POST['filter'])) {
+        if (isset(sanitize_text_field($_POST['filter']))) {
 
-            $filters = json_decode(stripcslashes($_POST['filter']), true);
+            $filters = json_decode(stripcslashes(sanitize_text_field($_POST['filter'])), true);
             foreach ($filters as $attr_id => $term_ids) {
                 $singleAttr = $this->get_woo_attribute_by('id', $attr_id);
                 $attr_tax = $singleAttr->attribute_name;
@@ -665,7 +665,7 @@ class Archive {
             }
         }
         //print_r($args);
-        $this->shared_query_filters($args,$_POST);
+        $this->shared_query_filters($args,sanitize_text_field($_POST));
         $data = array();
         $wp_query = new WP_Query();
         $wp_query->query(apply_filters("osa_archive_archiveLevel3_query_args", $args, $this->user_id));
@@ -859,16 +859,16 @@ class Archive {
         return $final_attr;
     }
 
-    public function bulkSearch() {
-        $keywords = json_decode(stripcslashes($_POST['keywords']), true);
-        foreach ($keywords as $keyword) {
-            $bulk_box[] = $this->search($keyword, true);
-        }
-        $bulk_result = array(
-            'status' => true,
-            'data' => $bulk_box,
-        );
-
+nitize_text_field(    public function bulkSearch() {
+	        $keywords = json_decode(stripcslashes($_POST['keywords']), true);
+			        foreach ($keywords as $keyword) {
+						            $bulk_box[] = $this->search($keyword, true);
+									        }
+			        $bulk_result = array(
+						            'status' => true,
+									            'data' => $bulk_box,
+												        );
+			)
         return ( $bulk_result );
     }
 
@@ -904,17 +904,17 @@ class Archive {
 
     public function search($s = false, $exist = false, $return = false) {
         if (!$s) {
-            $s = $_POST['query'];
+            $s = sanitize_text_field($_POST['query']);
             $return = false;
         } else {
             $return = true;
         }
 
-        $exist = $_POST['exist'];
+        $exist = sanitize_text_field($_POST['exist']);
         if ($s != '') {
             $index = $this->service_container->get(Index::class);
             wp_reset_query();
-            $page = ( isset($_POST['page']) ) ? $_POST['page'] : 1;
+            $page = ( isset(sanitize_text_field($_POST['page'])) ) ? $_POST['page'] : 1;
             $count = ( storina_get_option('Archive_product_count') ) ? storina_get_option('Archive_product_count') : 8;
             $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 0;
             $offset = ( $page - 1 ) * $count;
@@ -928,15 +928,15 @@ class Archive {
             );
             $general = $this->service_container->get(General::class);
             $activeVendors = $general->vendor_ids();
-            if (strlen($_POST['vendor_town']) > 2) {
+            if (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) {
                 $args['author__in'] = $activeVendors;
             }
-            $userToken = $_POST['userToken'];
+            $userToken = sanitize_text_field($_POST['userToken']);
             $user_action = $this->service_container->get(User::class);
             $user_id = $user_action->get_userID_byToken($userToken);
             $this->user_id = $user_id;
             do_action('osa_archive_search_action_init',$s,$user_id);
-            $this->shared_query_filters($args,$_POST);
+            $this->shared_query_filters($args,sanitize_text_field($_POST));
             $data = array();
             $wp_query = new WP_Query();
             $wp_query->query(apply_filters("osa_search_search_query_args", $args, $this->user_id));
