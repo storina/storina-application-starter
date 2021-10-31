@@ -25,18 +25,18 @@ class NotificationController {
     }
 
     public function send_notification(){
-        $identifier = $_POST['identifier'];
-        if(!is_numeric($identifier) || !isset($_POST['title'],$_POST['body'])){
+        $identifier = sanitize_text_field($_POST['identifier']);
+        if(!is_numeric($identifier) || !isset(sanitize_text_field($_POST['title']),sanitize_text_field($_POST['body']))){
             wp_send_json([
                 'status' => false,
                 'message' => __("params is invalid","onlinerShopApp")
             ]);
         }
-        $notification_action = $this->get_notification_handler()->clickEvent($_POST['click_event_type'],$_POST['click_event_value']);
+        $notification_action = $this->get_notification_handler()->clickEvent(sanitize_text_field($_POST['click_event_type']),sanitize_text_field($_POST['click_event_value']));
         $data = array_merge([
-            'title' => $_POST['title'],
-            'body' => $_POST['body'],
-            'icon' => $_POST['notification_icon'] ?: 'https://person.bilpay.ir/2/wp-content/uploads/2018/10/bell.png',
+            'title' => sanitize_text_field($_POST['title']),
+            'body' => sanitize_text_field($_POST['body']),
+            'icon' => sanitize_text_field($_POST['notification_icon']) ?: 'https://person.bilpay.ir/2/wp-content/uploads/2018/10/bell.png',
             'sound' => 'default',
             'badge' => 1,
             ],$notification_action);
