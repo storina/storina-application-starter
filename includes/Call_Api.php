@@ -23,9 +23,9 @@ class Call_Api {
 
     public function prepare_response($action, $log_id) {
         do_action("osa_init_response");
-        if (isset($_POST['googleID'])) {
+        if (isset(sanitize_text_field($_POST['googleID']))) {
             global $googleID;
-            $googleID = $_POST['googleID'];
+            $googleID = sanitize_text_field($_POST['googleID']);
         }
         $action = $this->general->checkAction($action);
         $module = $this->router->get($action);
@@ -43,8 +43,8 @@ class Call_Api {
         $new_rules = array();
         $new_rules['^onlinerApi'] = 'index.php?onapi=true';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-        if (isset($_POST['action'])) {
-            set_query_var('onlinerApi', $_POST['action']);
+        if (isset(sanitize_text_field($_POST['action']))) {
+            set_query_var('onlinerApi', sanitize_text_field($_POST['action']));
         } else {
             $arr = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
             $index = array_search('onlinerApi', $arr);
@@ -59,9 +59,9 @@ class Call_Api {
     }
 
     function parse_api_request(&$wp) {
-        $client_type = $_POST['client_type'] ?? 'ios';
+        $client_type = sanitize_text_field($_POST['client_type']) ?? 'ios';
 		$request_type = $wp->query_vars['woap_request_type'];
-		$action = $_POST['action'] ?? 'getVersion';
+		$action = sanitize_text_field($_POST['action']) ?? 'getVersion';
         if('android' != $client_type && $action != 'getVersion' && $request_type == 'ios'){
             return;
         }
@@ -84,8 +84,8 @@ class Call_Api {
         $action = ( isset($_GET['getVersion'])) ? 'getVersion' : $q_var;
         //trigger exception in a "try" block
         try {
-            if (isset($_POST['action'])) {
-                $log_id = $this->set_error_log('insert', '', '', $_POST['action'], $_POST, '');
+            if (isset(sanitize_text_field($_POST['action']))) {
+                $log_id = $this->set_error_log('insert', '', '', sanitize_text_field($_POST['action']), sanitize_text_field($_POST), '');
             }
             $this->prepare_response($action, $log_id);
         } catch (Throwable $e) {
