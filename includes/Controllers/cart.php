@@ -24,7 +24,7 @@ class Cart {
         define('CONSUMER_KEY', storina_get_option('cunsomer_key'));
         define('CONSUMER_SECRET', storina_get_option('Secret_key'));
         require_once( ABSPATH . "wp-load.php" );
-        if (isset(sanitize_text_field($_POST['userToken']))) {
+        if (!empty(sanitize_text_field($_POST['userToken']))) {
             $userToken = sanitize_text_field($_POST['userToken']);
             $user_action = $this->service_container->get(User::class);
             $this->user_id = $user_action->get_userID_byToken($userToken);
@@ -46,7 +46,7 @@ class Cart {
     }
 
     public function retrive_cart() {
-        $userToken = ( isset(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
+        $userToken = ( !empty(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
         $basket = $this->get_cart(true);
@@ -639,7 +639,7 @@ class Cart {
         );
 
         $color_name = strtolower($color_name);
-        if (isset($colors[$color_name])) {
+        if (!empty($colors[$color_name])) {
             return ( '#' . $colors[$color_name] );
         } else {
             return ( $color_name );
@@ -688,14 +688,14 @@ class Cart {
             'status' => true,
             'messages' => []
         ];
-        $product_id = ( isset(sanitize_text_field($_POST['product_id'])) ) ? sanitize_text_field($_POST['product_id']) : null;
+        $product_id = ( !empty(sanitize_text_field($_POST['product_id'])) ) ? sanitize_text_field($_POST['product_id']) : null;
         if(empty($product_id)){
             return;
         }
-        $quantity = ( isset(sanitize_text_field($_POST['quantity'])) && ("yes" !=  get_post_meta($product_id, "_sold_individually", true))) ? sanitize_text_field($_POST['quantity']) : 1;
+        $quantity = ( !empty(sanitize_text_field($_POST['quantity'])) && ("yes" !=  get_post_meta($product_id, "_sold_individually", true))) ? sanitize_text_field($_POST['quantity']) : 1;
 
-        $variation_id = ( isset(sanitize_text_field($_POST['variation_id'])) ) ? sanitize_text_field($_POST['variation_id']) : null;
-        $meta_variations_tmp = ( isset(sanitize_text_field($_POST['meta_variation'])) ) ? sanitize_text_field($_POST['meta_variation']) : null;
+        $variation_id = ( !empty(sanitize_text_field($_POST['variation_id'])) ) ? sanitize_text_field($_POST['variation_id']) : null;
+        $meta_variations_tmp = ( !empty(sanitize_text_field($_POST['meta_variation'])) ) ? sanitize_text_field($_POST['meta_variation']) : null;
 
 
         $variation = array();
@@ -722,7 +722,7 @@ class Cart {
             foreach ($createdVariation as $item) {
                 $variation[$item['name']] = $item['option'];
             }
-            $variation_arr = (isset(sanitize_text_field($_POST['variation']))) ? sanitize_text_field($_POST['variation']) : 0;
+            $variation_arr = (!empty(sanitize_text_field($_POST['variation']))) ? sanitize_text_field($_POST['variation']) : 0;
         } else {
             $manage_stock = get_post_meta($product_id, '_manage_stock', true);
             $stock = get_post_meta($product_id, '_stock', true);
@@ -1320,7 +1320,7 @@ class Cart {
         $userToken = sanitize_text_field($_POST['userToken']);
         $timestamp = sanitize_text_field($_POST['timestamp']);
 
-        if (isset(sanitize_text_field($_POST['orderNote']))) {
+        if (!empty(sanitize_text_field($_POST['orderNote']))) {
             $orderNote = sanitize_text_field($_POST['orderNote']);
         }
         global $woocommerce;
