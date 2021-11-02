@@ -14,8 +14,6 @@ class BuildController extends Controller {
     
 	public function __construct($service_container){
 		parent::__construct($service_container);
-		ini_set('display_errors',1);
-		error_reporting(E_ALL);
 		add_action("osa_admin_menu_application_main", array($this, "builder_wrapper_panel"), 20);
 		add_action('woap_options_configuration_build_details_content',[$this,'build_details_content_html']);
 		add_action('woap_options_configuration_build_request_content',[$this,'build_request_content_html']);
