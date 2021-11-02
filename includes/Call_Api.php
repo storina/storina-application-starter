@@ -5,6 +5,7 @@ namespace STORINA;
 defined('ABSPATH') || exit;
 
 use \STORINA\Controllers\General;
+use \STORINA\Router;
 
 class Call_Api {
 
@@ -43,7 +44,7 @@ class Call_Api {
         $new_rules = array();
         $new_rules['^onlinerApi'] = 'index.php?onapi=true';
         $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-        if (!empty(sanitize_text_field($_POST['action']))) {
+        if (!empty(sanitize_text_field(@$_POST['action']))) {
             set_query_var('onlinerApi', sanitize_text_field($_POST['action']));
         } else {
             $arr = explode('/', trim($_SERVER['REQUEST_URI'], '/'));

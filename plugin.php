@@ -8,7 +8,6 @@
   Author: storina
   License: A "Slug" license name e.g. GPL2
  */
-
 if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
@@ -80,14 +79,14 @@ class storina_application_init {
             "includes/Service_Provider.php",
             "includes/Router.php",
             "includes/Call_Api.php",
-            "includes/Autoload.php",
+			"includes/Autoload.php",
             #Web
             "them_options/on5_functions.php",
             "them_options/on5-panel.php",
             "inc/user_field.php",
             "inc/order_functions.php",
             "inc/woocommerce_custom_field.php",
-            "inc/catalogueType.php",
+			"inc/catalogueType.php",
         );
         foreach($requires as $require){
             require_once trailingslashit(__DIR__) . $require;
@@ -97,7 +96,7 @@ class storina_application_init {
 
     public function register_activation_hook() {
         storina_delete_all_cache();
-        osa_create_tables();
+        storina_create_tables();
     }
 
     public function register_deactivation_hook() {
