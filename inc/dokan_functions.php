@@ -52,39 +52,6 @@ add_action( 'dokan_render_settings_content', function ( $query_vars ) {
 	}
 } , 10 );
 
-add_action( 'dokan_order_detail_after_order_items', function ( $order ) {
-	$billing_mobile  = get_post_meta( $order->id, 'billing_mobile', true );
-	$shipping_mobile = get_post_meta( $order->id, 'shipping_mobile', true );
-	?>
-    <script>
-        $(document).ready(function () {
-            var mobile1;
-            var mobile2;
-			<?php if(! empty( $billing_mobile )){ ?>
-            mobile1 = '<li><a href="#">موبایل ۱: <span class="tab"><?= $billing_mobile; ?></span></a></li>';
-			<?php }
-			if(! empty( $shipping_mobile )){
-			?>
-            mobile2 = '<li><a href="#">موبایل۲: <span class="tab"><?= $shipping_mobile; ?></span></a></li>';
-			<?php } ?>
-            timestamp = '';
-			<?php if ( ! function_exists( 'jdate' ) ) {
-			include_once( STORINA_PLUGIN_PATH . '/api/models/jdf.php' );
-        } //where HttpRequest.php is the saved file
-			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
-			$timestamp = intval( $timestamp / 1000 );
-			if(! empty( $timestamp )){
-			?>
-            timestamp = '<li><a href="#">زمان ارسال محصول: <span class="tab"><?= jdate( 'l d F Y - H:i', $timestamp, '', '', 'en' ); ?></span></a></li>';
-			<?php } ?>
-            jQuery("ul.customer-details").append(mobile1 + mobile2 + timestamp);
-        });
-        //$('.customer-details').append('<?= $billing_mobile . $shipping_mobile; ?>');
-
-    </script>
-	<?php
-
-} , 5, 1 );
 
 /**
  * dokan vendor shipping implements
