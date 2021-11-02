@@ -23,7 +23,6 @@ class Archive {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        require_once( ABSPATH . "wp-load.php" );
         $this->yith_price_role = $this->service_container->get(Yith_Role_Based_Price::class);
     }
 

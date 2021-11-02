@@ -18,8 +18,6 @@ class Single {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        require_once( ABSPATH . "wp-load.php" );
-        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
         if (class_exists('JCWC_AdvancedAttrubutes')) {
             $jcaa = STORINA_PLUGIN_PATH . '../jc-woocommerce-advanced-attributes/libs/jcaa-integrations.php';
             $bigikala = STORINA_PLUGIN_PATH . '../Bigilala-Attributes/libs/jcaa-integrations.php';

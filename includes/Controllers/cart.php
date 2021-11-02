@@ -23,7 +23,6 @@ class Cart {
         define('DOMAIN', str_replace('https://', 'http://', get_bloginfo('url')));
         define('CONSUMER_KEY', storina_get_option('cunsomer_key'));
         define('CONSUMER_SECRET', storina_get_option('Secret_key'));
-        require_once( ABSPATH . "wp-load.php" );
         if (!empty(sanitize_text_field(@$_POST['userToken']))) {
             $userToken = sanitize_text_field($_POST['userToken']);
             $user_action = $this->service_container->get(User::class);

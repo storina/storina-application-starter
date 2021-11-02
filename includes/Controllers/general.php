@@ -14,7 +14,6 @@ class General {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        require_once( ABSPATH . "wp-load.php" );
         add_action('init', array($this, 'initial'));
     }
 

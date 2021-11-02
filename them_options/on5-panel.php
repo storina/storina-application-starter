@@ -451,11 +451,6 @@ function storina_pippin_get_image_id( $image_url ) {
 }
 
 function storina_upload_from_url( $postID, $url, $title = '' ) {
-	require_once( ABSPATH . "wp-load.php" );
-	require_once( ABSPATH . "wp-admin/includes/image.php" );
-	require_once( ABSPATH . "wp-admin/includes/file.php" );
-	require_once( ABSPATH . "wp-admin/includes/media.php" );
-
 	$tmp = download_url( $url );
 	if ( strlen( $title ) < 1 ) {
 		$title = basename( $url );

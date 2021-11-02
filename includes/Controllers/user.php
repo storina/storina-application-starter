@@ -16,7 +16,6 @@ class User {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        require_once( ABSPATH . "wp-load.php" );
         // fix conflict by google recaptcha
         remove_action('init', 'gglcptch_init');
         remove_action('plugins_loaded', 'gglcptch_plugins_loaded');

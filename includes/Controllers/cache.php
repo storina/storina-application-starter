@@ -15,7 +15,6 @@ class Cache {
     public function __construct($service_container) {
         $this->service_container = $service_container;
         $this->index_object = $this->service_container->get(Index::class);
-        require_once( ABSPATH . "wp-load.php" );
     }
 
     public function setCache($json, $type, $itemID, $page = null, $param = null) {
