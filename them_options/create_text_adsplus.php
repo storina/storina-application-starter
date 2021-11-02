@@ -32,10 +32,10 @@
         <div class="clear"></div>
         <table class="wp-list-table widefat fixed">
             <thead>
-            <th><?=__("Title",'onlinerShopApp');?></th><th><?=__("Text",'onlinerShopApp');?></th><th><?=__("Link type",'onlinerShopApp');?></th><th><?=__("Value",'onlinerShopApp');?></th><th><?=__("Action",'onlinerShopApp');?></th>
+            <th><?php echo__("Title",'onlinerShopApp');?></th><th><?php echo__("Text",'onlinerShopApp');?></th><th><?php echo__("Link type",'onlinerShopApp');?></th><th><?php echo__("Value",'onlinerShopApp');?></th><th><?php echo__("Action",'onlinerShopApp');?></th>
             </thead>
             <tfoot>
-            <th><?=__("Title",'onlinerShopApp');?></th><th><?=__("Text",'onlinerShopApp');?></th><th><?=__("Link type",'onlinerShopApp');?></th><th><?=__("Value",'onlinerShopApp');?></th><th><?=__("Action",'onlinerShopApp');?></th>
+            <th><?php echo__("Title",'onlinerShopApp');?></th><th><?php echo__("Text",'onlinerShopApp');?></th><th><?php echo__("Link type",'onlinerShopApp');?></th><th><?php echo__("Value",'onlinerShopApp');?></th><th><?php echo__("Action",'onlinerShopApp');?></th>
             </tfoot>
             <?php
             if($titles){
@@ -50,14 +50,14 @@
                         <td>
                             <select class="select_box" name="<?php echo $slider; ?>[typeLink][]">
                                 <?php foreach ($action as $item => $value) { ?>
-                                    <option value="<?=$item?>" <?php if($typeLinks[$i] == $item){echo 'selected="selected"';} ?>><?=$value?></option>
+                                    <option value="<?php echo$item?>" <?php if($typeLinks[$i] == $item){echo 'selected="selected"';} ?>><?php echo$value?></option>
                                 <?php } ?>
                             </select>
                         </td>
                         <td><input type="text" name="<?php echo $slider; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
 
                         <td>
-                            <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?=__("Delete",'onlinerShopApp');?>">
+                            <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo__("Delete",'onlinerShopApp');?>">
                         </td>
                     </tr>
                     <?php
@@ -71,13 +71,13 @@
                     <td>
                         <select class="select_box" name="<?php echo $slider; ?>[typeLink][]">
                             <?php foreach ($action as $item => $value) { ?>
-                                <option value="<?=$item?>" ><?=$value?></option>
+                                <option value="<?php echo$item?>" ><?php echo$value?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td><input type="text" name="<?php echo $slider; ?>[link][]" /></td>
                     <td>
-                        <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?=__("Delete",'onlinerShopApp');?>">
+                        <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo__("Delete",'onlinerShopApp');?>">
                     </td>
                 </tr>
             <?php }
@@ -88,8 +88,8 @@
 <div class="osa-submit-wrapper-table">
 <input type="hidden" name="apptype_form" value="text_adsplus">
         <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-        <input type="submit" value="<?=__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-        <button type="button" class="button add_row"><?= __( "Add ", 'onlinerShopApp' ) ?></button>
+        <input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+        <button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
 </div>
     </form>
 </div>

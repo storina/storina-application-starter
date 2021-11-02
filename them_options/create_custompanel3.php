@@ -39,13 +39,13 @@
         <table class="wp-list-table widefat fixed">
             <thead>
             <th style="width: 20px;"><strong class="sort_elem">|||</strong></th>
-            <th><?= __( "Item", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Action", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Item", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
             </thead>
             <tfoot>
             <th style="width: 20px;"><strong class="sort_elem">|||</strong></th>
-            <th><?= __( "Item", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Action", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Item", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
             </tfoot>
             <tbody>
             <?php
@@ -60,16 +60,16 @@
                                 value="<?php echo $custom_option_value2[ $i ]; ?>"/>
                             <select class="element select_box" name="<?php echo $custom_option_name; ?>[option3][]">
                                 <?php foreach ( $types as $item => $value ) { ?>
-                                    <option value="<?= $item ?>" <?php if ( $custom_option_value3[ $i ] == $item ) {
+                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value3[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?= $value ?></option>
+                                    } ?>><?php echo $value ?></option>
                                 <?php } ?>
                             </select>
                         </td>
 
                         <td>
                             <input title="<?php echo $custom_option_name; ?>" type="button"
-                                class="button-primary delete_row" value="<?= __( "Delete", 'onlinerShopApp' ); ?>">
+                                class="button-primary delete_row" value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
                         </td>
                     </tr>
                     <?php
@@ -83,13 +83,13 @@
                             name="<?php echo $custom_option_name; ?>[option2][]"/>
                         <select class="element select_box" name="<?php echo $custom_option_name; ?>[option3][]">
                             <?php foreach ( $types as $item => $value ) { ?>
-                                <option value="<?= $item ?>"><?= $value ?></option>
+                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td>
                         <input title="<?php echo $custom_option_name; ?>" type="button" class="button delete_row"
-                            value="<?= __( "Delete", 'onlinerShopApp' ); ?>">
+                            value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
                     </td>
                 </tr>
             <?php }
@@ -100,8 +100,8 @@
         <div class="osa-submit-wrapper-table">
             <input type="hidden" name="apptype_form" value="custom">
             <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-            <input type="submit" value="<?=__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-            <button type="button" class="button add_row"><?= __( "Add ", 'onlinerShopApp' ) ?></button>
+            <input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+            <button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
         </div>
     </form>
 

@@ -20,7 +20,7 @@
 	<div class="clear"></div>
 	<table id="menu_table">
 	<tr class="header_th">
-	<th><?=__("Title",'onlinerShopApp')?></th><th><?=__("Link",'onlinerShopApp')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
+	<th><?php echo__("Title",'onlinerShopApp')?></th><th><?php echo__("Link",'onlinerShopApp')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
 	</tr>
 	<?php 
 	if($menu_namess){
@@ -109,7 +109,7 @@
 		<input type="hidden" name="apptype_form" value="FAQ">
 		<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 		<input type="submit" value="ذخیره" name="submit_theme_options" class="button save">
-		<button type="button" class="button add_row"><?= __( "Add ", 'onlinerShopApp' ) ?></button>
+		<button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
 	</div>
 	</form>
 </div>

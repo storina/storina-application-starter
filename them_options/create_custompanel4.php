@@ -29,19 +29,19 @@
         <div class="clear"></div>
         <table class="wp-list-table widefat fixed">
             <thead>
-            <th><?= __( "Title", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Banner address 1", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Link type", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Value", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Action", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Title", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Banner address 1", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Link type", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Value", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
 
             </thead>
             <tfoot>
-            <th><?= __( "Title", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Banner address 1", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Link type", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Value", 'onlinerShopApp' ); ?></th>
-            <th><?= __( "Action", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Title", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Banner address 1", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Link type", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Value", 'onlinerShopApp' ); ?></th>
+            <th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
 
             </tfoot>
             <!-- <tr class="header_th">
@@ -60,14 +60,14 @@
                             <input class="target_line" type="text" name="<?php echo $custom_option_name; ?>[option3][]"
                                 value="<?php echo $custom_option_value3[ $i ]; ?>"/>
                             <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                                value="<?= __( "Upload", 'onlinerShopApp' ); ?>">
+                                value="<?php echo __( "Upload", 'onlinerShopApp' ); ?>">
                         </td>
                         <td>
                             <select class="select_box" name="<?php echo $custom_option_name; ?>[option4][]">
                                 <?php foreach ( $action as $item => $value ) { ?>
-                                    <option value="<?= $item ?>" <?php if ( $custom_option_value4[ $i ] == $item ) {
+                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value4[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?= $value ?></option>
+                                    } ?>><?php echo $value ?></option>
                                 <?php } ?>
                             </select>
                         </td>
@@ -75,7 +75,7 @@
                                 value="<?php echo $custom_option_value5[ $i ]; ?>"/></td>
                         <td>
                             <input title="<?php echo $custom_option_name; ?>" type="button"
-                                class="button-primary delete_row" value="<?= __( "Delete", 'onlinerShopApp' ); ?>">
+                                class="button-primary delete_row" value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
                         </td>
                     </tr>
                     <?php
@@ -90,12 +90,12 @@
                     <td>
                         <input class="target_line" type="text" name="<?php echo $custom_option_name; ?>[option3][]"/>
                         <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                            value="<?= __( "Upload", 'onlinerShopApp' ); ?>">
+                            value="<?php echo __( "Upload", 'onlinerShopApp' ); ?>">
                     </td>
                     <td>
                         <select class="select_box" name="<?php echo $custom_option_name; ?>[option4][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?= $item ?>"><?= $value ?></option>
+                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -103,7 +103,7 @@
 
                     <td>
                         <input title="<?php echo $custom_option_name; ?>" type="button" class="button delete_row"
-                            value="<?= __( "Delete", 'onlinerShopApp' ); ?>">
+                            value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
                     </td>
                 </tr>
             <?php }
@@ -114,8 +114,8 @@
         <div class="osa-submit-wrapper-table">
             <input type="hidden" name="apptype_form" value="custom">
             <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-            <input type="submit" value="<?=__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-            <button type="button" class="button add_row"><?= __( "Add ", 'onlinerShopApp' ) ?></button>
+            <input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+            <button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
         </div>
     </form>
 </div>

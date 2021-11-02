@@ -532,52 +532,52 @@ function storina_send_notif(){
 	}
 
 	?>
-    <div class="wrap"><div id="icon-options-general" class="icon32"><br></div> <h2><?=__('Send notification','onlinerShopApp')?></h2>
+    <div class="wrap"><div id="icon-options-general" class="icon32"><br></div> <h2><?php echo__('Send notification','onlinerShopApp')?></h2>
         <form action="" method="post">
             <table class="form-table">
                 <tr>
-                    <th><label for="notif_title"><?= __( 'Title', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_title"><?php echo __( 'Title', 'onlinerShopApp' ) ?></label></th>
                     <td><input required id="notif_title" name="notif_title" type="text" class="regular-text"></td>
                 </tr>
                 <tr>
-                    <th><label for="notif_desc"><?= __( 'Text', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_desc"><?php echo __( 'Text', 'onlinerShopApp' ) ?></label></th>
                     <td><textarea required name="notif_desc" id="notif_desc" cols="30" rows="4"></textarea></td>
                 </tr>
                 <tr>
-                    <th><label for="notif_icon"><?= __( 'Icon', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_icon"><?php echo __( 'Icon', 'onlinerShopApp' ) ?></label></th>
                     <td><input id="notif_icon" name="notif_icon" class="target_line regular-text text-box" value=""
                                type="text">
                         <input name="upload-btn" class="upload-btn button-secondary" value="آپلود تصویر" type="button">
-                        <p class="description"><?= __( 'Select notification icon 512*512 px', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo __( 'Select notification icon 512*512 px', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="notif_linkType"><?= __( 'Link type', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_linkType"><?php echo __( 'Link type', 'onlinerShopApp' ) ?></label></th>
                     <td>
                         <select required name="notif_linkType" class="select_box">
 	                        <?php $actions = $general->clickEventList();
 	                        foreach ( $actions as $index => $action ) {
 		                        ?>
-                                <option value="<?= $index ?>"><?= $action ?></option>
+                                <option value="<?php echo $index ?>"><?php echo $action ?></option>
 		                        <?php
 	                        }
 	                        if ( function_exists( 'dokan_get_store_info' ) ) { ?>
-                                <option value="VendorPage"><?= __( 'Open vendor page', 'onlinerShopApp' ) ?></option>
+                                <option value="VendorPage"><?php echo __( 'Open vendor page', 'onlinerShopApp' ) ?></option>
 	                        <?php } ?>
                         </select>
-                        <p class="description"><?= __( 'What do you want then touch on notification?', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo __( 'What do you want then touch on notification?', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="notif_linkValue"><?= __( 'Link value', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_linkValue"><?php echo __( 'Link value', 'onlinerShopApp' ) ?></label></th>
                     <td>
                         <input required id="notif_linkValue" name="notif_linkValue" class="regular-text text-box"
                                value="" type="text">
-                        <p class="description"><?= __( 'Enter the desired value according to the link type field.', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo __( 'Enter the desired value according to the link type field.', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><input value="<?= __( 'Send', 'onlinerShopApp' ) ?>" name="send_notif"
+                    <th><input value="<?php echo __( 'Send', 'onlinerShopApp' ) ?>" name="send_notif"
                                class="button save button-primary button-large" type="submit">
                     </th>
                     <td></td>

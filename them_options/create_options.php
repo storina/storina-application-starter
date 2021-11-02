@@ -116,9 +116,9 @@
 			?>
 			<script type="text/javascript">
 				jQuery(document).ready(function ($) {
-					jQuery(document).on('change', '#<?=$item['id'];?>', function (e) {
+					jQuery(document).on('change', '#<?php echo$item['id'];?>', function (e) {
 						e.preventDefault();
-						var allelm = jQuery('.<?=$item['id'];?>');
+						var allelm = jQuery('.<?php echo$item['id'];?>');
 						var elm = jQuery('#' + this.value);
 						allelm.hide();
 						elm.show();
