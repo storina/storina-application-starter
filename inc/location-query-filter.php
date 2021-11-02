@@ -1,7 +1,7 @@
 <?php 
 
 add_action("init", function (){
-    if(empty(sanitize_text_field($_POST['vendor_town'])) || false == (strlen(sanitize_text_field($_POST['vendor_town'])) > 2) ){
+    if(empty(sanitize_text_field(@$_POST['vendor_town'])) || false == (strlen(sanitize_text_field(@$_POST['vendor_town'])) > 2) ){
         return;
     }
     $filters = array(
