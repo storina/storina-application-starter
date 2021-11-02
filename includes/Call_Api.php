@@ -72,16 +72,6 @@ class Call_Api {
         }
         header('Content-Type: application/json');
         $q_var = get_query_var('onlinerApi');
-        if (false && !in_array('ionCube Loader', get_loaded_extensions())) {
-            wp_send_json(array(
-                'posts' => array(
-                    'status' => false,
-                    'data' => array(
-                        'message' => __('ioncube loader +5.6 Not installed.', 'onlinerShopApp')
-                    )
-                ),
-            ));
-        }
         $action = ( !empty($_GET['getVersion'])) ? 'getVersion' : $q_var;
         //trigger exception in a "try" block
         try {
