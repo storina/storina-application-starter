@@ -1,5 +1,7 @@
 <?php
 
+namespace STORINA;
+
 defined('ABSPATH') || exit;
 
 class Router {
