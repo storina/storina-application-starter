@@ -12,7 +12,6 @@ add_action( 'add_meta_boxes', function () {
 		add_meta_box(
 			'address_on_map',
 			'آدرس روی نقشه',
-			'storina_app_show_map',
 			'shop_order',
 			'normal',
 			'high' );
@@ -34,32 +33,6 @@ add_action( 'admin_enqueue_scripts', function ( $hook ) {
 	}
 
 } );
-
-function storina_app_show_map() {
-	global $post;
-	$order_id     = $post->ID;
-	$address_type = get_post_meta( $order_id, 'address_type', true );
-	if ( ! $address_type ) {
-		$address_type = 'billing';
-	}
-	$user_id     = get_post_meta( $order_id, '_customer_user', true );
-	$billing_lat = get_user_meta( $user_id, $address_type . '_lat', true );
-	$billing_lng = get_user_meta( $user_id, $address_type . '_lng', true );
-	?>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-	<script type="text/javascript" src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-	<div id="map" style="height: 300px"></div>
-	<script>
-		var map = L.map('map').setView([<?= $billing_lat ?>, <?= $billing_lng ?>], 17);
-
-		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-		}).addTo(map);
-		L.marker([<?= $billing_lat ?>, <?= $billing_lng ?>]).addTo(map)
-			.openPopup();
-	</script>
-<?php
-}
 
 add_action( 'woocommerce_admin_order_data_after_shipping_address', function ( $order ) {
 	if ( ! class_exists( 'WC_Checkout_Field_Editor' ) ) {
