@@ -146,7 +146,7 @@ add_action( 'plugins_loaded', function () {
 	// Your CODE with user capability check
 	if ( current_user_can('manage_options') ) {
 		add_action('wp_dashboard_setup', 'storina_delete_cache_widget');
-		if ( !empty( sanitize_text_field($_POST['delede_cache']) ) || !empty( $_GET['delede_cache'] ) ) {
+		if ( !empty( sanitize_text_field(@$_POST['delede_cache']) ) || !empty( $_GET['delede_cache'] ) ) {
 			$delete = storina_delete_all_cache();
 			if($delete){
 				add_action( 'admin_notices', 'storina_delete_cache_notice' );
@@ -447,3 +447,14 @@ add_filter('osa_index_get_app_info',function($app_info,$user_id){
 	$app_info['popup_home'] = array_values($popup_home);
 	return $app_info;
 },10,3);
+
+add_action('admin_enqueue_scripts',function($hook){
+	if(!strpos($hook,'ONLINER_options')){
+		return;
+	}
+	wp_enqueue_media();
+	$stylesheet = ("fa_IR" == get_locale())? "rtl.css" : "style.css";
+	wp_enqueue_style('osa-main-style', trailingslashit(STORINA_THEME_OPTION) . 'assets/css/' . $stylesheet);
+	wp_enqueue_style('woap-iran-yekan',trailingslashit(STORINA_PDU) . "assets/css/iran-yekan.css");
+	wp_enqueue_script('woap-main-script',trailingslashit(STORINA_THEME_OPTION) . "assets/js/main.js", ['jquery','jquery-ui-sortable']);
+});

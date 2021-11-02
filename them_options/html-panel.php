@@ -1,22 +1,4 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-$stylesheet = ("fa_IR" == get_locale())? "rtl.css" : "style.css";
-wp_enqueue_style('osa-rtl-style', trailingslashit(STORINA_THEME_OPTION) . 'assets/css/' . $stylesheet);
-wp_enqueue_style('woap-iran-yekan',trailingslashit(STORINA_PDU) . "assets/css/iran-yekan.css");
-?>
-<link rel="stylesheet" type="text/css" href="<?= STORINA_THEME_OPTION; ?>css/screen.css">
-<?php
-wp_enqueue_script('jquery');
-if(function_exists('wp_enqueue_media')){
-	wp_enqueue_media();}
-?>
-<link type="text/css" rel="stylesheet" href="<?= STORINA_THEME_OPTION; ?>css/jquery-ui.css" />
-<link type="text/css" href="<?= STORINA_THEME_OPTION; ?>css/ui.multiselect.css" rel="stylesheet" />
-<script type="text/javascript" src="<?= STORINA_THEME_OPTION; ?>scripts/plugins/localisation/jquery.localisation-min.js"></script>
-<script type="text/javascript" src="<?= STORINA_THEME_OPTION; ?>scripts/plugins/scrollTo/jquery.scrollTo-min.js"></script>
-<script type="text/javascript" src="<?= STORINA_THEME_OPTION; ?>scripts/tabmenu.js"></script>
-<script type="text/javascript" src="<?= STORINA_THEME_OPTION; ?>scripts/rotator.js"></script>
-<script type="text/javascript" src="<?= STORINA_THEME_OPTION; ?>scripts/jscolor/jscolor.js"></script>
+<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
 <div class="wrap">
 	<div class="osa-settings-wrapper">
 		<ul class="osa-setting-tabs">
