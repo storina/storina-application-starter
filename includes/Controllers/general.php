@@ -1008,7 +1008,7 @@ class General {
         }
         $extra['title'] = $title;
         $extra['body'] = $body;
-        $extra['icon'] = ( $icon ) ? $icon : 'https://person.bilpay.ir/2/wp-content/uploads/2018/10/bell.png';
+        $extra['icon'] = $icon;
         $extra['sound'] = 'default';
         $extra['badge'] = '1';
         $arrayToSend = array('to' => $token, 'priority' => 'high', "data" => $extra);

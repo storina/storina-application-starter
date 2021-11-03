@@ -136,13 +136,8 @@ function storina_update_option2() {
 		//slider
 
 		$top_slider_imagesslide_1 = storina_get_option( 'top_slider_imagesslide_1' );
-		if ( empty( $top_slider_imagesslide_1 ) OR ! $top_slider_imagesslide_1 ) {
-			$banners = array(
-				'https://person.bilpay.ir/2/wp-content/uploads/2018/12/gif1-1.gif',
-				'https://person.bilpay.ir/2/wp-content/uploads/2019/03/4353884925.jpg',
-				'https://person.bilpay.ir/2/wp-content/uploads/2019/03/1278674567845378126378.jpg',
-				'https://person.bilpay.ir/2/wp-content/uploads/2019/03/12786e332784781263.jpg'
-			);
+		if ( empty( $top_slider_imagesslide_1 ) OR ! $top_slider_imagesslide_1  || false) {
+			$banners = array();
 			storina_update_option( 'top_slider_imagesslide_1', $banners );
 		}
 
@@ -176,11 +171,7 @@ function storina_update_option2() {
 		//oneColADV_1
 		$Hbanner_banner1oneColADV_1 = storina_get_option( 'Hbanner_banner1oneColADV_1' );
 		if ( empty( $Hbanner_banner1oneColADV_1 ) OR ! $Hbanner_banner1oneColADV_1 ) {
-			$banners = array(
-				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/328748283229039093.jpg',
-				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/0203094892838904.jpg',
-				'https://person.bilpay.ir/2/wp-content/uploads/2018/11/9932003948742.jpg'
-			);
+			$banners = array();
 			storina_update_option( 'Hbanner_banner1oneColADV_1', $banners );
 		}
 		// cat

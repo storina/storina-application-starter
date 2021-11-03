@@ -36,7 +36,7 @@ class NotificationController {
         $data = array_merge([
             'title' => sanitize_text_field($_POST['title']),
             'body' => sanitize_text_field($_POST['body']),
-            'icon' => sanitize_text_field($_POST['notification_icon']) ?: 'https://person.bilpay.ir/2/wp-content/uploads/2018/10/bell.png',
+            'icon' => sanitize_text_field($_POST['notification_icon']);
             'sound' => 'default',
             'badge' => 1,
             ],$notification_action);
