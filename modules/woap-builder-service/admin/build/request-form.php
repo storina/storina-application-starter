@@ -20,7 +20,7 @@
 		<!-- .woap-field-wrapper -->
 		<div class="woap-field-wrapper">
 			<label for="">مسیر نصب وردپرس</label>
-			<input type="text" disabled class="wp-installation-url" name="wp_installation_url" dir="ltr" value="<?php echo $wp_installation_url; ?>">
+			<input type="text" disabled class="wp-installation-url" name="wp_installation_url" dir="ltr" value="<?php echo esc_html($wp_installation_url); ?>">
 		</div>
 		<!-- .woap-field-wrapper -->
 		<div class="woap-field-wrapper">
@@ -82,11 +82,11 @@
 					
 						<tr>
 							<td>
-								<label for="<?php echo $key; ?>"><?php echo $value; ?></label>
+								<label for="<?php echo esc_html($key); ?>"><?php echo $value; ?></label>
 							</td>
 							<td>
 								<div class="woap-field-wrapper">
-									<input type="text" id="<?php echo $key; ?>" name="strings[<?php echo $key ?>]" value="<?php echo $value ?>">
+									<input type="text" id="<?php echo esc_html($key); ?>" name="strings[<?php echo $key ?>]" value="<?php echo $value ?>">
 								</div>
 							</td>
 						</tr>

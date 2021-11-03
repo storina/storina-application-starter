@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
 <p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
     <form action="" method="POST" id="on5_form_panel" class="panel_form textads_form">
         <?php
         $description = $page['title'];
@@ -57,36 +57,36 @@
                 foreach ( $custom_option_value2 as $title ) { ?>
                     <tr>
                         <td>
-                            <input class="target_line" type="text" name="<?php echo $custom_option_name; ?>[option3][]"
-                                value="<?php echo $custom_option_value3[ $i ]; ?>"/>
+                            <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option3][]"
+                                value="<?php echo esc_html($custom_option_value3[ $i ]); ?>"/>
                             <input type="button" name="upload-btn" class="upload-btn button-secondary"
                                 value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
                         </td>
                         <td>
-                            <select class="select_box" name="<?php echo $custom_option_name; ?>[option4][]">
+                            <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option4][]">
                                 <?php foreach ( $action as $item => $value ) { ?>
-                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value4[ $i ] == $item ) {
+                                    <option value="<?php echo esc_html($item); ?>" <?php if ( $custom_option_value4[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?php echo $value ?></option>
+                                    } ?>><?php echo esc_html($value); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
-                        <td><input type="text" name="<?php echo $custom_option_name; ?>[option5][]"
-                                value="<?php echo $custom_option_value5[ $i ]; ?>"/></td>
+                        <td><input type="text" name="<?php echo esc_html($custom_option_name); ?>[option5][]"
+                                value="<?php echo esc_html($custom_option_value5[ $i ]); ?>"/></td>
 
 
                         <!--
-                        <td><input type="text" name="<?php /*echo $custom_option_name; */?>[option7][]" value="<?php /*echo $custom_option_value7[$i]; */?>"/></td>
-                        <td><input type="text" name="<?php /*echo $custom_option_name; */?>[option8][]" value="<?php /*echo $custom_option_value8[$i]; */?>"/></td>
-                        <td><input type="text" name="<?php /*echo $custom_option_name; */?>[option9][]" value="<?php /*echo $custom_option_value9[$i]; */?>"/></td>-->
-                        <!-- <td><select class="select_box" name="<?php /*echo $custom_option_name; */
+                        <td><input type="text" name="<?php /*echo esc_html($custom_option_name); */?>[option7][]" value="<?php /*echo $custom_option_value7[$i]; */?>"/></td>
+                        <td><input type="text" name="<?php /*echo esc_html($custom_option_name); */?>[option8][]" value="<?php /*echo $custom_option_value8[$i]; */?>"/></td>
+                        <td><input type="text" name="<?php /*echo esc_html($custom_option_name); */?>[option9][]" value="<?php /*echo $custom_option_value9[$i]; */?>"/></td>-->
+                        <!-- <td><select class="select_box" name="<?php /*echo esc_html($custom_option_name); */
                         ?>[option9][]">
                                 <?php /*foreach ($select as $item => $value) { */?>
                                     <option value="<?/*=$item*/?>" <?php /*if($custom_option_value9[$i] == $item){echo 'selected="selected"';} */?>><?/*=$value*/?></option>
                                 <?php /*} */?>
                             </select></td>-->
                         <td>
-                            <input title="<?php echo $custom_option_name; ?>" type="button"
+                            <input title="<?php echo esc_html($custom_option_name); ?>" type="button"
                                 class="button-primary delete_row" value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
                         </td>
                     </tr>
@@ -96,21 +96,21 @@
             } else { ?>
                 <tr>
                     <td>
-                        <input class="target_line" type="text" name="<?php echo $custom_option_name; ?>[option3][]"/>
+                        <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option3][]"/>
                         <input type="button" name="upload-btn" class="upload-btn button-secondary"
                             value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
                     </td>
                     <td>
-                        <select class="select_box" name="<?php echo $custom_option_name; ?>[option4][]">
+                        <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option4][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
+                                <option value="<?php echo $item; ?>"><?php echo esc_html($value); ?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td><input type="text" name="<?php echo $custom_option_name; ?>[option5][]"/></td>
 
                     <td>
-                        <input title="<?php echo $custom_option_name; ?>" type="button" class="button delete_row"
+                        <input title="<?php echo esc_html($custom_option_name); ?>" type="button" class="button delete_row"
                             value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
                     </td>
                 </tr>

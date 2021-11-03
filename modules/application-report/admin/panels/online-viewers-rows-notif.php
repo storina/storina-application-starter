@@ -1,12 +1,12 @@
 <?php wp_enqueue_media(); ?>
 <div class="osa-notification-panel-wrapper">
-    <form action="" method="post" id="osa-report-notification-form-<?php echo $viewer['identifier']; ?>" class="osa-report-notification-form">
+    <form action="" method="post" id="osa-report-notification-form-<?php echo esc_html($viewer['identifier']); ?>" class="osa-report-notification-form">
         <div class="osa-report-notification-form-output">
             <p class="osa-report-notification-form-preloader"><?php _e("Loading...","onlinerShopApp"); ?></p>
             <p class="osa-report-notification-form-result"></p>
         </div>
-        <input type="hidden" name="identifier" value="<?php echo $viewer['identifier']; ?>">
-        <input type="hidden" name="authentication" value="<?php echo $viewer['authentication_value']; ?>">
+        <input type="hidden" name="identifier" value="<?php echo esc_html($viewer['identifier']); ?>">
+        <input type="hidden" name="authentication" value="<?php echo esc_html($viewer['authentication_value']); ?>">
         <div class="osa-report-form-item">
             <div><label class="osa-report-form-label" for=""><?php _e("Title","onlinerShopApp"); ?></label></div>
             <div class="woap-report-form-field-wrapper">

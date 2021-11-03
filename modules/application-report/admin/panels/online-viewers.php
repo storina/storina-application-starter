@@ -39,7 +39,7 @@
                     $disabled = ($i == $current)? 'disabled' : "";
                     ?>
                         <li>
-                            <a href="#" class="osa-report-viewers-pagination-item <?php echo $disabled; ?>" data-paged="<?php echo $i; ?>" ><?php echo $i; ?></a>
+                            <a href="#" class="osa-report-viewers-pagination-item <?php echo esc_html($disabled); ?>" data-paged="<?php echo $i; ?>" ><?php echo $i; ?></a>
                         </li>
                     <?php
                 }

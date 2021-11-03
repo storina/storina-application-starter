@@ -79,7 +79,7 @@ add_action( 'woocommerce_admin_order_data_after_shipping_address', function ( $o
 			?>
             <table class="woocommerce-table woocommerce-table--custom-fields shop_table custom-fields">
 				<?php
-				echo $fields_html;
+				echo esc_html($fields_html);
 				?>
             </table>
 			<?php
@@ -133,7 +133,7 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $or
 			?>
             <table class="woocommerce-table woocommerce-table--custom-fields shop_table custom-fields">
 				<?php
-				echo $fields_html;
+				echo esc_html($fields_html);
 				?>
             </table>
 			<?php

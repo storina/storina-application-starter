@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
 	<p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form banner_panel header_th">
 		<?php
 		$description = $page['title'];
@@ -39,25 +39,25 @@
 			foreach($addresses as $address){ ?>
 				<tr>
 				<td>
-				<input class="target_line" type="text" name="<?php echo $banner; ?>[address][]" value="<?php echo $addresses[$i]; ?>"/>
+				<input class="target_line" type="text" name="<?php echo esc_html($banner); ?>[address][]" value="<?php echo esc_html($addresses[$i]); ?>"/>
 				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
 				</td>
-				<td><input type="text" name="<?php echo $banner; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
+				<td><input type="text" name="<?php echo esc_html($banner); ?>[title][]" value="<?php echo esc_html($titles[$i]); ?>"/></td>
 				<td>
 				
 		
-				<textarea name="<?php echo $banner; ?>[text][]" ><?php echo $captions[$i]; ?></textarea>
+				<textarea name="<?php echo esc_html($banner); ?>[text][]" ><?php echo esc_html($captions[$i]); ?></textarea>
 				</td>
-				<td><input type="text" name="<?php echo $banner; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
+				<td><input type="text" name="<?php echo esc_html($banner); ?>[link][]" value="<?php echo esc_html($links[$i]); ?>"/></td>
 				<td>
-					<input placeholder="50px" type="text" name="<?php echo $banner; ?>[width][]" value="<?php echo $widths[$i]; ?>"/>
+					<input placeholder="50px" type="text" name="<?php echo esc_html($banner); ?>[width][]" value="<?php echo esc_html($widths[$i]); ?>"/>
 				</td>
 					<td>
-						<input placeholder="50px" type="text" name="<?php echo $banner; ?>[height][]" value="<?php echo $heights[$i]; ?>"/>
+						<input placeholder="50px" type="text" name="<?php echo esc_html($banner); ?>[height][]" value="<?php echo esc_html($heights[$i]); ?>"/>
 					</td>
 				<td>
 
-					<select class="select_box" name="<?php echo $banner; ?>[banner_relation][]">
+					<select class="select_box" name="<?php echo esc_html($banner); ?>[banner_relation][]">
 					<?php
 					foreach ($product_cats as $product_cat => $value) {
 						$selected = ($product_cat == $relations[$i])?'selected':'';
@@ -65,9 +65,9 @@
 					}
 					?>
 				</select></td>
-				<td><input type="text" name="<?php echo $banner; ?>[banner_expire][]" value="<?php echo $expires[$i]; ?>"  id="datepicker"/></td>
+				<td><input type="text" name="<?php echo esc_html($banner); ?>[banner_expire][]" value="<?php echo esc_html($expires[$i]); ?>"  id="datepicker"/></td>
 				<td>
-					<input title="<?php echo $banner; ?>" type="button" class="button-primary delete_row"
+					<input title="<?php echo esc_html($banner); ?>" type="button" class="button-primary delete_row"
 							value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
 				</td>
 				</tr>
@@ -77,28 +77,28 @@
 		}else{ ?>
 		<tr>
 		<td>
-		<input class="target_line" type="text" name="<?php echo $banner; ?>[address][]" />
+		<input class="target_line" type="text" name="<?php echo esc_html($banner); ?>[address][]" />
 		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
 		</td>
-		<td><input type="text" name="<?php echo $banner; ?>[title][]" /></td>
-		<td><textarea name="<?php echo $banner; ?>[text][]" ></textarea></td>
-		<td><input type="text" name="<?php echo $banner; ?>[link][]" /></td>
+		<td><input type="text" name="<?php echo esc_html($banner); ?>[title][]" /></td>
+		<td><textarea name="<?php echo esc_html($banner); ?>[text][]" ></textarea></td>
+		<td><input type="text" name="<?php echo esc_html($banner); ?>[link][]" /></td>
 			<td>
-				<input placeholder="50px" type="text" name="<?php echo $banner; ?>[width][]"/>
+				<input placeholder="50px" type="text" name="<?php echo esc_html($banner); ?>[width][]"/>
 			</td>
 			<td>
-				<input placeholder="50px" type="text" name="<?php echo $banner; ?>[height][]"/>
+				<input placeholder="50px" type="text" name="<?php echo esc_html($banner); ?>[height][]"/>
 			</td>
-		<td><select class="select_box" name="<?php echo $banner; ?>[banner_relation][]">
+		<td><select class="select_box" name="<?php echo esc_html($banner); ?>[banner_relation][]">
 				<?php
 				foreach ($product_cats as $product_cat => $value) {
 					echo "<option value='$product_cat'>$value</option>";
 				}
 				?>
 			</select></td>
-		<td><input type="text" name="<?php echo $banner; ?>[banner_expire][]" value="<?php echo $expires[$i]; ?>" id="datepicker" /></td>
+		<td><input type="text" name="<?php echo esc_html($banner); ?>[banner_expire][]" value="<?php echo esc_html($expires[$i]); ?>" id="datepicker" /></td>
 		<td>
-			<input title="<?php echo $banner; ?>" type="button" class="button-primary delete_row"
+			<input title="<?php echo esc_html($banner); ?>" type="button" class="button-primary delete_row"
 					value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
 		</td>
 		</tr>

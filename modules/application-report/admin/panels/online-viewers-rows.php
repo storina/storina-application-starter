@@ -11,10 +11,10 @@ foreach($viewers_data as $viewer){
             <!-- Trigger-modal -->
             <a 
             href="#" 
-            data-modal="osa-modal-content-<?php echo $viewer['identifier']; ?>" 
+            data-modal="osa-modal-content-<?php echo esc_html($viewer['identifier']); ?>" 
             class="button button-primary osa-modal-button"><?php _e("send notification","onlinerShopApp") ?></a>
             <!-- The Modal -->
-            <div id="osa-modal-content-<?php echo $viewer['identifier']; ?>"  class="osa-modal-content">
+            <div id="osa-modal-content-<?php echo esc_html($viewer['identifier']); ?>"  class="osa-modal-content">
                 <!-- Modal content -->
                 <div class="modal-content">
                     <div class="modal-header">

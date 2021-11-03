@@ -198,11 +198,11 @@ add_action('dokan_order_detail_after_order_items', function ($order){
             var mobile1;
             var mobile2;
 			<?php if(!empty($billing_mobile)){ ?>
-            mobile1 = '<li><a href="#">' + <?php echo esc_html__('Mobile 1 :','onlinerShopApp');?> + ' <span class="tab"><?php echo $billing_mobile; ?></span></a></li>';
+            mobile1 = '<li><a href="#">' + <?php echo esc_html__('Mobile 1 :','onlinerShopApp');?> + ' <span class="tab"><?php echo esc_html($billing_mobile); ?></span></a></li>';
 			<?php }
 			if(!empty($shipping_mobile)){
 			?>
-            mobile2 = '<li><a href="#">' + <?php echo esc_html__('Mobile 2 :','onlinerShopApp');?> +'<span class="tab"><?php echo $shipping_mobile; ?></span></a></li>';
+            mobile2 = '<li><a href="#">' + <?php echo esc_html__('Mobile 2 :','onlinerShopApp');?> +'<span class="tab"><?php echo esc_html($shipping_mobile); ?></span></a></li>';
 			<?php } 
 			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 			$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;

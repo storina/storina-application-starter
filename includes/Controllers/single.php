@@ -1160,19 +1160,19 @@ class Single {
             <table class="table-mail-report" style="border-collapse: collapse; text-align: right;direction: rtl;">
                 <tr>
                     <td style="border: 1px solid black;padding: 6px 10px;">ایمیل کاربر</td>
-                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo $user_email; ?></td>
+                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo esc_html($user_email); ?></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black;padding: 6px 10px;">نام کاربری</td>
-                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo $user_login; ?></td>
+                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo esc_html($user_login); ?></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black;padding: 6px 10px;">نام محصول گزارش شده</td>
-                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo $product_title; ?></td>
+                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo esc_html($product_title); ?></td>
                 </tr>
                 <tr>
                     <td style="border: 1px solid black;padding: 6px 10px;">شناسه محصول</td>
-                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo $product_id; ?></td>
+                    <td style="border: 1px solid black;padding: 6px 10px;"><?php echo esc_html($product_id); ?></td>
                 </tr>
             </table>
         </div>
