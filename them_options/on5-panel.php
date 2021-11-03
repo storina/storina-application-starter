@@ -413,14 +413,14 @@ function storina_update_option2() {
 		$count++;
 	}// end foreach
 	storina_delete_index_cache();
-	echo '<div class="updated"><p>'.__('Saved changes.','onlinerShopApp').'</p></div>';
+	echo '<div class="updated"><p>'.esc_html__('Saved changes.','onlinerShopApp').'</p></div>';
 }//end if
 }
 
 /** Step 1. */
 add_action( 'admin_menu', function () {
-	add_menu_page( 'onliner app options', __('Application settings','onlinerShopApp'), 'manage_options', 'ONLINER_options', 'storina_app_options' );
-	add_submenu_page( 'ONLINER_options', __('Send notification','onlinerShopApp'), __('Send notification','onlinerShopApp'), 'manage_options', 'onliner-send-notification', 'storina_send_notif');
+	add_menu_page( 'onliner app options', esc_html__('Application settings','onlinerShopApp'), 'manage_options', 'ONLINER_options', 'storina_app_options' );
+	add_submenu_page( 'ONLINER_options', esc_html__('Send notification','onlinerShopApp'), esc_html__('Send notification','onlinerShopApp'), 'manage_options', 'onliner-send-notification', 'storina_send_notif');
         do_action("osa_admin_menu_application_main");
 } );
 
@@ -428,7 +428,7 @@ add_action( 'admin_menu', function () {
 function storina_app_options() {
 
 	if ( !current_user_can( 'manage_options' ) )  {
-		wp_die( __('You can not change options on site.','onlinerShopApp') );
+		wp_die( esc_html__('You can not change options on site.','onlinerShopApp') );
 	}
 	require_once("create_list.php");
 	global $options_page;
@@ -520,13 +520,13 @@ function storina_send_notif(){
 					set_post_thumbnail( $post_id, $attach_id );
 					add_post_meta( $post_id, 'onClickModel', json_encode( $onClickModel ) );
 				}
-				echo '<div class="updated"><p>' . __( 'Notification sent.', 'onlinerShopApp' ) . ' </p></div>';
+				echo '<div class="updated"><p>' . esc_html__( 'Notification sent.', 'onlinerShopApp' ) . ' </p></div>';
 
 			} else {
-				echo '<div class="update-nag"><p>' . __( 'Notification not send.', 'onlinerShopApp' ) . '  </p></div>';
+				echo '<div class="update-nag"><p>' . esc_html__( 'Notification not send.', 'onlinerShopApp' ) . '  </p></div>';
 			}
 		} else {
-			echo '<div class="update-nag"><p>' . __( 'Please fill all reqired fields.', 'onlinerShopApp' ) . '</p></div>';
+			echo '<div class="update-nag"><p>' . esc_html__( 'Please fill all reqired fields.', 'onlinerShopApp' ) . '</p></div>';
 		}
 
 	}
@@ -536,23 +536,23 @@ function storina_send_notif(){
         <form action="" method="post">
             <table class="form-table">
                 <tr>
-                    <th><label for="notif_title"><?php echo __( 'Title', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_title"><?php echo esc_html__( 'Title', 'onlinerShopApp' ) ?></label></th>
                     <td><input required id="notif_title" name="notif_title" type="text" class="regular-text"></td>
                 </tr>
                 <tr>
-                    <th><label for="notif_desc"><?php echo __( 'Text', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_desc"><?php echo esc_html__( 'Text', 'onlinerShopApp' ) ?></label></th>
                     <td><textarea required name="notif_desc" id="notif_desc" cols="30" rows="4"></textarea></td>
                 </tr>
                 <tr>
-                    <th><label for="notif_icon"><?php echo __( 'Icon', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_icon"><?php echo esc_html__( 'Icon', 'onlinerShopApp' ) ?></label></th>
                     <td><input id="notif_icon" name="notif_icon" class="target_line regular-text text-box" value=""
                                type="text">
                         <input name="upload-btn" class="upload-btn button-secondary" value="آپلود تصویر" type="button">
-                        <p class="description"><?php echo __( 'Select notification icon 512*512 px', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo esc_html__( 'Select notification icon 512*512 px', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="notif_linkType"><?php echo __( 'Link type', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_linkType"><?php echo esc_html__( 'Link type', 'onlinerShopApp' ) ?></label></th>
                     <td>
                         <select required name="notif_linkType" class="select_box">
 	                        <?php $actions = $general->clickEventList();
@@ -562,22 +562,22 @@ function storina_send_notif(){
 		                        <?php
 	                        }
 	                        if ( function_exists( 'dokan_get_store_info' ) ) { ?>
-                                <option value="VendorPage"><?php echo __( 'Open vendor page', 'onlinerShopApp' ) ?></option>
+                                <option value="VendorPage"><?php echo esc_html__( 'Open vendor page', 'onlinerShopApp' ) ?></option>
 	                        <?php } ?>
                         </select>
-                        <p class="description"><?php echo __( 'What do you want then touch on notification?', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo esc_html__( 'What do you want then touch on notification?', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="notif_linkValue"><?php echo __( 'Link value', 'onlinerShopApp' ) ?></label></th>
+                    <th><label for="notif_linkValue"><?php echo esc_html__( 'Link value', 'onlinerShopApp' ) ?></label></th>
                     <td>
                         <input required id="notif_linkValue" name="notif_linkValue" class="regular-text text-box"
                                value="" type="text">
-                        <p class="description"><?php echo __( 'Enter the desired value according to the link type field.', 'onlinerShopApp' ) ?></p>
+                        <p class="description"><?php echo esc_html__( 'Enter the desired value according to the link type field.', 'onlinerShopApp' ) ?></p>
                     </td>
                 </tr>
                 <tr>
-                    <th><input value="<?php echo __( 'Send', 'onlinerShopApp' ) ?>" name="send_notif"
+                    <th><input value="<?php echo esc_html__( 'Send', 'onlinerShopApp' ) ?>" name="send_notif"
                                class="button save button-primary button-large" type="submit">
                     </th>
                     <td></td>

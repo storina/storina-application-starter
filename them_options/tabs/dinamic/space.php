@@ -2,7 +2,7 @@
 $info=array(
 	'name'        => 'index',
 	'apppagename' => 'space-options' . $elementID[ $i ],
-	'title'       => __( "Space", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Space", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 global $pages;
 if($pages){
@@ -11,9 +11,9 @@ if($pages){
 $options=array(
     array(
         "type" => "text",
-        "name" => __("space value",'onlinerShopApp'),
+        "name" => esc_html__("space value",'onlinerShopApp'),
         "id" => "space".$elementID[$i],
-        "desc" =>__("Enter the space value for pixel",'onlinerShopApp'),
+        "desc" =>esc_html__("Enter the space value for pixel",'onlinerShopApp'),
     ),
 
 );

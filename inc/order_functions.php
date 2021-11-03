@@ -55,7 +55,7 @@ add_action( 'woocommerce_admin_order_data_after_shipping_address', function ( $o
 			if ( isset( $options['show_in_order'] ) && $options['show_in_order'] && $enabled && $is_custom_field ) {
 				$value = get_post_meta( $order_id, $name, true );
 				if ( ! empty( $value ) ) {
-					$label = isset( $options['label'] ) && ! empty( $options['label'] ) ? __( $options['label'], 'woocommerce' ) : $name;
+					$label = isset( $options['label'] ) && ! empty( $options['label'] ) ? esc_html__( $options['label'], 'woocommerce' ) : $name;
 
 					if ( is_account_page() ) {
 						if ( apply_filters( 'thwcfd_view_order_customer_details_table_view', true ) ) {
@@ -109,7 +109,7 @@ add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $or
 			if ( isset( $options['show_in_order'] ) && $options['show_in_order'] && $enabled && $is_custom_field ) {
 				$value = get_post_meta( $order_id, $name, true );
 				if ( ! empty( $value ) ) {
-					$label = isset( $options['label'] ) && ! empty( $options['label'] ) ? __( $options['label'], 'woocommerce' ) : $name;
+					$label = isset( $options['label'] ) && ! empty( $options['label'] ) ? esc_html__( $options['label'], 'woocommerce' ) : $name;
 
 					if ( is_account_page() ) {
 						if ( apply_filters( 'thwcfd_view_order_customer_details_table_view', true ) ) {
@@ -150,7 +150,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 	unset( $columns['tags'] );
 
 	//add column
-	$columns['chanel'] = __( 'From', 'onlinerShopApp' );
+	$columns['chanel'] = esc_html__( 'From', 'onlinerShopApp' );
 
 	return $columns;
 } , 15 );
@@ -158,7 +158,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 add_action( 'manage_shop_order_posts_custom_column', function ( $column, $postid ) {
 	if ( $column == 'chanel' ) {
 		$purchase_type = get_post_meta( $postid, 'purchase_type', true );
-		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? __( 'App', 'onlinerShopApp' ) : 'Website' ) . '</strong>';
+		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? esc_html__( 'App', 'onlinerShopApp' ) : 'Website' ) . '</strong>';
 	}
 } , 10, 2 );
 
@@ -172,7 +172,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 		$new_columns[ $column_name ] = $column_info;
 
 		if ( 'order_date' === $column_name ) {
-			$new_columns['chanel'] = __( 'From', 'onlinerShopApp' );
+			$new_columns['chanel'] = esc_html__( 'From', 'onlinerShopApp' );
 		}
 	}
 
@@ -230,9 +230,9 @@ add_filter('osa_theme_options_app',function($options){
 	}
 	$options[] = 	array(
 		"type" => "text",
-		"name" => __( "FAQ", 'onlinerShopApp' ),
+		"name" => esc_html__( "FAQ", 'onlinerShopApp' ),
 		"id"   => "app_faq_shortcode_id",
-		"desc" => __( "enter faq shortcode id. <a href='https://nimb.ws/bOogTf' target='_blank'>Screenshot</a>", 'onlinerShopApp' ),
+		"desc" => esc_html__( "enter faq shortcode id. <a href='https://nimb.ws/bOogTf' target='_blank'>Screenshot</a>", 'onlinerShopApp' ),
 	);
 	return $options;
 });
@@ -277,7 +277,7 @@ add_filter('woap_add_to_cart_validation',function($validation,$item,$cart){
 	$status = $maximum_quantity >= $request_quantity;
 	if(!$status){
 		$validation['status'] = false;
-		$validation['messages'][] = __("Request Quantity is bigger than request quantity","onlinerShopApp");
+		$validation['messages'][] = esc_html__("Request Quantity is bigger than request quantity","onlinerShopApp");
 		return $validation;
 	}
 	return $validation;

@@ -7,7 +7,7 @@ wp_enqueue_style('osa-report-admin-style',trailingslashit( VOS_PDU ) . 'admin/as
 wp_enqueue_script('osa-report-chartjs-library', trailingslashit( VOS_PDU ) . 'admin/assets/js/chart.js', ['jquery'], true, 1);
 wp_enqueue_script('osa-report-main-script', trailingslashit( VOS_PDU ) . 'admin/assets/js/script.js', ['jquery','osa-report-chartjs-library'], true, 1);
 wp_localize_script('osa-report-main-script','ReportOBJ',[
-    'singleViewLabel' => __("Product Views Count","onlinerShopApp"),
+    'singleViewLabel' => esc_html__("Product Views Count","onlinerShopApp"),
     'viewsPeriod' => $views_period,
     'viewsCount' => $views_count,
     'adminAjax' => $admin_ajax,

@@ -49,7 +49,7 @@ class Index {
             $index = $record;
             $version = sanitize_text_field($_POST['currentVersion']);
             $appinfo = array(
-                "zeroPriceText" => __("Call", "onlinerShopApp"),
+                "zeroPriceText" => esc_html__("Call", "onlinerShopApp"),
                     /* "new_app_version" => intval( storina_get_option( 'app_version' ) ),
                       "description"     => array(),
                       "isForce"         => false,
@@ -59,7 +59,7 @@ class Index {
 
                 $description = explode(PHP_EOL, storina_get_option('app_versionText'));
                 $appinfo = array(
-                    "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                    "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : esc_html__('Call', 'onlinerShopApp'),
                     "new_app_version" => intval(storina_get_option('app_version')),
                     "description" => $description,
                     "isForce" => ( storina_get_option('app_UpdateFource') == 'true' ) ? true : false,
@@ -99,7 +99,7 @@ class Index {
         if (floatval($version) < floatval(storina_get_option('app_version'))) {
             $description = explode(PHP_EOL, storina_get_option('app_versionText'));
             $appInfo = array(
-                "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                "zeroPriceText" => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : esc_html__('Call', 'onlinerShopApp'),
                 "new_app_version" => intval(storina_get_option('app_version')),
                 "description" => $description,
                 "isForce" => ( storina_get_option('app_UpdateFource') == 'true' ) ? true : false,
@@ -107,7 +107,7 @@ class Index {
             );
         } else {
             $appInfo = array(
-                'zeroPriceText' => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : __('Call', 'onlinerShopApp'),
+                'zeroPriceText' => ( storina_get_option('zeroPriceText') ) ? storina_get_option('zeroPriceText') : esc_html__('Call', 'onlinerShopApp'),
                     /* "new_app_version" => intval( storina_get_option( 'app_version' ) ),
                       "description"     => array(),
                       "isForce"         => false,
@@ -194,7 +194,7 @@ class Index {
                     'app_icon' => storina_get_option('app_icon'),
                     'splashLogo' => ( storina_get_option('app_logo') ) ? str_replace('https://', 'http://', storina_get_option('app_logo')) : '',
                     'indexLogo' => ( storina_get_option('app_TopLogo') ) ? str_replace('https://', 'http://', storina_get_option('app_TopLogo')) : '',
-                    'appTitle' => ( storina_get_option('app_title') ) ? storina_get_option('app_title') : __('Onliner', 'onlinerShopApp'),
+                    'appTitle' => ( storina_get_option('app_title') ) ? storina_get_option('app_title') : esc_html__('Onliner', 'onlinerShopApp'),
                     'masterColor' => ( storina_get_option('app_masterColor') ) ? storina_get_option('app_masterColor') : false,
                     'secondColor' => ( storina_get_option('app_secondColor') ) ? storina_get_option('app_secondColor') : false,
                     'IconsColor' => ( storina_get_option('app_IconColor') ) ? storina_get_option('app_IconColor') : false,
@@ -637,7 +637,7 @@ class Index {
             $sales_price_from = get_post_meta(get_the_ID(), '_sale_price_dates_from', true);
             $now = time();
 
-            $to = __("To", "onlinerShopApp");
+            $to = esc_html__("To", "onlinerShopApp");
             if ($PriceRange) {
                 if ($PriceRange['regularPrice']['min'] != $PriceRange['regularPrice']['max']) {
                     $prices['regular_price'] = "{$PriceRange['regularPrice']['min']} $to {$PriceRange['regularPrice']['max']}";

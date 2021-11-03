@@ -29,7 +29,7 @@ class NotificationController {
         if(!is_numeric($identifier) || !empty(sanitize_text_field($_POST['title'])) || !empty(sanitize_text_field($_POST['body']))){
             wp_send_json([
                 'status' => false,
-                'message' => __("params is invalid","onlinerShopApp")
+                'message' => esc_html__("params is invalid","onlinerShopApp")
             ]);
         }
         $notification_action = $this->get_notification_handler()->clickEvent(sanitize_text_field($_POST['click_event_type']),sanitize_text_field($_POST['click_event_value']));
@@ -61,7 +61,7 @@ class NotificationController {
         curl_close($curl);
         wp_send_json([
             'status' => filter_var($result->success,FILTER_VALIDATE_BOOLEAN),
-            'message' => ($status)? __("notification was sended","onlinerShopApp") : __("error","onlinerShopApp"),
+            'message' => ($status)? esc_html__("notification was sended","onlinerShopApp") : esc_html__("error","onlinerShopApp"),
             'result' => $result,
         ]);
     }

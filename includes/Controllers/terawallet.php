@@ -62,7 +62,7 @@ class Terawallet {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
             return ( $result );
@@ -129,7 +129,7 @@ class Terawallet {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 18,
-                    'message' => __('something wrong happen.', 'onlinerShopApp')
+                    'message' => esc_html__('something wrong happen.', 'onlinerShopApp')
                 )
             );
 
@@ -166,21 +166,21 @@ class Terawallet {
             $currency = get_woocommerce_currency_symbol();
             $response = array(
                 'is_valid' => false,
-                'message' => sprintf(__('The minimum amount needed for wallet top up is %s', 'woo-wallet'), "{$min_topup_amount} {$currency}"),
+                'message' => sprintf(esc_html__('The minimum amount needed for wallet top up is %s', 'woo-wallet'), "{$min_topup_amount} {$currency}"),
             );
         }
         if ($max_topup_amount && $amount > $max_topup_amount) {
             $currency = get_woocommerce_currency_symbol();
             $response = array(
                 'is_valid' => false,
-                'message' => sprintf(__('Wallet top up amount should be less than %s', 'woo-wallet'), "{$max_topup_amount} {$currency}")
+                'message' => sprintf(esc_html__('Wallet top up amount should be less than %s', 'woo-wallet'), "{$max_topup_amount} {$currency}")
             );
         }
         if ($min_topup_amount && $max_topup_amount && ( $amount < $min_topup_amount || $amount > $max_topup_amount )) {
             $currency = get_woocommerce_currency_symbol();
             $response = array(
                 'is_valid' => false,
-                'message' => sprintf(__('Wallet top up amount should be between %s and %s', 'woo-wallet'), "{$min_topup_amount} {$currency}", "{$max_topup_amount} {$currency}")
+                'message' => sprintf(esc_html__('Wallet top up amount should be between %s and %s', 'woo-wallet'), "{$min_topup_amount} {$currency}", "{$max_topup_amount} {$currency}")
             );
         }
 
@@ -391,7 +391,7 @@ class Terawallet {
         $order->calculate_totals();
         $order_total_before_discount = $order->get_total();
         $order_id = $order->get_id();
-        $wallet_debit_description = __( 'For order payment #', 'woo-wallet' ) . $order->get_order_number();
+        $wallet_debit_description = esc_html__( 'For order payment #', 'woo-wallet' ) . $order->get_order_number();
         $this->wc_order_add_discount($order, $wallet_debit_description, $wallet_balance);
         update_post_meta($order_id, self::meta_key, $wallet_balance);
         return $order;
@@ -411,7 +411,7 @@ class Terawallet {
 
     public function order_process_payment_wallet($user_id,$order,$wallet_gateway){
         $order_id = $order->get_id();
-        $wallet_debit_description = __( 'For order payment #', 'woo-wallet' ) . $order->get_order_number();
+        $wallet_debit_description = esc_html__( 'For order payment #', 'woo-wallet' ) . $order->get_order_number();
         $wallet_response = woo_wallet()->wallet->debit( $user_id, $order->get_total( 'edit' ), $wallet_debit_description);
  
         if ( !$wallet_response ) {

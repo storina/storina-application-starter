@@ -2,9 +2,9 @@
 $info=array(
 	'name'        => 'index',
 	'apppagename' => 'postBox-options' . $elementID[ $i ],
-	'title'       => __( "Post box", "onlinerShopApp" ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Post box", "onlinerShopApp" ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
-$category[-1] = __("All",'onlinerShopApp');
+$category[-1] = esc_html__("All",'onlinerShopApp');
 $category = storina_hierarchical_category_tree3(0,'category');
 global $pages;
 if($pages){
@@ -13,54 +13,54 @@ if($pages){
 $options=array(
 	array(
 		"type" => "text",
-		"name" => __("Box title",'onlinerShopApp'),
+		"name" => esc_html__("Box title",'onlinerShopApp'),
 		"id" => "indexAppBoxTitle".$elementID[$i],
-		"desc" => __("Enter the title box",'onlinerShopApp'),
+		"desc" => esc_html__("Enter the title box",'onlinerShopApp'),
 	),
     array(
         "type" => "select",
-        "name" => __("category",'onlinerShopApp'),
+        "name" => esc_html__("category",'onlinerShopApp'),
         "id" => "indexAppBox".$elementID[$i],
         "return_value" => false,
         "options" => $category,
-        "desc" => __("Select the category",'onlinerShopApp'),
+        "desc" => esc_html__("Select the category",'onlinerShopApp'),
     ),
 array(
     "type" => "text",
-    "name" => __("post count",'onlinerShopApp'),
+    "name" => esc_html__("post count",'onlinerShopApp'),
     "id" => "indexAppBoxCount".$elementID[$i],
-    "desc" => __("Enter post count for show in box. max 12",'onlinerShopApp'),
+    "desc" => esc_html__("Enter post count for show in box. max 12",'onlinerShopApp'),
 ),
 	array(
 		"type" => "select",
-		"name" => __("Order by",'onlinerShopApp'),
+		"name" => esc_html__("Order by",'onlinerShopApp'),
 		"id" => "indexAppBoxSort".$elementID[$i],
 		"return_value" => false,
 		"options" => array(
-			'date' => __("Created date",'onlinerShopApp'),
-			'modified'=>__("Modified date",'onlinerShopApp'),
-			'title' => __("Title",'onlinerShopApp'),
-			'sale' => __("sale count",'onlinerShopApp'),
-			'view' => __("View count",'onlinerShopApp'),
-			'comment_count' => __("Comment count",'onlinerShopApp'),
-			'rand' => __("Random",'onlinerShopApp')),
-		"desc" => __("Select order type for show posts.",'onlinerShopApp'),
+			'date' => esc_html__("Created date",'onlinerShopApp'),
+			'modified'=>esc_html__("Modified date",'onlinerShopApp'),
+			'title' => esc_html__("Title",'onlinerShopApp'),
+			'sale' => esc_html__("sale count",'onlinerShopApp'),
+			'view' => esc_html__("View count",'onlinerShopApp'),
+			'comment_count' => esc_html__("Comment count",'onlinerShopApp'),
+			'rand' => esc_html__("Random",'onlinerShopApp')),
+		"desc" => esc_html__("Select order type for show posts.",'onlinerShopApp'),
 	),
 	array(
 		"type" => "select",
-		"name" => __("Sort",'onlinerShopApp'),
+		"name" => esc_html__("Sort",'onlinerShopApp'),
 		"id" => "indexAppBoxOrder".$elementID[$i],
 		"return_value" => false,
-		"options" => array('ASC' => __("ASC",'onlinerShopApp'),'DESC'=>__("DESC",'onlinerShopApp')),
-		"desc" => __("Select the sort type for show",'onlinerShopApp'),
+		"options" => array('ASC' => esc_html__("ASC",'onlinerShopApp'),'DESC'=>esc_html__("DESC",'onlinerShopApp')),
+		"desc" => esc_html__("Select the sort type for show",'onlinerShopApp'),
 	),
 	array(
 		"type"         => "select",
-		"name"         => __( "float", 'onlinerShopApp' ),
+		"name"         => esc_html__( "float", 'onlinerShopApp' ),
 		"id"           => "indexAppBoxFloat" . $elementID[ $i ],
 		"return_value" => false,
-		"options"      => array( 'rtl' => __( "rtl", 'onlinerShopApp' ), 'ltr' => __( "ltr", 'onlinerShopApp' ) ),
-		"desc"         => __( "Select the float type for show", 'onlinerShopApp' ),
+		"options"      => array( 'rtl' => esc_html__( "rtl", 'onlinerShopApp' ), 'ltr' => esc_html__( "ltr", 'onlinerShopApp' ) ),
+		"desc"         => esc_html__( "Select the float type for show", 'onlinerShopApp' ),
 	),
 );
 global $options_page;

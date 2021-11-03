@@ -68,7 +68,7 @@
 				<td><input type="text" name="<?php echo $banner; ?>[banner_expire][]" value="<?php echo $expires[$i]; ?>"  id="datepicker"/></td>
 				<td>
 					<input title="<?php echo $banner; ?>" type="button" class="button-primary delete_row"
-							value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
+							value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
 				</td>
 				</tr>
 			<?php 
@@ -99,7 +99,7 @@
 		<td><input type="text" name="<?php echo $banner; ?>[banner_expire][]" value="<?php echo $expires[$i]; ?>" id="datepicker" /></td>
 		<td>
 			<input title="<?php echo $banner; ?>" type="button" class="button-primary delete_row"
-					value="<?php echo __( "Delete", 'onlinerShopApp' ); ?>">
+					value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
 		</td>
 		</tr>
 		<?php }
@@ -110,7 +110,7 @@
 			<input type="hidden" name="apptype_form" value="banner">
 			<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 			<input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-			<button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
+			<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 		</div>
 	</form>
 </div>

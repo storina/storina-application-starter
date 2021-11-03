@@ -2,7 +2,7 @@
 $info = array(
 	"name"        => "system",
 	"apppagename" => "system-options",
-	"title"       => __( "systemic options", "onlinerShopApp" ),
+	"title"       => esc_html__( "systemic options", "onlinerShopApp" ),
 );
 global $pages;
 if ( $pages ) {
@@ -13,158 +13,158 @@ if ( $pages ) {
 $options = array(
 	array(
 		"type"         => "select",
-		"name"         => __( "Caching mode", "onlinerShopApp" ),
+		"name"         => esc_html__( "Caching mode", "onlinerShopApp" ),
 		"id"           => "appCacheStatus",
 		"options"      => array(
-			"active"   => __( "Active", "onlinerShopApp" ),
-			"inactive" => __( "Deactive", "onlinerShopApp" )
+			"active"   => esc_html__( "Active", "onlinerShopApp" ),
+			"inactive" => esc_html__( "Deactive", "onlinerShopApp" )
 		),
 		"return_value" => false,
-		"desc"         => __( "Caching mode increase your application load speed", "onlinerShopApp" ),
+		"desc"         => esc_html__( "Caching mode increase your application load speed", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "text",
-		"name" => __( "Application version", "onlinerShopApp" ),
+		"name" => esc_html__( "Application version", "onlinerShopApp" ),
 		"id"   => "app_version",
-		"desc" => __( "Enter application version", "onlinerShopApp" ),
+		"desc" => esc_html__( "Enter application version", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "text",
-		"name" => __( "English App Name", "onlinerShopApp" ),
+		"name" => esc_html__( "English App Name", "onlinerShopApp" ),
 		"id"   => "english_app_name",
-		"desc" => __( "English App Name has the same name you enter when making apk file", "onlinerShopApp" ),
+		"desc" => esc_html__( "English App Name has the same name you enter when making apk file", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "picture",
-		"name" => __( "APK file", "onlinerShopApp" ),
+		"name" => esc_html__( "APK file", "onlinerShopApp" ),
 		"id"   => "app_url",
-		"desc" => __( "Upload and select application file. *.apk", "onlinerShopApp" ),
+		"desc" => esc_html__( "Upload and select application file. *.apk", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "textarea",
-		"name" => __( "new version description", "onlinerShopApp" ),
+		"name" => esc_html__( "new version description", "onlinerShopApp" ),
 		"id"   => "app_versionText",
-		"desc" => __( "Enter the new version descriptions. one item in one line.", "onlinerShopApp" ),
+		"desc" => esc_html__( "Enter the new version descriptions. one item in one line.", "onlinerShopApp" ),
 	),
 	array(
 		"type"    => "checkbox",
-		"name"    => __( "Fource update", "onlinerShopApp" ),
+		"name"    => esc_html__( "Fource update", "onlinerShopApp" ),
 		"id"      => array( "app_UpdateFource" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __( "If users must update to this version, active this field;", "onlinerShopApp" ),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__( "If users must update to this version, active this field;", "onlinerShopApp" ),
 	),
 	array(
 		"type"         => "select",
-		"name"         => __( "Archive level Start", "onlinerShopApp" ),
+		"name"         => esc_html__( "Archive level Start", "onlinerShopApp" ),
 		"id"           => "appArchiveType",
 		"options"      => array(
-			"parent" => __( "Parent", "onlinerShopApp" ),
-			"sub"    => __( "Sub category", "onlinerShopApp" )
+			"parent" => esc_html__( "Parent", "onlinerShopApp" ),
+			"sub"    => esc_html__( "Sub category", "onlinerShopApp" )
 		),
 		"return_value" => false,
-		"desc"         => __( "when that user select a sub categories, show type be parent category or sam category?", "onlinerShopApp" ),
+		"desc"         => esc_html__( "when that user select a sub categories, show type be parent category or sam category?", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "text",
-		"name" => __( "view count custom field", "onlinerShopApp" ),
+		"name" => esc_html__( "view count custom field", "onlinerShopApp" ),
 		"id"   => "viewCounterField",
-		"desc" => __( "Set your custom field for view counter", "onlinerShopApp" ),
+		"desc" => esc_html__( "Set your custom field for view counter", "onlinerShopApp" ),
 	),
 	array(
 		"type"         => "select",
-		"name"         => __( "Payment type", "onlinerShopApp" ),
+		"name"         => esc_html__( "Payment type", "onlinerShopApp" ),
 		"id"           => "payType",
 		"options"      => array(
-			"normal"   => __( "In browser", "onlinerShopApp" ),
-			"inAppPay" => __( "In application", "onlinerShopApp" )
+			"normal"   => esc_html__( "In browser", "onlinerShopApp" ),
+			"inAppPay" => esc_html__( "In application", "onlinerShopApp" )
 		),
 		"return_value" => false,
-		"desc"         => __( "In (in application) method, when user go for payment , do not exit from application. ", "onlinerShopApp" ),
+		"desc"         => esc_html__( "In (in application) method, when user go for payment , do not exit from application. ", "onlinerShopApp" ),
 	),
 	array(
 		"type"         => "select",
-		"name"         => __( "Register type", "onlinerShopApp" ),
+		"name"         => esc_html__( "Register type", "onlinerShopApp" ),
 		"id"           => "registerType",
 		"options"      => array(
-			"email"  => __( "Only by email", "onlinerShopApp" ),
-			"mobile" => __( "Only by mobile", "onlinerShopApp" ),
-			"both"   => __( "by Email AND mobile", "onlinerShopApp" )
+			"email"  => esc_html__( "Only by email", "onlinerShopApp" ),
+			"mobile" => esc_html__( "Only by mobile", "onlinerShopApp" ),
+			"both"   => esc_html__( "by Email AND mobile", "onlinerShopApp" )
 		),
 		"return_value" => false,
-		"desc"         => __( "Select your registration type in application. need to digits plugin for mobile registration.", "onlinerShopApp" ),
+		"desc"         => esc_html__( "Select your registration type in application. need to digits plugin for mobile registration.", "onlinerShopApp" ),
 	),
 	array(
 		"type"    => "checkbox",
-		"name"    => __( "Google map manifest", "onlinerShopApp" ),
+		"name"    => esc_html__( "Google map manifest", "onlinerShopApp" ),
 		"id"      => array( "app_map_api" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __( "google map on application and orders", "onlinerShopApp" ),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__( "google map on application and orders", "onlinerShopApp" ),
 	),
     	array(
 		"type"    => "checkbox",
-		"name"    => __( "App send time field", "onlinerShopApp" ),
+		"name"    => esc_html__( "App send time field", "onlinerShopApp" ),
 		"id"      => array( "app_send_time_field" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __( "Application send time field activation", "onlinerShopApp" ),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__( "Application send time field activation", "onlinerShopApp" ),
 	),
 	array(
 		"type"    => "checkbox",
-		"name"    => __( "Debug mode", "onlinerShopApp" ),
+		"name"    => esc_html__( "Debug mode", "onlinerShopApp" ),
 		"id"      => array( "debug_mode" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __( "if you dont have any information about it, do not active it", "onlinerShopApp" ),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__( "if you dont have any information about it, do not active it", "onlinerShopApp" ),
 	),
 	array(
 		"type" => "text",
-		"name" => __( "debug key", "onlinerShopApp" ),
+		"name" => esc_html__( "debug key", "onlinerShopApp" ),
 		"id"   => "debug_key",
-		"desc" => __( "Set your secret key for debug", "onlinerShopApp" ),
+		"desc" => esc_html__( "Set your secret key for debug", "onlinerShopApp" ),
 	),
 
 );
 if ( function_exists( "dokan_is_seller_enabled" ) ) {
 	$options[] = array(
 		"type"    => "checkbox",
-		"name"    => __("vendor grouping","onlinerShopApp"),
+		"name"    => esc_html__("vendor grouping","onlinerShopApp"),
 		"id"      => array( "app_vendor_grouping" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __("do you want activate state/city select box for vendors in app?","onlinerShopApp"),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__("do you want activate state/city select box for vendors in app?","onlinerShopApp"),
 	);
 	$options[] =
 	array(
 		"type"         => "select",
-		"name"         => __( "Vendor group by", "onlinerShopApp" ),
+		"name"         => esc_html__( "Vendor group by", "onlinerShopApp" ),
 		"id"           => "appVendorlist",
 		"options"      => array(
-			"state" => __( "state", "onlinerShopApp" ),
-			"city"  => __( "city", "onlinerShopApp" )
+			"state" => esc_html__( "state", "onlinerShopApp" ),
+			"city"  => esc_html__( "city", "onlinerShopApp" )
 		),
 		"return_value" => false,
-		"desc"         => __( "how to grouping vendors.", "onlinerShopApp" ),
+		"desc"         => esc_html__( "how to grouping vendors.", "onlinerShopApp" ),
 	);
 	$options[] = array(
 		"type"    => "checkbox",
-		"name"    => __("hidden empty states","onlinerShopApp"),
+		"name"    => esc_html__("hidden empty states","onlinerShopApp"),
 		"id"      => array( "app_hidden_empty_state" ),
-		"options" => array( __( "Active", "onlinerShopApp" ) ),
-		"desc"    => __("do you want hidden empty states in select box?","onlinerShopApp"),
+		"options" => array( esc_html__( "Active", "onlinerShopApp" ) ),
+		"desc"    => esc_html__("do you want hidden empty states in select box?","onlinerShopApp"),
 	);
 	$options[] = array(
 		"type"    => "checkbox",
-		"name"    => __("hide vendor list on menu","onlinerShopApp"),
+		"name"    => esc_html__("hide vendor list on menu","onlinerShopApp"),
 		"id"      => array( "app_hidden_menu_vendor_list" ),
-		"options" => array( __( "hidden", "onlinerShopApp" ) ),
-		"desc"    => __("if you want to hide vendor list on menu active this","onlinerShopApp"),
+		"options" => array( esc_html__( "hidden", "onlinerShopApp" ) ),
+		"desc"    => esc_html__("if you want to hide vendor list on menu active this","onlinerShopApp"),
 	);
 	$options[] = [
 		'type' => 'select',
-		'name' => __("Dokan shipping type","onlinerShopApp"),
+		'name' => esc_html__("Dokan shipping type","onlinerShopApp"),
 		'id' => 'app_dokan_shipping_type',
 		'options' => [
-			'regular_shipping' => __("regular shipping","onlinerShopApp"),
-			'vendor_shipping' => __("vendor shipping","onlinerShopApp")
+			'regular_shipping' => esc_html__("regular shipping","onlinerShopApp"),
+			'vendor_shipping' => esc_html__("vendor shipping","onlinerShopApp")
 		],
-		'desc' => __("select shipping type. vendor shipping is having seprate shipping method for each seller","onlinerShopApp")
+		'desc' => esc_html__("select shipping type. vendor shipping is having seprate shipping method for each seller","onlinerShopApp")
 	];
 }
 

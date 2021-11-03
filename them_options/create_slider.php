@@ -18,20 +18,20 @@
 		?>
 		<table class="wp-list-table widefat fixed">
 		<thead>
-		<th style="width: 20px;"><?php echo __( "Sort", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Banner address", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Title", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Description", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Link", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
+		<th style="width: 20px;"><?php echo esc_html__( "Sort", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Banner address", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Title", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Description", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Link", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Action", 'onlinerShopApp' ); ?></th>
 		</thead>
 		<tfoot>
-		<th style="width: 20px;"><?php echo __( "Sort", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Banner address", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Title", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Description", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Link", 'onlinerShopApp' ); ?></th>
-		<th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
+		<th style="width: 20px;"><?php echo esc_html__( "Sort", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Banner address", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Title", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Description", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Link", 'onlinerShopApp' ); ?></th>
+		<th><?php echo esc_html__( "Action", 'onlinerShopApp' ); ?></th>
 		</tfoot>
 		<?php 
 		if($addresses){
@@ -76,7 +76,7 @@
 			<input type="hidden" name="apptype_form" value="slider">
 			<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 			<input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-			<button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
+			<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 		</div>
 	</form>
 </div>

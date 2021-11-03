@@ -70,7 +70,7 @@ class Message {
                 'message_data' => $this->message_action->prepare_message_data($message,$owner_id),
                 'notif_result' => $notif_result
             ],
-            "message" => __("message send","crn")
+            "message" => esc_html__("message send","crn")
         ));
     }
 
@@ -87,7 +87,7 @@ class Message {
         if(empty($messages)){
             return(array(
                 "status" => false,
-                "messages" => __("No Message Found","crn")
+                "messages" => esc_html__("No Message Found","crn")
             ));
         }
         $messages = $this->message_action->set_messages_seen($messages,$user_id);

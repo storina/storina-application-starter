@@ -323,7 +323,7 @@ class General {
                 $final = array(
                     'status' => false,
                     'error' => array(
-                        'message' => __('Error in insert comment.', 'onlinerShopApp'),
+                        'message' => esc_html__('Error in insert comment.', 'onlinerShopApp'),
                         'errorCode' => - 13,
                     )
                 );
@@ -354,7 +354,7 @@ class General {
                 $final = array(
                     'status' => false,
                     'error' => array(
-                        'message' => __('Error in insert comment.', 'onlinerShopApp'),
+                        'message' => esc_html__('Error in insert comment.', 'onlinerShopApp'),
                         'errorCode' => - 13,
                     )
                 );
@@ -416,11 +416,11 @@ class General {
     public function aboutUS() {
         $final = array(
             'top_logo' => str_replace('https://', 'http://', storina_get_option('app_aboutlogo')),
-            'app_slogan' => ( storina_get_option('app_slogan') ) ? storina_get_option('app_slogan') : __('Your shop slogan here.', 'onlinerShopApp'),
+            'app_slogan' => ( storina_get_option('app_slogan') ) ? storina_get_option('app_slogan') : esc_html__('Your shop slogan here.', 'onlinerShopApp'),
             'app_Email' => ( storina_get_option('app_Email') ) ? storina_get_option('app_Email') : 'yorEmail@gmail.com',
             'app_telegramID' => ( storina_get_option('app_telegramID') ) ? storina_get_option('app_telegramID') : 'TelegramID',
             'app_phone' => ( storina_get_option('app_phone') ) ? storina_get_option('app_phone') : '09152222222',
-            'app_copyright' => ( storina_get_option('app_copyright') ) ? storina_get_option('app_copyright') : __('All right reserved.', 'onlinerShopApp'),
+            'app_copyright' => ( storina_get_option('app_copyright') ) ? storina_get_option('app_copyright') : esc_html__('All right reserved.', 'onlinerShopApp'),
             'app_privacyLink' => storina_get_option('app_privacyLink'),
             'app_termsLink' => storina_get_option('app_termsLink'),
             'app_aboutLink' => storina_get_option('app_aboutLink'),
@@ -530,16 +530,16 @@ class General {
 
     public function clickEventList() {
         $list = array(
-            'AppHome' => __('Open the Home page of app', 'onlinerShopApp'),
-            'OpenWebsite' => __('Open the site', 'onlinerShopApp'),
-            'OpenTelegramChannel' => __('Open telegram channel', 'onlinerShopApp'),
-            'CallNumber' => __('Call', 'onlinerShopApp'),
-            'OpenInstagram' => __('Open instagram page', 'onlinerShopApp'),
-            'DeepLinkArchive' => __('A custom archive', 'onlinerShopApp'),
-            'DeepLinkSingle' => __('A custom product', 'onlinerShopApp'),
-            'DeepLinkBlogsingle' => __('A custom article (post)', 'onlinerShopApp'),
-            'DeepLinkBlogarchive' => __('A custom article (archive)', 'onlinerShopApp'),
-            'VendorListBasedCat' => __('Show Vendor List Based on Category ', 'onlinerShopApp')
+            'AppHome' => esc_html__('Open the Home page of app', 'onlinerShopApp'),
+            'OpenWebsite' => esc_html__('Open the site', 'onlinerShopApp'),
+            'OpenTelegramChannel' => esc_html__('Open telegram channel', 'onlinerShopApp'),
+            'CallNumber' => esc_html__('Call', 'onlinerShopApp'),
+            'OpenInstagram' => esc_html__('Open instagram page', 'onlinerShopApp'),
+            'DeepLinkArchive' => esc_html__('A custom archive', 'onlinerShopApp'),
+            'DeepLinkSingle' => esc_html__('A custom product', 'onlinerShopApp'),
+            'DeepLinkBlogsingle' => esc_html__('A custom article (post)', 'onlinerShopApp'),
+            'DeepLinkBlogarchive' => esc_html__('A custom article (archive)', 'onlinerShopApp'),
+            'VendorListBasedCat' => esc_html__('Show Vendor List Based on Category ', 'onlinerShopApp')
         );
 
         return $list;
@@ -797,7 +797,7 @@ class General {
                 $result = array(
                     'status' => false,
                     'error' => array(
-                        'message' => __('email is not sent.', 'onlinerShopApp'),
+                        'message' => esc_html__('email is not sent.', 'onlinerShopApp'),
                         'errorCode' => - 13,
                     )
                 );
@@ -806,7 +806,7 @@ class General {
             $result = array(
                 'status' => false,
                 'error' => array(
-                    'message' => __('product id is not exists.', 'onlinerShopApp'),
+                    'message' => esc_html__('product id is not exists.', 'onlinerShopApp'),
                     'errorCode' => - 13,
                 )
             );

@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'aboutUS',
 	'apppagename' => 'aboutUS-options',
-	'title' => __('About US','onlinerShopApp'),
+	'title' => esc_html__('About US','onlinerShopApp'),
 );
 
 /*
@@ -22,75 +22,75 @@ array_push($pages, $info);
 $options=array(
 	array(
 		"type" => "text",
-		"name" => __('Shop slogan','onlinerShopApp'),
+		"name" => esc_html__('Shop slogan','onlinerShopApp'),
 		"id" => "app_slogan",
-		"desc" => __('Enter the shop slogan','onlinerShopApp'),
+		"desc" => esc_html__('Enter the shop slogan','onlinerShopApp'),
 	),
 	array(
 		"type" => "picture",
-		"name" => __('select top page logo','onlinerShopApp'),
+		"name" => esc_html__('select top page logo','onlinerShopApp'),
 		"id" => "app_aboutlogo",
-		"desc" => __('Select top page logo. PNG and width 700px height 445px','onlinerShopApp'),
+		"desc" => esc_html__('Select top page logo. PNG and width 700px height 445px','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('Email','onlinerShopApp'),
+		"name" => esc_html__('Email','onlinerShopApp'),
 		"id" => "app_Email",
-		"desc" =>__('Enter support Email','onlinerShopApp'),
+		"desc" =>esc_html__('Enter support Email','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('Telegram','onlinerShopApp'),
+		"name" => esc_html__('Telegram','onlinerShopApp'),
 		"id" => "app_telegramID",
-		"desc" => __('Enter the telegram ID (without @)','onlinerShopApp'),
+		"desc" => esc_html__('Enter the telegram ID (without @)','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('mubile number','onlinerShopApp'),
+		"name" => esc_html__('mubile number','onlinerShopApp'),
 		"id" => "app_phone",
-		"desc" => __('Enter support phone','onlinerShopApp'),
+		"desc" => esc_html__('Enter support phone','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('copyright','onlinerShopApp'),
+		"name" => esc_html__('copyright','onlinerShopApp'),
 		"id" => "app_copyright",
-		"desc" => __('Enter the copyright text. maximum 12 char','onlinerShopApp'),
+		"desc" => esc_html__('Enter the copyright text. maximum 12 char','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('Privacy','onlinerShopApp'),
+		"name" => esc_html__('Privacy','onlinerShopApp'),
 		"id" => "app_privacyLink",
-		"desc" => __('Enter the privacy page url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the privacy page url','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('Terms','onlinerShopApp'),
+		"name" => esc_html__('Terms','onlinerShopApp'),
 		"id" => "app_termsLink",
-		"desc" => __('Enter the terms page url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the terms page url','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('About US','onlinerShopApp'),
+		"name" => esc_html__('About US','onlinerShopApp'),
 		"id" => "app_aboutLink",
-		"desc" => __('Enter the url of about us page','onlinerShopApp'),
+		"desc" => esc_html__('Enter the url of about us page','onlinerShopApp'),
 	),
 	array(
 		"type" => "hr",
-		"name" => __('Custom button','onlinerShopApp'),
+		"name" => esc_html__('Custom button','onlinerShopApp'),
 		"id" => "",
 		"desc" => "",
 	),
 	array(
 		"type" => "text",
-		"name" => __('button text','onlinerShopApp'),
+		"name" => esc_html__('button text','onlinerShopApp'),
 		"id" => "app_aboutButtonText",
-		"desc" => __('Enter the button text','onlinerShopApp'),
+		"desc" => esc_html__('Enter the button text','onlinerShopApp'),
 	),
 	array(
 		"type" => "text",
-		"name" => __('URL button','onlinerShopApp'),
+		"name" => esc_html__('URL button','onlinerShopApp'),
 		"id" => "app_aboutButtonLink",
-		"desc" => __('Enter the button url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the button url','onlinerShopApp'),
 	),
 );
 global $options_page;

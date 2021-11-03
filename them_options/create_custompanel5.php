@@ -4,9 +4,9 @@ global $osa_autoload;
 $general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 $action = $general->clickEventList();
 $columns = [
-    1 => __("One column",'onlinerShopApp'),
-    2 => __("Two column",'onlinerShopApp'),
-    4 => __("Four column",'onlinerShopApp'),
+    1 => esc_html__("One column",'onlinerShopApp'),
+    2 => esc_html__("Two column",'onlinerShopApp'),
+    4 => esc_html__("Four column",'onlinerShopApp'),
 ];
 ?>
 <div class="osa-option-wrapper">
@@ -48,8 +48,8 @@ $columns = [
             <thead>
                 <th style="width: 20px;"><strong class="sort_elem">|||</strong></th>
                 <th><?php _e("Banners, from the right Banner link, Link type, Link value","onlinerShopApp"); ?></th>
-                <th><?php echo __( "Column", 'onlinerShopApp' ); ?></th>
-                <th><?php echo __( "Action", 'onlinerShopApp' ); ?></th>
+                <th><?php echo esc_html__( "Column", 'onlinerShopApp' ); ?></th>
+                <th><?php echo esc_html__( "Action", 'onlinerShopApp' ); ?></th>
             </thead>
             <tbody class="woap-adc-tbody">
             <?php 
@@ -114,7 +114,7 @@ $columns = [
             <input type="hidden" name="apptype_form" value="woap-home-adc">
             <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
             <input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-            <button type="button" class="button add-adc-row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
+            <button type="button" class="button add-adc-row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
         </div>
     </form>
 </div>

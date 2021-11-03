@@ -121,7 +121,7 @@ add_action( 'delete_post', 'storina_empty_carts', 10 );
 function storina_delete_cache_widget() {
 	global $wp_meta_boxes;
 
-	wp_add_dashboard_widget('custom_help_widget', __("Delete app cache","onlinerShopApp"), 'storina_delete_cache_dashboard');
+	wp_add_dashboard_widget('custom_help_widget', esc_html__("Delete app cache","onlinerShopApp"), 'storina_delete_cache_dashboard');
 }
 
 function storina_delete_cache_dashboard() { ?>
@@ -275,19 +275,19 @@ function back_to_application( $order_id ) {
 add_action( "init", function () {
     // Articles
 	$labels = array(
-		'name'               => __("اعلان های اپلیکیشن",'onlinerShopApp'),
-		'singular_name'      => __("اعلان های اپلیکیشن",'onlinerShopApp'),
-		'edit_item'          => __("ویرایش",'onlinerShopApp'),
-		'new_item'           => __("افزودن",'onlinerShopApp'),
-		'view_item'          => __("نمایش",'onlinerShopApp'),
-		'search_items'       => __("جستجو",'onlinerShopApp'),
+		'name'               => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp'),
+		'singular_name'      => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp'),
+		'edit_item'          => esc_html__("ویرایش",'onlinerShopApp'),
+		'new_item'           => esc_html__("افزودن",'onlinerShopApp'),
+		'view_item'          => esc_html__("نمایش",'onlinerShopApp'),
+		'search_items'       => esc_html__("جستجو",'onlinerShopApp'),
 		'parent_item_colon'  => '',
-		'menu_name'          => __("اعلان های اپلیکیشن",'onlinerShopApp')
+		'menu_name'          => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp')
 	);
 	$args = array(
 		'labels'        => $labels,
 		'menu_icon' => 'dashicons-media-spreadsheet',
-		'description'   => __("Save","onlinerShopApp"),
+		'description'   => esc_html__("Save","onlinerShopApp"),
 		'public'        => false,
 		'menu_position' => 100,
 		'taxonomies' => array('post_tag'),
@@ -317,18 +317,18 @@ add_filter( 'woocommerce_email_customer_details_fields', function ( $fields, $se
 	if ( empty( $fields ) ) {
 		if ( $order->get_billing_email() ) {
 			$fields['billing_email'] = array(
-				'label' => __( 'Email address', "onlinerShopApp" ),
+				'label' => esc_html__( 'Email address', "onlinerShopApp" ),
 				'value' => wptexturize( $order->get_billing_email() ),
 			);
 		}
 		if ( $order->get_billing_phone() ) {
 			$fields['billing_phone'] = array(
-				'label' => __( 'Phone', "onlinerShopApp" ),
+				'label' => esc_html__( 'Phone', "onlinerShopApp" ),
 				'value' => wptexturize( $order->get_billing_phone() ),
 			);
 		}
 		$fields['billing_mobile'] = array(
-			'label' => __( 'Emergency phon number', "onlinerShopApp" ),
+			'label' => esc_html__( 'Emergency phon number', "onlinerShopApp" ),
 			'value' => wptexturize( get_post_meta( $order->id, 'shipping_mobile', true ) ),
 		);
 
@@ -339,19 +339,19 @@ add_filter( 'woocommerce_email_customer_details_fields', function ( $fields, $se
 add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'    => 'application',
-		'title' => __("Application","onlinerShopApp"),
+		'title' => esc_html__("Application","onlinerShopApp"),
 		'href'  => admin_url() . 'admin.php?page=ONLINER_options',
 		'meta'  => array(
-			'title' => __("Application","onlinerShopApp"),
+			'title' => esc_html__("Application","onlinerShopApp"),
 		),
 	) );
 	$admin_bar->add_menu( array(
 		'id'     => 'app-setting',
 		'parent' => 'application',
-		'title'  => __("Application Settings","onlinerShopApp"),
+		'title'  => esc_html__("Application Settings","onlinerShopApp"),
 		'href'   => admin_url() . 'admin.php?page=ONLINER_options',
 		'meta'   => array(
-			'title'  => __("Application Settings","onlinerShopApp"),
+			'title'  => esc_html__("Application Settings","onlinerShopApp"),
 			'target' => '',
 			'class'  => ''
 		),
@@ -359,10 +359,10 @@ add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'     => 'app-send-notif',
 		'parent' => 'application',
-		'title'  => __("Send Notification","onlinerShopApp"),
+		'title'  => esc_html__("Send Notification","onlinerShopApp"),
 		'href'   => admin_url() . 'admin.php?page=onliner-send-notification',
 		'meta'   => array(
-			'title'  => __("Send Notification","onlinerShopApp"),
+			'title'  => esc_html__("Send Notification","onlinerShopApp"),
 			'target' => '',
 			'class'  => ''
 		),
@@ -370,10 +370,10 @@ add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'     => 'app-delete-cache',
 		'parent' => 'application',
-		'title'  => __("Clear cashe","onlinerShopApp"),
+		'title'  => esc_html__("Clear cashe","onlinerShopApp"),
 		'href'   => admin_url() . 'admin.php?page=ONLINER_options&delede_cache=true',
 		'meta'   => array(
-			'title'  => __("Clear cashe","onlinerShopApp"),
+			'title'  => esc_html__("Clear cashe","onlinerShopApp"),
 			'target' => '',
 			'class'  => ''
 		),

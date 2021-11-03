@@ -20,11 +20,11 @@ class ViewerLogic {
                 $nickname = get_user_meta($user_id,'nickname',true);
                 $display_name = (empty($first_name) && empty($last_name))? $nickname : "{$first_name} {$last_name}";
             }else{
-                $display_name = __("guest","onlinerShopApp");
+                $display_name = esc_html__("guest","onlinerShopApp");
             }
             $viewer_details['display_name'] = $display_name;
             $viewer_details['identifier'] = $viewer->get_data('identifier');
-            $viewer_details['authentication'] = ($viewer->get_data('authentication'))? __("yes","onlinerShopApp") : __("no","onlinerShopApp");
+            $viewer_details['authentication'] = ($viewer->get_data('authentication'))? esc_html__("yes","onlinerShopApp") : esc_html__("no","onlinerShopApp");
             $viewer_details['authentication_value'] = $viewer->get_data('authentication');
             $viewer_details['client_type'] = $viewer->get_data("client_type");
             $viewer_details['current_version'] = $viewer->get_data('current_version');

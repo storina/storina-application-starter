@@ -20,13 +20,13 @@
 
         global $product_cats;
         $product_cats     = array();
-        $product_cats[-1] = __("All",'onlinerShopApp');
+        $product_cats[-1] = esc_html__("All",'onlinerShopApp');
         $product_cats     = storina_hierarchical_category_tree2( 0 , $tax);
         global $osa_autoload;
         $general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
         $action           = $general->clickEventList();
         if ( function_exists( 'dokan_get_store_info' ) ) {
-            $action['VendorPage'] = __( 'Open vendor page', 'onlinerShopApp' );
+            $action['VendorPage'] = esc_html__( 'Open vendor page', 'onlinerShopApp' );
         }
         ?>
         <div class="clear"></div>
@@ -89,7 +89,7 @@
 <input type="hidden" name="apptype_form" value="text_adsplus">
         <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
         <input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-        <button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
+        <button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 </div>
     </form>
 </div>

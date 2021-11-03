@@ -8,7 +8,7 @@
 $info = array(
 	'name'        => 'custom',
 	'apppagename' => 'appSImages-options' . $elementID[ $i ],
-	'title'       => __( "Scroll Banners ads", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Scroll Banners ads", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 global $pages;
 if ( $pages ) {
@@ -19,7 +19,7 @@ if ( $pages ) {
 //سلول type همیشه در اولین خانه آرابه یاشد
 $options = array(
 	'type'               => 'custom',
-	'title'              => __( "Select the banners for show in home page", 'onlinerShopApp' ),
+	'title'              => esc_html__( "Select the banners for show in home page", 'onlinerShopApp' ),
 	'custom_option_name' => 'custom_option',
 	'custom_option2'     => 'Sbanner_customOption1' . $elementID[ $i ],
 	'custom_option3'     => 'Sbanner_banner' . $elementID[ $i ],

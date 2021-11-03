@@ -8,7 +8,7 @@
 $info = array(
 	'name'        => 'custom4',
 	'apppagename' => 'scrollBox-options' . $elementID[ $i ],
-	'title'       => __( "Scroll Box", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Scroll Box", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 global $pages;
 if ( $pages ) {
@@ -19,7 +19,7 @@ if ( $pages ) {
 //سلول type همیشه در اولین خانه آرابه یاشد
 $options = array(
 	'type'               => 'custom4',
-	'title'              => __( "Scrolled box with title and icon and link", 'onlinerShopApp' ),
+	'title'              => esc_html__( "Scrolled box with title and icon and link", 'onlinerShopApp' ),
 	'custom_option_name' => 'sb_custom_options',
 	'custom_option2'     => 'Sb_customOption1' . $elementID[ $i ],
 	'custom_option3'     => 'Sb_banner' . $elementID[ $i ],

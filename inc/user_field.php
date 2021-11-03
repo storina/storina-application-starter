@@ -11,19 +11,19 @@ add_action( 'user_register', function ( $user_id ) {
 
 add_filter( 'woocommerce_customer_meta_fields', function ( $fields ) {
 	$fields['billing']['fields']['billing_lat']   = array(
-		'label'       => __( 'Google map lat', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lat', 'onlinerShopApp' ),
 		'description' => ''
 	);
 	$fields['billing']['fields']['billing_lng']   = array(
-		'label'       => __( 'Google map lng', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lng', 'onlinerShopApp' ),
 		'description' => ''
 	);
 	$fields['shipping']['fields']['shipping_lat'] = array(
-		'label'       => __( 'Google map lat', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lat', 'onlinerShopApp' ),
 		'description' => ''
 	);
 	$fields['shipping']['fields']['shipping_lng'] = array(
-		'label'       => __( 'Google map lng', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lng', 'onlinerShopApp' ),
 		'description' => ''
 	);
 
@@ -136,28 +136,28 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
     if(is_admin()){
 	    $fields['billing']['billing_mobile'] = array(
 		    'type' => 'text',
-		    'label' => __('Emergency phone', 'onlinerShopApp'),
+		    'label' => esc_html__('Emergency phone', 'onlinerShopApp'),
 		    'placeholder' => _x('Emergency phone', 'placeholder', 'onlinerShopApp')
 	    );
 	    $fields['billing']['billing_email'] = array(
 		    'type' => 'text',
-		    'label' => __('Email', 'onlinerShopApp'),
+		    'label' => esc_html__('Email', 'onlinerShopApp'),
 		    'placeholder' => _x('Email', 'placeholder', 'onlinerShopApp')
 	    );
 
 	    $fields['shipping']['shipping_phone'] = array(
 		    'type' => 'text',
-		    'label' => __('Phone number', 'onlinerShopApp'),
+		    'label' => esc_html__('Phone number', 'onlinerShopApp'),
 		    'placeholder' => _x('Phone number', 'placeholder', 'onlinerShopApp')
 	    );
 	    $fields['shipping']['shipping_mobile'] = array(
 		    'type' => 'text',
-		    'label' => __('Mobile', 'onlinerShopApp'),
+		    'label' => esc_html__('Mobile', 'onlinerShopApp'),
 		    'placeholder' => _x('Mobile', 'placeholder', 'onlinerShopApp')
 	    );
 	    $fields['shipping']['shipping_email'] = array(
 		    'type' => 'text',
-		    'label' => __('Email', 'onlinerShopApp'),
+		    'label' => esc_html__('Email', 'onlinerShopApp'),
 		    'placeholder' => _x('Email', 'placeholder', 'onlinerShopApp')
 	    );
     }
@@ -172,19 +172,19 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
 add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $order ) {
 	$mobile = get_post_meta( $order->id, 'billing_mobile', true );
 	if ( $mobile ) {
-		echo '<p><strong>' . __( 'Mobile :', 'onlinerShopApp' ) . '</strong> <br/>' . $mobile . '</p>';
+		echo '<p><strong>' . esc_html__( 'Mobile :', 'onlinerShopApp' ) . '</strong> <br/>' . $mobile . '</p>';
 	}
 	$phone = get_post_meta( $order->id, 'shipping_phone', true );
 	if ( $phone ) {
-		echo '<p><strong>' . __( 'Shipping phone :', 'onlinerShopApp' ) . '</strong> <br/>' . $phone . '</p>';
+		echo '<p><strong>' . esc_html__( 'Shipping phone :', 'onlinerShopApp' ) . '</strong> <br/>' . $phone . '</p>';
 	}
 	$mobile = get_post_meta( $order->id, 'shipping_mobile', true );
 	if ( $mobile)
-    echo '<p><strong>'.__('Shipping mobile :', 'onlinerShopApp').':</strong> <br/>' . get_post_meta( $order->id, 'shipping_mobile', true ) . '</p>';
+    echo '<p><strong>'.esc_html__('Shipping mobile :', 'onlinerShopApp').':</strong> <br/>' . get_post_meta( $order->id, 'shipping_mobile', true ) . '</p>';
 	$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 	$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
-		echo '<p><strong>' . __('Send box time and date :','onlinerShopApp') . '</strong> <br/>' . $date . '</p>';
+		echo '<p><strong>' . esc_html__('Send box time and date :','onlinerShopApp') . '</strong> <br/>' . $date . '</p>';
 
 } , 10, 1 );
 
@@ -224,7 +224,7 @@ add_action( "woocommerce_email_after_order_table", function ( $order ) {
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 	$time = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 	if($timestamp)
-		echo '<p><strong>'.__('Send box time and date :','onlinerShopApp').'</strong>'. $time .'</p>';
+		echo '<p><strong>'.esc_html__('Send box time and date :','onlinerShopApp').'</strong>'. $time .'</p>';
 
 } , 10, 1 );
 

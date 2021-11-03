@@ -109,7 +109,7 @@
 		<input type="hidden" name="apptype_form" value="FAQ">
 		<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 		<input type="submit" value="ذخیره" name="submit_theme_options" class="button save">
-		<button type="button" class="button add_row"><?php echo __( "Add ", 'onlinerShopApp' ) ?></button>
+		<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 	</div>
 	</form>
 </div>

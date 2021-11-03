@@ -27,14 +27,14 @@ class Product {
         if(false == $product instanceof WC_Product){
             return(array(
                 "status" => false,
-                "message" => __("invalid product","crn")
+                "message" => esc_html__("invalid product","crn")
             ));
         }
         $vendor_id = get_post_field( 'post_author', $product_id );
         if($vendor_id != $user_id){
             return(array(
                 "status" => false,
-                "message" => __("invalid vendor","crn")
+                "message" => esc_html__("invalid vendor","crn")
             ));
         }
         $parent_id = (!empty(sanitize_text_field($_POST['id'])))? sanitize_text_field($_POST['id']) : null;
@@ -60,7 +60,7 @@ class Product {
         }
         return(array(
             "status" => true,
-            "message" => __("product status updated","crn")
+            "message" => esc_html__("product status updated","crn")
         ));
     }
 }

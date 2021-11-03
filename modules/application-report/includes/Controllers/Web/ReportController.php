@@ -31,7 +31,7 @@ class ReportController {
         if(!is_numeric($paged)){
             wp_send_json([
                 'status' => false,
-                'messages' => __("viewer paginate not working","onlinerShopApp")
+                'messages' => esc_html__("viewer paginate not working","onlinerShopApp")
             ]);
         }
         $pagination_args = $this->pagination_logic->get_pagination_args($paged);
@@ -47,7 +47,7 @@ class ReportController {
     }
 
     public function application_report_panel(){
-        add_submenu_page('ONLINER_options', __('Application Report', 'onlinerShopApp'), __('Application Report', 'onlinerShopApp'), 'manage_options', 'onliner-report-panel', [$this,'application_report_contents']);
+        add_submenu_page('ONLINER_options', esc_html__('Application Report', 'onlinerShopApp'), esc_html__('Application Report', 'onlinerShopApp'), 'manage_options', 'onliner-report-panel', [$this,'application_report_contents']);
     }
 
     public function application_report_contents(){

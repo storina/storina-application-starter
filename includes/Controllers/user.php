@@ -33,7 +33,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => __("Digits plugin not active.", "onlinerShopApp")
+                    'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
                 )
             );
 
@@ -49,7 +49,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 2,
-                    'message' => __("This user is not exist. please review or sign up first.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist. please review or sign up first.", "onlinerShopApp")
                 )
             );
         } else {
@@ -84,7 +84,7 @@ class User {
                     'status' => true,
                     'data' => array(
                         'verify' => true,
-                        'message' => __("Password sent.", "onlinerShopApp")
+                        'message' => esc_html__("Password sent.", "onlinerShopApp")
                     )
                 );
             } else {
@@ -106,7 +106,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => __("Digits plugin not active.", "onlinerShopApp")
+                    'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
                 )
             );
             if ($send_json) {
@@ -145,7 +145,7 @@ class User {
             return array(
                 "status" => false,
 				'error' => [
-					"message" => __("Entered cod is invalid.", "onlinerShopApp")
+					"message" => esc_html__("Entered cod is invalid.", "onlinerShopApp")
 				]
             );
         }
@@ -170,7 +170,7 @@ class User {
                 'userToken' => $user_token,
             ),
             'data' => array(
-                'message' => __("Verify successfully.", "onlinerShopApp")
+                'message' => esc_html__("Verify successfully.", "onlinerShopApp")
             ),
         );
         return apply_filters("osa_user_verify_result",$result ,$user_id);
@@ -187,7 +187,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 2,
-                        'message' => __("Entered email is invalid.", "onlinerShopApp")
+                        'message' => esc_html__("Entered email is invalid.", "onlinerShopApp")
                     )
                 );
             } else {
@@ -226,7 +226,7 @@ class User {
             $result = array(
                 'status' => false,
                 'error' => array(
-                    'message' => __("This email is exist. please login.", "onlinerShopApp")
+                    'message' => esc_html__("This email is exist. please login.", "onlinerShopApp")
                 )
             );
         }
@@ -312,7 +312,7 @@ class User {
                         'OSA_avatar' => $OSA_avatar,
                     ),
                     'verify' => false,
-                    'message' => __("Register successfully.", "onlinerShopApp"),
+                    'message' => esc_html__("Register successfully.", "onlinerShopApp"),
                 )
             );
         } else {
@@ -342,7 +342,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => __("Mobile number is invalid.", "onlinerShopApp")
+                    'message' => esc_html__("Mobile number is invalid.", "onlinerShopApp")
                 )
             );
 
@@ -358,7 +358,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 3,
-                    'message' => __("This mobile number is exist. please login.", "onlinerShopApp")
+                    'message' => esc_html__("This mobile number is exist. please login.", "onlinerShopApp")
                 )
             );
         } else {
@@ -403,7 +403,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => __("Wrong information.", "onlinerShopApp")
+                    'message' => esc_html__("Wrong information.", "onlinerShopApp")
                 /* html_entity_decode(strip_tags($userValid->get_error_message())) */
                 )
             );
@@ -413,7 +413,7 @@ class User {
         $validation_error = new WP_Error();
         $validation_error = apply_filters('woocommerce_process_login_errors', $validation_error, $username, $pass);
         if ($validation_error->get_error_code()) {
-            $message = ( __("Error:", 'woocommerce') . $validation_error->get_error_message() );
+            $message = ( esc_html__("Error:", 'woocommerce') . $validation_error->get_error_message() );
             $result = array(
                 'status' => false,
                 'error' => array(
@@ -425,7 +425,7 @@ class User {
             return $result;
         }
         if (empty($username)) {
-            $message = ( __("Error:", 'woocommerce') . __("Username is required.", 'woocommerce') );
+            $message = ( esc_html__("Error:", 'woocommerce') . esc_html__("Username is required.", 'woocommerce') );
             $result = array(
                 'status' => false,
                 'error' => array(
@@ -446,7 +446,7 @@ class User {
             if (isset($user->user_login)) {
                 $creds['user_login'] = $user->user_login;
             } else {
-                $message = ( __("Error:", 'woocommerce') . __("A user could not be found with this email address.", 'woocommerce') );
+                $message = ( esc_html__("Error:", 'woocommerce') . esc_html__("A user could not be found with this email address.", 'woocommerce') );
                 $result = array(
                     'status' => false,
                     'error' => array(
@@ -535,7 +535,7 @@ class User {
                 'error' => array(
                     'errorCode' => - 60,
                     'goVerify' => true,
-                    'message' => __("Before login need to verify mobile number. please first verify that.", "onlinerShopApp")
+                    'message' => esc_html__("Before login need to verify mobile number. please first verify that.", "onlinerShopApp")
                 )
             );
         } else {
@@ -551,7 +551,7 @@ class User {
                         'userToken' => $userToken,
                         'OSA_avatar' => $OSA_avatar,
                     ),
-                    'message' => __("Login successfully.", "onlinerShopApp"),
+                    'message' => esc_html__("Login successfully.", "onlinerShopApp"),
                     'states' => $states,
                 ),
             );
@@ -578,7 +578,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 15,
-                    'message' => __("This user is not exist.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist.", "onlinerShopApp")
                 )
             );
         }
@@ -619,7 +619,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 5,
-                    'message' => __("This user is not exist.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist.", "onlinerShopApp")
                 )
             );
         }
@@ -632,7 +632,7 @@ class User {
         $result = array(
             'status' => true,
             'data' => array(
-                'message' => __("Logout successfully.", "onlinerShopApp")
+                'message' => esc_html__("Logout successfully.", "onlinerShopApp")
             ),
         );
 
@@ -647,7 +647,7 @@ class User {
         $result = array(
             'status' => true,
             'data' => array(
-                'message' => __("Password reset successfully.", "onlinerShopApp")
+                'message' => esc_html__("Password reset successfully.", "onlinerShopApp")
             )
         );
 
@@ -669,14 +669,14 @@ class User {
                     $result = array(
                         'status' => true,
                         'data' => array(
-                            'message' => __("Reset password link sent to your email.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link sent to your email.", "onlinerShopApp")
                         )
                     );
                 } else {
                     $result = array(
                         'status' => false,
                         'error' => array(
-                            'message' => __("Reset password link not sent.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link not sent.", "onlinerShopApp")
                         )
                     );
                 }
@@ -684,7 +684,7 @@ class User {
                 $result = array(
                     'status' => false,
                     'error' => array(
-                        'message' => __("Entered email is not exist.", "onlinerShopApp")
+                        'message' => esc_html__("Entered email is not exist.", "onlinerShopApp")
                     )
                 );
             }
@@ -694,14 +694,14 @@ class User {
                     $result = array(
                         'status' => true,
                         'data' => array(
-                            'message' => __("Reset password link sent to your email.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link sent to your email.", "onlinerShopApp")
                         )
                     );
                 } else {
                     $result = array(
                         'status' => false,
                         'error' => array(
-                            'message' => __("Reset password link not sent.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link not sent.", "onlinerShopApp")
                         )
                     );
                 }
@@ -712,7 +712,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => __("Digits plugin not active.", "onlinerShopApp")
+                            'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
                         )
                     );
 
@@ -723,7 +723,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => __("Entered mobile number invalid.", "onlinerShopApp")
+                            'message' => esc_html__("Entered mobile number invalid.", "onlinerShopApp")
                         )
                     );
 
@@ -735,7 +735,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => __("Entered mobile number is not exist.", "onlinerShopApp")
+                            'message' => esc_html__("Entered mobile number is not exist.", "onlinerShopApp")
                         )
                     );
 
@@ -857,7 +857,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -922,7 +922,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -955,7 +955,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => __("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
                     )
                 );
             }
@@ -964,7 +964,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -998,7 +998,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => __("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
                     )
                 );
             }
@@ -1007,7 +1007,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -1070,7 +1070,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => __("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
                     )
                 );
             }
@@ -1079,7 +1079,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -1163,7 +1163,7 @@ class User {
                     'comment_result' => array(
                         'likeCount' => intval($like_count),
                         'dislikeCount' => intval($dislike_count),
-                        'message' => __("Your vote saved.", "onlinerShopApp")
+                        'message' => esc_html__("Your vote saved.", "onlinerShopApp")
                     )
                 )
             );
@@ -1172,7 +1172,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -1242,7 +1242,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
@@ -1258,14 +1258,14 @@ class User {
             return array(
                 'status' => false,
                 'error' => array(
-                    'message' => __("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
                 )
             );
         }
         $fields = json_decode(stripcslashes(sanitize_text_field($_POST['fields'])), true);
         foreach($fields as $key => $value){
             if(strpos($key, "email") && !is_email($value) && !empty($value)){
-                $errors[$key] = __("Email is invalid","onlinerShopApp");
+                $errors[$key] = esc_html__("Email is invalid","onlinerShopApp");
             }
         }
         if(!empty($errors) && is_array($errors)){
@@ -1392,7 +1392,7 @@ class User {
         if(empty($user_id)){
             wp_send_json(array(
                 "status" => false,
-                "message" => __("user not founded","crn")
+                "message" => esc_html__("user not founded","crn")
             ));
         }
         $args = array(

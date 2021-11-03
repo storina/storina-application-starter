@@ -15,7 +15,7 @@ class Authentication {
         if(!is_numeric($user_id) || false == $user_id){
             return ([
                 'status' => false,
-                'message' => __('Authentication failed,user not found','crn')
+                'message' => esc_html__('Authentication failed,user not found','crn')
             ]);
         }
 	return ['status' => true];

@@ -26,7 +26,7 @@ class Vendor {
         if(empty($user_id)){
             return(array(
                 "status" => false,
-                "message" => __("user not founded","crn")
+                "message" => esc_html__("user not founded","crn")
             ));
         }
         $args = array(

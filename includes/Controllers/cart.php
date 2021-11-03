@@ -804,7 +804,7 @@ class Cart {
                         return array(
                             "status" => false,
                             "error" => array(
-                                "message" => __("Sold individually","onlinerShopApp")
+                                "message" => esc_html__("Sold individually","onlinerShopApp")
                             )
                         );
                     } else {
@@ -1001,7 +1001,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1056,7 +1056,7 @@ class Cart {
                         array('%s')
                 );
                 WC()->cart->remove_coupons();
-                $message = __('Coupons removed successfully.', 'onlinerShopApp');
+                $message = esc_html__('Coupons removed successfully.', 'onlinerShopApp');
             }
             WC()->cart->calculate_totals();
             $cart = $this->get_cart();
@@ -1073,7 +1073,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1116,7 +1116,7 @@ class Cart {
                             array('%d')
                     );
 
-                    $message = __('Offer coupon applied.', 'onlinerShopApp');
+                    $message = esc_html__('Offer coupon applied.', 'onlinerShopApp');
                     WC()->session->set('couponCode', $couponCode);
                     $cart = $this->get_cart();
                     unset($cart['items']);
@@ -1127,7 +1127,7 @@ class Cart {
                         'data' => $cart
                     );
                 } else {
-                    $message = __('Coupon is invalid', 'onlinerShopApp');
+                    $message = esc_html__('Coupon is invalid', 'onlinerShopApp');
                     $cart['message'] = $message;
                     $cart['messages'] = $validation['messages'];
                     $result = array(
@@ -1136,7 +1136,7 @@ class Cart {
                     );
                 };
             } else {
-                $message = __('Basket have coupon.', 'onlinerShopApp');
+                $message = esc_html__('Basket have coupon.', 'onlinerShopApp');
                 $cart['message'] = $message;
                 $result = array(
                     'status' => false,
@@ -1149,7 +1149,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1206,7 +1206,7 @@ class Cart {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 12,
-                        'message' => __('This order is not for you.', 'onlinerShopApp')
+                        'message' => esc_html__('This order is not for you.', 'onlinerShopApp')
                     )
                 );
 
@@ -1307,7 +1307,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1409,7 +1409,7 @@ class Cart {
                             'status' => false,
                             'error' => array(
                                 'errorCode' => - 10,
-                                'message' => __('Cart is empty', 'onlinerShopApp')
+                                'message' => esc_html__('Cart is empty', 'onlinerShopApp')
                             )
                         )
                         );
@@ -1607,7 +1607,7 @@ class Cart {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => __('something wrong happen.', 'onlinerShopApp')
+                        'message' => esc_html__('something wrong happen.', 'onlinerShopApp')
                     )
                 );
             }
@@ -1616,7 +1616,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1726,7 +1726,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }
@@ -1940,7 +1940,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => __('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
                 )
             );
         }

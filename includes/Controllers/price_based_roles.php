@@ -68,7 +68,7 @@ class Yith_Role_Based_Price{
         $children_prices = array_map("intval", $children_prices);
         $children_prices_min = min($children_prices);
         $children_prices_max = max($children_prices);
-        $to = __('To', 'onlinerShopApp');
+        $to = esc_html__('To', 'onlinerShopApp');
         if ("0" == storina_get_option("get_compute_price_render")) {
             return (string) $children_prices_min;
         }

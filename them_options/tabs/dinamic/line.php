@@ -2,7 +2,7 @@
 $info=array(
 	'name'        => 'index',
 	'apppagename' => 'line-options' . $elementID[ $i ],
-	'title'       => __( "Line", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Line", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 global $pages;
 if($pages){

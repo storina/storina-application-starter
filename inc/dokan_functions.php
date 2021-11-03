@@ -8,7 +8,7 @@
 /** Adding Settings extra menu in Settings tabs Dahsboard */
 add_filter( 'dokan_get_dashboard_settings_nav',function ( $settings_tab ) {
 	$settings_tab['OSA'] = array(
-		'title' => __( 'آنلاینر اپ', 'dokan' ),
+		'title' => esc_html__( 'آنلاینر اپ', 'dokan' ),
 		'icon'  => '<i class="fa fa-mobile"></i>',
 		'url'   => dokan_get_navigation_url( 'settings/OSA' ),
 		'pos'   => 32
@@ -20,7 +20,7 @@ add_filter( 'dokan_get_dashboard_settings_nav',function ( $settings_tab ) {
 
 add_filter( 'dokan_dashboard_settings_heading_title', function ( $header, $query_vars ) {
 	if ( $query_vars == 'OSA' ) {
-		$header = __( 'تنظیمات اپلیکیشن', 'dokan' );
+		$header = esc_html__( 'تنظیمات اپلیکیشن', 'dokan' );
 	}
 	return $header;
 }, 11, 2 );
@@ -29,7 +29,7 @@ add_action( 'dokan_render_settings_content', function ( $query_vars ) {
 	if ( isset( $query_vars['settings'] ) && $query_vars['settings'] == 'OSA' ) {
 		$user = wp_get_current_user();
 		if ( ! in_array( 'seller', (array) $user->roles ) ) {
-			wp_die( __( 'شما مجوز ویرایش تنظیمات قالب را ندارید.' ) );
+			wp_die( esc_html__( 'شما مجوز ویرایش تنظیمات قالب را ندارید.' ) );
 		}
 
 		global $options_page, $pages;

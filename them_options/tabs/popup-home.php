@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'popupHome',
 	'apppagename' => 'popup-home',
-	'title' => __('Pop up',"onlinerShopApp"),
+	'title' => esc_html__('Pop up',"onlinerShopApp"),
 );
 
 
@@ -16,38 +16,38 @@ $types = $general->clickEventList();
 $options=array(
     array(
         'type' => 'checkbox',
-        'name' => __("Popup Activation","onlinerShopApp"),
+        'name' => esc_html__("Popup Activation","onlinerShopApp"),
         'id' => ['app_popup_activation']
     ),
 	array(
 		"type" => "picture",
-		"name" => __( "Image", "onlinerShopApp" ),
+		"name" => esc_html__( "Image", "onlinerShopApp" ),
 		"id"   => "app_popup_image",
     ),
 	array(
 		"type" => "text",
-		"name" => __( "Title", "onlinerShopApp" ),
+		"name" => esc_html__( "Title", "onlinerShopApp" ),
 		"id"   => "app_popup_title",
 	),
 	array(
 		"type" => "textarea",
-		"name" => __( "Description", "onlinerShopApp" ),
+		"name" => esc_html__( "Description", "onlinerShopApp" ),
 		"id"   => "‬app_popup_body",
 	),
     array(
         'type' => 'text',
-        'name' => __("Link Text","onlinerShopApp"),
+        'name' => esc_html__("Link Text","onlinerShopApp"),
         'id' => 'app_popup_link_text'
     ),
     array(
         'type' => 'select',
-        'name' => __("Link type","onlinerShopApp"),
+        'name' => esc_html__("Link type","onlinerShopApp"),
         'id' => 'app_popup_link_type',
         'options' => $types
     ),
     array(
         'type' => 'text',
-        'name' => __("Link Value","onlinerShopApp"),
+        'name' => esc_html__("Link Value","onlinerShopApp"),
         'id' => 'app_popup_link_value',
     ),
 );
