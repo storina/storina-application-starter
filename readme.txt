@@ -3,7 +3,7 @@ Contributors: storina
 Tags: woocommerce_application
 Requires at least: 3.0.0
 Tested up to: 5.8.1
-Stable tag: 5.8.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 
 storina application starter is woocommerce application with building panel in wordpress admin
