@@ -35,20 +35,20 @@ add_action( 'edit_user_profile', 'storina_app_user_fields' );
 
 function storina_app_user_fields( $user ) { ?>
 
-<h3><?php echo __('Extra information','onlinerShopApp')?></h3>
+<h3><?php echo esc_html__('Extra information','onlinerShopApp')?></h3>
 <table class="form-table">
 
     <tr>
-        <th><label for="userToken"><?php echo __('User token','onlinerShopApp')?></label></th>
+        <th><label for="userToken"><?php echo esc_html__('User token','onlinerShopApp')?></label></th>
 
         <td>
             <input readonly type="text" name="userToken" id="userToken" value="<?php echo esc_attr( get_user_meta($user->ID, 'userToken',true  ) ); ?>" class="regular-text" /><br />
-            <span class="description"><?php echo __('Current user token id.','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Current user token id.','onlinerShopApp');?></span>
         </td>
     </tr>
 
     <tr>
-        <th><label for="gender"><?php echo __('Gender','onlinerShopApp');?></label></th>
+        <th><label for="gender"><?php echo esc_html__('Gender','onlinerShopApp');?></label></th>
 
         <td>
             <input readonly type="text" name="gender" id="gender" value="<?php echo esc_attr( get_user_meta($user->ID, 'gender',true  ) ); ?>" class="regular-text" />
@@ -57,19 +57,19 @@ function storina_app_user_fields( $user ) { ?>
                 <option value="female">female</option>
             </select>
             <br />
-            <span class="description"><?php echo __('Select your gender','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Select your gender','onlinerShopApp');?></span>
         </td>
     </tr>
     <tr>
-        <th><label for="melliCode"><?php echo __('National codeٔ','onlinerShopApp');?></label></th>
+        <th><label for="melliCode"><?php echo esc_html__('National codeٔ','onlinerShopApp');?></label></th>
 
         <td>
             <input type="text" name="melliCode" id="melliCode" value="<?php echo esc_attr( get_user_meta($user->ID, 'melliCode',true  ) ); ?>" class="regular-text" /><br />
-            <span class="description"><?php echo __('National codeٔ','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('National codeٔ','onlinerShopApp');?></span>
         </td>
     </tr>
     <tr>
-        <th><label for="birthDate"><?php echo __('Birth date','onlinerShopApp');?></label></th>
+        <th><label for="birthDate"><?php echo esc_html__('Birth date','onlinerShopApp');?></label></th>
         <?php
         $birthYear = get_user_meta($user->ID, 'birthYear',true  );
         $birthMonth = get_user_meta($user->ID, 'birthMonth',true  );
@@ -99,7 +99,7 @@ function storina_app_user_fields( $user ) { ?>
                     echo "<option $selected value=\"$i\">$i</option>";}
                 ?>
             </select>
-            <span class="description"><?php echo __('Birth date','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Birth date','onlinerShopApp');?></span>
         </td>
     </tr>
     
@@ -198,18 +198,18 @@ add_action('dokan_order_detail_after_order_items', function ($order){
             var mobile1;
             var mobile2;
 			<?php if(!empty($billing_mobile)){ ?>
-            mobile1 = '<li><a href="#">' + <?php echo __('Mobile 1 :','onlinerShopApp');?> + ' <span class="tab"><?php echo $billing_mobile; ?></span></a></li>';
+            mobile1 = '<li><a href="#">' + <?php echo esc_html__('Mobile 1 :','onlinerShopApp');?> + ' <span class="tab"><?php echo $billing_mobile; ?></span></a></li>';
 			<?php }
 			if(!empty($shipping_mobile)){
 			?>
-            mobile2 = '<li><a href="#">' + <?php echo __('Mobile 2 :','onlinerShopApp');?> +'<span class="tab"><?php echo $shipping_mobile; ?></span></a></li>';
+            mobile2 = '<li><a href="#">' + <?php echo esc_html__('Mobile 2 :','onlinerShopApp');?> +'<span class="tab"><?php echo $shipping_mobile; ?></span></a></li>';
 			<?php } 
 			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 			$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 			$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 			if(!empty($timestamp)){
 			?>
-            timestamp = '<li><a href="#">' + <?php echo __('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?php echo $date; ?></span></a></li>';
+            timestamp = '<li><a href="#">' + <?php echo esc_html__('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?php echo $date; ?></span></a></li>';
 			<?php } ?>
             jQuery("ul.customer-details").append(mobile1 + mobile2 + timestamp);
 		});

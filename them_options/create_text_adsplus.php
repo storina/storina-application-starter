@@ -32,10 +32,10 @@
         <div class="clear"></div>
         <table class="wp-list-table widefat fixed">
             <thead>
-            <th><?php echo __("Title",'onlinerShopApp');?></th><th><?php echo __("Text",'onlinerShopApp');?></th><th><?php echo __("Link type",'onlinerShopApp');?></th><th><?php echo __("Value",'onlinerShopApp');?></th><th><?php echo __("Action",'onlinerShopApp');?></th>
+            <th><?php echo esc_html__("Title",'onlinerShopApp');?></th><th><?php echo esc_html__("Text",'onlinerShopApp');?></th><th><?php echo esc_html__("Link type",'onlinerShopApp');?></th><th><?php echo esc_html__("Value",'onlinerShopApp');?></th><th><?php echo esc_html__("Action",'onlinerShopApp');?></th>
             </thead>
             <tfoot>
-            <th><?php echo __("Title",'onlinerShopApp');?></th><th><?php echo __("Text",'onlinerShopApp');?></th><th><?php echo __("Link type",'onlinerShopApp');?></th><th><?php echo __("Value",'onlinerShopApp');?></th><th><?php echo __("Action",'onlinerShopApp');?></th>
+            <th><?php echo esc_html__("Title",'onlinerShopApp');?></th><th><?php echo esc_html__("Text",'onlinerShopApp');?></th><th><?php echo esc_html__("Link type",'onlinerShopApp');?></th><th><?php echo esc_html__("Value",'onlinerShopApp');?></th><th><?php echo esc_html__("Action",'onlinerShopApp');?></th>
             </tfoot>
             <?php
             if($titles){
@@ -57,7 +57,7 @@
                         <td><input type="text" name="<?php echo $slider; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
 
                         <td>
-                            <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo __("Delete",'onlinerShopApp');?>">
+                            <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'onlinerShopApp');?>">
                         </td>
                     </tr>
                     <?php
@@ -77,7 +77,7 @@
                     </td>
                     <td><input type="text" name="<?php echo $slider; ?>[link][]" /></td>
                     <td>
-                        <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo __("Delete",'onlinerShopApp');?>">
+                        <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'onlinerShopApp');?>">
                     </td>
                 </tr>
             <?php }
@@ -88,7 +88,7 @@
 <div class="osa-submit-wrapper-table">
 <input type="hidden" name="apptype_form" value="text_adsplus">
         <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-        <input type="submit" value="<?php echo __("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+        <input type="submit" value="<?php echo esc_html__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
         <button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 </div>
     </form>

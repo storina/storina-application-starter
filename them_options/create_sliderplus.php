@@ -62,7 +62,7 @@
 					<td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
 				<td>
 				<input class="target_line" type="text" name="<?php echo $slider; ?>[address][]" value="<?php echo $addresses[$i]; ?>"/>
-				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo __("Upload",'onlinerShopApp');?>">
+				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
 				</td>
 				<td><input type="text" name="<?php echo $slider; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
 				<td><textarea name="<?php echo $slider; ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
@@ -87,7 +87,7 @@
 				</select>
 				</td>
 				<td>
-					<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo __("Delete",'onlinerShopApp');?>">
+					<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'onlinerShopApp');?>">
 				</td>
 				</tr>
 			<?php 
@@ -98,7 +98,7 @@
 			<td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
 		<td>
 		<input class="target_line" type="text" name="<?php echo $slider; ?>[address][]" />
-		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo __("Upload",'onlinerShopApp');?>">
+		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
 		</td>
 		<td><input type="text" name="<?php echo $slider; ?>[title][]" /></td>
 		<td><textarea name="<?php echo $slider; ?>[text][]" ></textarea></td>
@@ -121,7 +121,7 @@
 			</select>
 		</td>
 		<td>
-			<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo __("Delete",'onlinerShopApp');?>">
+			<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'onlinerShopApp');?>">
 		</td>
 		</tr>
 		<?php }
@@ -132,7 +132,7 @@
 <div class="osa-submit-wrapper-table">
 <input type="hidden" name="apptype_form" value="sliderplus">
 		<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-		<input type="submit" value="<?php echo __("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+		<input type="submit" value="<?php echo esc_html__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
 		<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 </div>
 	</form>

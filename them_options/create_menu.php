@@ -20,7 +20,7 @@
 	<div class="clear"></div>
 	<table id="menu_table">
 	<tr class="header_th">
-	<th><?php echo __("Title",'onlinerShopApp')?></th><th><?php echo __("Link",'onlinerShopApp')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
+	<th><?php echo esc_html__("Title",'onlinerShopApp')?></th><th><?php echo esc_html__("Link",'onlinerShopApp')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
 	</tr>
 	<?php 
 	if($menu_namess){

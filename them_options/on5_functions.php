@@ -126,15 +126,15 @@ function storina_delete_cache_widget() {
 
 function storina_delete_cache_dashboard() { ?>
 	 <form action="" method="POST" style="display: inline;">
-        <input class="button" type="submit" name="delede_cache" value="<?php echo __("Delete cache","onlinerShopApp");?>"/>
+        <input class="button" type="submit" name="delede_cache" value="<?php echo esc_html__("Delete cache","onlinerShopApp");?>"/>
     </form>
-    <p><br/><?php echo __("You can delete application cache from this box.","onlinerShopApp");?></p>
+    <p><br/><?php echo esc_html__("You can delete application cache from this box.","onlinerShopApp");?></p>
 <?php
 }
 function storina_delete_cache_notice() {
 	?>
     <div class="updated">
-        <p><?php echo __("Deleted application cache","onlinerShopApp");?></p>
+        <p><?php echo esc_html__("Deleted application cache","onlinerShopApp");?></p>
     </div>
 	<?php
 }
