@@ -25,10 +25,10 @@
 		<div class="clear"></div>
 		<table class="wp-list-table widefat fixed">
 		<thead>
-		<th><?php echo__("Banner address",'onlinerShopApp');?></th><th><?php echo__("Title",'onlinerShopApp');?></th><th><?php echo__("Description",'onlinerShopApp');?></th><th><?php echo__("Link",'onlinerShopApp');?></th><th><?php echo__("Width px",'onlinerShopApp');?></th><th><?php echo__("Height px",'onlinerShopApp');?></th><th><?php echo__("Category",'onlinerShopApp');?></th><th><?php echo__("Expire",'onlinerShopApp');?></th><th><?php echo__("Action",'onlinerShopApp');?></th>
+		<th><?php echo __("Banner address",'onlinerShopApp');?></th><th><?php echo __("Title",'onlinerShopApp');?></th><th><?php echo __("Description",'onlinerShopApp');?></th><th><?php echo __("Link",'onlinerShopApp');?></th><th><?php echo __("Width px",'onlinerShopApp');?></th><th><?php echo __("Height px",'onlinerShopApp');?></th><th><?php echo __("Category",'onlinerShopApp');?></th><th><?php echo __("Expire",'onlinerShopApp');?></th><th><?php echo __("Action",'onlinerShopApp');?></th>
 		</thead>
 		<tfoot>
-		<th><?php echo__("Banner address",'onlinerShopApp');?></th><th><?php echo__("Title",'onlinerShopApp');?></th><th><?php echo__("Description",'onlinerShopApp');?></th><th><?php echo__("Link",'onlinerShopApp');?></th><th><?php echo__("Width px",'onlinerShopApp');?></th><th><?php echo__("Height px",'onlinerShopApp');?></th><th><?php echo__("Category",'onlinerShopApp');?></th><th><?php echo__("Expire",'onlinerShopApp');?></th><th><?php echo__("Action",'onlinerShopApp');?></th>
+		<th><?php echo __("Banner address",'onlinerShopApp');?></th><th><?php echo __("Title",'onlinerShopApp');?></th><th><?php echo __("Description",'onlinerShopApp');?></th><th><?php echo __("Link",'onlinerShopApp');?></th><th><?php echo __("Width px",'onlinerShopApp');?></th><th><?php echo __("Height px",'onlinerShopApp');?></th><th><?php echo __("Category",'onlinerShopApp');?></th><th><?php echo __("Expire",'onlinerShopApp');?></th><th><?php echo __("Action",'onlinerShopApp');?></th>
 		</tfoot>
 			<?php
 			global $product_cats;
@@ -40,7 +40,7 @@
 				<tr>
 				<td>
 				<input class="target_line" type="text" name="<?php echo $banner; ?>[address][]" value="<?php echo $addresses[$i]; ?>"/>
-				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo__("Upload",'onlinerShopApp');?>">
+				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo __("Upload",'onlinerShopApp');?>">
 				</td>
 				<td><input type="text" name="<?php echo $banner; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
 				<td>
@@ -78,7 +78,7 @@
 		<tr>
 		<td>
 		<input class="target_line" type="text" name="<?php echo $banner; ?>[address][]" />
-		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo__("Upload",'onlinerShopApp');?>">
+		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo __("Upload",'onlinerShopApp');?>">
 		</td>
 		<td><input type="text" name="<?php echo $banner; ?>[title][]" /></td>
 		<td><textarea name="<?php echo $banner; ?>[text][]" ></textarea></td>
@@ -109,7 +109,7 @@
 		<div class="osa-submit-wrapper-table">
 			<input type="hidden" name="apptype_form" value="banner">
 			<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-			<input type="submit" value="<?php echo__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
+			<input type="submit" value="<?php echo __("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
 			<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
 		</div>
 	</form>

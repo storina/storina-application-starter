@@ -532,7 +532,7 @@ function storina_send_notif(){
 	}
 
 	?>
-    <div class="wrap"><div id="icon-options-general" class="icon32"><br></div> <h2><?php echo__('Send notification','onlinerShopApp')?></h2>
+    <div class="wrap"><div id="icon-options-general" class="icon32"><br></div> <h2><?php echo __('Send notification','onlinerShopApp')?></h2>
         <form action="" method="post">
             <table class="form-table">
                 <tr>
