@@ -103,7 +103,7 @@
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option4][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo $item; ?>"><?php echo esc_html($value); ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo esc_html($value); ?></option>
                             <?php } ?>
                         </select>
                     </td>

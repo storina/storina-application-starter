@@ -86,7 +86,7 @@
 							</td>
 							<td>
 								<div class="woap-field-wrapper">
-									<input type="text" id="<?php echo esc_html($key); ?>" name="strings[<?php echo esc_attr($key); ?>]" value="<?php echo $value ?>">
+									<input type="text" id="<?php echo esc_html($key); ?>" name="strings[<?php echo esc_attr($key); ?>]" value="<?php echo esc_attr($value); ?>">
 								</div>
 							</td>
 						</tr>

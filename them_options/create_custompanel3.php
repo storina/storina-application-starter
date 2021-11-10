@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
     <p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
     <form action="" method="POST" id="on5_form_panel" class="panel_form textads_form">
         <?php
         $description = $page['title'];
@@ -56,19 +56,19 @@
                         <td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
                         <td>
                             <input class="element_id regular-text ltr" type="hidden"
-                                name="<?php echo $custom_option_name; ?>[option2][]"
-                                value="<?php echo $custom_option_value2[ $i ]; ?>"/>
-                            <select class="element select_box" name="<?php echo $custom_option_name; ?>[option3][]">
+                                name="<?php echo esc_attr($custom_option_name); ?>[option2][]"
+                                value="<?php echo esc_html($custom_option_value2[ $i ]); ?>"/>
+                            <select class="element select_box" name="<?php echo esc_attr($custom_option_name); ?>[option3][]">
                                 <?php foreach ( $types as $item => $value ) { ?>
-                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value3[ $i ] == $item ) {
+                                    <option value="<?php echo esc_attr($item); ?>" <?php if ( $custom_option_value3[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?php echo $value ?></option>
+                                    } ?>><?php echo esc_attr($value); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
 
                         <td>
-                            <input title="<?php echo $custom_option_name; ?>" type="button"
+                            <input title="<?php echo esc_attr($custom_option_name); ?>" type="button"
                                 class="button-primary delete_row" value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
                         </td>
                     </tr>
@@ -83,12 +83,12 @@
                             name="<?php echo esc_attr($custom_option_name); ?>[option2][]"/>
                         <select class="element select_box" name="<?php echo esc_attr($custom_option_name); ?>[option3][]">
                             <?php foreach ( $types as $item => $value ) { ?>
-                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo esc_attr($value); ?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td>
-                        <input title="<?php echo $esc_attr(custom_option_name); ?>" type="button" class="button delete_row"
+                        <input title="<?php echo esc_attr($custom_option_name); ?>" type="button" class="button delete_row"
                             value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
                     </td>
                 </tr>
@@ -107,5 +107,5 @@
 
 </div>
 <template id="osa_custom_option_id_template" >
-    <input class="element_id regular-text ltr" type="hidden" name="<?php echo $custom_option_name; ?>[option2][]" value="ELEMENT_ID"/>
+    <input class="element_id regular-text ltr" type="hidden" name="<?php echo esc_attr($custom_option_name); ?>[option2][]" value="ELEMENT_ID"/>
 </template>

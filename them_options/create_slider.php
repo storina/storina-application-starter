@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
 	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_att($page['title']); ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form slider_form">
 		<?php
 		$slider = $page['slider_name'];
@@ -40,14 +40,14 @@
 				<tr >
 					<td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
 				<td>
-				<input class="target_line" type="text" name="<?php echo $slider; ?>[address][]" value="<?php echo $addresses[$i]; ?>"/>
+				<input class="target_line" type="text" name="<?php echo esc_attr($slider); ?>[address][]" value="<?php echo $addresses[$i]; ?>"/>
 				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'storina-application');?>">
 				</td>
-				<td><input type="text" name="<?php echo $slider; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
-				<td><textarea name="<?php echo $slider; ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
-				<td><input type="text" name="<?php echo $slider; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
+				<td><input type="text" name="<?php echo esc_attr($slider); ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
+				<td><textarea name="<?php echo esc_attr($slider); ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
+				<td><input type="text" name="<?php echo esc_attr($slider); ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
 				<td>
-					<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
+					<input title="<?php echo esc_attr($slider); ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
 				</td>
 				</tr>
 			<?php 
@@ -57,14 +57,14 @@
 		<tr>
 			<td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
 		<td>
-		<input class="target_line" type="text" name="<?php echo $slider; ?>[address][]" />
+		<input class="target_line" type="text" name="<?php echo esc_attr($slider); ?>[address][]" />
 		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'storina-application');?>">
 		</td>
-		<td><input type="text" name="<?php echo $slider; ?>[title][]" /></td>
-		<td><textarea name="<?php echo $slider; ?>[text][]" ></textarea></td>
-		<td><input type="text" name="<?php echo $slider; ?>[link][]" /></td>
+		<td><input type="text" name="<?php echo esc_attr($slider); ?>[title][]" /></td>
+		<td><textarea name="<?php echo esc_attr($slider); ?>[text][]" ></textarea></td>
+		<td><input type="text" name="<?php echo esc_attr($slider); ?>[link][]" /></td>
 		<td>
-			<input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
+			<input title="<?php echo esc_attr($slider); ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
 		</td>
 		</tr>
 		<?php }

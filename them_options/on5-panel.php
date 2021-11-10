@@ -549,7 +549,7 @@ function storina_send_notif(){
 	                        <?php $actions = $general->clickEventList();
 	                        foreach ( $actions as $index => $action ) {
 		                        ?>
-                                <option value="<?php echo $index ?>"><?php echo $action ?></option>
+                                <option value="<?php echo esc_attr($index); ?>"><?php echo $action ?></option>
 		                        <?php
 	                        }
 	                        if ( function_exists( 'dokan_get_store_info' ) ) { ?>

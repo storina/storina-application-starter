@@ -11,7 +11,7 @@ $columns = [
 ?>
 <div class="osa-option-wrapper">
     <p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
     <style>
         .woap-ads-table,
         .woap-ads-table input{
@@ -73,18 +73,18 @@ $columns = [
                             ?>
                             <div class="d-flex">
                                 <div class="flex-column woap-ads-img">
-                                    <input class="target_line" type="text" name="<?php echo $option_names['banner']; ?>[<?php echo $i; ?>][]" value="<?php echo $banner[$j]; ?>" />
+                                    <input class="target_line" type="text" name="<?php echo esc_att($option_names['banner']); ?>[<?php echo $i; ?>][]" value="<?php echo $banner[$j]; ?>" />
                                     <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'storina-application' ); ?>">
                                 </div>
                                 <div class="flex-column">
-                                    <select class="select_box" name="<?php echo $option_names['link_type']; ?>[<?php echo $i; ?>][]">
+                                    <select class="select_box" name="<?php echo esc_att($option_names['link_type']); ?>[<?php echo $i; ?>][]">
                                         <?php foreach ( $action as $key => $label ) { ?>
-                                        <option value="<?php echo $key; ?>" <?php echo ($key == $link_type[$j])? "selected" : ""; ?>><?php echo $label; ?></option>
+                                        <option value="<?php echo esc_attr($key); ?>" <?php echo ($key == $link_type[$j])? "selected" : ""; ?>><?php echo esc_html($label); ?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                                 <div class="flex-column woap-adc-link-value-wrapper">
-                                    <input type="text" name="<?php echo $option_names['link_value']; ?>[<?php echo $i; ?>][]" value="<?php echo $link_value[$j]; ?>"/>
+                                    <input type="text" name="<?php echo esc_att($option_names['link_value']); ?>[<?php echo $i; ?>][]" value="<?php echo $link_value[$j]; ?>"/>
                                 </div>
                             </div>
                             <!-- .d-flex -->  
@@ -93,9 +93,9 @@ $columns = [
                         ?>
                         </td>
                         <td>
-                            <select class="select_box woap-adc-banner-column" name="<?php echo $option_names['column']; ?>[]">
+                            <select class="select_box woap-adc-banner-column" name="<?php echo esc_att($option_names['column']); ?>[]">
                                 <?php foreach ( $columns as $key => $label ) { ?>
-                                    <option value="<?php echo $key; ?>" <?php echo ($key == $banner_columns[$i])? "selected" : ""; ?>><?php echo $label; ?></option>
+                                    <option value="<?php echo esc_attr($key); ?>" <?php echo ($key == $banner_columns[$i])? "selected" : ""; ?>><?php echo esc_html($label); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
@@ -127,26 +127,26 @@ $columns = [
         <td class="adc-banner-wrapper">
             <div class="d-flex">
                 <div class="flex-column woap-ads-img">
-                    <input class="target_line" type="text" name="<?php echo $option_names['banner']; ?>[COUNTER_CONST][]" value="" />
+                    <input class="target_line" type="text" name="<?php echo esc_att($option_names['banner']); ?>[COUNTER_CONST][]" value="" />
                     <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'storina-application' ); ?>">
                 </div>
                 <div class="flex-column">
-                    <select class="select_box" name="<?php echo $option_names['link_type']; ?>[COUNTER_CONST][]">
+                    <select class="select_box" name="<?php echo esc_att($option_names['link_type']); ?>[COUNTER_CONST][]">
                         <?php foreach ( $action as $key => $label ) { ?>
-                        <option value="<?php echo $key; ?>"><?php echo $label; ?></option>
+                        <option value="<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></option>
                         <?php } ?>
                     </select>
                 </div>
                 <div class="flex-column">
-                    <input type="text" name="<?php echo $option_names['link_value']; ?>[COUNTER_CONST][]" value=""/>
+                    <input type="text" name="<?php echo esc_att($option_names['link_value']); ?>[COUNTER_CONST][]" value=""/>
                 </div>
             </div>
             <!-- .d-flex -->
         </td>
         <td>
-            <select class="select_box woap-adc-banner-column" name="<?php echo $option_names['column']; ?>[]">
+            <select class="select_box woap-adc-banner-column" name="<?php echo esc_att($option_names['column']); ?>[]">
                 <?php foreach ( $columns as $key => $label ) { ?>
-                    <option value="<?php echo $key; ?>"><?php echo $label; ?></option>
+                    <option value="<?php echo esc_attr($key); ?>"><?php echo esc_html($label); ?></option>
                 <?php } ?>
             </select>
         </td>

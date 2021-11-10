@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
     <p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
     <form action="" method="POST" id="on5_form_panel" class="panel_form slider_form">
         <?php
         $slider = $page['slider_name'];
@@ -45,19 +45,19 @@
                     ?>
                     <tr >
 
-                        <td><input type="text" name="<?php echo $slider; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
-                        <td><textarea name="<?php echo $slider; ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
+                        <td><input type="text" name="<?php echo esc_attr($slider); ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
+                        <td><textarea name="<?php echo esc_attr($slider); ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
                         <td>
-                            <select class="select_box" name="<?php echo $slider; ?>[typeLink][]">
+                            <select class="select_box" name="<?php echo esc_attr($slider); ?>[typeLink][]">
                                 <?php foreach ($action as $item => $value) { ?>
                                     <option value="<?php echo$item?>" <?php if($typeLinks[$i] == $item){echo 'selected="selected"';} ?>><?php echo$value?></option>
                                 <?php } ?>
                             </select>
                         </td>
-                        <td><input type="text" name="<?php echo $slider; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
+                        <td><input type="text" name="<?php echo esc_attr($slider); ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
 
                         <td>
-                            <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
+                            <input title="<?php echo esc_attr($slider); ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
                         </td>
                     </tr>
                     <?php
@@ -66,18 +66,18 @@
                 }else{ ?>
                 <tr>
 
-                    <td><input type="text" name="<?php echo $slider; ?>[title][]" /></td>
-                    <td><textarea name="<?php echo $slider; ?>[text][]" ></textarea></td>
+                    <td><input type="text" name="<?php echo esc_attr($slider); ?>[title][]" /></td>
+                    <td><textarea name="<?php echo esc_attr($slider); ?>[text][]" ></textarea></td>
                     <td>
-                        <select class="select_box" name="<?php echo $slider; ?>[typeLink][]">
+                        <select class="select_box" name="<?php echo esc_attr($slider); ?>[typeLink][]">
                             <?php foreach ($action as $item => $value) { ?>
                                 <option value="<?php echo$item?>" ><?php echo$value?></option>
                             <?php } ?>
                         </select>
                     </td>
-                    <td><input type="text" name="<?php echo $slider; ?>[link][]" /></td>
+                    <td><input type="text" name="<?php echo esc_attr($slider); ?>[link][]" /></td>
                     <td>
-                        <input title="<?php echo $slider; ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
+                        <input title="<?php echo esc_attr($slider); ?>" type="button" class="button-primary delete_row" value="<?php echo esc_html__("Delete",'storina-application');?>">
                     </td>
                 </tr>
             <?php }

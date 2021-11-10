@@ -199,7 +199,7 @@ add_action('woocommerce_cart_is_empty', function() {
     $domain  = $general->validateDomain( $domain, true, '' );
     ob_start();
     ?>
-    <a id="backtoapp" href="app://app.<?php echo $domain; ?>/credit/1">
+    <a id="backtoapp" href="app://app.<?php echo esc_url($domain); ?>/credit/1">
         <span>بازگشت به اپلیکیشن</span>
     </a>
     <style>

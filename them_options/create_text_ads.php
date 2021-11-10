@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
 	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form textads_form">
 		<?php
 		$description = $page['title'];
@@ -28,17 +28,17 @@
 			$i = 0;
 			foreach($titles as $title){ ?>
 				<tr>
-				<td><input type="text" name="<?php echo $text_ads_name; ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
-				<td><input type="text" name="<?php echo $text_ads_name; ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
-				<td><textarea name="<?php echo $text_ads_name; ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
-				<td><select class="select_box" name="<?php echo $text_ads_name; ?>[follow][]">
+				<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[title][]" value="<?php echo $titles[$i]; ?>"/></td>
+				<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[link][]" value="<?php echo $links[$i]; ?>"/></td>
+				<td><textarea name="<?php echo esc_attr($text_ads_name); ?>[text][]" ><?php echo $captions[$i]; ?></textarea></td>
+				<td><select class="select_box" name="<?php echo esc_attr($text_ads_name); ?>[follow][]">
 				<option value="follow" <?php if($followes[$i] == 'follow'){echo 'selected="selected"';} ?>>Follow</option>
 				<option value="nofollow" <?php if($followes[$i] == 'nofollow'){echo 'selected="selected"';} ?>>no-Follow</option>
 				</select></td>
-				<td><input type="text" name="<?php echo $text_ads_name; ?>[expire][]" value="<?php echo $expires[$i]; ?>"/></td>
-				<td><input class="color" type="text" name="<?php echo $text_ads_name; ?>[color][]" value="<?php echo $colors[$i]; ?>"/></td>
+				<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[expire][]" value="<?php echo $expires[$i]; ?>"/></td>
+				<td><input class="color" type="text" name="<?php echo esc_attr($text_ads_name); ?>[color][]" value="<?php echo $colors[$i]; ?>"/></td>
 				<td>
-					<input title="<?php echo $text_ads_name; ?>" type="button" class="button-primary delete_row"
+					<input title="<?php echo esc_attr($text_ads_name); ?>" type="button" class="button-primary delete_row"
 							value="حذف">
 				</td>
 				</tr>
@@ -47,17 +47,17 @@
 			}
 		}else{ ?>
 		<tr>
-		<td><input type="text" name="<?php echo $text_ads_name; ?>[title][]" /></td>
-		<td><input type="text" name="<?php echo $text_ads_name; ?>[link][]" /></td>
-		<td><textarea name="<?php echo $text_ads_name; ?>[text][]" ></textarea></td>
-		<td><select class="select_box" name="<?php echo $text_ads_name; ?>[follow][]">
+		<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[title][]" /></td>
+		<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[link][]" /></td>
+		<td><textarea name="<?php echo esc_attr($text_ads_name); ?>[text][]" ></textarea></td>
+		<td><select class="select_box" name="<?php echo esc_attr($text_ads_name); ?>[follow][]">
 			<option value="follow">Follow</option>
 			<option value="nofollow">no-Follow</option>
 		</select></td>
-		<td><input type="text" name="<?php echo $text_ads_name; ?>[expire][]" value="<?php echo $expires[$i]; ?>" /></td>
+		<td><input type="text" name="<?php echo esc_attr($text_ads_name); ?>[expire][]" value="<?php echo $expires[$i]; ?>" /></td>
 		<td><input type="text" class="color" name="<?php echo $text_ads_name; ?>[expire][]" value="<?php echo $colors[$i]; ?>" /></td>
 		<td>
-			<input title="<?php echo $text_ads_name; ?>" type="button" class="button delete_row" value="حذف">
+			<input title="<?php echo esc_attr($text_ads_name); ?>" type="button" class="button delete_row" value="حذف">
 		</td>
 		</tr>
 		<?php }

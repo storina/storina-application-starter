@@ -1,6 +1,6 @@
 <div class="osa-option-wrapper">
 	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
-	<p class="osa-option-description"><?php echo $page['title']; ?></p>
+	<p class="osa-option-description"><?php echo esc_att($page['title']); ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form slider_form">
 	<?php
 	$FAQ = $page['page_name'];
@@ -27,10 +27,10 @@
 		$i = 0;
 		foreach($menu_namess as $menu_name){  ?>
 			<tr >
-			<td><input type="text" name="<?php echo $FAQ; ?>[question][]" value="<?php echo $menu_namess[$i]; ?>"/></td>
-			<td><input type="text" name="<?php echo $FAQ; ?>[link][]" value="<?php echo $link_namess[$i]; ?>"/></td>
+			<td><input type="text" name="<?php echo esc_attr($FAQ); ?>[question][]" value="<?php echo esc_attr($menu_namess[$i]); ?>"/></td>
+			<td><input type="text" name="<?php echo esc_attr($FAQ); ?>[link][]" value="<?php echo esc_attr($link_namess[$i]); ?>"/></td>
 			<td>
-			<select name="<?php echo $FAQ; ?>[username][]" class="select_box">
+			<select name="<?php echo esc_attr($FAQ); ?>[username][]" class="select_box">
 			<?php $count = count($wp_cats);
 			$value = $cat1_namess[$i];
 			for($ii=0;$ii<$count;$ii++){
@@ -41,7 +41,7 @@
 			</select>
 			</td>
 			<td>
-			<select name="<?php echo $FAQ; ?>[answer][]" class="select_box">
+			<select name="<?php echo esc_attr($FAQ); ?>[answer][]" class="select_box">
 			<?php $count = count($wp_cats);
 			$value = $cat2_namess[$i];
 			for($ii=0;$ii<$count;$ii++){
@@ -52,7 +52,7 @@
 			</select>
 			</td>
 			<td>
-			<select name="<?php echo $FAQ; ?>[date][]" class="select_box">
+			<select name="<?php echo esc_attr($FAQ); ?>[date][]" class="select_box">
 			<?php $count = count($wp_cats);
 			$value = $cat3_namess[$i];
 			for($ii=0;$ii<$count;$ii++){
@@ -63,7 +63,7 @@
 			</select>
 			</td>
 			<td>
-				<input title="<?php echo $FAQ; ?>" type="button" class="button-primary delete_row" value="حذف">
+				<input title="<?php echo esc_attr($FAQ); ?>" type="button" class="button-primary delete_row" value="حذف">
 			</td>
 			</tr>
 		<?php 
@@ -71,10 +71,10 @@
 		}
 	}else{ ?>
 	<tr>
-	<td><input type="text" name="<?php echo $FAQ; ?>[question][]" /></td>
-	<td><input type="text" name="<?php echo $FAQ; ?>[link][]" /></td>
+	<td><input type="text" name="<?php echo esc_attr($FAQ); ?>[question][]" /></td>
+	<td><input type="text" name="<?php echo esc_attr($FAQ); ?>[link][]" /></td>
 	<td>
-	<select name="<?php echo $FAQ; ?>[username][]" class="select_box">
+	<select name="<?php echo esc_attr($FAQ); ?>[username][]" class="select_box">
 	<?php $count = count($wp_cats);
 	$value = $cat1_namess[$i];
 	for($ii=0;$ii<$count;$ii++){
@@ -83,7 +83,7 @@
 	</select>
 	</td>
 	<td>
-	<select name="<?php echo $FAQ; ?>[answer][]" class="select_box">
+	<select name="<?php echo esc_attr($FAQ); ?>[answer][]" class="select_box">
 	<?php $count = count($wp_cats);
 	$value = $cat2_namess[$i];
 	for($ii=0;$ii<$count;$ii++){
@@ -91,7 +91,7 @@
 	} ?>
 	</select></td>
 	<td>
-	<select name="<?php echo $FAQ; ?>[date][]" class="select_box">
+	<select name="<?php echo esc_attr($FAQ); ?>[date][]" class="select_box">
 	<?php $count = count($wp_cats);
 	$value = $cat3_namess[$i];
 	for($ii=0;$ii<$count;$ii++){
@@ -99,7 +99,7 @@
 	} ?>
 	</select></td>
 	<td>
-		<input title="<?php echo $FAQ; ?>" type="button" class="button-primary delete_row" value="حذف">
+		<input title="<?php echo esc_attr($FAQ); ?>" type="button" class="button-primary delete_row" value="حذف">
 	</td>
 	</tr>
 	<?php }

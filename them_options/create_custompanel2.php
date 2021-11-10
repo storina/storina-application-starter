@@ -96,7 +96,7 @@
                         <td>
                             <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option6][]">
                                 <?php foreach ( $coll as $item => $value ) { ?>
-                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value6[ $i ] == $item ) {
+                                    <option value="<?php echo esc_attr($item); ?>" <?php if ( $custom_option_value6[ $i ] == $item ) {
                                         echo 'selected="selected"';
                                     } ?>><?php echo esc_attr($value); ?></option>
                                 <?php } ?>
@@ -143,7 +143,7 @@
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option7][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo esc_attr($value); ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -156,7 +156,7 @@
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option8][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo esc_attr($value); ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -164,7 +164,7 @@
                     <td>
                     <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option6][]">
 					    <?php foreach ( $coll as $item => $value ) { ?>
-                            <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
+                            <option value="<?php echo esc_attr($item); ?>"><?php echo esc_attr($value); ?></option>
 					    <?php } ?>
                     </select>
                 </td>

@@ -6,7 +6,7 @@
 			$counter = 1;
 			foreach($pages as $page){ ?>
 			<li  <?php if($counter==1){echo 'class="active"';} ?>>
-				<a href="#" rel="tab-<?php echo $counter; ?>"><?php echo $page['title']; ?></a>
+				<a href="#" rel="tab-<?php echo esc_attr($counter); ?>"><?php echo $page['title']; ?></a>
 			</li>
 			<?php $counter++; } ?>
 			<li>
@@ -17,7 +17,7 @@
 		<?php
 		$counter = 1;
 		foreach($options_page as $page){ ?>
-		<div <?php if($counter == 1){echo 'style="display:block;"';} ?> id="tab-<?php echo $counter; ?>" class="osa-setting-content-item">
+		<div <?php if($counter == 1){echo 'style="display:block;"';} ?> id="tab-<?php echo esc_attr($counter); ?>" class="osa-setting-content-item">
 			<?php
 			if(@$page['type'] == 'slider'){ require("create_slider.php"); }
 			else if(@$page['type'] == 'sliderplus'){ require("create_sliderplus.php"); }

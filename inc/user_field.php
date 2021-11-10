@@ -213,7 +213,7 @@ add_action('dokan_order_detail_after_order_items', function ($order){
 			<?php } ?>
             jQuery("ul.customer-details").append(mobile1 + mobile2 + timestamp);
 		});
-        //$('.customer-details').append('<?php echo $billing_mobile.$shipping_mobile; ?>');
+        //$('.customer-details').append('<?php echo esc_html($billing_mobile.$shipping_mobile); ?>');
     </script>
 	<?php
 } ,5,1);
