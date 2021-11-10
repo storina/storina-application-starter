@@ -20,9 +20,6 @@ class Cart {
 
     public function __construct($service_container) {
         $this->service_container = $service_container;
-        define('DOMAIN', str_replace('https://', 'http://', get_bloginfo('url')));
-        define('CONSUMER_KEY', storina_get_option('cunsomer_key'));
-        define('CONSUMER_SECRET', storina_get_option('Secret_key'));
         if (!empty(sanitize_text_field(@$_POST['userToken']))) {
             $userToken = sanitize_text_field($_POST['userToken']);
             $user_action = $this->service_container->get(User::class);
