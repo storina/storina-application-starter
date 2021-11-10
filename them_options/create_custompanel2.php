@@ -68,9 +68,9 @@
                         <td>
                             <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option7][]">
                                 <?php foreach ( $action as $item => $value ) { ?>
-                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value7[ $i ] == $item ) {
+                                    <option value="<?php echo esc_attr($item); ?>" <?php if ( $custom_option_value7[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?php echo $value ?></option>
+                                    } ?>><?php echo esc_attr($value); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
@@ -85,9 +85,9 @@
                         <td>
                             <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option8][]">
                                 <?php foreach ( $action as $item => $value ) { ?>
-                                    <option value="<?php echo $item ?>" <?php if ( $custom_option_value8[ $i ] == $item ) {
+                                    <option value="<?php echo esc_attr($item); ?>" <?php if ( $custom_option_value8[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?php echo $value ?></option>
+                                    } ?>><?php echo esc_attr($value); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
@@ -98,7 +98,7 @@
                                 <?php foreach ( $coll as $item => $value ) { ?>
                                     <option value="<?php echo $item ?>" <?php if ( $custom_option_value6[ $i ] == $item ) {
                                         echo 'selected="selected"';
-                                    } ?>><?php echo $value ?></option>
+                                    } ?>><?php echo esc_attr($value); ?></option>
                                 <?php } ?>
                             </select>
                         </td>
@@ -143,7 +143,7 @@
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option7][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
                             <?php } ?>
                         </select>
                     </td>
@@ -156,20 +156,20 @@
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option8][]">
                             <?php foreach ( $action as $item => $value ) { ?>
-                                <option value="<?php echo $item ?>"><?php echo $value ?></option>
+                                <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
                             <?php } ?>
                         </select>
                     </td>
-                    <td><input type="text" name="<?php echo $custom_option_name; ?>[option5][]"/></td>
+                    <td><input type="text" name="<?php echo esc_attr($custom_option_name); ?>[option5][]"/></td>
                     <td>
                     <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option6][]">
 					    <?php foreach ( $coll as $item => $value ) { ?>
-                            <option value="<?php echo $item ?>"><?php echo $value ?></option>
+                            <option value="<?php echo esc_attr($item); ?>"><?php echo $value ?></option>
 					    <?php } ?>
                     </select>
                 </td>
                 <td>
-                    <select name="<?php echo $custom_option_name; ?>[option9][]" class="widefat">
+                    <select name="<?php echo esc_attr($custom_option_name); ?>[option9][]" class="widefat">
 					    <?php
 					    foreach ( $product_cats as $product_cat => $value ) {
 						    echo '<option  value="' . $product_cat . '" >' . $value . '</option>';

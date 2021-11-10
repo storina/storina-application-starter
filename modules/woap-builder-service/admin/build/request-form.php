@@ -82,11 +82,11 @@
 					
 						<tr>
 							<td>
-								<label for="<?php echo esc_html($key); ?>"><?php echo $value; ?></label>
+								<label for="<?php echo esc_html($key); ?>"><?php echo esc_html($value); ?></label>
 							</td>
 							<td>
 								<div class="woap-field-wrapper">
-									<input type="text" id="<?php echo esc_html($key); ?>" name="strings[<?php echo $key ?>]" value="<?php echo $value ?>">
+									<input type="text" id="<?php echo esc_html($key); ?>" name="strings[<?php echo esc_attr($key); ?>]" value="<?php echo $value ?>">
 								</div>
 							</td>
 						</tr>

@@ -209,7 +209,7 @@ add_action('dokan_order_detail_after_order_items', function ($order){
 			$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 			if(!empty($timestamp)){
 			?>
-            timestamp = '<li><a href="#">' + <?php echo esc_html__('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?php echo $date; ?></span></a></li>';
+            timestamp = '<li><a href="#">' + <?php echo esc_html__('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?php echo esc_html($date); ?></span></a></li>';
 			<?php } ?>
             jQuery("ul.customer-details").append(mobile1 + mobile2 + timestamp);
 		});

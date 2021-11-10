@@ -107,7 +107,7 @@
                             <?php } ?>
                         </select>
                     </td>
-                    <td><input type="text" name="<?php echo $custom_option_name; ?>[option5][]"/></td>
+                    <td><input type="text" name="<?php echo esc_attr($custom_option_name); ?>[option5][]"/></td>
 
                     <td>
                         <input title="<?php echo esc_html($custom_option_name); ?>" type="button" class="button delete_row"

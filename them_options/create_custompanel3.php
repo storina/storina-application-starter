@@ -80,15 +80,15 @@
                     <td style="width: 20px; text-align: center;"><strong class="sort_elem">|||</strong></td>
                     <td>
                         <input class="element_id regular-text ltr" type="hidden"
-                            name="<?php echo $custom_option_name; ?>[option2][]"/>
-                        <select class="element select_box" name="<?php echo $custom_option_name; ?>[option3][]">
+                            name="<?php echo esc_attr($custom_option_name); ?>[option2][]"/>
+                        <select class="element select_box" name="<?php echo esc_attr($custom_option_name); ?>[option3][]">
                             <?php foreach ( $types as $item => $value ) { ?>
                                 <option value="<?php echo $item ?>"><?php echo $value ?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td>
-                        <input title="<?php echo $custom_option_name; ?>" type="button" class="button delete_row"
+                        <input title="<?php echo $esc_attr(custom_option_name); ?>" type="button" class="button delete_row"
                             value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
                     </td>
                 </tr>

@@ -9,7 +9,7 @@
             ]);
             $active_class = ($id == $active_section_value)? "active" : "";
             ?>
-            <a class="<?php echo "woap-option-nav-section {$active_class}"; ?>" id="<?php echo $section_id; ?>" href="<?php echo $href; ?>"><?php echo $label; ?></a>
+            <a class="<?php echo "woap-option-nav-section {$active_class}"; ?>" id="<?php echo esc_att($section_id); ?>" href="<?php echo $href; ?>"><?php echo $label; ?></a>
             <?php
         }
         ?>
