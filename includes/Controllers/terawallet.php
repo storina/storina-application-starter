@@ -62,7 +62,7 @@ class Terawallet {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
             return ( $result );
@@ -129,7 +129,7 @@ class Terawallet {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 18,
-                    'message' => esc_html__('something wrong happen.', 'onlinerShopApp')
+                    'message' => esc_html__('something wrong happen.', 'storina-application')
                 )
             );
 

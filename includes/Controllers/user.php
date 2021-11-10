@@ -33,7 +33,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
+                    'message' => esc_html__("Digits plugin not active.", "storina-application")
                 )
             );
 
@@ -49,7 +49,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 2,
-                    'message' => esc_html__("This user is not exist. please review or sign up first.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist. please review or sign up first.", "storina-application")
                 )
             );
         } else {
@@ -84,7 +84,7 @@ class User {
                     'status' => true,
                     'data' => array(
                         'verify' => true,
-                        'message' => esc_html__("Password sent.", "onlinerShopApp")
+                        'message' => esc_html__("Password sent.", "storina-application")
                     )
                 );
             } else {
@@ -106,7 +106,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
+                    'message' => esc_html__("Digits plugin not active.", "storina-application")
                 )
             );
             if ($send_json) {
@@ -145,7 +145,7 @@ class User {
             return array(
                 "status" => false,
 				'error' => [
-					"message" => esc_html__("Entered cod is invalid.", "onlinerShopApp")
+					"message" => esc_html__("Entered cod is invalid.", "storina-application")
 				]
             );
         }
@@ -170,7 +170,7 @@ class User {
                 'userToken' => $user_token,
             ),
             'data' => array(
-                'message' => esc_html__("Verify successfully.", "onlinerShopApp")
+                'message' => esc_html__("Verify successfully.", "storina-application")
             ),
         );
         return apply_filters("osa_user_verify_result",$result ,$user_id);
@@ -187,7 +187,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 2,
-                        'message' => esc_html__("Entered email is invalid.", "onlinerShopApp")
+                        'message' => esc_html__("Entered email is invalid.", "storina-application")
                     )
                 );
             } else {
@@ -226,7 +226,7 @@ class User {
             $result = array(
                 'status' => false,
                 'error' => array(
-                    'message' => esc_html__("This email is exist. please login.", "onlinerShopApp")
+                    'message' => esc_html__("This email is exist. please login.", "storina-application")
                 )
             );
         }
@@ -312,7 +312,7 @@ class User {
                         'OSA_avatar' => $OSA_avatar,
                     ),
                     'verify' => false,
-                    'message' => esc_html__("Register successfully.", "onlinerShopApp"),
+                    'message' => esc_html__("Register successfully.", "storina-application"),
                 )
             );
         } else {
@@ -342,7 +342,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => esc_html__("Mobile number is invalid.", "onlinerShopApp")
+                    'message' => esc_html__("Mobile number is invalid.", "storina-application")
                 )
             );
 
@@ -358,7 +358,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 3,
-                    'message' => esc_html__("This mobile number is exist. please login.", "onlinerShopApp")
+                    'message' => esc_html__("This mobile number is exist. please login.", "storina-application")
                 )
             );
         } else {
@@ -403,7 +403,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 4,
-                    'message' => esc_html__("Wrong information.", "onlinerShopApp")
+                    'message' => esc_html__("Wrong information.", "storina-application")
                 /* html_entity_decode(strip_tags($userValid->get_error_message())) */
                 )
             );
@@ -535,7 +535,7 @@ class User {
                 'error' => array(
                     'errorCode' => - 60,
                     'goVerify' => true,
-                    'message' => esc_html__("Before login need to verify mobile number. please first verify that.", "onlinerShopApp")
+                    'message' => esc_html__("Before login need to verify mobile number. please first verify that.", "storina-application")
                 )
             );
         } else {
@@ -551,7 +551,7 @@ class User {
                         'userToken' => $userToken,
                         'OSA_avatar' => $OSA_avatar,
                     ),
-                    'message' => esc_html__("Login successfully.", "onlinerShopApp"),
+                    'message' => esc_html__("Login successfully.", "storina-application"),
                     'states' => $states,
                 ),
             );
@@ -578,7 +578,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 15,
-                    'message' => esc_html__("This user is not exist.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist.", "storina-application")
                 )
             );
         }
@@ -619,7 +619,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 5,
-                    'message' => esc_html__("This user is not exist.", "onlinerShopApp")
+                    'message' => esc_html__("This user is not exist.", "storina-application")
                 )
             );
         }
@@ -632,7 +632,7 @@ class User {
         $result = array(
             'status' => true,
             'data' => array(
-                'message' => esc_html__("Logout successfully.", "onlinerShopApp")
+                'message' => esc_html__("Logout successfully.", "storina-application")
             ),
         );
 
@@ -647,7 +647,7 @@ class User {
         $result = array(
             'status' => true,
             'data' => array(
-                'message' => esc_html__("Password reset successfully.", "onlinerShopApp")
+                'message' => esc_html__("Password reset successfully.", "storina-application")
             )
         );
 
@@ -669,14 +669,14 @@ class User {
                     $result = array(
                         'status' => true,
                         'data' => array(
-                            'message' => esc_html__("Reset password link sent to your email.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link sent to your email.", "storina-application")
                         )
                     );
                 } else {
                     $result = array(
                         'status' => false,
                         'error' => array(
-                            'message' => esc_html__("Reset password link not sent.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link not sent.", "storina-application")
                         )
                     );
                 }
@@ -684,7 +684,7 @@ class User {
                 $result = array(
                     'status' => false,
                     'error' => array(
-                        'message' => esc_html__("Entered email is not exist.", "onlinerShopApp")
+                        'message' => esc_html__("Entered email is not exist.", "storina-application")
                     )
                 );
             }
@@ -694,14 +694,14 @@ class User {
                     $result = array(
                         'status' => true,
                         'data' => array(
-                            'message' => esc_html__("Reset password link sent to your email.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link sent to your email.", "storina-application")
                         )
                     );
                 } else {
                     $result = array(
                         'status' => false,
                         'error' => array(
-                            'message' => esc_html__("Reset password link not sent.", "onlinerShopApp")
+                            'message' => esc_html__("Reset password link not sent.", "storina-application")
                         )
                     );
                 }
@@ -712,7 +712,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => esc_html__("Digits plugin not active.", "onlinerShopApp")
+                            'message' => esc_html__("Digits plugin not active.", "storina-application")
                         )
                     );
 
@@ -723,7 +723,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => esc_html__("Entered mobile number invalid.", "onlinerShopApp")
+                            'message' => esc_html__("Entered mobile number invalid.", "storina-application")
                         )
                     );
 
@@ -735,7 +735,7 @@ class User {
                         'status' => false,
                         'error' => array(
                             'errorCode' => - 4,
-                            'message' => esc_html__("Entered mobile number is not exist.", "onlinerShopApp")
+                            'message' => esc_html__("Entered mobile number is not exist.", "storina-application")
                         )
                     );
 
@@ -857,7 +857,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -922,7 +922,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -955,7 +955,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "storina-application")
                     )
                 );
             }
@@ -964,7 +964,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -998,7 +998,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "storina-application")
                     )
                 );
             }
@@ -1007,7 +1007,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -1070,7 +1070,7 @@ class User {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "onlinerShopApp")
+                        'message' => esc_html__("yith-woocommerce-wishlist plugin is not active. please first active that.", "storina-application")
                     )
                 );
             }
@@ -1079,7 +1079,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -1163,7 +1163,7 @@ class User {
                     'comment_result' => array(
                         'likeCount' => intval($like_count),
                         'dislikeCount' => intval($dislike_count),
-                        'message' => esc_html__("Your vote saved.", "onlinerShopApp")
+                        'message' => esc_html__("Your vote saved.", "storina-application")
                     )
                 )
             );
@@ -1172,7 +1172,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -1242,7 +1242,7 @@ class User {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
@@ -1258,14 +1258,14 @@ class User {
             return array(
                 'status' => false,
                 'error' => array(
-                    'message' => esc_html__("Token is invalid", "onlinerShopApp")
+                    'message' => esc_html__("Token is invalid", "storina-application")
                 )
             );
         }
         $fields = json_decode(stripcslashes(sanitize_text_field($_POST['fields'])), true);
         foreach($fields as $key => $value){
             if(strpos($key, "email") && !is_email($value) && !empty($value)){
-                $errors[$key] = esc_html__("Email is invalid","onlinerShopApp");
+                $errors[$key] = esc_html__("Email is invalid","storina-application");
             }
         }
         if(!empty($errors) && is_array($errors)){

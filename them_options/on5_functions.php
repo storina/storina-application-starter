@@ -121,20 +121,20 @@ add_action( 'delete_post', 'storina_empty_carts', 10 );
 function storina_delete_cache_widget() {
 	global $wp_meta_boxes;
 
-	wp_add_dashboard_widget('custom_help_widget', esc_html__("Delete app cache","onlinerShopApp"), 'storina_delete_cache_dashboard');
+	wp_add_dashboard_widget('custom_help_widget', esc_html__("Delete app cache","storina-application"), 'storina_delete_cache_dashboard');
 }
 
 function storina_delete_cache_dashboard() { ?>
 	 <form action="" method="POST" style="display: inline;">
-        <input class="button" type="submit" name="delede_cache" value="<?php echo esc_html__("Delete cache","onlinerShopApp");?>"/>
+        <input class="button" type="submit" name="delede_cache" value="<?php echo esc_html__("Delete cache","storina-application");?>"/>
     </form>
-    <p><br/><?php echo esc_html__("You can delete application cache from this box.","onlinerShopApp");?></p>
+    <p><br/><?php echo esc_html__("You can delete application cache from this box.","storina-application");?></p>
 <?php
 }
 function storina_delete_cache_notice() {
 	?>
     <div class="updated">
-        <p><?php echo esc_html__("Deleted application cache","onlinerShopApp");?></p>
+        <p><?php echo esc_html__("Deleted application cache","storina-application");?></p>
     </div>
 	<?php
 }
@@ -275,19 +275,19 @@ function back_to_application( $order_id ) {
 add_action( "init", function () {
     // Articles
 	$labels = array(
-		'name'               => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp'),
-		'singular_name'      => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp'),
-		'edit_item'          => esc_html__("ویرایش",'onlinerShopApp'),
-		'new_item'           => esc_html__("افزودن",'onlinerShopApp'),
-		'view_item'          => esc_html__("نمایش",'onlinerShopApp'),
-		'search_items'       => esc_html__("جستجو",'onlinerShopApp'),
+		'name'               => esc_html__("اعلان های اپلیکیشن",'storina-application'),
+		'singular_name'      => esc_html__("اعلان های اپلیکیشن",'storina-application'),
+		'edit_item'          => esc_html__("ویرایش",'storina-application'),
+		'new_item'           => esc_html__("افزودن",'storina-application'),
+		'view_item'          => esc_html__("نمایش",'storina-application'),
+		'search_items'       => esc_html__("جستجو",'storina-application'),
 		'parent_item_colon'  => '',
-		'menu_name'          => esc_html__("اعلان های اپلیکیشن",'onlinerShopApp')
+		'menu_name'          => esc_html__("اعلان های اپلیکیشن",'storina-application')
 	);
 	$args = array(
 		'labels'        => $labels,
 		'menu_icon' => 'dashicons-media-spreadsheet',
-		'description'   => esc_html__("Save","onlinerShopApp"),
+		'description'   => esc_html__("Save","storina-application"),
 		'public'        => false,
 		'menu_position' => 100,
 		'taxonomies' => array('post_tag'),
@@ -317,18 +317,18 @@ add_filter( 'woocommerce_email_customer_details_fields', function ( $fields, $se
 	if ( empty( $fields ) ) {
 		if ( $order->get_billing_email() ) {
 			$fields['billing_email'] = array(
-				'label' => esc_html__( 'Email address', "onlinerShopApp" ),
+				'label' => esc_html__( 'Email address', "storina-application" ),
 				'value' => wptexturize( $order->get_billing_email() ),
 			);
 		}
 		if ( $order->get_billing_phone() ) {
 			$fields['billing_phone'] = array(
-				'label' => esc_html__( 'Phone', "onlinerShopApp" ),
+				'label' => esc_html__( 'Phone', "storina-application" ),
 				'value' => wptexturize( $order->get_billing_phone() ),
 			);
 		}
 		$fields['billing_mobile'] = array(
-			'label' => esc_html__( 'Emergency phon number', "onlinerShopApp" ),
+			'label' => esc_html__( 'Emergency phon number', "storina-application" ),
 			'value' => wptexturize( get_post_meta( $order->id, 'shipping_mobile', true ) ),
 		);
 
@@ -339,19 +339,19 @@ add_filter( 'woocommerce_email_customer_details_fields', function ( $fields, $se
 add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'    => 'application',
-		'title' => esc_html__("Application","onlinerShopApp"),
+		'title' => esc_html__("Application","storina-application"),
 		'href'  => admin_url() . 'admin.php?page=ONLINER_options',
 		'meta'  => array(
-			'title' => esc_html__("Application","onlinerShopApp"),
+			'title' => esc_html__("Application","storina-application"),
 		),
 	) );
 	$admin_bar->add_menu( array(
 		'id'     => 'app-setting',
 		'parent' => 'application',
-		'title'  => esc_html__("Application Settings","onlinerShopApp"),
+		'title'  => esc_html__("Application Settings","storina-application"),
 		'href'   => admin_url() . 'admin.php?page=ONLINER_options',
 		'meta'   => array(
-			'title'  => esc_html__("Application Settings","onlinerShopApp"),
+			'title'  => esc_html__("Application Settings","storina-application"),
 			'target' => '',
 			'class'  => ''
 		),
@@ -359,10 +359,10 @@ add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'     => 'app-send-notif',
 		'parent' => 'application',
-		'title'  => esc_html__("Send Notification","onlinerShopApp"),
+		'title'  => esc_html__("Send Notification","storina-application"),
 		'href'   => admin_url() . 'admin.php?page=onliner-send-notification',
 		'meta'   => array(
-			'title'  => esc_html__("Send Notification","onlinerShopApp"),
+			'title'  => esc_html__("Send Notification","storina-application"),
 			'target' => '',
 			'class'  => ''
 		),
@@ -370,10 +370,10 @@ add_action( 'admin_bar_menu', function ( $admin_bar ) {
 	$admin_bar->add_menu( array(
 		'id'     => 'app-delete-cache',
 		'parent' => 'application',
-		'title'  => esc_html__("Clear cashe","onlinerShopApp"),
+		'title'  => esc_html__("Clear cashe","storina-application"),
 		'href'   => admin_url() . 'admin.php?page=ONLINER_options&delede_cache=true',
 		'meta'   => array(
-			'title'  => esc_html__("Clear cashe","onlinerShopApp"),
+			'title'  => esc_html__("Clear cashe","storina-application"),
 			'target' => '',
 			'class'  => ''
 		),

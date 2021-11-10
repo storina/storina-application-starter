@@ -8,7 +8,7 @@
 $info=array(
 	'name'        => 'custom5',
 	'apppagename' => 'appHImages-options' . $elementID[ $i ],
-	'title'       => esc_html__( "Banners ads", 'onlinerShopApp' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
+	'title'       => esc_html__( "Banners ads", 'storina-application' ) . '<span style="display: none;"> #' . $elementID[ $i ] . '</span>',
 );
 global $pages;
 if($pages){
@@ -17,7 +17,7 @@ if($pages){
 //سلول type همیشه در اولین خانه آرابه یاشد
 $options=array(
     'type' => 'custom5',
-    'title' => esc_html__("Select the banners for show in home page",'onlinerShopApp'),
+    'title' => esc_html__("Select the banners for show in home page",'storina-application'),
     'custom_option_name' => 'custom_option',
     'custom_option2' => 'Hbanner_banner1'.$elementID[$i],
     'option-names' => [

@@ -323,7 +323,7 @@ class General {
                 $final = array(
                     'status' => false,
                     'error' => array(
-                        'message' => esc_html__('Error in insert comment.', 'onlinerShopApp'),
+                        'message' => esc_html__('Error in insert comment.', 'storina-application'),
                         'errorCode' => - 13,
                     )
                 );
@@ -354,7 +354,7 @@ class General {
                 $final = array(
                     'status' => false,
                     'error' => array(
-                        'message' => esc_html__('Error in insert comment.', 'onlinerShopApp'),
+                        'message' => esc_html__('Error in insert comment.', 'storina-application'),
                         'errorCode' => - 13,
                     )
                 );
@@ -416,11 +416,11 @@ class General {
     public function aboutUS() {
         $final = array(
             'top_logo' => str_replace('https://', 'http://', storina_get_option('app_aboutlogo')),
-            'app_slogan' => ( storina_get_option('app_slogan') ) ? storina_get_option('app_slogan') : esc_html__('Your shop slogan here.', 'onlinerShopApp'),
+            'app_slogan' => ( storina_get_option('app_slogan') ) ? storina_get_option('app_slogan') : esc_html__('Your shop slogan here.', 'storina-application'),
             'app_Email' => ( storina_get_option('app_Email') ) ? storina_get_option('app_Email') : 'yorEmail@gmail.com',
             'app_telegramID' => ( storina_get_option('app_telegramID') ) ? storina_get_option('app_telegramID') : 'TelegramID',
             'app_phone' => ( storina_get_option('app_phone') ) ? storina_get_option('app_phone') : '09152222222',
-            'app_copyright' => ( storina_get_option('app_copyright') ) ? storina_get_option('app_copyright') : esc_html__('All right reserved.', 'onlinerShopApp'),
+            'app_copyright' => ( storina_get_option('app_copyright') ) ? storina_get_option('app_copyright') : esc_html__('All right reserved.', 'storina-application'),
             'app_privacyLink' => storina_get_option('app_privacyLink'),
             'app_termsLink' => storina_get_option('app_termsLink'),
             'app_aboutLink' => storina_get_option('app_aboutLink'),
@@ -530,16 +530,16 @@ class General {
 
     public function clickEventList() {
         $list = array(
-            'AppHome' => esc_html__('Open the Home page of app', 'onlinerShopApp'),
-            'OpenWebsite' => esc_html__('Open the site', 'onlinerShopApp'),
-            'OpenTelegramChannel' => esc_html__('Open telegram channel', 'onlinerShopApp'),
-            'CallNumber' => esc_html__('Call', 'onlinerShopApp'),
-            'OpenInstagram' => esc_html__('Open instagram page', 'onlinerShopApp'),
-            'DeepLinkArchive' => esc_html__('A custom archive', 'onlinerShopApp'),
-            'DeepLinkSingle' => esc_html__('A custom product', 'onlinerShopApp'),
-            'DeepLinkBlogsingle' => esc_html__('A custom article (post)', 'onlinerShopApp'),
-            'DeepLinkBlogarchive' => esc_html__('A custom article (archive)', 'onlinerShopApp'),
-            'VendorListBasedCat' => esc_html__('Show Vendor List Based on Category ', 'onlinerShopApp')
+            'AppHome' => esc_html__('Open the Home page of app', 'storina-application'),
+            'OpenWebsite' => esc_html__('Open the site', 'storina-application'),
+            'OpenTelegramChannel' => esc_html__('Open telegram channel', 'storina-application'),
+            'CallNumber' => esc_html__('Call', 'storina-application'),
+            'OpenInstagram' => esc_html__('Open instagram page', 'storina-application'),
+            'DeepLinkArchive' => esc_html__('A custom archive', 'storina-application'),
+            'DeepLinkSingle' => esc_html__('A custom product', 'storina-application'),
+            'DeepLinkBlogsingle' => esc_html__('A custom article (post)', 'storina-application'),
+            'DeepLinkBlogarchive' => esc_html__('A custom article (archive)', 'storina-application'),
+            'VendorListBasedCat' => esc_html__('Show Vendor List Based on Category ', 'storina-application')
         );
 
         return $list;
@@ -797,7 +797,7 @@ class General {
                 $result = array(
                     'status' => false,
                     'error' => array(
-                        'message' => esc_html__('email is not sent.', 'onlinerShopApp'),
+                        'message' => esc_html__('email is not sent.', 'storina-application'),
                         'errorCode' => - 13,
                     )
                 );
@@ -806,7 +806,7 @@ class General {
             $result = array(
                 'status' => false,
                 'error' => array(
-                    'message' => esc_html__('product id is not exists.', 'onlinerShopApp'),
+                    'message' => esc_html__('product id is not exists.', 'storina-application'),
                     'errorCode' => - 13,
                 )
             );
@@ -858,7 +858,7 @@ class General {
             $versionInfo = array(
                 "name" => "shoping application",
                 "version" => "5.0.0",
-                "download_url" => "https://onlinerapp.ir/apk/plugin/onlinerShopApp.zip",
+                "download_url" => "https://onlinerapp.ir/apk/plugin/storina-application.zip",
                 "sections" => array(
                     "description" => (string) storina_return_html_content(trailingslashit(STORINA_STORAGE) . "version-info.php"),
                 )

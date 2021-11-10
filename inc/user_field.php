@@ -11,19 +11,19 @@ add_action( 'user_register', function ( $user_id ) {
 
 add_filter( 'woocommerce_customer_meta_fields', function ( $fields ) {
 	$fields['billing']['fields']['billing_lat']   = array(
-		'label'       => esc_html__( 'Google map lat', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lat', 'storina-application' ),
 		'description' => ''
 	);
 	$fields['billing']['fields']['billing_lng']   = array(
-		'label'       => esc_html__( 'Google map lng', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lng', 'storina-application' ),
 		'description' => ''
 	);
 	$fields['shipping']['fields']['shipping_lat'] = array(
-		'label'       => esc_html__( 'Google map lat', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lat', 'storina-application' ),
 		'description' => ''
 	);
 	$fields['shipping']['fields']['shipping_lng'] = array(
-		'label'       => esc_html__( 'Google map lng', 'onlinerShopApp' ),
+		'label'       => esc_html__( 'Google map lng', 'storina-application' ),
 		'description' => ''
 	);
 
@@ -35,20 +35,20 @@ add_action( 'edit_user_profile', 'storina_app_user_fields' );
 
 function storina_app_user_fields( $user ) { ?>
 
-<h3><?php echo esc_html__('Extra information','onlinerShopApp')?></h3>
+<h3><?php echo esc_html__('Extra information','storina-application')?></h3>
 <table class="form-table">
 
     <tr>
-        <th><label for="userToken"><?php echo esc_html__('User token','onlinerShopApp')?></label></th>
+        <th><label for="userToken"><?php echo esc_html__('User token','storina-application')?></label></th>
 
         <td>
             <input readonly type="text" name="userToken" id="userToken" value="<?php echo esc_attr( get_user_meta($user->ID, 'userToken',true  ) ); ?>" class="regular-text" /><br />
-            <span class="description"><?php echo esc_html__('Current user token id.','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Current user token id.','storina-application');?></span>
         </td>
     </tr>
 
     <tr>
-        <th><label for="gender"><?php echo esc_html__('Gender','onlinerShopApp');?></label></th>
+        <th><label for="gender"><?php echo esc_html__('Gender','storina-application');?></label></th>
 
         <td>
             <input readonly type="text" name="gender" id="gender" value="<?php echo esc_attr( get_user_meta($user->ID, 'gender',true  ) ); ?>" class="regular-text" />
@@ -57,19 +57,19 @@ function storina_app_user_fields( $user ) { ?>
                 <option value="female">female</option>
             </select>
             <br />
-            <span class="description"><?php echo esc_html__('Select your gender','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Select your gender','storina-application');?></span>
         </td>
     </tr>
     <tr>
-        <th><label for="melliCode"><?php echo esc_html__('National codeٔ','onlinerShopApp');?></label></th>
+        <th><label for="melliCode"><?php echo esc_html__('National codeٔ','storina-application');?></label></th>
 
         <td>
             <input type="text" name="melliCode" id="melliCode" value="<?php echo esc_attr( get_user_meta($user->ID, 'melliCode',true  ) ); ?>" class="regular-text" /><br />
-            <span class="description"><?php echo esc_html__('National codeٔ','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('National codeٔ','storina-application');?></span>
         </td>
     </tr>
     <tr>
-        <th><label for="birthDate"><?php echo esc_html__('Birth date','onlinerShopApp');?></label></th>
+        <th><label for="birthDate"><?php echo esc_html__('Birth date','storina-application');?></label></th>
         <?php
         $birthYear = get_user_meta($user->ID, 'birthYear',true  );
         $birthMonth = get_user_meta($user->ID, 'birthMonth',true  );
@@ -99,7 +99,7 @@ function storina_app_user_fields( $user ) { ?>
                     echo "<option $selected value=\"$i\">$i</option>";}
                 ?>
             </select>
-            <span class="description"><?php echo esc_html__('Birth date','onlinerShopApp');?></span>
+            <span class="description"><?php echo esc_html__('Birth date','storina-application');?></span>
         </td>
     </tr>
     
@@ -136,29 +136,29 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
     if(is_admin()){
 	    $fields['billing']['billing_mobile'] = array(
 		    'type' => 'text',
-		    'label' => esc_html__('Emergency phone', 'onlinerShopApp'),
-		    'placeholder' => _x('Emergency phone', 'placeholder', 'onlinerShopApp')
+		    'label' => esc_html__('Emergency phone', 'storina-application'),
+		    'placeholder' => _x('Emergency phone', 'placeholder', 'storina-application')
 	    );
 	    $fields['billing']['billing_email'] = array(
 		    'type' => 'text',
-		    'label' => esc_html__('Email', 'onlinerShopApp'),
-		    'placeholder' => _x('Email', 'placeholder', 'onlinerShopApp')
+		    'label' => esc_html__('Email', 'storina-application'),
+		    'placeholder' => _x('Email', 'placeholder', 'storina-application')
 	    );
 
 	    $fields['shipping']['shipping_phone'] = array(
 		    'type' => 'text',
-		    'label' => esc_html__('Phone number', 'onlinerShopApp'),
-		    'placeholder' => _x('Phone number', 'placeholder', 'onlinerShopApp')
+		    'label' => esc_html__('Phone number', 'storina-application'),
+		    'placeholder' => _x('Phone number', 'placeholder', 'storina-application')
 	    );
 	    $fields['shipping']['shipping_mobile'] = array(
 		    'type' => 'text',
-		    'label' => esc_html__('Mobile', 'onlinerShopApp'),
-		    'placeholder' => _x('Mobile', 'placeholder', 'onlinerShopApp')
+		    'label' => esc_html__('Mobile', 'storina-application'),
+		    'placeholder' => _x('Mobile', 'placeholder', 'storina-application')
 	    );
 	    $fields['shipping']['shipping_email'] = array(
 		    'type' => 'text',
-		    'label' => esc_html__('Email', 'onlinerShopApp'),
-		    'placeholder' => _x('Email', 'placeholder', 'onlinerShopApp')
+		    'label' => esc_html__('Email', 'storina-application'),
+		    'placeholder' => _x('Email', 'placeholder', 'storina-application')
 	    );
     }
 
@@ -172,19 +172,19 @@ add_filter( 'woocommerce_checkout_fields', function ( $fields ) {
 add_action( 'woocommerce_admin_order_data_after_billing_address', function ( $order ) {
 	$mobile = get_post_meta( $order->id, 'billing_mobile', true );
 	if ( $mobile ) {
-		echo '<p><strong>' . esc_html__( 'Mobile :', 'onlinerShopApp' ) . '</strong> <br/>' . $mobile . '</p>';
+		echo '<p><strong>' . esc_html__( 'Mobile :', 'storina-application' ) . '</strong> <br/>' . $mobile . '</p>';
 	}
 	$phone = get_post_meta( $order->id, 'shipping_phone', true );
 	if ( $phone ) {
-		echo '<p><strong>' . esc_html__( 'Shipping phone :', 'onlinerShopApp' ) . '</strong> <br/>' . $phone . '</p>';
+		echo '<p><strong>' . esc_html__( 'Shipping phone :', 'storina-application' ) . '</strong> <br/>' . $phone . '</p>';
 	}
 	$mobile = get_post_meta( $order->id, 'shipping_mobile', true );
 	if ( $mobile)
-    echo '<p><strong>'.esc_html__('Shipping mobile :', 'onlinerShopApp').':</strong> <br/>' . get_post_meta( $order->id, 'shipping_mobile', true ) . '</p>';
+    echo '<p><strong>'.esc_html__('Shipping mobile :', 'storina-application').':</strong> <br/>' . get_post_meta( $order->id, 'shipping_mobile', true ) . '</p>';
 	$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 	$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
-		echo '<p><strong>' . esc_html__('Send box time and date :','onlinerShopApp') . '</strong> <br/>' . $date . '</p>';
+		echo '<p><strong>' . esc_html__('Send box time and date :','storina-application') . '</strong> <br/>' . $date . '</p>';
 
 } , 10, 1 );
 
@@ -198,18 +198,18 @@ add_action('dokan_order_detail_after_order_items', function ($order){
             var mobile1;
             var mobile2;
 			<?php if(!empty($billing_mobile)){ ?>
-            mobile1 = '<li><a href="#">' + <?php echo esc_html__('Mobile 1 :','onlinerShopApp');?> + ' <span class="tab"><?php echo esc_html($billing_mobile); ?></span></a></li>';
+            mobile1 = '<li><a href="#">' + <?php echo esc_html__('Mobile 1 :','storina-application');?> + ' <span class="tab"><?php echo esc_html($billing_mobile); ?></span></a></li>';
 			<?php }
 			if(!empty($shipping_mobile)){
 			?>
-            mobile2 = '<li><a href="#">' + <?php echo esc_html__('Mobile 2 :','onlinerShopApp');?> +'<span class="tab"><?php echo esc_html($shipping_mobile); ?></span></a></li>';
+            mobile2 = '<li><a href="#">' + <?php echo esc_html__('Mobile 2 :','storina-application');?> +'<span class="tab"><?php echo esc_html($shipping_mobile); ?></span></a></li>';
 			<?php } 
 			$timestamp = get_post_meta( $order->id, 'time4SendTimestamp', true );
 			$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 			$date = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 			if(!empty($timestamp)){
 			?>
-            timestamp = '<li><a href="#">' + <?php echo esc_html__('Send box time and date :','onlinerShopApp');?> + '<span class="tab"><?php echo esc_html($date); ?></span></a></li>';
+            timestamp = '<li><a href="#">' + <?php echo esc_html__('Send box time and date :','storina-application');?> + '<span class="tab"><?php echo esc_html($date); ?></span></a></li>';
 			<?php } ?>
             jQuery("ul.customer-details").append(mobile1 + mobile2 + timestamp);
 		});
@@ -224,7 +224,7 @@ add_action( "woocommerce_email_after_order_table", function ( $order ) {
 	$valid_timestamp = (strlen($timestamp) > 10)? intval($timestamp/1000) : $timestamp;
 	$time = (is_rtl())? STORINA\Libraries\JDate::jdate("Y-m-d H:i",$valid_timestamp) : date("Y-m-d H:i",$valid_timestamp);
 	if($timestamp)
-		echo '<p><strong>'.esc_html__('Send box time and date :','onlinerShopApp').'</strong>'. $time .'</p>';
+		echo '<p><strong>'.esc_html__('Send box time and date :','storina-application').'</strong>'. $time .'</p>';
 
 } , 10, 1 );
 

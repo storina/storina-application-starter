@@ -801,7 +801,7 @@ class Cart {
                         return array(
                             "status" => false,
                             "error" => array(
-                                "message" => esc_html__("Sold individually","onlinerShopApp")
+                                "message" => esc_html__("Sold individually","storina-application")
                             )
                         );
                     } else {
@@ -998,7 +998,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1053,7 +1053,7 @@ class Cart {
                         array('%s')
                 );
                 WC()->cart->remove_coupons();
-                $message = esc_html__('Coupons removed successfully.', 'onlinerShopApp');
+                $message = esc_html__('Coupons removed successfully.', 'storina-application');
             }
             WC()->cart->calculate_totals();
             $cart = $this->get_cart();
@@ -1070,7 +1070,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1113,7 +1113,7 @@ class Cart {
                             array('%d')
                     );
 
-                    $message = esc_html__('Offer coupon applied.', 'onlinerShopApp');
+                    $message = esc_html__('Offer coupon applied.', 'storina-application');
                     WC()->session->set('couponCode', $couponCode);
                     $cart = $this->get_cart();
                     unset($cart['items']);
@@ -1124,7 +1124,7 @@ class Cart {
                         'data' => $cart
                     );
                 } else {
-                    $message = esc_html__('Coupon is invalid', 'onlinerShopApp');
+                    $message = esc_html__('Coupon is invalid', 'storina-application');
                     $cart['message'] = $message;
                     $cart['messages'] = $validation['messages'];
                     $result = array(
@@ -1133,7 +1133,7 @@ class Cart {
                     );
                 };
             } else {
-                $message = esc_html__('Basket have coupon.', 'onlinerShopApp');
+                $message = esc_html__('Basket have coupon.', 'storina-application');
                 $cart['message'] = $message;
                 $result = array(
                     'status' => false,
@@ -1146,7 +1146,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1203,7 +1203,7 @@ class Cart {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 12,
-                        'message' => esc_html__('This order is not for you.', 'onlinerShopApp')
+                        'message' => esc_html__('This order is not for you.', 'storina-application')
                     )
                 );
 
@@ -1304,7 +1304,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1406,7 +1406,7 @@ class Cart {
                             'status' => false,
                             'error' => array(
                                 'errorCode' => - 10,
-                                'message' => esc_html__('Cart is empty', 'onlinerShopApp')
+                                'message' => esc_html__('Cart is empty', 'storina-application')
                             )
                         )
                         );
@@ -1604,7 +1604,7 @@ class Cart {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 19,
-                        'message' => esc_html__('something wrong happen.', 'onlinerShopApp')
+                        'message' => esc_html__('something wrong happen.', 'storina-application')
                     )
                 );
             }
@@ -1613,7 +1613,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1723,7 +1723,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }
@@ -1937,7 +1937,7 @@ class Cart {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('Token is invalid', 'onlinerShopApp')
+                    'message' => esc_html__('Token is invalid', 'storina-application')
                 )
             );
         }

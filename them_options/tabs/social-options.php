@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'banners',
 	'apppagename' => 'social-options',
-	'title' => esc_html__("socials icons",'onlinerShopApp'),
+	'title' => esc_html__("socials icons",'storina-application'),
 );
 if($pages){
 array_push($pages, $info);
@@ -10,7 +10,7 @@ array_push($pages, $info);
 //سلول type همیشه در اولین خانه آرابه یاشد
 $options=array(
 	'type' => 'banner',
-	'title' => esc_html__("this icons shown in buttom of app menu. only banner address and link using ",'onlinerShopApp'),
+	'title' => esc_html__("this icons shown in buttom of app menu. only banner address and link using ",'storina-application'),
 	'banner_name' => 'social_icon',
 	'banner_addresses' => 'social_icon_images',
 	'banner_links' => 'social_icon_links',

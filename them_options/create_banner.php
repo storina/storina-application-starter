@@ -1,5 +1,5 @@
 <div class="osa-option-wrapper">
-	<p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
+	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
 	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form banner_panel header_th">
 		<?php
@@ -25,10 +25,10 @@
 		<div class="clear"></div>
 		<table class="wp-list-table widefat fixed">
 		<thead>
-		<th><?php echo esc_html__("Banner address",'onlinerShopApp');?></th><th><?php echo esc_html__("Title",'onlinerShopApp');?></th><th><?php echo esc_html__("Description",'onlinerShopApp');?></th><th><?php echo esc_html__("Link",'onlinerShopApp');?></th><th><?php echo esc_html__("Width px",'onlinerShopApp');?></th><th><?php echo esc_html__("Height px",'onlinerShopApp');?></th><th><?php echo esc_html__("Category",'onlinerShopApp');?></th><th><?php echo esc_html__("Expire",'onlinerShopApp');?></th><th><?php echo esc_html__("Action",'onlinerShopApp');?></th>
+		<th><?php echo esc_html__("Banner address",'storina-application');?></th><th><?php echo esc_html__("Title",'storina-application');?></th><th><?php echo esc_html__("Description",'storina-application');?></th><th><?php echo esc_html__("Link",'storina-application');?></th><th><?php echo esc_html__("Width px",'storina-application');?></th><th><?php echo esc_html__("Height px",'storina-application');?></th><th><?php echo esc_html__("Category",'storina-application');?></th><th><?php echo esc_html__("Expire",'storina-application');?></th><th><?php echo esc_html__("Action",'storina-application');?></th>
 		</thead>
 		<tfoot>
-		<th><?php echo esc_html__("Banner address",'onlinerShopApp');?></th><th><?php echo esc_html__("Title",'onlinerShopApp');?></th><th><?php echo esc_html__("Description",'onlinerShopApp');?></th><th><?php echo esc_html__("Link",'onlinerShopApp');?></th><th><?php echo esc_html__("Width px",'onlinerShopApp');?></th><th><?php echo esc_html__("Height px",'onlinerShopApp');?></th><th><?php echo esc_html__("Category",'onlinerShopApp');?></th><th><?php echo esc_html__("Expire",'onlinerShopApp');?></th><th><?php echo esc_html__("Action",'onlinerShopApp');?></th>
+		<th><?php echo esc_html__("Banner address",'storina-application');?></th><th><?php echo esc_html__("Title",'storina-application');?></th><th><?php echo esc_html__("Description",'storina-application');?></th><th><?php echo esc_html__("Link",'storina-application');?></th><th><?php echo esc_html__("Width px",'storina-application');?></th><th><?php echo esc_html__("Height px",'storina-application');?></th><th><?php echo esc_html__("Category",'storina-application');?></th><th><?php echo esc_html__("Expire",'storina-application');?></th><th><?php echo esc_html__("Action",'storina-application');?></th>
 		</tfoot>
 			<?php
 			global $product_cats;
@@ -40,7 +40,7 @@
 				<tr>
 				<td>
 				<input class="target_line" type="text" name="<?php echo esc_html($banner); ?>[address][]" value="<?php echo esc_html($addresses[$i]); ?>"/>
-				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
+				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'storina-application');?>">
 				</td>
 				<td><input type="text" name="<?php echo esc_html($banner); ?>[title][]" value="<?php echo esc_html($titles[$i]); ?>"/></td>
 				<td>
@@ -68,7 +68,7 @@
 				<td><input type="text" name="<?php echo esc_html($banner); ?>[banner_expire][]" value="<?php echo esc_html($expires[$i]); ?>"  id="datepicker"/></td>
 				<td>
 					<input title="<?php echo esc_html($banner); ?>" type="button" class="button-primary delete_row"
-							value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
+							value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
 				</td>
 				</tr>
 			<?php 
@@ -78,7 +78,7 @@
 		<tr>
 		<td>
 		<input class="target_line" type="text" name="<?php echo esc_html($banner); ?>[address][]" />
-		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'onlinerShopApp');?>">
+		<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php echo esc_html__("Upload",'storina-application');?>">
 		</td>
 		<td><input type="text" name="<?php echo esc_html($banner); ?>[title][]" /></td>
 		<td><textarea name="<?php echo esc_html($banner); ?>[text][]" ></textarea></td>
@@ -99,7 +99,7 @@
 		<td><input type="text" name="<?php echo esc_html($banner); ?>[banner_expire][]" value="<?php echo esc_html($expires[$i]); ?>" id="datepicker" /></td>
 		<td>
 			<input title="<?php echo esc_html($banner); ?>" type="button" class="button-primary delete_row"
-					value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
+					value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
 		</td>
 		</tr>
 		<?php }
@@ -109,8 +109,8 @@
 		<div class="osa-submit-wrapper-table">
 			<input type="hidden" name="apptype_form" value="banner">
 			<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-			<input type="submit" value="<?php echo esc_html__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-			<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
+			<input type="submit" value="<?php echo esc_html__("Save",'storina-application')?>" name="submit_theme_options" class="button save">
+			<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'storina-application' ) ?></button>
 		</div>
 	</form>
 </div>

@@ -4,8 +4,9 @@
   Plugin Name: Storina Application Starter
   Plugin URI: https://storina.com
   Description: The REST API works on a person shopping application. It compatible with any woocommerce websites.
-  Version: 1.1.0
+  Version: 1.2.0
   Author: storina
+  Text Domain: storina-application
   License: A "Slug" license name e.g. GPL2
  */
 if (!defined('ABSPATH'))
@@ -104,7 +105,7 @@ class storina_application_init {
     }
 
     public function plugin_init() {
-        load_plugin_textdomain('onlinerShopApp', false, basename(dirname(__FILE__)) . '/languages');
+        load_plugin_textdomain('storina-application', false, basename(dirname(__FILE__)) . '/languages');
         $woocommerce = (class_exists("woocommerce")) ? "active" : "deactive";
         $onliner_shop_app = (function_exists("storina_get_option")) ? "active" : "deactive";
     }

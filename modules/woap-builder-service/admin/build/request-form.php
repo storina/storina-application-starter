@@ -26,12 +26,12 @@
 		<div class="woap-field-wrapper">
 			<label for="">آیکن اپلیکیشن</label>
 			<input type="text" name="icon" class="target-line">
-			<input class="button upload-button" type="button" value="<?php _e("upload","onlinerShopApp"); ?>">
+			<input class="button upload-button" type="button" value="<?php _e("upload","storina-application"); ?>">
 		</div>
 		<div class="woap-field-wrapper">
 			<label for="">آیکن صفحه اسپلش</label>
 			<input type="text" name="splash_screen_icon" class="target-line">
-			<input class="button upload-button" type="button" value="<?php _e("upload","onlinerShopApp"); ?>">
+			<input class="button upload-button" type="button" value="<?php _e("upload","storina-application"); ?>">
 		</div>
 		<div class="woap-field-wrapper">
 			<label for="">رنگ صفحه آغازین اپلیکیشن</label>

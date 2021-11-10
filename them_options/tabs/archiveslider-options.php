@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'sliderplus',
 	'apppagename' => 'galleryslider-options',
-	'title' => esc_html__("Archive sliders",'onlinerShopApp'),
+	'title' => esc_html__("Archive sliders",'storina-application'),
 );
 global $pages;
 if($pages){
@@ -12,7 +12,7 @@ array_push($pages, $info);
 $options=array(
 	'type' => 'sliderplus',
 	'taxonomy' => 'product_cat',// امکان انتخاب دسته های این نوع نوشته
-	'title' => esc_html__("set slider banners for show in custom archives. width 800px height 400px",'onlinerShopApp'),
+	'title' => esc_html__("set slider banners for show in custom archives. width 800px height 400px",'storina-application'),
 	'slider_name' => 'apparchive_slider',
 	'image_name' => 'apparchive_slider_images',
 	'typeLink_name' => 'apparchive_slider_typeLinks',

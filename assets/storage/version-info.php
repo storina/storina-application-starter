@@ -17,7 +17,7 @@
         <p>امکان تعیین پروتکل وب سایت در اپلیکیشن در موتور ساخت اپلیکیشن</p>
         <p>امکان تعیین رنگ صفحه آغازین اپلیکیشن در موتور ساخت اپلیکیشن</p>
         <p>بروزرسانی تمامی کتابخانه های اندروید اپلیکیشن مطابق با آخرین استاندارد های گوگل</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V5.0.0.zip" >دانلود نسخه 4.3.0</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V5.0.0.zip" >دانلود نسخه 4.3.0</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>4.3.0</span></h2>
@@ -25,7 +25,7 @@
         <p>نمایش تعرفه ارسال بر اساس فروشندگان سبد خرید</p>
         <p>(رفع مشکل نمایش توضیحات)نمایش توضیحات خرید در سفارش و همگام سازی با پلاگین های تولید فاکتور</p>
         <p>تغییر ساختار پایگاه داده اپلیکیشن</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V4.3.0.zip" >دانلود نسخه 4.3.0</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V4.3.0.zip" >دانلود نسخه 4.3.0</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>4</span></h2>
@@ -36,7 +36,7 @@
         <p>بهبود نمایش مبلغ سفارش هایی که با کیف پول پرداخت شده اند</p>
         <p>بهبود نمایش خطاهای کوپن های تخفیف</p>
         <p>نمایش محصولات ناموجود در انتها در صورت نیاز در تنظیمات</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V4.zip" >دانلود نسخه 3.4.0</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V4.zip" >دانلود نسخه 3.4.0</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.8.3</span></h2>
@@ -44,7 +44,7 @@
         <p>حل مشکل سوالات متداول</p>
         <p>حل مشکل برخی کاربران در نمایش پرداخت در محل</p>
         <p>حل مشکل برخی کاربران در استفاده از دیجیتز در تولید کد یکبار مصرف</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.8.3.zip" >دانلود نسخه 3.8.3</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.8.3.zip" >دانلود نسخه 3.8.3</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.8.2</span></h2>
@@ -55,14 +55,14 @@
         <p>همگام سازی با نسخه جدید افزونه زمان ارسال بحرینی پور نسخه 3.0.0</p>
         <p>همگام سازی سفارشات با پلاگین دکان</p>
         <p>سازگاری با نسخه جدید پلاگین Yith Role Based Price</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.8.2.zip" >دانلود نسخه 3.8.2</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.8.2.zip" >دانلود نسخه 3.8.2</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.8.0</span></h2>
         <p>جداسازی ماژول پرسش ها و پاسخ ها</p>
         <p>سازگاری با درگاه های جدید در دیجیتس</p>
         <p>حل مشکل ثبت سفارش با مبلغ صفر</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.8.0.zip" >دانلود نسخه 3.8.0</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.8.0.zip" >دانلود نسخه 3.8.0</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.7.9</span></h2>
@@ -72,7 +72,7 @@
         <p>اعتبار سنجی محصولات در سبد خرید اپلیکیشن</p>
         <p>دیباگ وب سرویس ارسال مجدد کد اعتبار سنجی</p>
         <p>تغییر الگوریتم چند فروشندگی بنا به درخواست کاربران</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.7.9.zip" >دانلود نسخه 3.7.9</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.7.9.zip" >دانلود نسخه 3.7.9</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.7.7</span></h2>
@@ -83,14 +83,14 @@
         <p>تغییر الگوریتم سبد خرید و امکان افزودن تا ۷۰ محصول</p>
         <p>بهبود الگوریتم ثبت سفارش</p>
         <p>بهبود الگوریتم جستجو</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.7.7.zip" >دانلود نسخه 3.7.7</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.7.7.zip" >دانلود نسخه 3.7.7</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.7.3</span></h2>
         <p>تظبیق الگوریتم محاسبه قیمت در پلاگین role based price بر اساس الگوریتم وب سایت</p>
         <p>رفع اشکال نمای محصولات متغیر در شگفت انگیز ها</p>
         <p>غیر فعال سازی سیستم چند فروشنده در امکان نمایش بر اساس شهر</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.7.3.zip" >دانلود نسخه 3.7.4</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.7.3.zip" >دانلود نسخه 3.7.4</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.7.3</span></h2>
@@ -102,14 +102,14 @@
         <p>تغییر ساختار فایل در وب سرویس</p>
         <p>بهبود تاریخ میلادی در برخی عملگر های وب سرویس</p>
         <p>بهبود عملکرد کیف پول اپلیکیشن</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.7.3.zip" >دانلود نسخه 3.7.3</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.7.3.zip" >دانلود نسخه 3.7.3</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.7.0</span></h2>
         <p>تغییر پنل تنظیمات اپلیکیشن</p>
         <p>بهبود عملکرد اپلکیشن با چند فروشندگی دکان</p>
         <p>رفع اعلان های کتابخانه بروزرسان اپلیکیشن</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.7.0.zip" >دانلود نسخه 3.7.0</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.7.0.zip" >دانلود نسخه 3.7.0</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.6.7</span></h2>
@@ -121,7 +121,7 @@
         <p>رفع خطاهای گزارش شده تا پایان سال ۹۸</p>
         <p>بازنویسی ماژول ها و بهبود ساختارکدهای سمت سرور</p>
         <p>سازگاری با نسخه جدید پلاگین YITH WooCommerce Wishlist</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.6.7.zip" >دانلود نسخه 3.6.7</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.6.7.zip" >دانلود نسخه 3.6.7</a></p>
     </div>
     <div class="version-info-item">
         <h2><span>3.6.6</span></h2>
@@ -133,24 +133,24 @@
         <p>پیاده سازی هوک های اختصاصی برای افزونه های جانبی</p>    
         <p>دیباگ روال کوپن های تخفیف در اپلیکیشن.</p>   
         <p>نمایش خطاهای کوپن به صورت تخصصی تر در اپ</p>
-        <p><a href="http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.6.6.zip" >دانلود نسخه 3.6.6</a></p>
+        <p><a href="http://onlinerapp.ir/apk/plugin/storina-application%20V3.6.6.zip" >دانلود نسخه 3.6.6</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.5.2 </span></h2>
         <p>نسخه پایدار ۱۰ آذر ماه</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.5.2.zip'>دانلود نسخه 3.5.2</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.5.2.zip'>دانلود نسخه 3.5.2</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.4.6 </span></h2>
         <p>نسخه پایدار در تاریخ ۸ آبان ماه</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.4.6.zip'>دانلود نسخه 3.4.6</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.4.6.zip'>دانلود نسخه 3.4.6</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.4.1 </span></h2>
         <p>پشتیبانی از نسخه جدید پلاگین Checkout Field Editor for WooCommerce</p>
         <p>بررسی حداقل و حداکثر شارژ کیف پول TeraWallet</p>
         <p>بهبود عملکرد کیف پول</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.4.1.zip'>دانلود نسخه 3.4.1</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.4.1.zip'>دانلود نسخه 3.4.1</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.8 </span></h2>
@@ -158,18 +158,18 @@
         <p>پشتیبانی از افزوونه woocommerce-advanced-shipping</p>
         <p>پشتیبانی از افزوونه کیف پول تراولت TeraWallet</p>
         <p>پشتیبانی از افزوونه روش های حمل ایران</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.8.zip'>دانلود نسخه 3.2.8</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.8.zip'>دانلود نسخه 3.2.8</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.6 </span></h2>
         <p>پشتیبانی از افزونه WooCommerce Advanced Quantity</p>
         <p>حذف کلیه تنظیمات پنل های اس ام اس و استفاده از سیستم دیجیتز برای ارسال پیامک</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.6.zip'>دانلود نسخه 3.2.6</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.6.zip'>دانلود نسخه 3.2.6</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.5 </span></h2>
         <p>شبیه سازی کامل ثبت آدرس ها مشابه سیستم ووکامرس. در این ورژن حتما نیاز به ساخت مجدد اپ هست.</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.5.zip'>دانلود نسخه 3.2.5</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.5.zip'>دانلود نسخه 3.2.5</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.4 </span></h2>
@@ -182,7 +182,7 @@
         <p>نمایش اطلاعات زمان ارسال فروشنده دکان در باکس اطلاعات فروشنده</p>
         <p>رفع مشکل تخلیه سبد خرید بعد از لاگین با شماره موبایل</p>
         <p>ورود فقط با شماره موبایل</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.4.zip'>دانلود نسخه 3.2.4</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.4.zip'>دانلود نسخه 3.2.4</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.4 </span></h2>
@@ -192,7 +192,7 @@
         <p>بهینه سازی شگفت انگیز ها</p>
         <p>بهینه سازی سیستم بازگشت به اپ</p>
         <p>رفع نمایش دوگانه فیلد های اضافی در صفحه جزئیات محصول</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.2.zip'>دانلود نسخه 3.2.2</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.2.zip'>دانلود نسخه 3.2.2</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.2.2 </span></h2>
@@ -202,7 +202,7 @@
         <p>بهینه سازی شگفت انگیز ها</p>
         <p>بهینه سازی سیستم بازگشت به اپ</p>
         <p>رفع نمایش دوگانه فیلد های اضافی در صفحه جزئیات محصول</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.2.2.zip'>دانلود نسخه 3.2.2</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.2.2.zip'>دانلود نسخه 3.2.2</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.1.8 </span></h2>
@@ -216,7 +216,7 @@
         <p>رفع مشکل جزئی فیلترینگ</p>
         <p>نمایش محصولات مرتبط بر اساس دسته بندی</p>
         <p>رفع مشکل تداخل با افزونه‌ی شرکت همکار</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.1.8.zip'>دانلود نسخه 3.1.8</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.1.8.zip'>دانلود نسخه 3.1.8</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.1.2 </span></h2>
@@ -228,7 +228,7 @@
         <p>اصلاح اختلاف زمانی محصولات شگفت انگیز در صفحه اصلی و داخلی</p>
         <p>حذف کلمه phone از جزيیات سفارش</p>
         <p>اصلاح لینک به یک مطلب خاص</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.1.2.zip'>دانلود نسخه 3.1.2</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.1.2.zip'>دانلود نسخه 3.1.2</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.1.0 </span></h2>
@@ -240,20 +240,20 @@
         <p>حذف کدهای html اضافی در محتوای پست ها و محصولات</p>
         <p>رفع مشکل لود اپ برای برخی مشتریان</p>
         <p>نمایش اطلاعات کامل مشتری در جزئیات سفارش</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.1.0.zip'>دانلود نسخه 3.1.0</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.1.0.zip'>دانلود نسخه 3.1.0</a></p>
     </div>
     <div class="version-info-item">
     <h2 ><span>3.0.4 </span></h2>
         <p>افزایش سرعت صفحه اصلی</p>
         <p>رفع مشکل بازگشت به اپ بعد از پرداخت</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.0.4.zip'>دانلود نسخه 3.0.4</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.0.4.zip'>دانلود نسخه 3.0.4</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.0.3 </span></h2>
         <p>رفع مشکل نمایش تعداد فروشندگان در صفحه لیست فروشندگان</p>
         <p>امکان تعیین چینش محصولات در باکس های صفحه اصلی بصورت راست به چپ یا چپ به راست</p>
         <p>امکان تعیین ترتیب باکس های صفحه اصلی و اسلایدر و بنر ها با درگ اند دراپ</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.0.3.zip'>دانلود نسخه 3.0.3</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.0.3.zip'>دانلود نسخه 3.0.3</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.0.2 </span></h2>
@@ -261,21 +261,21 @@
         <p>افزوده شدن سامانه ملی پیامک</p>
         <p>افزوده شدن دکمه افزودن در تنظیمات منوی سفارشی</p>
         <p>اصلاح ترتیب نمایش محصولات در صفحه اصلی</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.0.2.zip'>دانلود نسخه 3.0.2</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.0.2.zip'>دانلود نسخه 3.0.2</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>3.0.0 </span></h2>
         <p>برای مشاهده جزئیات آپدیت ۳ به صفحه محصول رجوع کنید.</p>
         <p>دقت کنید برای فعال سازی امکانات ورژن ۳ نیاز هست که اپلیکیشن مجدد از پنل بیلد گرفته شود.</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V3.0.0.zip'>دانلود نسخه 3.0.0</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V3.0.0.zip'>دانلود نسخه 3.0.0</a></p>
         <h2 ><span>2.9.68 </span></h2>
         <p>رفع مشکل جزئی در محصولات متغیر</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V2.9.68.zip'>دانلود نسخه 2.9.68</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V2.9.68.zip'>دانلود نسخه 2.9.68</a></p>
     </div>
     <div class="version-info-item">
         <h2 ><span>2.9.67 </span></h2>
         <p>نمایش تگ اپلیکیشن در لیست سفارشاتی که از اپلیکیشن انجام شده اند</p>
         <p>بهینه سازی و رفع مشکل ویژگی های دستی در متغیر ها</p>
-        <p><a href='http://onlinerapp.ir/apk/plugin/onlinerShopApp%20V2.9.67.zip'>دانلود نسخه 2.9.67</a></p>
+        <p><a href='http://onlinerapp.ir/apk/plugin/storina-application%20V2.9.67.zip'>دانلود نسخه 2.9.67</a></p>
     </div>
 </div>

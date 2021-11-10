@@ -15,7 +15,7 @@ add_action( 'woocommerce_product_options_general_product_data', function () {
     woocommerce_wp_text_input(
         array(
             'id'          => '_subtitle',
-            'label'       => esc_html__('secondary title for show in app','onlinerShopApp'),
+            'label'       => esc_html__('secondary title for show in app','storina-application'),
             'placeholder' => '',
             'desc_tip'    => 'true',
             'description' => ''

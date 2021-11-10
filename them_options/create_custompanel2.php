@@ -1,5 +1,5 @@
 <div class="osa-option-wrapper">
-    <p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
+    <p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
 	<p class="osa-option-description"><?php echo esc_html($page['title']); ?></p>
     <form action="" method="POST" id="on5_form_panel" class="panel_form textads_form">
         <?php
@@ -23,32 +23,32 @@
         $custom_option_value9 = storina_get_option($custom_option9);
         global $product_cats;
         $product_cats     = array();
-        $product_cats[-1] = esc_html__("All",'onlinerShopApp');
+        $product_cats[-1] = esc_html__("All",'storina-application');
         $product_cats     = storina_hierarchical_category_tree2( 0 , 'product_cat');
         global $osa_autoload;
         $general          = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
         $action           = $general->clickEventList();
         if ( function_exists( 'dokan_get_store_info' ) ) {
-            $action['VendorPage'] = esc_html__( 'Open vendor page', 'onlinerShopApp' );
+            $action['VendorPage'] = esc_html__( 'Open vendor page', 'storina-application' );
         }
         $coll = array(
-            1 => esc_html__("One column",'onlinerShopApp'),
-            2 => esc_html__("Two column",'onlinerShopApp'),
+            1 => esc_html__("One column",'storina-application'),
+            2 => esc_html__("Two column",'storina-application'),
         );
         ?>
         <div class="clear"></div>
         <table class="wp-list-table widefat fixed">
             <thead>
             <th style="width: 20px;"><strong class="sort_elem">|||</strong></th>
-            <th><?php echo esc_html__( "Banner address 1", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Link type", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Value", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Banner address 2", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Link type", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Value", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Column", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Show", 'onlinerShopApp' ); ?></th>
-            <th><?php echo esc_html__( "Action", 'onlinerShopApp' ); ?></th>
+            <th><?php echo esc_html__( "Banner address 1", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Link type", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Value", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Banner address 2", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Link type", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Value", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Column", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Show", 'storina-application' ); ?></th>
+            <th><?php echo esc_html__( "Action", 'storina-application' ); ?></th>
 
             </thead>
 
@@ -63,7 +63,7 @@
                             <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option2][]"
                                 value="<?php echo esc_html($custom_option_value2[ $i ]); ?>"/>
                             <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                                value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
+                                value="<?php echo esc_html__( "Upload", 'storina-application' ); ?>">
                         </td>
                         <td>
                             <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option7][]">
@@ -80,7 +80,7 @@
                             <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option4][]"
                                 value="<?php echo esc_html($custom_option_value4[ $i ]); ?>"/>
                             <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                                value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
+                                value="<?php echo esc_html__( "Upload", 'storina-application' ); ?>">
                         </td>
                         <td>
                             <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option8][]">
@@ -126,7 +126,7 @@
                             </select></td>-->
                         <td>
                             <input title="<?php echo esc_html($custom_option_name); ?>" type="button"
-                                class="button-primary delete_row" value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
+                                class="button-primary delete_row" value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
                         </td>
                     </tr>
                     <?php
@@ -138,7 +138,7 @@
                     <td>
                         <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option2][]"/>
                         <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                            value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
+                            value="<?php echo esc_html__( "Upload", 'storina-application' ); ?>">
                     </td>
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option7][]">
@@ -151,7 +151,7 @@
                     <td>
                         <input class="target_line" type="text" name="<?php echo esc_html($custom_option_name); ?>[option4][]"/>
                         <input type="button" name="upload-btn" class="upload-btn button-secondary"
-                            value="<?php echo esc_html__( "Upload", 'onlinerShopApp' ); ?>">
+                            value="<?php echo esc_html__( "Upload", 'storina-application' ); ?>">
                     </td>
                     <td>
                         <select class="select_box" name="<?php echo esc_html($custom_option_name); ?>[option8][]">
@@ -181,7 +181,7 @@
 
                 <td>
                     <input title="<?php echo esc_html($custom_option_name); ?>" type="button" class="button delete_row"
-                           value="<?php echo esc_html__( "Delete", 'onlinerShopApp' ); ?>">
+                           value="<?php echo esc_html__( "Delete", 'storina-application' ); ?>">
                 </td>
             </tr>
 	    <?php }
@@ -193,8 +193,8 @@
 <div class="osa-submit-wrapper-table">
     <input type="hidden" name="apptype_form" value="custom">
     <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-    <input type="submit" value="<?php echo esc_html__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-    <button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
+    <input type="submit" value="<?php echo esc_html__("Save",'storina-application')?>" name="submit_theme_options" class="button save">
+    <button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'storina-application' ) ?></button>
 </div>
 </form>
 

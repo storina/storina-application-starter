@@ -1,5 +1,5 @@
 <div class="osa-option-wrapper">
-	<p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
+	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
 	<p class="osa-option-description"><?php echo $page['title']; ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form slider_form">
 	<?php
@@ -20,7 +20,7 @@
 	<div class="clear"></div>
 	<table id="menu_table">
 	<tr class="header_th">
-	<th><?php echo esc_html__("Title",'onlinerShopApp')?></th><th><?php echo esc_html__("Link",'onlinerShopApp')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
+	<th><?php echo esc_html__("Title",'storina-application')?></th><th><?php echo esc_html__("Link",'storina-application')?></th><th>دسته شاخص</th><th>دسته دوم</th><th>دسته سوم</th><th>کنترل</th>
 	</tr>
 	<?php 
 	if($menu_namess){
@@ -109,7 +109,7 @@
 		<input type="hidden" name="apptype_form" value="FAQ">
 		<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 		<input type="submit" value="ذخیره" name="submit_theme_options" class="button save">
-		<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
+		<button type="button" class="button add_row"><?php echo esc_html__( "Add ", 'storina-application' ) ?></button>
 	</div>
 	</form>
 </div>

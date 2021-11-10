@@ -7,8 +7,8 @@ global $wp_cats;
 $wp_cats = array();
 
 $wp_cats = storina_hierarchical_category_tree2( 0 , 'category');
-$wp_cats[0] = esc_html__("All",'onlinerShopApp');
-$wp_cats[-1] = esc_html__("Nothing",'onlinerShopApp');
+$wp_cats[0] = esc_html__("All",'storina-application');
+$wp_cats[-1] = esc_html__("Nothing",'storina-application');
 
 /*
 all_pages
@@ -24,5 +24,5 @@ product categories
 */
 global $product_cats;
 $product_cats = array();
-$product_cats[0] = esc_html__("All",'onlinerShopApp');
+$product_cats[0] = esc_html__("All",'storina-application');
 $product_cats = storina_hierarchical_category_tree2( 0 , 'product_cat');

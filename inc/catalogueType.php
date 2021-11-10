@@ -27,6 +27,6 @@ add_action( 'plugins_loaded', function () {
  * Add to product type drop down.
  */
 add_filter( 'product_type_selector',function ( $types ){
-   	$types[ 'simple_catalogue' ] = esc_html__("Catalogue",'onlinerShopApp');
+   	$types[ 'simple_catalogue' ] = esc_html__("Catalogue",'storina-application');
 	return $types;
 });

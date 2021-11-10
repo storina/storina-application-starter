@@ -19,7 +19,7 @@
 				<p class="osa-option-title"><strong><?php echo $item['name']; ?></strong></p>
 				<p class="osa-option-description"><?php echo $item['desc']; ?></p>
 				<input type="text" id="<?php echo $item['id']; ?>" name="<?php echo $item['id'] ?>" class="target_line regular-text text-box" value="<?php echo $value; ?>">
-				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e("upload","onlinerShopApp"); ?>">
+				<input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e("upload","storina-application"); ?>">
 			</div>
 			<?php
 			break;
@@ -161,6 +161,6 @@
 <input type="hidden" name="apptype_form" value="options">
 <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
 <div class="osa-submit-wrapper">
-	<input type="submit" value="<?php _e("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save button-primary button-large">
+	<input type="submit" value="<?php _e("Save",'storina-application')?>" name="submit_theme_options" class="button save button-primary button-large">
 </div>
 </form>

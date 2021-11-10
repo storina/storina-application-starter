@@ -10,7 +10,7 @@
 			</li>
 			<?php $counter++; } ?>
 			<li>
-				<a href="#" rel="tab-import"><?php echo esc_html__( "import","onlinerShopApp" ); ?></a>
+				<a href="#" rel="tab-import"><?php echo esc_html__( "import","storina-application" ); ?></a>
 			</li>
 		</ul>
 		<div class="osa-setting-contents">
@@ -40,10 +40,10 @@
 		} ?>
 		<div id="tab-import" class="osa-setting-content-item">
 			<div class="osa-option-wrapper">
-				<p class="osa-option-title"><strong><?php _e("Import Settings","onlinerShopApp"); ?></strong></p>
-				<p class="osa-option-description"><?php _e("Import default home page settings like slider and banners and product box.note that import action remove all current settings","onlinerShopApp"); ?></p>
+				<p class="osa-option-title"><strong><?php _e("Import Settings","storina-application"); ?></strong></p>
+				<p class="osa-option-description"><?php _e("Import default home page settings like slider and banners and product box.note that import action remove all current settings","storina-application"); ?></p>
 				<form action="" method="post">
-					<input type="submit" value="<?php echo esc_html__( "Import configuration", 'onlinerShopApp' ) ?>" name="submit_osa_import" class="button save">
+					<input type="submit" value="<?php echo esc_html__( "Import configuration", 'storina-application' ) ?>" name="submit_osa_import" class="button save">
 					<?php wp_nonce_field('osa_import_configuration_nonce_value','osa_import_configuration_nonce_key'); ?>
 				</form>
 			</div>

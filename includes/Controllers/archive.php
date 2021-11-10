@@ -190,7 +190,7 @@ class Archive {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 45,
-                    'message' => esc_html__('Dokan is inactive.', 'onlinerShopApp')
+                    'message' => esc_html__('Dokan is inactive.', 'storina-application')
                 )
             );
 
@@ -1020,7 +1020,7 @@ class Archive {
                     'status' => false,
                     'error' => array(
                         'errorCode' => - 12,
-                        'message' => esc_html__('Result not found.', 'onlinerShopApp')
+                        'message' => esc_html__('Result not found.', 'storina-application')
                     )
                 );
                 if ($return) {
@@ -1035,7 +1035,7 @@ class Archive {
                 'status' => false,
                 'error' => array(
                     'errorCode' => - 12,
-                    'message' => esc_html__('don\'t receive keyword for search.', 'onlinerShopApp')
+                    'message' => esc_html__('don\'t receive keyword for search.', 'storina-application')
                 )
             );
             if ($return) {
@@ -1058,7 +1058,7 @@ class Archive {
         if(empty($parent_terms)){
             return [
                 'status' => false,
-                'message' => esc_html__("no product category was founded","onlinerShopApp")
+                'message' => esc_html__("no product category was founded","storina-application")
             ];
         }
         foreach($parent_terms as $parent_term){

@@ -150,7 +150,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 	unset( $columns['tags'] );
 
 	//add column
-	$columns['chanel'] = esc_html__( 'From', 'onlinerShopApp' );
+	$columns['chanel'] = esc_html__( 'From', 'storina-application' );
 
 	return $columns;
 } , 15 );
@@ -158,7 +158,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 add_action( 'manage_shop_order_posts_custom_column', function ( $column, $postid ) {
 	if ( $column == 'chanel' ) {
 		$purchase_type = get_post_meta( $postid, 'purchase_type', true );
-		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? esc_html__( 'App', 'onlinerShopApp' ) : 'Website' ) . '</strong>';
+		echo '<strong style="color: darkred;">' . ( ( $purchase_type == 'app' ) ? esc_html__( 'App', 'storina-application' ) : 'Website' ) . '</strong>';
 	}
 } , 10, 2 );
 
@@ -172,7 +172,7 @@ add_filter( 'manage_edit-shop_order_columns', function ( $columns ) {
 		$new_columns[ $column_name ] = $column_info;
 
 		if ( 'order_date' === $column_name ) {
-			$new_columns['chanel'] = esc_html__( 'From', 'onlinerShopApp' );
+			$new_columns['chanel'] = esc_html__( 'From', 'storina-application' );
 		}
 	}
 
@@ -230,9 +230,9 @@ add_filter('osa_theme_options_app',function($options){
 	}
 	$options[] = 	array(
 		"type" => "text",
-		"name" => esc_html__( "FAQ", 'onlinerShopApp' ),
+		"name" => esc_html__( "FAQ", 'storina-application' ),
 		"id"   => "app_faq_shortcode_id",
-		"desc" => esc_html__( "enter faq shortcode id. <a href='https://nimb.ws/bOogTf' target='_blank'>Screenshot</a>", 'onlinerShopApp' ),
+		"desc" => esc_html__( "enter faq shortcode id. <a href='https://nimb.ws/bOogTf' target='_blank'>Screenshot</a>", 'storina-application' ),
 	);
 	return $options;
 });
@@ -277,7 +277,7 @@ add_filter('woap_add_to_cart_validation',function($validation,$item,$cart){
 	$status = $maximum_quantity >= $request_quantity;
 	if(!$status){
 		$validation['status'] = false;
-		$validation['messages'][] = esc_html__("Request Quantity is bigger than request quantity","onlinerShopApp");
+		$validation['messages'][] = esc_html__("Request Quantity is bigger than request quantity","storina-application");
 		return $validation;
 	}
 	return $validation;

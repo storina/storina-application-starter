@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'banners',
 	'apppagename' => 'archive-banner-options',
-	'title' => esc_html__("Categories banners ADS",'onlinerShopApp'),
+	'title' => esc_html__("Categories banners ADS",'storina-application'),
 );
 global $pages;
 if($pages){
@@ -11,7 +11,7 @@ array_push($pages, $info);
 //سلول type همیشه در اولین خانه آرابه یاشد
 $options=array(
 	'type' => 'custom2',
-	'title' => esc_html__("Enter the ads banners for archive pages",'onlinerShopApp'),
+	'title' => esc_html__("Enter the ads banners for archive pages",'storina-application'),
 	'custom_option_name' => 'custom_option',
 	'custom_option2' => 'HArchive_banner1',
 	'custom_option3' => 'HArchive_linkBanner1',

@@ -63,7 +63,7 @@ class Single {
             $Post['price'] = get_post_meta($post_id, '_regular_price', true);
             $Post['sale_price'] = get_post_meta($post_id, '_sale_price', true);
             if ("variable" == $product->get_type()) {
-                $to = esc_html__("To", "onlinerShopApp");
+                $to = esc_html__("To", "storina-application");
                 $min = $product->get_variation_sale_price('min');
                 $max = $product->get_variation_sale_price('max');
                 $Post['price'] = "{$min} {$to} {$max}";
@@ -1097,7 +1097,7 @@ class Single {
         }
 
 
-        return array(array('title' => esc_html__('Details', 'onlinerShopApp'), 'subAttributes' => $attrGroup));
+        return array(array('title' => esc_html__('Details', 'storina-application'), 'subAttributes' => $attrGroup));
         //$final['attributes'][0] = $originalData['attributes'];
     }
 

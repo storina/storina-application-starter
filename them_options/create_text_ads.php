@@ -1,5 +1,5 @@
 <div class="osa-option-wrapper">
-	<p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
+	<p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
 	<p class="osa-option-description"><?php echo $page['title']; ?></p>
 	<form action="" method="POST" id="on5_form_panel" class="panel_form textads_form">
 		<?php
@@ -68,7 +68,7 @@
 <div class="osa-submit-wrapper-table">
 <input type="hidden" name="apptype_form" value="text_ads">
 		<input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-		<input type="submit" value="<?php _e("save","onlinerShopApp"); ?>" name="submit_theme_options" class="button save">
+		<input type="submit" value="<?php _e("save","storina-application"); ?>" name="submit_theme_options" class="button save">
 </div>
 	</form>
 </div>

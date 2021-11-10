@@ -4,13 +4,13 @@ global $osa_autoload;
 $general = $osa_autoload->service_provider->get(\STORINA\Controllers\General::class);
 $action = $general->clickEventList();
 $columns = [
-    1 => esc_html__("One column",'onlinerShopApp'),
-    2 => esc_html__("Two column",'onlinerShopApp'),
-    4 => esc_html__("Four column",'onlinerShopApp'),
+    1 => esc_html__("One column",'storina-application'),
+    2 => esc_html__("Two column",'storina-application'),
+    4 => esc_html__("Four column",'storina-application'),
 ];
 ?>
 <div class="osa-option-wrapper">
-    <p class="osa-option-title"><strong><?php _e("Description",'onlinerShopApp'); ?></strong></p>
+    <p class="osa-option-title"><strong><?php _e("Description",'storina-application'); ?></strong></p>
 	<p class="osa-option-description"><?php echo $page['title']; ?></p>
     <style>
         .woap-ads-table,
@@ -47,9 +47,9 @@ $columns = [
         <table class="wp-list-table widefat fixed woap-ads-table">
             <thead>
                 <th style="width: 20px;"><strong class="sort_elem">|||</strong></th>
-                <th><?php _e("Banners, from the right Banner link, Link type, Link value","onlinerShopApp"); ?></th>
-                <th><?php echo esc_html__( "Column", 'onlinerShopApp' ); ?></th>
-                <th><?php echo esc_html__( "Action", 'onlinerShopApp' ); ?></th>
+                <th><?php _e("Banners, from the right Banner link, Link type, Link value","storina-application"); ?></th>
+                <th><?php echo esc_html__( "Column", 'storina-application' ); ?></th>
+                <th><?php echo esc_html__( "Action", 'storina-application' ); ?></th>
             </thead>
             <tbody class="woap-adc-tbody">
             <?php 
@@ -74,7 +74,7 @@ $columns = [
                             <div class="d-flex">
                                 <div class="flex-column woap-ads-img">
                                     <input class="target_line" type="text" name="<?php echo $option_names['banner']; ?>[<?php echo $i; ?>][]" value="<?php echo $banner[$j]; ?>" />
-                                    <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'onlinerShopApp' ); ?>">
+                                    <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'storina-application' ); ?>">
                                 </div>
                                 <div class="flex-column">
                                     <select class="select_box" name="<?php echo $option_names['link_type']; ?>[<?php echo $i; ?>][]">
@@ -100,7 +100,7 @@ $columns = [
                             </select>
                         </td>
                         <td>
-                            <input type="button" class="button-primary delete_row" value="<?php _e( "Delete", 'onlinerShopApp' ); ?>">
+                            <input type="button" class="button-primary delete_row" value="<?php _e( "Delete", 'storina-application' ); ?>">
                         </td>
                     </tr>
                     <?php
@@ -113,8 +113,8 @@ $columns = [
         <div class="osa-submit-wrapper-table">
             <input type="hidden" name="apptype_form" value="woap-home-adc">
             <input type="hidden" name="appname_form" value="<?php echo($pages[$counter-1]['apppagename']); ?>">
-            <input type="submit" value="<?php echo esc_html__("Save",'onlinerShopApp')?>" name="submit_theme_options" class="button save">
-            <button type="button" class="button add-adc-row"><?php echo esc_html__( "Add ", 'onlinerShopApp' ) ?></button>
+            <input type="submit" value="<?php echo esc_html__("Save",'storina-application')?>" name="submit_theme_options" class="button save">
+            <button type="button" class="button add-adc-row"><?php echo esc_html__( "Add ", 'storina-application' ) ?></button>
         </div>
     </form>
 </div>
@@ -128,7 +128,7 @@ $columns = [
             <div class="d-flex">
                 <div class="flex-column woap-ads-img">
                     <input class="target_line" type="text" name="<?php echo $option_names['banner']; ?>[COUNTER_CONST][]" value="" />
-                    <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'onlinerShopApp' ); ?>">
+                    <input type="button" name="upload-btn" class="upload-btn button-secondary" value="<?php _e( "Upload", 'storina-application' ); ?>">
                 </div>
                 <div class="flex-column">
                     <select class="select_box" name="<?php echo $option_names['link_type']; ?>[COUNTER_CONST][]">
@@ -151,7 +151,7 @@ $columns = [
             </select>
         </td>
         <td>
-            <input type="button" class="button-primary delete_row" value="<?php _e( "Delete", 'onlinerShopApp' ); ?>">
+            <input type="button" class="button-primary delete_row" value="<?php _e( "Delete", 'storina-application' ); ?>">
         </td>
     </tr>
 </template>

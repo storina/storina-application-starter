@@ -22,14 +22,14 @@ class BuildController extends Controller {
 	}
 
 	public function builder_wrapper_panel(){
-        add_submenu_page('ONLINER_options', esc_html__('Build Panel', 'onlinerShopApp'), esc_html__('Build Panel', 'onlinerShopApp'), 'manage_options', 'build-panel', [$this,'build_panel_wrapper_html']);
+        add_submenu_page('ONLINER_options', esc_html__('Build Panel', 'storina-application'), esc_html__('Build Panel', 'storina-application'), 'manage_options', 'build-panel', [$this,'build_panel_wrapper_html']);
 	}
 
 	public function build_panel_wrapper_html(){
 		$active_section_value = sanitize_text_field($_GET['section'] ?? 'details');
 		$sections = apply_filters('woap_options_configuration_build_sections',[
-			'details' => esc_html__('Build Details','onlinerShopApp'),
-			'request' => esc_html__('Build Request','onlinerShopApp'),
+			'details' => esc_html__('Build Details','storina-application'),
+			'request' => esc_html__('Build Request','storina-application'),
 		]);
 		require_once trailingslashit(WOAB_ADM) . 'build/build-wrapper.php';
 	}

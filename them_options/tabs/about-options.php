@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'aboutUS',
 	'apppagename' => 'aboutUS-options',
-	'title' => esc_html__('About US','onlinerShopApp'),
+	'title' => esc_html__('About US','storina-application'),
 );
 
 /*
@@ -22,75 +22,75 @@ array_push($pages, $info);
 $options=array(
 	array(
 		"type" => "text",
-		"name" => esc_html__('Shop slogan','onlinerShopApp'),
+		"name" => esc_html__('Shop slogan','storina-application'),
 		"id" => "app_slogan",
-		"desc" => esc_html__('Enter the shop slogan','onlinerShopApp'),
+		"desc" => esc_html__('Enter the shop slogan','storina-application'),
 	),
 	array(
 		"type" => "picture",
-		"name" => esc_html__('select top page logo','onlinerShopApp'),
+		"name" => esc_html__('select top page logo','storina-application'),
 		"id" => "app_aboutlogo",
-		"desc" => esc_html__('Select top page logo. PNG and width 700px height 445px','onlinerShopApp'),
+		"desc" => esc_html__('Select top page logo. PNG and width 700px height 445px','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('Email','onlinerShopApp'),
+		"name" => esc_html__('Email','storina-application'),
 		"id" => "app_Email",
-		"desc" =>esc_html__('Enter support Email','onlinerShopApp'),
+		"desc" =>esc_html__('Enter support Email','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('Telegram','onlinerShopApp'),
+		"name" => esc_html__('Telegram','storina-application'),
 		"id" => "app_telegramID",
-		"desc" => esc_html__('Enter the telegram ID (without @)','onlinerShopApp'),
+		"desc" => esc_html__('Enter the telegram ID (without @)','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('mubile number','onlinerShopApp'),
+		"name" => esc_html__('mubile number','storina-application'),
 		"id" => "app_phone",
-		"desc" => esc_html__('Enter support phone','onlinerShopApp'),
+		"desc" => esc_html__('Enter support phone','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('copyright','onlinerShopApp'),
+		"name" => esc_html__('copyright','storina-application'),
 		"id" => "app_copyright",
-		"desc" => esc_html__('Enter the copyright text. maximum 12 char','onlinerShopApp'),
+		"desc" => esc_html__('Enter the copyright text. maximum 12 char','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('Privacy','onlinerShopApp'),
+		"name" => esc_html__('Privacy','storina-application'),
 		"id" => "app_privacyLink",
-		"desc" => esc_html__('Enter the privacy page url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the privacy page url','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('Terms','onlinerShopApp'),
+		"name" => esc_html__('Terms','storina-application'),
 		"id" => "app_termsLink",
-		"desc" => esc_html__('Enter the terms page url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the terms page url','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('About US','onlinerShopApp'),
+		"name" => esc_html__('About US','storina-application'),
 		"id" => "app_aboutLink",
-		"desc" => esc_html__('Enter the url of about us page','onlinerShopApp'),
+		"desc" => esc_html__('Enter the url of about us page','storina-application'),
 	),
 	array(
 		"type" => "hr",
-		"name" => esc_html__('Custom button','onlinerShopApp'),
+		"name" => esc_html__('Custom button','storina-application'),
 		"id" => "",
 		"desc" => "",
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('button text','onlinerShopApp'),
+		"name" => esc_html__('button text','storina-application'),
 		"id" => "app_aboutButtonText",
-		"desc" => esc_html__('Enter the button text','onlinerShopApp'),
+		"desc" => esc_html__('Enter the button text','storina-application'),
 	),
 	array(
 		"type" => "text",
-		"name" => esc_html__('URL button','onlinerShopApp'),
+		"name" => esc_html__('URL button','storina-application'),
 		"id" => "app_aboutButtonLink",
-		"desc" => esc_html__('Enter the button url','onlinerShopApp'),
+		"desc" => esc_html__('Enter the button url','storina-application'),
 	),
 );
 global $options_page;

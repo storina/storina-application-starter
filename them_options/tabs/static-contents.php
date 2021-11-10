@@ -2,7 +2,7 @@
 $info=array(
 	'name' => 'staticContents',
 	'apppagename' => 'static-contents',
-	'title' => esc_html__('Static Pages',"onlinerShopApp"),
+	'title' => esc_html__('Static Pages',"storina-application"),
 );
 
 
@@ -13,17 +13,17 @@ array_push($pages, $info);
 $options=array(
 	array(
 		"type" => "textarea",
-		"name" => esc_html__( "Privacy And Policy", "onlinerShopApp" ),
+		"name" => esc_html__( "Privacy And Policy", "storina-application" ),
 		"id"   => "app_privacy_policy",
 	),
 	array(
 		"type" => "textarea",
-		"name" => esc_html__( "Terms And Conditions", "onlinerShopApp" ),
+		"name" => esc_html__( "Terms And Conditions", "storina-application" ),
 		"id"   => "‬app_terms_conditions",
 	),
 	array(
 		"type" => "textarea",
-		"name" => esc_html__( "Shopping Guildline", "onlinerShopApp" ),
+		"name" => esc_html__( "Shopping Guildline", "storina-application" ),
 		"id"   => "app_shopping_guide",
 	),
 );
