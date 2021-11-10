@@ -10,20 +10,6 @@ class ModulesController {
     public function __construct(){
         $this->bootstraps = [
             [            
-                'class' => \VOS\Init::class,
-                'path' => trailingslashit(STORINA_PDP) . 'modules/application-report/bootstrap.php',
-                'version' => 1.0,
-                'web_slug' => 'vos',
-                'api_slug' => 'VOSApi'
-            ],
-            [            
-                'class' => \CRN\Init::class,
-                'path' => trailingslashit(STORINA_PDP) . 'modules/customer-vendor-talk/bootstrap.php',
-                'version' => 1.0,
-                'web_slug' => 'crn',
-                'api_slug' => 'CRNApi'
-            ],
-            [            
                 'class' => \WOAP\Init::class,
                 'path' => trailingslashit(STORINA_PDP) . 'modules/woap-builder-service/bootstrap.php',
                 'version' => 1.0,
