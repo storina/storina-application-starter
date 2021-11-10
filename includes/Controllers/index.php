@@ -215,7 +215,6 @@ class Index {
         $cat_ids = storina_get_option('indexAppFeatures' . $elementID[$iiii]);
         $count = storina_get_option('indexAppFeaturesCount' . $elementID[$iiii]);
 
-        date_default_timezone_set(storina_get_option('timezone_string'));
         $data = $productInfo = array();
         $data['type'] = 'featured';
         $data['icon'] = storina_get_option("osn_feature_product_icon");
@@ -473,7 +472,6 @@ class Index {
         $BoxExist = storina_get_option('indexAppBoxExist' . $elementID[$iiii]);
         $cat_ids = storina_get_option('indexAppBox' . $elementID[$iiii]);
         $count = storina_get_option('indexAppBoxCount' . $elementID[$iiii]);
-        date_default_timezone_set(storina_get_option('timezone_string'));
         $termtmp = get_term_by('id', $cat_ids, 'product_cat');
         $data = $productInfo = array();
         $data['type'] = 'productBox';

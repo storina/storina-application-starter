@@ -42,7 +42,6 @@ class Cache {
     }
 
     public function getCache($type, $itemID, $page = null, $param = null) {
-        date_default_timezone_set('Asia/Tehran');
         global $wpdb;
         if ($page) {
             $itemID = $itemID . '/' . $page . $param;

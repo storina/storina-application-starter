@@ -90,9 +90,7 @@ class Single {
 
     public function get() {
         $index_object = $this->service_container->get(Index::class);
-        date_default_timezone_set('Asia/Tehran');
         $masterID = sanitize_text_field($_POST['id']);
-
         $userToken = ( !empty(sanitize_text_field($_POST['userToken'])) ) ? sanitize_text_field($_POST['userToken']) : "";
         $user_action = $this->service_container->get(User::class);
         $user_id = $user_action->get_userID_byToken($userToken);
