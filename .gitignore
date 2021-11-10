@@ -5,3 +5,4 @@
 *.sw*
 ^.*.php
 nohup.out
+error.log
