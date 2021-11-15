@@ -13,7 +13,6 @@ class HttpRequest extends Controller{
 	private $request_body=[];
 
 	public function __construct($service_container){
-		$this->curl_handler = curl_init();
 		parent::__construct($service_container);
 	}	
 
@@ -43,26 +42,18 @@ class HttpRequest extends Controller{
 		return $this;
 	}
 
-	public function set_curl_option($option_key,$option_value){
-		curl_setopt($this->curl_handler, $option_key, $option_value);
-		return $this;
-	}
 
 	public function post($post_fields=[]){
 		$this->request_body = array_merge($this->request_body,$post_fields);
-		curl_setopt($this->curl_handler, CURLOPT_URL, $this->request_url);
-        curl_setopt($this->curl_handler, CURLOPT_POST, true);
-        curl_setopt($this->curl_handler, CURLOPT_HTTPHEADER, $this->request_headers);
-        curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($this->curl_handler, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($this->curl_handler, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($this->curl_handler, CURLOPT_POSTFIELDS, http_build_query($this->request_body));
-		$result = curl_exec($this->curl_handler);
-		return $result;
+		$args = [
+			'headers' => $this->request_headers,
+			'body' => $this->request_body,
+			'sslverify' => false,
+		];
+		$wp_remote_result = wp_remote_post($this->request_url,$args);
+		$respone_body = wp_remote_retrieve_body($wp_remote_result);
+		return $respons_body;
 	}
 
-	public function __destruct(){
-		curl_close($this->curl_handler);
-	}
 
 }

@@ -1023,18 +1023,15 @@ class General {
             'Content-Type:application/json',
             'Authorization:key=' . $server_key
         );
-//CURL request to route notification to FCM connection server (provided by Google)
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
         $ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
-        curl_setopt($ch, CURLOPT_USERAGENT, $ua);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        $result = curl_exec($ch);
+		$args = [
+			'headers' => $headers,
+			'body' => $data,
+			'sslverify' => false,
+			'user-agent' => $ua,
+		];
+		$wp_remote_result = wp_remote_post($url,$args);
+		$result = wp_remote_retrieve_body($wp_remote_result);
         if ($result === false) {
             die('Oops! FCM Send Error: ' . curl_error($ch));
         } else {
@@ -1065,27 +1062,22 @@ class General {
     }
 
     public function get_master_domain($domain) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://storina.com/tR92l0x5Pb9s3Qj9nhfY/app_api.php');
+		$url='https://storina.com/tR92l0x5Pb9s3Qj9nhfY/app_api.php';
         $ua = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.A.B.C Safari/525.13';
-        curl_setopt($ch, CURLOPT_USERAGENT, $ua);
-
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS,
-                "action=getMasterDomain&url=$domain");
-
-// In real life you should use something like:
-// curl_setopt($ch, CURLOPT_POSTFIELDS,
-//          http_build_query(array('postvar1' => 'value1')));
-// Receive server response ...
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $server_output = curl_exec($ch);
+		$data=[
+			'action' => 'getMasterDomain',
+			'url' => $domain
+		];
+		$args = [
+			'body' => $data,
+			'sslverify' => false,
+			'user-agent' => $ua,
+		];
+		$wp_remote_result = wp_remote_post($url,$args);
+		$server_output = wp_retrieve_body($wp_remote_result);
         $result = json_decode($server_output);
-        curl_close($ch);
 
-// Further processing ...
+		// Further processing ...
         if ($result->status == true) {
             return $result->url;
         } else {
